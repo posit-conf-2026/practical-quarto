@@ -1,15 +1,9 @@
-WORKSHOP_TITLE
-================
+Level up your Quarto: Patterns, templates, and tooling
+========================================================
 
 ### posit::conf(2026)
 
-by INSTRUCTOR_NAME
-
------
-
-INSTRUCTIONS FOR INSTRUCTORS: Please insert information about your workshop below. Then, add workshop content in the materials folder and link to each session’s materials from the schedule below. You are welcomed to add more rows to the schedule. We just ask that you take breaks at the specified times. Once you are done adding information, you can remove these instructions from the README.
-
-Alternatively, you can completely redo the organization of this repo  as a Quarto website or some other format you prefer to host your workshop materials. The only requirement is that your workshop materials are hosted here.
+by Charlotte Wickham and Mine Çetinkaya-Rundel
 
 -----
 
@@ -22,7 +16,9 @@ Alternatively, you can completely redo the organization of this repo  as a Quart
 
 ## Description
 
-ADD WORKSHOP DESCRIPTION.
+This workshop is designed for Quarto users who want to update and extend their Quarto mastery. It will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy-paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns — each one solving a real authoring or publishing problem you're likely to encounter, including how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
+
+By the end of the workshop, you'll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You'll leave equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.
 
 ## Setup
 
@@ -42,7 +38,7 @@ ADD INFORMATION YOU WANT LEARNERS TO HAVE / STEPS THEY WANT THEM TO COMPLETE PRI
 
 ## Instructor(s)
 
-ADD INSTRUCTOR(S) INFO.
+Charlotte Wickham and Mine Çetinkaya-Rundel.
 
 -----
 
