@@ -1,0 +1,23 @@
+---
+title: Productive workflows in Positron
+---
+
+## Overview
+
+Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Use Positron's Quarto-specific features to author and preview documents more efficiently.
+* Auto-format R code in Quarto documents with Air.
+* Incorporate LLM assistance into a Quarto workflow in practical, deliberate ways.
+* Explain how Quarto's freeze works and when to check it in to version control, refresh it, or disable it.
+
+## Links
+
+* [Positron](https://positron.posit.co/)
+* [Quarto in Positron](https://quarto.org/docs/tools/positron.html)
+* [Air formatter](https://www.tidyverse.org/blog/2025/02/air/)
+* [Freezing computations](https://quarto.org/docs/projects/code-execution.html#freeze)

@@ -1,0 +1,22 @@
+---
+title: Why Typst matters
+---
+
+## Overview
+
+Explore why Typst deserves a place on your radar, with concrete "quick wins" that show how it can dramatically simplify PDF generation.
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Describe what Typst is and how it differs from LaTeX-based PDF generation.
+* Render Quarto documents to PDF via Typst and customize their appearance.
+* Apply Typst "quick wins" to solve common PDF layout problems that are painful in LaTeX.
+* Decide when Typst is the right choice for a PDF workflow.
+
+## Links
+
+* [Quarto Typst format](https://quarto.org/docs/output-formats/typst.html)
+* [Typst documentation](https://typst.app/docs/)
+* [Typst templates in Quarto](https://quarto.org/docs/output-formats/typst-custom.html)

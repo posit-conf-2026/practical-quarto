@@ -1,0 +1,29 @@
+color:
+  palette:
+    blue: "#447099"
+    orange: "#ee6331"
+    teal: "#419599"
+    green: "#729943"
+    burgundy: "#9a4665"
+    purple: burgundy
+    gray: "#404041"
+    black: "#151515"
+    white: "#FFFFFF"
+  primary: blue
+  foreground: black
+
+typography: 
+  fonts:
+    - family: Atkinson Hyperlegible
+      source: google
+  base: Atkinson Hyperlegible
+  link: 
+    decoration: underline
+
+defaults:
+  bootstrap:
+    rules: |
+      h2 {
+          border: none;
+        }
+

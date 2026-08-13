@@ -1,0 +1,22 @@
+---
+title: Design once, use anywhere
+---
+
+## Overview
+
+Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Enable and customize light and dark modes for HTML documents and websites.
+* Define a brand with `_brand.yml`, including colors, typography, and logos.
+* Apply a single brand consistently across multiple Quarto projects without duplication.
+* Produce renderings of the same content in multiple formats while preserving brand consistency.
+
+## Links
+
+* [Quarto Branding](https://quarto.org/docs/authoring/brand.html)
+* [Dark mode](https://quarto.org/docs/output-formats/html-themes.html#dark-mode)
+* [HTML themes](https://quarto.org/docs/output-formats/html-themes.html)

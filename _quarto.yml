@@ -1,0 +1,36 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!LICENSE.md"
+
+website:
+  page-navigation: true
+  site-url: https://posit-conf-2026.github.io/practical-quarto
+  title: "Level up your Quarto"
+  description: "A one day workshop at posit::conf(2026) on patterns, templates, and tooling for Quarto."
+  repo-url: https://github.com/posit-conf-2026/practical-quarto
+  page-footer:
+    center:
+      - icon: github
+        href: https://github.com/posit-conf-2026/practical-quarto
+    right: "This page is built with 💙 and [Quarto](https://quarto.org/)."
+  open-graph: true
+  sidebar:
+    id: main
+    logo: images/quarto.png
+    title: Level up your Quarto
+    pinned: true
+    align: center
+    search: true
+    collapse-level: 2
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: setup.qmd
+      - text: "---"
+      - auto: modules/
+
+format:
+  html:
+    code-overflow: wrap

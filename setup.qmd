@@ -1,0 +1,73 @@
+---
+title: Setup
+---
+
+Please complete the following steps before the workshop so we can dive straight into the material.
+
+## Accounts
+
+* **GitHub account** — needed to clone and work with the workshop materials. Sign up at <https://github.com> if you don't have one.
+
+* **Posit AI account** — we'll use Posit Assistant in Positron during the workshop. If you don't already have one, create a free account at <https://posit.ai>. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.
+
+## Software requirements
+
+1. **Positron**
+
+    We'll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from <https://positron.posit.co/download>. 
+
+    The following extensions are the ones we'll be relying on and Positron already ships with them — nothing extra to install.
+
+    - Quarto
+    - Air
+    - Posit Assistant
+
+2. **Quarto (latest release)**
+
+    We'll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:
+
+    ```bash
+    quarto --version
+    ```
+
+    Download at: <https://quarto.org/docs/download/>
+
+3. **R or Python**
+
+    Bring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later with an up-to-date tidyverse:
+
+    ```r
+    install.packages("tidyverse")
+    ```
+
+4. **Git**
+
+    We'll clone workshop materials and discuss version control workflows. If you don't already have Git, install it from <https://git-scm.com/downloads>.
+
+5.  **Posit AI**
+
+    In Positron, open the Command Palette and run **Authentication: Configure Language Model Providers**, choose Posit AI, and sign in through your browser. That's it! During the workshop, usage draws from the workshop's credit pool first, not your personal balance.
+
+## Check your setup
+
+Before the workshop, open a terminal in Positron and confirm the following run without errors:
+
+```bash
+quarto --version   # 1.10 or later
+git --version
+```
+
+Then create and render a test document:
+
+```bash
+quarto create document test-setup
+cd test-setup
+quarto render test-setup.qmd --to html
+quarto render test-setup.qmd --to typst
+```
+
+If both renders succeed, you're all set. Typst is bundled with Quarto, so no separate installation is needed.
+
+## Having trouble?
+
+If you run into installation issues, please post on the workshop thread on [Posit Community](https://forum.posit.co/) before the workshop and we'll help you get sorted.
