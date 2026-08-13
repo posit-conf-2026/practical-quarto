@@ -1,0 +1,288 @@
+[
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "Please complete the following steps before the workshop so we can dive straight into the material.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#accounts",
+    "href": "setup.html#accounts",
+    "title": "Setup",
+    "section": "Accounts",
+    "text": "Accounts\n\nGitHub account — needed to clone and work with the workshop materials. Sign up at https://github.com if you don’t have one.\nPosit AI account — we’ll use Posit Assistant in Positron during the workshop. If you don’t already have one, create a free account at https://posit.ai. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software-requirements",
+    "href": "setup.html#software-requirements",
+    "title": "Setup",
+    "section": "Software requirements",
+    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later with an up-to-date tidyverse:\ninstall.packages(\"tidyverse\")\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#check-your-setup",
+    "href": "setup.html#check-your-setup",
+    "title": "Setup",
+    "section": "Check your setup",
+    "text": "Check your setup\nBefore the workshop, open a terminal in Positron and confirm the following run without errors:\nquarto --version   # 1.10 or later\ngit --version\nThen create and render a test document:\nquarto create document test-setup\ncd test-setup\nquarto render test-setup.qmd --to html\nquarto render test-setup.qmd --to typst\nIf both renders succeed, you’re all set. Typst is bundled with Quarto, so no separate installation is needed.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#having-trouble",
+    "href": "setup.html#having-trouble",
+    "title": "Setup",
+    "section": "Having trouble?",
+    "text": "Having trouble?\nIf you run into installation issues, please post on the workshop thread on Posit Community before the workshop and we’ll help you get sorted.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "modules/03-typst.html",
+    "href": "modules/03-typst.html",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/03-typst.html#overview",
+    "href": "modules/03-typst.html#overview",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/03-typst.html#learning-objectives",
+    "href": "modules/03-typst.html#learning-objectives",
+    "title": "Why Typst matters",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe what Typst is and how it differs from LaTeX-based PDF generation.\nRender Quarto documents to PDF via Typst and customize their appearance.\nApply Typst “quick wins” to solve common PDF layout problems that are painful in LaTeX.\nDecide when Typst is the right choice for a PDF workflow.",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/03-typst.html#links",
+    "href": "modules/03-typst.html#links",
+    "title": "Why Typst matters",
+    "section": "Links",
+    "text": "Links\n\nQuarto Typst format\nTypst documentation\nTypst templates in Quarto",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/01-brand.html",
+    "href": "modules/01-brand.html",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/01-brand.html#overview",
+    "href": "modules/01-brand.html#overview",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/01-brand.html#learning-objectives",
+    "href": "modules/01-brand.html#learning-objectives",
+    "title": "Design once, use anywhere",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/01-brand.html#links",
+    "href": "modules/01-brand.html#links",
+    "title": "Design once, use anywhere",
+    "section": "Links",
+    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "",
+    "text": "September 14th, 2026\nposit::conf(2026)",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Setup",
+    "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:30\nDesign once, use anywhere\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:30\nBuild reusable structures\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nWhy Typst matters\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 17:00\nProductive workflows in Positron",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructors",
+    "href": "index.html#instructors",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Instructors",
+    "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Description",
+    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nMaster freezing and reproducibility: Demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html",
+    "href": "modules/02-partials.html",
+    "title": "Build reusable structures",
+    "section": "",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#overview",
+    "href": "modules/02-partials.html#overview",
+    "title": "Build reusable structures",
+    "section": "",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#learning-objectives",
+    "href": "modules/02-partials.html#learning-objectives",
+    "title": "Build reusable structures",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nCustomize a template partial to change the appearance or content of specific sections without affecting the entire template.\nFactor out repeated content and layouts into reusable partials for easier maintenance.",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#links",
+    "href": "modules/02-partials.html#links",
+    "title": "Build reusable structures",
+    "section": "Links",
+    "text": "Links\n\nTemplate partials\nQuarto templates\nIncludes and shortcodes",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/04-workflows.html",
+    "href": "modules/04-workflows.html",
+    "title": "Productive workflows in Positron",
+    "section": "",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/04-workflows.html#overview",
+    "href": "modules/04-workflows.html#overview",
+    "title": "Productive workflows in Positron",
+    "section": "",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/04-workflows.html#learning-objectives",
+    "href": "modules/04-workflows.html#learning-objectives",
+    "title": "Productive workflows in Positron",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/04-workflows.html#links",
+    "href": "modules/04-workflows.html#links",
+    "title": "Productive workflows in Positron",
+    "section": "Links",
+    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  }
+]

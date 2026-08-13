@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/setup.html</loc>
+    <lastmod>2026-08-13T17:43:46.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/03-typst.html</loc>
+    <lastmod>2026-08-13T17:43:46.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/01-brand.html</loc>
+    <lastmod>2026-08-13T17:43:46.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/index.html</loc>
+    <lastmod>2026-08-13T17:43:46.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/02-partials.html</loc>
+    <lastmod>2026-08-13T17:43:46.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/04-workflows.html</loc>
+    <lastmod>2026-08-13T17:43:46.044Z</lastmod>
+  </url>
+</urlset>
