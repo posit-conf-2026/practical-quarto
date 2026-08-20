@@ -13,12 +13,14 @@ website:
   page-footer:
     center:
       - icon: github
+        aria-label: Github
         href: https://github.com/posit-conf-2026/practical-quarto
     right: "This page is built with 💙 and [Quarto](https://quarto.org/)."
   open-graph: true
   sidebar:
     id: main
     logo: images/quarto.png
+    logo-alt: Quarto logo
     title: Level up your Quarto
     pinned: true
     align: center
@@ -33,4 +35,5 @@ website:
 
 format:
   html:
+    syntax-highlighting: arrow-light
     code-overflow: wrap
