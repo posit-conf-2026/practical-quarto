@@ -1,0 +1,109 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$presentation-title-slide-text-align: "left";
+$presentation-heading-color: #283c4d;
+$link-color: #283c4d;
+
+/*-- scss:rules --*/
+
+/* title slide */
+
+/* Override link color on light background sections for link on title */
+section.has-light-background a, section.has-light-background a:hover {
+  color: $link-color;
+}
+
+.reveal #title-slide .slide-url {
+  margin-top: 20px;
+}
+
+.reveal #title-slide .subtitle {
+  font-weight: bold;
+}
+
+/* rest of slides */
+
+/* Use .wrap on code cells to avoid scrollbars */
+.reveal pre.sourceCode.wrap code {
+  white-space: pre-wrap; 
+}
+
+/* Match alignment of filename with code */
+.code-with-filename .code-with-filename-file {
+  padding-left: 9px;
+}
+
+/* Catch images that are the only element in a column */
+div.column > p:only-child:has(img),  div.column > p:only-child > img {
+  margin: 0;
+}
+
+.reveal h2 span.small {
+  font-size: 0.8em;
+}
+
+.ast-diagram {
+  width: 100%; 
+  height: 600px;
+  border:none;
+}
+
+.box {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.marker {
+  font-family: "Permanent Marker", cursive;
+}
+
+.rotated-text {
+  font-weight: 400;
+  font-size: 100px; 
+  display: inline-block;
+  transform: rotate(20deg);
+}
+
+.handwriting {
+  font-family: "Gochi Hand", cursive;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.large {
+  font-size: 1.5em;
+}
+
+.reveal .slide .your-turn {
+  border-left: 3px solid #283c4d;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background: #9cbbbd50;
+}
+
+.reveal .slide .exercise-folder {
+  border-left: 3px solid #ddb245;
+  padding-left: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin-top: 0.25em;
+  background: #ddb24550;
+  font-size: 0.8em;
+}
+
+.reveal .slide .example-folder {
+  border-left: 3px solid #5a5a5a;
+  padding-left: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin-top: 0.25em;
+  background: #e2e2e2;
+  font-size: 0.8em;
+}

@@ -1,0 +1,33 @@
+code-line-numbers: false
+subtitle: "Level up your Quarto: Patterns, templates, and tooling @ `posit::conf(2026)`"
+authors:
+  - Charlotte Wickham
+  - Mine Çetinkaya-Rundel
+footer: "[pos.it/practical-quarto-conf26](http://pos.it/practical-quarto-conf26)"
+format: 
+  revealjs:
+    title-slide-attributes:
+      data-background-color: "#9cbbbd"
+    template-partials: 
+      - title-slide.html
+    theme: slides.scss
+    countdown:
+      color_background: "#283c4d"
+      color_text: "#ffffff"
+    include-after-body: 
+      text: |
+        <!-- https://github.com/quarto-dev/quarto-cli/discussion6262#discussioncomment-6472906 -->
+        <script type="text/javascript">
+          Reveal.on( 'ready', event => {
+            // remove footer when prez start on first slide
+            if (event.indexh === 0) {
+              document.querySelector("div.footer").style.display = "none";
+            }
+          })
+          Reveal.addEventListener('slidechanged', (event) => {
+            // Aslo remove footer when prez start go back to first slide
+            if (event.indexh === 0) {
+              document.querySelector("div.footer").style.display = "none";
+            }
+          });
+        </script>
