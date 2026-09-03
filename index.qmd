@@ -13,13 +13,17 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 
 | Time          | Activity         |
 | :------------ | :--------------- |
-| 09:00 - 10:30 | [Productive workflows in Positron](modules/04-workflows.qmd)        |
+| 09:00 - 09:15 | Introductions + Set-up        |
+| 09:15 - 10:30 | [Productive workflows in Positron](modules/04-workflows.qmd)        |
 | 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | [Design once, use anywhere](modules/01-brand.qmd)         |
+| 11:00 - 12:10 | [Design once, use anywhere](modules/01-brand.qmd)         |
+| 12:10 - 12:30 | q2 |
 | 12:30 - 13:30 | *Lunch break*    |
 | 13:30 - 15:00 | [Build reusable structures](modules/02-partials.qmd)      |
 | 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | [Why Typst matters](modules/03-typst.qmd)    |
+| 15:30 - 16:30 | [Why Typst matters](modules/03-typst.qmd)    |
+| 16:30 - 17:00 | Wrap-up + Q&A    |
+
 
 ## Instructors
 
