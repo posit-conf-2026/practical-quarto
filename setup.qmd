@@ -34,10 +34,10 @@ Please complete the following steps before the workshop so we can dive straight 
 
 3. **R or Python**
 
-    Bring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later with an up-to-date tidyverse:
+    Bring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):
 
     ```r
-    install.packages("tidyverse")
+    install.packages(c("tidyverse", "quarto"))
     ```
 
 4. **Git**
@@ -47,26 +47,6 @@ Please complete the following steps before the workshop so we can dive straight 
 5.  **Posit AI**
 
     In Positron, open the Command Palette and run **Authentication: Configure Language Model Providers**, choose Posit AI, and sign in through your browser. That's it! During the workshop, usage draws from the workshop's credit pool first, not your personal balance.
-
-## Check your setup
-
-Before the workshop, open a terminal in Positron and confirm the following run without errors:
-
-```bash
-quarto --version   # 1.10 or later
-git --version
-```
-
-Then create and render a test document:
-
-```bash
-quarto create document test-setup
-cd test-setup
-quarto render test-setup.qmd --to html
-quarto render test-setup.qmd --to typst
-```
-
-If both renders succeed, you're all set. Typst is bundled with Quarto, so no separate installation is needed.
 
 ## Having trouble?
 
