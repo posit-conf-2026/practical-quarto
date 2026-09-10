@@ -1,0 +1,8 @@
+---
+title: Why Typst matters
+format: revealjs
+---
+
+## Template: `format: typst` {.scrollable}
+
+![](../images/typst-template-partials.svg){fig-alt="A schematic of template.typ as an ordered stack of partial files: numbering.typ (number formats), definitions.typ (helpers), typst-template.typ (defines article()), a dashed header-includes slot, page.typ (#set page()), and typst-show.typ (calls article(doc)). A box labeled passed to article() as doc holds the rest: a dashed include-before slot, the body, notes.typ (footnotes), biblio.typ (bibliography), and a dashed include-after slot."}
