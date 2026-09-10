@@ -6,17 +6,19 @@ title: Build reusable structures
 
 Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.
 
+{{< include _slides.md >}}
+
 ## Learning Objectives
 
 By the end of this module, you will be able to:
 
 * Explain the role of template partials in Quarto documents and how they differ from full template overrides.
 * Locate and reference partial files in an existing Quarto template.
-* Customize a template partial to change the appearance or content of specific sections without affecting the entire template.
-* Factor out repeated content and layouts into reusable partials for easier maintenance.
+* Use Pandoc's template syntax (`$title$`, `$if$`) to render document metadata, including custom fields, in a partial.
 
 ## Links
 
-* [Template partials](https://quarto.org/docs/journals/templates.html#template-partials)
 * [Quarto templates](https://quarto.org/docs/journals/templates.html)
-* [Includes and shortcodes](https://quarto.org/docs/authoring/includes.html)
+* [Template partials](https://quarto.org/docs/journals/templates.html#template-partials)
+* [Pandoc's template syntax](https://www.pandoc.org/MANUAL.html#template-syntax)
+* [Includes](https://quarto.org/docs/authoring/includes.html)
