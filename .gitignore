@@ -8,3 +8,6 @@ _site/
 
 **/*.quarto_ipynb
 /.luarc.json
+
+# Local working notes and repros (not for publication)
+_local-notes/
