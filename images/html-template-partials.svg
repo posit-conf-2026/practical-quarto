@@ -56,13 +56,13 @@
 
     <!-- metadata.html -->
     <rect x="124" y="312" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
-    <text x="146" y="358" font-size="30" fill="#222">metadata.html</text>
+    <text x="146" y="358" font-size="30" fill="#222">$metadata.html()$</text>
     <text x="610" y="358" font-size="26" fill="#777" text-anchor="end"
           font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">meta tags</text>
 
     <!-- styles.html -->
     <rect x="124" y="432" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
-    <text x="146" y="478" font-size="30" fill="#222">styles.html</text>
+    <text x="146" y="478" font-size="30" fill="#222">$styles.html()$</text>
     <text x="610" y="478" font-size="26" fill="#777" text-anchor="end"
           font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">CSS</text>
 
@@ -76,19 +76,19 @@
 
     <!-- title-block.html (conditional, nested container) -->
     <rect x="124" y="764" width="506" height="210" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
-    <text x="146" y="804" font-size="30" fill="#222">title-block.html</text>
+    <text x="146" y="804" font-size="30" fill="#222">$title-block.html()$</text>
     <text x="146" y="830" font-size="20" font-style="italic" fill="#8a5a00"
           font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">if title, subtitle, author, date, &#8230; is set</text>
 
     <rect x="146" y="846" width="462" height="112" rx="6" fill="#ffffff" stroke="#999" stroke-width="2"/>
-    <text x="164" y="880" font-size="26" fill="#222">title-metadata.html</text>
+    <text x="164" y="880" font-size="26" fill="#222">$title-metadata.html()$</text>
 
     <rect x="164" y="896" width="426" height="48" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
-    <text x="180" y="927" font-size="24" fill="#222">_title-meta-author.html</text>
+    <text x="180" y="927" font-size="24" fill="#222">$_title-meta-author.html()$</text>
 
     <!-- toc.html (conditional) -->
     <rect x="124" y="1022" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
-    <text x="146" y="1054" font-size="30" fill="#222">toc.html</text>
+    <text x="146" y="1054" font-size="30" fill="#222">$toc.html()$</text>
     <text x="146" y="1082" font-size="20" font-style="italic" fill="#8a5a00"
           font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">if toc is set</text>
     <text x="610" y="1054" font-size="26" fill="#777" text-anchor="end"

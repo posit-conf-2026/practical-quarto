@@ -52,6 +52,13 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
   border:none;
 }
 
+/* Screenshots of rendered output: a hairline so the page edge is visible
+   against the slide. Diagrams are not screenshots and do not get this. */
+.reveal .slide img.screenshot {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+
 .box {
   border: 1px solid grey;
   border-radius: 5px;

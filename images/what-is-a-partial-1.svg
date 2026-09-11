@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1300 510"
+     role="img"
+     aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">One file holds the whole page</title>
+  <desc id="svg-desc">A box labelled template.html, one file, holding a small but complete HTML template: html, head, a title element with the teal dollar title dollar, then a body containing a header element with an h1 of dollar title dollar and a paragraph of dollar author dollar, then dollar body dollar. The header element and its two indented lines are ringed in an amber dashed box, annotated: this part is the title block.</desc>
+
+  <text x="40" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="26" font-weight="bold" fill="#222">template.html</text>
+  <text x="440" y="34" text-anchor="end" font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#777">one file</text>
+  <rect x="40" y="48" width="400" height="438" rx="10" fill="#ffffff" stroke="#333" stroke-width="4"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="24" fill="#555">
+    <text x="66" y="88">&lt;html&gt;</text>
+    <text x="66" y="122">&lt;head&gt;</text>
+    <text x="66" y="156">&lt;title&gt;<tspan fill="#14625d" font-weight="bold">$title$</tspan>&lt;/title&gt;</text>
+    <text x="66" y="190">&lt;/head&gt;</text>
+    <text x="66" y="224">&lt;body&gt;</text>
+    <text x="66" y="258">&lt;header&gt;</text>
+    <text x="66" y="292">  &lt;h1&gt;<tspan fill="#14625d" font-weight="bold">$title$</tspan>&lt;/h1&gt;</text>
+    <text x="66" y="326">  &lt;p&gt;<tspan fill="#14625d" font-weight="bold">$author$</tspan>&lt;/p&gt;</text>
+    <text x="66" y="360">&lt;/header&gt;</text>
+    <text x="66" y="394"><tspan fill="#14625d" font-weight="bold">$body$</tspan></text>
+    <text x="66" y="428">&lt;/body&gt;</text>
+    <text x="66" y="462">&lt;/html&gt;</text>
+  </g>
+  <rect x="54" y="233" width="372" height="136" rx="6" fill="none" stroke="#8a5a00" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <text x="474" y="297" font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#8a5a00">this part is the</text>
+  <text x="474" y="327" font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#8a5a00">title block</text>
+
+</svg>

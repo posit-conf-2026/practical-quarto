@@ -2,140 +2,512 @@
 title: Partials
 format: revealjs
 ---
-
 # Templates and template partials
 
-## Templates
+## What is a template?
 
-- Quarto uses Pandoc templates to generate the rendered output from a markdown file. 
+You write a document.
 
-- A **Pandoc template** is a mix of format specific content and variables, where the variables are replaced with their values from a rendered document
+![](../images/what-is-a-template-1.svg){fig-alt="One box, labelled hello.qmd, your content, holding a short Quarto document: a YAML header setting title to Hello, then the line Hello asterisk asterisk world asterisk asterisk exclamation mark. The value Hello and the body line are teal."}
 
-## Diagram of content -> template
+::: notes
+Title in the YAML, one line of markdown.
 
-## Example: Basic LaTeX template
+Teal is yours. 
+:::
 
-::: {.columns}
+## What is a template? {visibility="uncounted"}
 
-::: {.column .fragment width="25%"}
+Render it, and you get an HTML document.
 
-**Input:**
+![](../images/what-is-a-template-2.svg){fig-alt="The document on the left, with a connector stepping down from it, labelled render, arrowing into hello.html on the right: a full HTML page of which only two parts are teal, Hello inside the title element and a paragraph reading Hello world. Everything else is grey, and nothing yet explains where it came from."}
 
-``` {.markdown filename="article.qmd"}
-Hello **world**!
+::: notes
+Only the teal came from the document. Where does the other stuff come from?
+:::
+
+## What is a template? {visibility="uncounted"}
+
+A **template**: boilerplate, with named holes.
+
+![](../images/what-is-a-template-3.svg){fig-alt="The same figure with template.html revealed below the document, its connector joining the render line. The template is HTML boilerplate with two teal placeholders, dollar title dollar inside the title element and dollar body dollar inside the body. They line up with the two teal parts of the output, and the grey boilerplate lines up with the grey output."}
+
+::: notes
+The template provides the boilerplate: with named holes for your content.
+E.g. `$title$` takes a value from the YAML **by name**. — the mechanism
+the next hour rests on. 
+
+Notice `$body$` is your content translated.  Pandoc did that.
+:::
+
+## What is a partial?
+
+Part of the template renders the title block.
+
+![](../images/what-is-a-partial-1.svg){fig-alt="A box labelled template.html, one file, holding a small but complete HTML template: html, head, a title element with the teal dollar title dollar, then a body containing a header element with an h1 of dollar title dollar and a paragraph of dollar author dollar, then dollar body dollar. The header element and its two indented lines are ringed in an amber dashed box, annotated: this part is the title block."}
+
+::: notes
+Same file as the previous slide, grown a little.
+
+There's a chunk that has one job, make the title block.
+:::
+
+## What is a partial? {visibility="uncounted"}
+
+Pull it out into its own file, now its a **partial**.
+
+![](../images/what-is-a-partial-2.svg){fig-alt="The same template.html box, with the header markup gone and the amber call dollar title-block dot html parens dollar in its place. A connector runs from that call to a new box on the right, labelled title-block.html, the file it names, holding the header element with an h1 of the teal dollar title dollar and a paragraph of the teal dollar author dollar. Its tags are annotated raw HTML and its placeholders annotated variables."}
+
+::: notes
+That gets pulled out into it's own file and referenced in the template. It's called a partial, and inside looks just like a template, HTML boilerplate with holes for content.
+:::
+
+## What is a partial? {visibility="uncounted"}
+
+Quarto does this for many parts of the page.
+
+![](../images/what-is-a-partial-3.svg){fig-alt="The same figure, with the rest of the template also replaced by amber calls: dollar metadata dot html parens dollar and dollar styles dot html parens dollar in the head, and dollar toc dot html parens dollar beside the title-block call in the body. Only dollar body dollar, in teal, and the literal html, head and body tags remain."}
+
+::: notes
+Same thing happens with other parts of the document: metadata, styles, etc.
+:::
+
+## What is a partial? {visibility="uncounted"}
+
+Replace a partial without touching the rest of the template
+
+![](../images/what-is-a-partial-4.svg){fig-alt="The same figure with Quarto's title-block.html box faded to grey and a second box below it drawn with a purple dashed border, labelled title-block.html, yours. It holds the same header element plus an extra paragraph containing the teal dollar subtitle dollar. The connector from the call now points at your box."}
+
+::: notes
+Partition allows you to override a partial without touching the rest of the template. 
+That's what we'll do today.
+:::
+
+# Case study
+
+The **Bureau of Regional Statistics** publishes a quarterly release as a
+standalone HTML file.
+
+## Every release must carry:
+
+::: {.incremental}
+- the agency masthead
+- the reference period and the region
+- the release status — Provisional, Revised, or Final
+:::
+
+::: {.fragment}
+![](../images/partials-turn4-styled-alt.png){.screenshot fig-alt="The finished title block. The agency logo and wordmark sit at the top right. Regional Employment Indicators is large and bold at the left, with the subtitle Quarterly statistical release beneath it. Below that, in small grey letter-spaced capitals, Q3 2026 dot OREGON. Under that a dark green rectangular badge reads PROVISIONAL in white capitals. Author and Published run along the bottom in two columns."}
+:::
+
+::: notes
+**this is a publishing requirement, not a design preference.** 
+
+The same shape applies to any organization's report template: fields that must appear on every document.
+:::
+
+
+## Setup: replace the partial
+
+::: {.example-folder}
+(Optional) Follow along: `03-partials/00-setup`
+:::
+
+1. Pull the brand:
+
+   ```{.bash .wrap}
+   quarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand
+   ```
+
+2. Copy [`templates/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/title-block.html)
+   into the folder.
+
+3. Register it:
+
+   ```{.yaml filename="report.qmd"}
+   format:
+     html:
+       template-partials:
+         - title-block.html
+   ```
+
+::: notes
+Render before adding partial. Add partial. Render. Nothing changes.
+
+Add something obvious to check its wired up.
+
+Point out `$title$`. Dollar signs indicate Pandoc template syntax. Can access metadata values.
+
+Notice brand has `logo`, but standalone HTML docs don't get logo.
+:::
+
+## Our starting point
+
+![](../images/partials-turn0-branded.png){.screenshot fig-alt="The title block after the setup demo. Regional Employment Indicators in large bold type, the subtitle Quarterly statistical release below it, then Author, Bureau of Regional Statistics, and Published, September 14 2026, in two columns. No logo, no reference period, no status."}
+
+::: notes
+The partial is theirs now and the page is unchanged by it.
+:::
+
+## Your turn 1: add the masthead
+
+::: your-turn
+
+1. Add a `masthead` key to the YAML of `report.qmd`:
+
+   ```yaml
+   masthead: _brand/brs-logo.svg
+   ```
+
+2. Add this line to `title-block.html`, right after `<header ...>`:
+
+   ```{.html .wrap}
+   <img src="$masthead$" alt="Bureau of Regional Statistics" class="report-masthead">
+   ```
+
+3. Render.
+
+:::
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `03-partials/01-masthead`
+:::
+
+{{< countdown minutes=5 >}}
+
+::: notes
+Touch on review:
+
+- `$variable$` substitutes a value
+- Any YAML key becomes a template variable. `masthead` is *your* key. Quarto has
+  no `masthead` option and never reads it.
+:::
+
+## 
+
+![](../images/partials-turn1-masthead.png){.screenshot fig-alt="The same title block with the agency logo and wordmark now added above the title, at full size on the left. Below it, Regional Employment Indicators, the subtitle, and the Author and Published columns."}
+
+::: notes
+Resist fixing styling ...
+:::
+
+## Pandoc template syntax {.smaller}
+
+Write in the format you are targeting: HTML here
+
+Anything inside `$...$` or `${...}` is Pandoc's template syntax. 
+
+| Write | Get |
+|---|---|
+| `$title$` | the value of the `title` metadata key |
+| `$brs-release.period$` | reach into nested metadata with a dot |
+| `$title-block.html()$` | include a partial — the `()` mean a *file* |
+
+[Pandoc's template syntax →](https://pandoc.org/MANUAL.html#template-syntax)
+
+::: notes
+The distinction that matters today: `$name$` substitutes a **value**,
+`$name.html()$` includes a **file**. Only the second is replaceable through
+`template-partials`.
+
+`$title$s` works, but `${title}s` is clearer — both give `Hellos`. The two
+forms are interchangeable everywhere, including partial calls and
+`${if(x)}…${endif}`.
+
+`$$` matters the moment a partial contains a literal dollar — a price, or
+`$(...)` in a script.
+
+Conditionals and loops are on the same page of the manual. We meet them in
+turns 3 and 4.
+:::
+
+## Your turn 2: add period and region
+
+Already in your YAML, and shown by nothing:
+
+```{.yaml filename="report.qmd"}
+brs-release:
+  period: "Q3 2026"
+  region: Oregon
+```
+
+::: your-turn
+
+1. Copy, then complete, this line in `title-block.html`, below the subtitle's
+   `$endif$`:
+
+   ```html
+   <p class="report-period">______ &middot; ______</p>
+   ```
+
+2. Render.
+
+:::
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `03-partials/02-period-and-region`
+:::
+
+{{< countdown minutes=8 >}}
+
+::: notes
+After: delete `region:` and render. A separator with nothing after it — the
+bridge to turn 3.
+:::
+
+## 
+
+![](../images/partials-turn2-period.png){.screenshot fig-alt="The title block with a new line reading Q3 2026 dot Oregon added below the subtitle, in the same size and colour as body text."}
+
+::: notes
+`Q3 2026 · Oregon`, rendered exactly as written — unlike the date above it,
+which Quarto reformatted before the template ever saw it.
+:::
+
+## Your own metadata, your own namespace
+
+```{.wrap .yaml filename="report.qmd"}
+masthead: _brand/brs-logo.svg   # turn 1: a name at the top level
+brs-release:                    # turn 2: a name with names inside
+  period: "Q3 2026"
+  region: Oregon
+```
+
+::: {.fragment}
+Every top-level name you invent is a bet that Quarto will never claim it.
+:::
+
+::: {.fragment}
+Nest, and you place that bet **once** instead of once per field.
+:::
+
+::: notes
+The obvious name is `logo`. It's taken — a real Quarto option in beamer,
+revealjs, typst and dashboards, free in `format: html` only.
+
+Render this same file to typst with `logo:` set and Quarto puts the image in
+the page background itself. Module 04 picks this up.
+
+`masthead` is safe. Nesting means you don't have to know which names are.
+:::
+
+## Condition markup on presence
+
+```{.html filename="title-block.html"}
+$if(subtitle)$
+<p class="subtitle lead">$subtitle$</p>
+$endif$
+```
+
+::: {.fragment}
+Read as **if `subtitle` has a value, then...**. 
+:::
+
+::: {.fragment}
+Prevents empty `<p></p>` in the document.
+:::
+
+::: notes
+They've been rendering this since setup without reading it.
+
+Pandoc has no comparison operator. `$if(x)$` asks "does this have a value?" and
+nothing else — which is why a default has to live in the template.
+:::
+
+
+## Your turn 3: add status
+
+::: your-turn
+
+1. Add `status: Provisional` under `brs-release:` in `report.qmd`.
+
+2. In `title-block.html`, below the reference period, show the status in a
+   `<span class="report-status">` — but only when `brs-release.status` is set.
+
+3. Render. Then delete the `status:` line and render again — the badge should
+   disappear, leaving nothing behind.
+
+:::
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `03-partials/03-release-status`
+:::
+
+{{< countdown minutes=10 >}}
+
+::: notes
+No snippet, so the work is reading their own file and adapting it.
+
+The assistant is a sanctioned escape hatch here. Prompt is in the README.
+
+After: `status` nests under `brs-release:` — the turn 2 rule, applied unprompted.
+The badge is unstyled and looks like nothing, which is the cue for turn 4.
+:::
+
+## 
+
+![](../images/partials-turn3-status.png){.screenshot fig-alt="The title block with the word Provisional added below the reference period line, in plain body text with no styling."}
+
+::: notes
+Provisional as plain text. It carries the right information and reads like
+nothing, which is exactly the setup for turn 4: three classes in the markup,
+still no CSS.
+:::
+
+## More Pandoc template syntax {.smaller}
+
+| Write | Get |
+|---|---|
+| `$if(x)$` … `$else$` … `$endif$` | conditionals, as in turn 3 |
+| `$for(x)$` … `$endfor$` | loop over an array |
+| `$sep$` | inside a loop: emitted **between** items, never after the last |
+| `${x/uppercase}` | a pipe — also `lowercase`, `length`, `reverse`, `nowrap`, … |
+| `$--` | a comment, to the end of the line |
+
+[Pandoc's template syntax →](https://pandoc.org/MANUAL.html#template-syntax)
+
+::: notes
+A signpost, not a lesson. You have met `$if$`; the rest is "this exists, the
+manual has it".
+
+`$sep$` is worth ten seconds: it is the answer to the dangling `&middot;` from
+turn 2's optional extra — a separator that knows it is between things.
+:::
+
+## For HTML: styling lives outside the partials
+
+```{.html filename="title-block.html"}
+<span class="report-status">$brs-release.status$</span>
+```
+
+::: {.fragment}
+No color. No size. No position. Just a name.
+:::
+
+::: {.fragment}
+```{.scss filename="custom.scss"}
+.report-status { background-color: $primary; }
+```
+:::
+
+::: {.fragment}
+You have been leaving these hooks since turn 1 — `report-masthead`,
+`report-period`, `report-status`. **Three classes, no CSS.**
+:::
+
+::: notes
+A partial decides *what* appears and in what order. A stylesheet decides what
+it looks like. Cross that line and nobody can restyle your template.
+
+This is why the snippets shipped with class names already in them.
+:::
+
+## Your turn 4: style what you built {.smaller}
+
+::: your-turn
+
+**Don't edit `title-block.html`.**
+
+1. Ask Posit Assistant to style your title block. Start with the prompt below then describe what you want.
+
+2. Render. Not what you asked for? Say what is wrong and go again.
+
+3. Skim `custom.scss`. Change one of the brand variables used and render again.
+
+:::
+
+Example prompt:
+```{.markdown .wrap}
+I'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.
+```
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `03-partials/04-style`
+:::
+
+{{< countdown minutes=8 >}}
+
+## One answer {.scrollable}
+
+::: {.panel-tabset}
+
+### Result
+
+![](../images/partials-turn4-styled.png){.screenshot fig-alt="The finished title block. The agency logo and wordmark sit at the top right. The title Regional Employment Indicators is large and bold at the left, the subtitle Quarterly statistical release below it in muted slate, then the reference period Q3 2026 dot Oregon in small grey text. Below that a dark green rounded pill reads PROVISIONAL in white capitals. Author and Published run underneath in two columns, and a dark green rule closes the block."}
+
+### The prompt
+
+```{.markdown .wrap}
+I'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.
+
+I want the masthead on the right, and the status styled like a badge.
+```
+
+### `custom.scss`
+
+```{.wrap .scss}
+/*-- scss:rules --*/
+
+// Accent rule under the whole masthead block.
+#title-block-header {
+  border-bottom: 3px solid $primary;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  // Clear the floated masthead so the description/metadata sit below.
+  overflow: hidden;
+}
+
+// Logo floats to the right of the title text.
+.report-masthead {
+  float: right;
+  width: auto;
+  max-height: 4rem;
+  margin-left: 1.5rem;
+}
+
+.subtitle {
+  color: $secondary;
+}
+
+// Release period reads as secondary metadata.
+.report-period {
+  color: $text-muted;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+// Status pill. color-contrast() picks a readable foreground from the
+// brand background instead of hard-coding black or white.
+.report-status {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  background-color: $brand-forest;
+  color: color-contrast($brand-forest);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 ```
 
 :::
 
-::: {.column .fragment width="35%"}
-
-**Template:**
-
-``` {.latex filename="my-awesome-template.tex"}
-\documentclass{scrartcl}
-\begin{document}
-$body$
-\end{document}
-```
-
+::: notes
+It styled `#title-block-header` and `.subtitle` which I didn't ask for.
 :::
 
-::: {.column .fragment width="40%"}
-
-**Output:**
-
-``` {.latex filename="article.tex"}
-\documentclass{scrartcl}
-\begin{document}
-Hello \textbf{world}!
-\end{document}
-```
-
-`$body$` replaced with LaTeX generated from body of document
-
-:::
-:::
-
-## Diagram of template (i.e. what are partials)
-
-## Full or partial?
-
-- Replacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.
-
-- Safer approaches:
-
-  - Selectively **replace** partials that exist within the master LaTeX or HTML template
-
-  - Replace the entire LaTeX or HTML template, but then **include** partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features
+# Wrapping up
 
 ## Replace partials to...
 
-* Zhuzh up your `title-slide` 💅 in `format: revealjs`
 * Expose custom metadata fields in `title-block` for `format: html`
+* Zhuzh up your `title-slide` 💅 in `format: revealjs`
 * Create a custom layout for `format: typst`
-
-# Working with partials
-
-## Replacing partials
-
-Do usage here.
-
-- Quarto provides built in templates that are composed of a set of partial template files for LaTeX / PDF and HTML output
-
-- You can *replace* portions of Quarto’s built in template which allows you to customize just a portion of the template without needing to replace it entirely
-
-## What's in a name? 🌹
-
-The name of the partial file must match the name of the partial in the built in template that you want to replace.
-
-::: {.columns}
-
-::: {.column .fragment width="43%"}
-
-```{ .yaml filename="my-document.qmd"}
-format:
-  revealjs:
-    template-partials:
-      - better-title-slide.html
-```
-
-:::
-::: {.column .fragment width="57%"}
-
-``` {.bash}
-ERROR: The format 'revealjs' only supports 
-the following partials:
-metadata.html
-title-block.html
-toc.html
-styles.html
-toc-slide.html
-title-slide.html
-
-Please provide one or more of these 
-partials.
-```
-
-:::
-
-:::
-
-::: {.callout-caution .fragment}
-In `format: html` you get no error and the partial is not applied.
-:::
-
-::: {.callout-tip .fragment}
-Provide an empty file as a partial to opt out of some features without modifying the whole main template.
-:::
-
-## Example: Basic usage 
-
-Complete working example with minimal content. Maybe a Your Turn instead.
 
 ## Partials for various formats {.smaller}
 
 They exist! <https://quarto.org/docs/journals/templates.html>
-Their content is written in the target format syntax
 
 ::: {.panel-tabset}
 
@@ -223,83 +595,75 @@ after-body.tex
 
 :::
 
-# Case study 
+## Full or partial?
 
-To cover:
+- Replacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.
 
-* Finding the default partials on GitHub
-* Referring to metadata, including nested metadata
-* Using custom metadata
-* Conditionals
-* Loops
-* Normalization (?)
-* Style (?) for HTML this is outside of partials. 
+- Safer approaches:
 
-## One name, five files: `title-block.html` {.smaller}
+  - Selectively **replace** partials that exist within the master LaTeX or HTML template
 
-Quarto picks the partial for you, based on your YAML:
+  - Replace the entire LaTeX or HTML template, but then **include** partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features
 
-| Your YAML | Partial that renders |
-|-----------|----------------------|
-| *(nothing — Bootstrap default)* | [`templates/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/title-block.html) ← **we started here** |
-| `title-block-banner: true` (or a color/image) | [`templates/banner/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/banner/title-block.html) |
-| `title-block-style: manuscript` | [`templates/manuscript/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/manuscript/title-block.html) |
-| `title-block-style: none` | [`pandoc/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/pandoc/title-block.html) — Pandoc's plain title block |
-| `template-partials: [title-block.html]` | **yours** — it replaces whichever of the above **would** have rendered |
+## Sharing: a custom format extension {.smaller}
 
-Two helpers ride along with every `te
-[`title-metadata.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/title-metadata.html) (called by the title block) and
-[`_title-meta-author.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/_title-meta-author.html) — you can replace
-those too.
-
-## Wrapping Up
-
-## Replacing the entire template
-
-```{.markdown}
-format:
-  pdf:
-    template: my-template.tex
-```
-
-## Use built-in partials
-
-Use built in partials when composing your own template, which allows you to include specific features from Quarto and Pandoc without copying and maintaining the entire template code:
+Everything you built, in one folder someone else can install:
 
 ::: {.columns}
-::: {.column width="35%"}
+::: {.column width="42%"}
 
-```{.latex filename="my-template.tex" code-line-numbers="|2|3-5"}
-\documentclass{scrartcl}
-$pandoc.tex()$  
-\begin{document}
-$body$          
-\end{document}  
+```{.default filename="_extensions/brs/"}
+_extension.yml
+title-block.html
+brs.scss
+brs-logo.svg
 ```
 
 :::
-::: {.column width="65%"}
+::: {.column width="58%"}
 
-- Use the `$pandoc.tex()$` partial to include pandoc configuration for text highlighting, tables, graphics, tight lists, citations, and header include.
-- Add your custom template for `$body$`.
+```{.yaml filename="_extension.yml"}
+title: BRS Report
+author: Bureau of Regional Statistics
+version: 1.0.0
+contributes:
+  formats:
+    html:
+      masthead: brs-logo.svg
+      template-partials:
+        - title-block.html
+      theme: [default, brs.scss]
+```
 
 :::
-::: 
+:::
 
 
-## Other
+::: {.example-folder}
+[Example](https://github.com/posit-conf-2026/practical-quarto-exercises): `brs-format`
+:::
 
-Localization
-Normalization
-Bundling as an extension
+[Creating formats →](https://quarto.org/docs/extensions/formats.html)
 
 # Questions?
 
-# Template diagrams
+# Resources 
 
-## Template: `format: html` {.scrollable}
+## The full `template.html` {.scrollable}
 
-![](../images/html-template-partials.svg){fig-alt="A schematic of template.html as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: metadata.html (meta tags), styles.html (CSS), and a dashed header-includes slot. Inside the body: a dashed include-before slot; title-block.html (only if title, subtitle, author, date, or similar metadata is set), drawn as a container nesting title-metadata.html, which nests _title-meta-author.html; toc.html (table of contents, only if toc is set); the body; and a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
+![](../images/html-template-partials.svg){.nostretch width="80%" fig-align="center" fig-alt="A schematic of template.html as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: metadata.html (meta tags), styles.html (CSS), and a dashed header-includes slot. Inside the body: a dashed include-before slot; title-block.html (only if title, subtitle, author, date, or similar metadata is set), drawn as a container nesting title-metadata.html, which nests _title-meta-author.html; toc.html (table of contents, only if toc is set); the body; and a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
+
+## There is more than one `title-block.html` {.smaller}
+
+Quarto picks one for you based on your YAML, and
+the docs link to the wrong one for the default:
+
+| Your YAML | Partial that renders |
+|-----------|----------------------|
+| *(nothing — Bootstrap default)* | [`templates/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/title-block.html) ← **you used this one** |
+| `title-block-banner: true` | [`templates/banner/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/banner/title-block.html) |
+| `title-block-style: manuscript` | [`templates/manuscript/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/templates/manuscript/title-block.html) |
+| `title-block-style: none` | [`pandoc/title-block.html`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/pandoc/title-block.html) — Pandoc's plain block |
 
 ## Template: `format: revealjs` {.scrollable}
 
@@ -308,3 +672,29 @@ Bundling as an extension
 ## Template: `format: pdf` {.scrollable}
 
 ![](../images/pdf-template-partials.svg){fig-alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)."}
+
+## Localized strings in templates {.smaller}
+
+Hard-coding "Table of contents" in a partial breaks the moment someone sets
+`lang:`. 
+
+Since Quarto 1.10, the strings Quarto already translates are template
+variables:
+
+```{.html}
+<h2>${quarto.language.toc-title-document}</h2>
+```
+
+::: {.fragment}
+| `lang: en` | `lang: fr` |
+|---|---|
+| Table of contents | Table des matières |
+| Abstract | Résumé |
+:::
+
+[Localized strings in templates →](https://quarto.org/docs/authoring/language.html#localized-strings-in-templates)
+
+::: notes
+The `quarto.language` namespace exposes every string Quarto localizes, resolved
+for the document's `lang`. 
+:::
