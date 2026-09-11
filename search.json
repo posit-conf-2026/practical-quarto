@@ -1,489 +1,52 @@
 [
   {
-    "objectID": "slides/04-typst.html#same-release-new-requirement",
-    "href": "slides/04-typst.html#same-release-new-requirement",
-    "title": "Why Typst matters",
-    "section": "Same release, new requirement",
-    "text": "Same release, new requirement\nThe Bureau of Regional Statistics quarterly release. Every one must carry:\n\nthe agency mark\nthe reference period and the region\nthe release status — Provisional, Revised, or Final\n\n\nLast module we built all three into an HTML title block. Now it has to be a PDF.\n\n\nDo not sell Typst yet. Get them to render one first.\nThe starter is the document without the title block work — a clean sheet, not their module 03 folder."
+    "objectID": "slides/05-wrap-up.html#four-problems-four-patterns",
+    "href": "slides/05-wrap-up.html#four-problems-four-patterns",
+    "title": "Wrap-up",
+    "section": "Four problems, four patterns",
+    "text": "Four problems, four patterns\n\nProductive workflows — the friction between you and the render\nDesign once, use anywhere — one brand, every format\nBuild reusable structures — the boilerplate around your content\nWhy Typst matters — a PDF you can restyle\n\n\nEach one stands alone. Pick up the ones that match what you already fight with."
   },
   {
-    "objectID": "slides/04-typst.html#your-turn-1-render-it-as-a-pdf",
-    "href": "slides/04-typst.html#your-turn-1-render-it-as-a-pdf",
-    "title": "Why Typst matters",
-    "section": "Your turn 1: render it as a PDF",
-    "text": "Your turn 1: render it as a PDF\n\n\nAdd typst as a second format in report.qmd. Keep html:\n\n\nreport.qmd\n\nformat:\n  html: default\n  typst: default\n\nRender with Quarto: Preview Format… and pick Typst.\nRender the HTML too. What came across? What didn’t?\n\n\n\nExercise: 04-typst/01-first-pdf\n\n\n \n\nNo TeX install.\nQuarto: Preview Format… — the command from this morning.\nAdd, don’t replace. They end holding both outputs, which is what makes step 3 possible.\nSteer the comparison to the logo, and to the status with nothing marking it."
+    "objectID": "slides/05-wrap-up.html#which-piece-for-which-job",
+    "href": "slides/05-wrap-up.html#which-piece-for-which-job",
+    "title": "Wrap-up",
+    "section": "Which piece for which job?",
+    "text": "Which piece for which job?\n\n_brand.yml — the same look across formats and projects. One repo, not a theme per project.\nTemplate partials — the same structure, different content. Format specific, and driven by metadata.\n\n\nLook, structure, distribution. Three different problems.\nReach for the smallest piece that solves yours."
   },
   {
-    "objectID": "slides/04-typst.html#section",
-    "href": "slides/04-typst.html#section",
-    "title": "Why Typst matters",
-    "section": "",
-    "text": "Same brand in both: Atkinson Hyperlegible, brand ink for the text, forest links.\nThe logo only shows up in the PDF. Brand cannot place it in a standalone HTML document — module 03 built a partial for exactly that. Here it arrives with no configuration.\nThe date is 2026-09-14 here and September 14, 2026 in the HTML.\n{{&lt; meta brs-release.status &gt;}} in the Summary works in both."
+    "objectID": "slides/05-wrap-up.html#what-we-did-not-get-to",
+    "href": "slides/05-wrap-up.html#what-we-did-not-get-to",
+    "title": "Wrap-up",
+    "section": "What we did not get to",
+    "text": "What we did not get to\nLua filters — change the document while Pandoc holds it as an AST.\nNot format specific, so one filter can serve html, typst, and revealjs. Reach for one when the change you want is to the content, not the boilerplate around it.\nExtending Quarto → — a whole workshop on filters, shortcodes, and extensions\n\nPartials are the boilerplate. Filters are the content.\nThat workshop’s materials are open, same license as these."
   },
   {
-    "objectID": "slides/04-typst.html#why-typst",
-    "href": "slides/04-typst.html#why-typst",
-    "title": "Why Typst matters",
-    "section": "Why Typst?",
-    "text": "Why Typst?\n\nAlready installed. format: pdf needs a LaTeX distribution. Typst ships inside Quarto.\nFaster. Render, look, change, look again.\nUses your brand. Colors, fonts, and the logo, from the same _brand.yml.\n\n\nTypst is a binary dependency, in the same quarto check list as Pandoc.\nBrand reaches none of this in LaTeX. The .tex has no trace of it.\nHeadings are brand ink here, not primary. Turn 3 changes that."
+    "objectID": "slides/05-wrap-up.html#where-to-go-next",
+    "href": "slides/05-wrap-up.html#where-to-go-next",
+    "title": "Wrap-up",
+    "section": "Where to go next",
+    "text": "Where to go next\n\nquarto.org — the reference, and the changelog for each release\nQuarto: the practical guide — the long-form version of today\nGitHub Discussions — where the maintainers answer, and where the good examples end up\nDiscord, #workshop-quarto — we’ll keep an eye on it for a while\n\n\nFile an issue when something is genuinely broken. Discussions for “how do I”.\nDiscord is not forever. Ask there while we are still watching."
   },
   {
-    "objectID": "slides/04-typst.html#two-ways-to-reach-metadata",
-    "href": "slides/04-typst.html#two-ways-to-reach-metadata",
-    "title": "Why Typst matters",
-    "section": "Two ways to reach metadata",
-    "text": "Two ways to reach metadata\n\n\n\n\n\n\n\n\n\nLast module\nThis module\n\n\n\n\nWhere you write it\ntitle-block.html, a partial\nreport.qmd, the body\n\n\nWhat you write\n$brs-release.status$\n{{&lt; meta brs-release.status &gt;}}\n\n\nWhat it is\nPandoc template syntax\na Quarto shortcode\n\n\n\n\nPandoc’s template syntax only runs when Pandoc is filling a template.\n\nPandoc’s template syntax →\nQuarto’s meta shortcode →\n\n$brs-release.status$ typed in the body is just text.\nBoth reach a nested key with a dot.\nThe shortcode also works inside a raw Typst block too."
+    "objectID": "slides/05-wrap-up.html#these-materials",
+    "href": "slides/05-wrap-up.html#these-materials",
+    "title": "Wrap-up",
+    "section": "These materials",
+    "text": "These materials\nThis site, and every exercise folder, stay up.\n\nSlides and modules: pos.it/practical-quarto-conf26\nExercises: github.com/posit-conf-2026/practical-quarto-exercises\n\n\nLicensed CC BY-SA 4.0 — reuse them, teach from them, just say where they came from."
   },
   {
-    "objectID": "slides/04-typst.html#qmd-.typ-.pdf",
-    "href": "slides/04-typst.html#qmd-.typ-.pdf",
-    "title": "Why Typst matters",
-    "section": ".qmd → .typ → .pdf",
-    "text": ".qmd → .typ → .pdf\n\n\n\n\n\nKeep the intermediate .typ:\n\n\nreport.qmd\n\nformat:\n  typst:\n    keep-typ: true\n\n\nTwo renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.\nThe middle file is normally deleted. Keep it and you can read it, and errors point into it."
+    "objectID": "slides/05-wrap-up.html#workshop-survey",
+    "href": "slides/05-wrap-up.html#workshop-survey",
+    "title": "Wrap-up",
+    "section": "Workshop survey",
+    "text": "Workshop survey\nBefore we move on to Q&A, please take a note of the workshop survey:\n\n\n pos.it/conf-workshop-survey"
   },
   {
-    "objectID": "slides/04-typst.html#your-content-translated-to-typst",
-    "href": "slides/04-typst.html#your-content-translated-to-typst",
-    "title": "Why Typst matters",
-    "section": "Your content translated to Typst",
-    "text": "Your content translated to Typst\n\n\nreport.typ\n\n= Summary\n&lt;summary&gt;\nThis is a Provisional release covering Oregon for the reference period Q3 2026.\n\nTotal employment in the region rose by 4,300 jobs over the quarter, an increase of 0.4%. Sector detail is in #ref(&lt;tbl-sectors&gt;, supplement: [Table]), and the full method is in the #link(\"https://example.gov/brs/methods\")[methodology notes].\n\n#strong[All figures in this release are #emph[provisional].]\n\n#quote(block: true)[\nBenchmarking aligns the survey estimates with the annual census of employment.\n]\n\n\nTemplate contributes 431 lines above it…\n\n\nEvery line above 432 came from the template and its partials, or from the brand.\n475 lines in total for a two-page release.\nScroll up through it live. Do not read it out — just show the scale, then land on #show: doc =&gt; article( and brand-color."
-  },
-  {
-    "objectID": "slides/04-typst.html#template-format-typst",
-    "href": "slides/04-typst.html#template-format-typst",
-    "title": "Why Typst matters",
-    "section": "Template: format: typst",
-    "text": "Template: format: typst\n\n\nThe boilerplate, in order. Their content is the box in the middle."
-  },
-  {
-    "objectID": "slides/04-typst.html#text-is-content",
-    "href": "slides/04-typst.html#text-is-content",
-    "title": "Why Typst matters",
-    "section": "Text is content",
-    "text": "Text is content\n\n\n\n\nbadge.typ\n\nProvisional\n\n\n\n\n\nA .typ starts in markup mode. Text is text.\n= is a heading, - a list item. Typst has *bold* and _italic_ too — Pandoc just does not use them."
-  },
-  {
-    "objectID": "slides/04-typst.html#switches-into-code",
-    "href": "slides/04-typst.html#switches-into-code",
-    "title": "Why Typst matters",
-    "section": "# switches into code",
-    "text": "# switches into code\n\n\n\n\nbadge.typ\n\nrect()\n\n\n\n\n\nbadge.typ\n\n#rect()\n\n\n\n\n\n\nEmpty parentheses: a call with no arguments.\n\nTypst: rect →\n\nOne character is the whole difference. Without the # you get the characters rect() back as text.\nThe docs page for rect is the next two slides, ahead of time."
-  },
-  {
-    "objectID": "slides/04-typst.html#arguments-go-in-the-parentheses",
-    "href": "slides/04-typst.html#arguments-go-in-the-parentheses",
-    "title": "Why Typst matters",
-    "section": "Arguments go in the parentheses",
-    "text": "Arguments go in the parentheses\n\n\n\n\nbadge.typ\n\n#rect(fill: green)\n\n\n\n\n\nNamed arguments. A function’s reference page is a list of these.\ngreen is built in."
-  },
-  {
-    "objectID": "slides/04-typst.html#use-to-pass-content-arguments",
-    "href": "slides/04-typst.html#use-to-pass-content-arguments",
-    "title": "Why Typst matters",
-    "section": "Use [] to pass content arguments",
-    "text": "Use [] to pass content arguments\n\n\n\n\nbadge.typ\n\n#rect(fill: green)[Provisional]\n\n\n\n\n\nThis is the same call:\n#rect(fill: green, [Provisional])\n\nTypst: trailing content blocks →\n\n[...] is a content block. The box now has something in it.\nTypst calls the [...] after the parentheses a trailing content block, and you will see both spellings in the docs.\nWith nothing else in the parentheses they can go too: #rect[Provisional]. A function can even take several trailing blocks — #enum(start: 2)[A][B]."
-  },
-  {
-    "objectID": "slides/04-typst.html#your-turn-2-read-the-typst",
-    "href": "slides/04-typst.html#your-turn-2-read-the-typst",
-    "title": "Why Typst matters",
-    "section": "Your turn 2: read the Typst",
-    "text": "Your turn 2: read the Typst\n\n\nRender, then open report.typ. Scroll down to = Summary — everything below it is your content.\nFind a call — it starts with #.\nLook it up in the Typst reference. Say in plain words what it does, and whether any arguments are being passed to it.\nAgain, with another one.\n\n\n\nExercise: 04-typst/02-read-the-typ\n\n\n \n\nAll four are in the first section: #ref, #link, #quote, and a #strong with an #emph nested inside it.\nArguments vary on purpose — #strong takes none, #quote(block: true) takes a named one, #link and #ref take one unnamed and then content.\nCollect two or three out loud. The reference being readable is the point, not finishing."
-  },
-  {
-    "objectID": "slides/04-typst.html#you-can-nest-content-and-calls",
-    "href": "slides/04-typst.html#you-can-nest-content-and-calls",
-    "title": "Why Typst matters",
-    "section": "You can nest content and calls",
-    "text": "You can nest content and calls\n\n\n\n\nbadge.typ\n\n#rect(fill: green)[\n  #text(fill: white)[Provisional]\n]\n\n\n\n\n\nThey just met this in their own file — #strong[... #emph[provisional] ...].\nInside [...] you are back in content mode, so the second # does the same job as the first.\nThis is the shape the status badge needs."
-  },
-  {
-    "objectID": "slides/04-typst.html#writing-typst-in-a-.qmd",
-    "href": "slides/04-typst.html#writing-typst-in-a-.qmd",
-    "title": "Why Typst matters",
-    "section": "Writing Typst in a .qmd",
-    "text": "Writing Typst in a .qmd\nA raw block passes straight through:\n\n\nreport.qmd\n\n```{=typst}\n#rect(fill: green)[Provisional]\n```\n\n\nLands in report.typ untouched. Every other format ignores it.\n\n\nSame mechanism as {=html}. The = means “this is already in the target language, do not translate it”.\nRender this document to HTML and the block is dropped, silently.\nThis is how the status badge gets into the document."
-  },
-  {
-    "objectID": "slides/04-typst.html#the-release-status-badge",
-    "href": "slides/04-typst.html#the-release-status-badge",
-    "title": "Why Typst matters",
-    "section": "The release status badge",
-    "text": "The release status badge\n\n\n\n\nreport.qmd\n\n```{=typst}\n#rect(fill: brand-color.primary, radius: 3pt)[\n  #text(fill: white)[\n    {{&lt; meta brs-release.status &gt;}}\n  ]\n]\n```\n\n\n\n\n\nRead it inside out: take the status, make it white text, put it inside a primary-coloured rectangle.\nEverything from the last section, one step each: a call, an argument, a content block, and a call inside it.\nbrand-color.primary instead of a hex code, and {{&lt; meta &gt;}} instead of $status$.\nThis block is in the next exercise folder already."
-  },
-  {
-    "objectID": "slides/04-typst.html#every-element-has-a-function",
-    "href": "slides/04-typst.html#every-element-has-a-function",
-    "title": "Why Typst matters",
-    "section": "Every element has a function",
-    "text": "Every element has a function\nAll layout and styling happens with functions\n\n\n\n\n\n\n\nElement\nIts function\n\n\n\n\nText\ntext()\n\n\nHeading\nheading()\n\n\nParagraphs\npar()\n\n\nPage\npage()\n\n\n\n\nNothing is exempt. Provisional on its own is a text element — we just never named the function.\nTypst’s own word for these is element function, and its docs say every one of them can be customised with set and show rules. That is the next two slides.\nTheir .typ already has set par, set text, set heading and set page, all written by Quarto from the YAML and the brand."
-  },
-  {
-    "objectID": "slides/04-typst.html#a-set-rule-changes-the-default",
-    "href": "slides/04-typst.html#a-set-rule-changes-the-default",
-    "title": "Why Typst matters",
-    "section": "A set rule changes the default",
-    "text": "A set rule changes the default\n\n\n\n\nstyles.typ\n\nProvisional\n\n#set text(fill: brand-color.primary)\n\nProvisional\n\n\n\n\n\nFrom here on, not everywhere. The first one was already rendered.\n#set f(arg: value) — the arguments are the function’s own."
-  },
-  {
-    "objectID": "slides/04-typst.html#adding-show-scopes-it-to-an-element",
-    "href": "slides/04-typst.html#adding-show-scopes-it-to-an-element",
-    "title": "Why Typst matters",
-    "section": "Adding show scopes it to an element",
-    "text": "Adding show scopes it to an element\n\n\n\n\nstyles.typ\n\n#show heading: set text(fill: brand-color.primary)\n\n= Summary\n\nOrdinary text here\n\n== Manufacturing\n\n\n\n\n\nA show-set rule: the show keyword, a selector, a colon, then a set rule.\n\nTypst: styling →\n\nRead it as: wherever a heading appears, apply this.\nNothing had to be marked up — show finds the elements itself."
-  },
-  {
-    "objectID": "slides/04-typst.html#where-narrows-the-selector",
-    "href": "slides/04-typst.html#where-narrows-the-selector",
-    "title": "Why Typst matters",
-    "section": ".where() narrows the selector",
-    "text": ".where() narrows the selector\n\n\n\n\nstyles.typ\n\n#show heading.where(level: 1): set text(fill: brand-color.primary)\n\n= Summary\n== Manufacturing\n\n\n\n\n\nSame rule, narrower selector. heading.where(level: 1) is still the heading function, with a filter on it.\nCareful: Quarto shifts levels down by one, so a markdown ## is Typst level 1."
-  },
-  {
-    "objectID": "slides/04-typst.html#your-.typ-is-already-full-of-these",
-    "href": "slides/04-typst.html#your-.typ-is-already-full-of-these",
-    "title": "Why Typst matters",
-    "section": "Your .typ is already full of these",
-    "text": "Your .typ is already full of these\n\n\nreport.typ\n\n#set page(\n  paper: \"us-letter\",\n  margin: (x: 1.25in, y: 1.25in),\n  numbering: \"1\",\n  columns: 1,\n)\n\n#set text(fill: brand-color.foreground)\n#show heading: set text(font: (\"Atkinson Hyperlegible\",), weight: 600, )\n#show link: set text(fill: rgb(\"#1b5e4f\"), )\n\n\nThe page block is page.typ, filled from defaults you never set.\nThe brand lines are the module 03 callback — brand was unreachable from an HTML partial, and here it is, in scope, in the body. Yours can say brand-color.primary instead of a hex code."
-  },
-  {
-    "objectID": "slides/04-typst.html#your-turn-3-set-and-show-rules",
-    "href": "slides/04-typst.html#your-turn-3-set-and-show-rules",
-    "title": "Why Typst matters",
-    "section": "Your turn 3: set and show rules",
-    "text": "Your turn 3: set and show rules\nIn report.qmd, add a new raw block above the badge, so the rules apply to everything below.\n\n\nWrite a set rule to loosen the paragraphs — par has a leading argument. par\nWrite a show-set rule to centre the section headings. align\nBonus: step 2 caught ### Manufacturing too. Narrow the selector to the top-level sections only.\n\n\n\nExercise: 04-typst/03-set-and-show\n\n\n \n\nreport.qmd, not report.typ — the .typ is generated, and anything typed there is gone on the next render.\nBoth rules have a model in that generated file, though.\nStep 1 is #set, step 2 is #show. Say that if nobody moves.\nThe bonus needs the heading shift — ## is level 1. Staged in the README.\nFast finishers: the menu of free wins."
-  },
-  {
-    "objectID": "slides/04-typst.html#one-answer",
-    "href": "slides/04-typst.html#one-answer",
-    "title": "Why Typst matters",
-    "section": "One answer",
-    "text": "One answer\n\nResultThe block\n\n\n\n\n\n\n\nreport.qmd\n\n```{=typst}\n#set par(leading: 1em)\n#show heading.where(level: 1): set align(center)\n```\n\n\n\n\n\nTwo lines. One changes a default everywhere, one changes it inside headings only.\nThe ### Manufacturing subsection staying left is the selector doing its job."
-  },
-  {
-    "objectID": "slides/04-typst.html#when-a-raw-block-is-not-enough",
-    "href": "slides/04-typst.html#when-a-raw-block-is-not-enough",
-    "title": "Why Typst matters",
-    "section": "When a raw block is not enough",
-    "text": "When a raw block is not enough\n\n\n\n\n\n\n\nYou want\nReach for\n\n\n\n\nrules used across documents\ninclude-before: styles.typ\n\n\na header or footer on every page\noverride page.typ\n\n\na different title block\noverride typst-show.typ, typst-template.typ\n\n\n\n\nA raw block styles what is already there. It cannot touch the title block — that is built before your content arrives.\n#set page() in the body starts a new page too, so a body raw block cannot even reach page one."
-  },
-  {
-    "objectID": "slides/04-typst.html#seed-with-the-defaults-hand-to-an-agent",
-    "href": "slides/04-typst.html#seed-with-the-defaults-hand-to-an-agent",
-    "title": "Why Typst matters",
-    "section": "Seed with the defaults, hand to an agent",
-    "text": "Seed with the defaults, hand to an agent\nI've added page.typ, typst-show.typ and typst-template.typ, \nunedited copies of Quarto's Typst partials, already registered in report.qmd. \nEdit the partials to rebuild the title block: \ntitle and subtitle alongside a right aligned the brand logo, \nthe reference period and region, \nthen the release status as a badge. \n\nDo not ask for partials from scratch — it will drop the machinery behind cross-references, footnotes and the bibliography.\npage.typ is the interesting change: a deletion. Editing a partial is as often about removing default behaviour as adding to it.\nThe logo comes from _brand.yml, not a document key. $logo$ on its own renders the string true; you want $logo.path$.\nBrand colours are not template variables — only brand.typography.* is. brand-color is a Typst variable, so pass it from typst-show.typ."
-  },
-  {
-    "objectID": "slides/04-typst.html#with-a-little-iteration",
-    "href": "slides/04-typst.html#with-a-little-iteration",
-    "title": "Why Typst matters",
-    "section": "With a little iteration…",
-    "text": "With a little iteration…\n\n\nExample: 04-typst/05-title-block\n\n\nThe same layout as the HTML title block from module 03, in the format that could not have it.\nRead the folder, don’t work through it. The README lists what the first pass got wrong and what is still not right."
-  },
-  {
-    "objectID": "slides/04-typst.html#when-latex-is-still-right",
-    "href": "slides/04-typst.html#when-latex-is-still-right",
-    "title": "Why Typst matters",
-    "section": "When LaTeX is still right",
-    "text": "When LaTeX is still right\n\nan existing journal template — different language, no path across\nan established math workflow built on LaTeX packages\nHTML, when screen-reader users are a primary audience\n\n\nSay this plainly. Typst is not a replacement for all of it."
-  },
-  {
-    "objectID": "slides/04-typst.html#free-with-typst",
-    "href": "slides/04-typst.html#free-with-typst",
-    "title": "Why Typst matters",
-    "section": "Free with Typst",
-    "text": "Free with Typst\n\ngt tables. Structure and CSS styling both translate. Stay in R.\npdf-standard: ua-1. One line, and a tagged PDF.\nPage layout. papersize, margin, page-numbering, columns.\n\n\nua-1 needs quarto install verapdf to be validated. Without it the render still succeeds and the check is skipped.\nPassing validation is not the same as meeting the standard."
-  },
-  {
-    "objectID": "slides/04-typst.html#reading-.typ-in-your-editor",
-    "href": "slides/04-typst.html#reading-.typ-in-your-editor",
-    "title": "Why Typst matters",
-    "section": "Reading .typ in your editor",
-    "text": "Reading .typ in your editor\nTinymist Typst — syntax highlighting and completion for .typ files.\nmyriad-dreamin.tinymist\nOpen VSX · VS Code Marketplace · Docs\n\nPositron installs extensions from Open VSX, and this one is there.\nIt covers .typ files. A {=typst} raw block inside a .qmd is not highlighted — the grammar only injects into fences labelled typ or typst.\nnvarner.typst-lsp is the predecessor and contributes no grammar. Uninstall it if you have both."
-  },
-  {
-    "objectID": "slides/04-typst.html#where-the-typst-partials-live",
-    "href": "slides/04-typst.html#where-the-typst-partials-live",
-    "title": "Why Typst matters",
-    "section": "Where the Typst partials live",
-    "text": "Where the Typst partials live\nnumbering.typ\ndefinitions.typ\ntypst-template.typ\npage.typ\ntypst-show.typ\nnotes.typ\nbiblio.typ\nSource for a version: quarto-cli/src/resources/formats/typst/pandoc/quarto"
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
-    "section": "",
-    "text": "Please complete the following steps before the workshop so we can dive straight into the material.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#accounts",
-    "href": "setup.html#accounts",
-    "title": "Setup",
-    "section": "Accounts",
-    "text": "Accounts\n\nGitHub account — needed to clone and work with the workshop materials. Sign up at https://github.com if you don’t have one.\nPosit AI account — we’ll use Posit Assistant in Positron during the workshop. If you don’t already have one, create a free account at https://posit.ai. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#software-requirements",
-    "href": "setup.html#software-requirements",
-    "title": "Setup",
-    "section": "Software requirements",
-    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#having-trouble",
-    "href": "setup.html#having-trouble",
-    "title": "Setup",
-    "section": "Having trouble?",
-    "text": "Having trouble?\nIf you run into installation issues, please post on the workshop thread on Posit Community before the workshop and we’ll help you get sorted.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "modules/03-partials.html",
-    "href": "modules/03-partials.html",
-    "title": "Build reusable structures",
-    "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Build reusable structures"
-    ]
-  },
-  {
-    "objectID": "modules/03-partials.html#overview",
-    "href": "modules/03-partials.html#overview",
-    "title": "Build reusable structures",
-    "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Build reusable structures"
-    ]
-  },
-  {
-    "objectID": "modules/03-partials.html#learning-objectives",
-    "href": "modules/03-partials.html#learning-objectives",
-    "title": "Build reusable structures",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nUse Pandoc’s template syntax ($title$, $if$) to render document metadata, including custom fields, in a partial.",
-    "crumbs": [
-      "Modules",
-      "Build reusable structures"
-    ]
-  },
-  {
-    "objectID": "modules/03-partials.html#links",
-    "href": "modules/03-partials.html#links",
-    "title": "Build reusable structures",
-    "section": "Links",
-    "text": "Links\n\nQuarto templates\nTemplate partials\nPandoc’s template syntax\nIncludes",
-    "crumbs": [
-      "Modules",
-      "Build reusable structures"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html",
-    "href": "modules/01-workflows.html",
-    "title": "Productive workflows in Positron",
-    "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#overview",
-    "href": "modules/01-workflows.html#overview",
-    "title": "Productive workflows in Positron",
-    "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#learning-objectives",
-    "href": "modules/01-workflows.html#learning-objectives",
-    "title": "Productive workflows in Positron",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#links",
-    "href": "modules/01-workflows.html#links",
-    "title": "Productive workflows in Positron",
-    "section": "Links",
-    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "",
-    "text": "September 14th, 2026\nposit::conf(2026)",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Setup",
-    "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nq2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#instructors",
-    "href": "index.html#instructors",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Instructors",
-    "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#description",
-    "href": "index.html#description",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Description",
-    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nMaster freezing and reproducibility: Demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html",
-    "href": "modules/02-brand.html",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#overview",
-    "href": "modules/02-brand.html#overview",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#learning-objectives",
-    "href": "modules/02-brand.html#learning-objectives",
-    "title": "Design once, use anywhere",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#links",
-    "href": "modules/02-brand.html#links",
-    "title": "Design once, use anywhere",
-    "section": "Links",
-    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/04-typst.html",
-    "href": "modules/04-typst.html",
-    "title": "Why Typst matters",
-    "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Why Typst matters"
-    ]
-  },
-  {
-    "objectID": "modules/04-typst.html#overview",
-    "href": "modules/04-typst.html#overview",
-    "title": "Why Typst matters",
-    "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Why Typst matters"
-    ]
-  },
-  {
-    "objectID": "modules/04-typst.html#learning-objectives",
-    "href": "modules/04-typst.html#learning-objectives",
-    "title": "Why Typst matters",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
-    "crumbs": [
-      "Modules",
-      "Why Typst matters"
-    ]
-  },
-  {
-    "objectID": "modules/04-typst.html#links",
-    "href": "modules/04-typst.html#links",
-    "title": "Why Typst matters",
-    "section": "Links",
-    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
-    "crumbs": [
-      "Modules",
-      "Why Typst matters"
-    ]
+    "objectID": "slides/05-wrap-up.html#questions",
+    "href": "slides/05-wrap-up.html#questions",
+    "title": "Wrap-up",
+    "section": "Questions?",
+    "text": "Questions?\nAny questions, but especially of the kind:\n\nHow would I solve _my problem_ with a brand, a partial, or Typst?\nWhich of those do I even need for _my problem_?"
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-template",
@@ -708,5 +271,491 @@
     "title": "Partials",
     "section": "Localized strings in templates",
     "text": "Localized strings in templates\nHard-coding “Table of contents” in a partial breaks the moment someone sets lang:.\nSince Quarto 1.10, the strings Quarto already translates are template variables:\n&lt;h2&gt;${quarto.language.toc-title-document}&lt;/h2&gt;\n\n\n\n\nlang: en\nlang: fr\n\n\n\n\nTable of contents\nTable des matières\n\n\nAbstract\nRésumé\n\n\n\n\nLocalized strings in templates →\n\nThe quarto.language namespace exposes every string Quarto localizes, resolved for the document’s lang."
+  },
+  {
+    "objectID": "modules/04-typst.html",
+    "href": "modules/04-typst.html",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#overview",
+    "href": "modules/04-typst.html#overview",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#learning-objectives",
+    "href": "modules/04-typst.html#learning-objectives",
+    "title": "Why Typst matters",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#links",
+    "href": "modules/04-typst.html#links",
+    "title": "Why Typst matters",
+    "section": "Links",
+    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html",
+    "href": "modules/02-brand.html",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#overview",
+    "href": "modules/02-brand.html#overview",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#learning-objectives",
+    "href": "modules/02-brand.html#learning-objectives",
+    "title": "Design once, use anywhere",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#links",
+    "href": "modules/02-brand.html#links",
+    "title": "Design once, use anywhere",
+    "section": "Links",
+    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "",
+    "text": "September 14th, 2026\nposit::conf(2026)",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Setup",
+    "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nq2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructors",
+    "href": "index.html#instructors",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Instructors",
+    "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Description",
+    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nMaster freezing and reproducibility: Demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "modules/01-workflows.html",
+    "href": "modules/01-workflows.html",
+    "title": "Productive workflows in Positron",
+    "section": "",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/01-workflows.html#overview",
+    "href": "modules/01-workflows.html#overview",
+    "title": "Productive workflows in Positron",
+    "section": "",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/01-workflows.html#learning-objectives",
+    "href": "modules/01-workflows.html#learning-objectives",
+    "title": "Productive workflows in Positron",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/01-workflows.html#links",
+    "href": "modules/01-workflows.html#links",
+    "title": "Productive workflows in Positron",
+    "section": "Links",
+    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
+    "crumbs": [
+      "Modules",
+      "Productive workflows in Positron"
+    ]
+  },
+  {
+    "objectID": "modules/03-partials.html",
+    "href": "modules/03-partials.html",
+    "title": "Build reusable structures",
+    "section": "",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/03-partials.html#overview",
+    "href": "modules/03-partials.html#overview",
+    "title": "Build reusable structures",
+    "section": "",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/03-partials.html#learning-objectives",
+    "href": "modules/03-partials.html#learning-objectives",
+    "title": "Build reusable structures",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nUse Pandoc’s template syntax ($title$, $if$) to render document metadata, including custom fields, in a partial.",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/03-partials.html#links",
+    "href": "modules/03-partials.html#links",
+    "title": "Build reusable structures",
+    "section": "Links",
+    "text": "Links\n\nQuarto templates\nTemplate partials\nPandoc’s template syntax\nIncludes",
+    "crumbs": [
+      "Modules",
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "Please complete the following steps before the workshop so we can dive straight into the material.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#accounts",
+    "href": "setup.html#accounts",
+    "title": "Setup",
+    "section": "Accounts",
+    "text": "Accounts\n\nGitHub account — needed to clone and work with the workshop materials. Sign up at https://github.com if you don’t have one.\nPosit AI account — we’ll use Posit Assistant in Positron during the workshop. If you don’t already have one, create a free account at https://posit.ai. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software-requirements",
+    "href": "setup.html#software-requirements",
+    "title": "Setup",
+    "section": "Software requirements",
+    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#having-trouble",
+    "href": "setup.html#having-trouble",
+    "title": "Setup",
+    "section": "Having trouble?",
+    "text": "Having trouble?\nIf you run into installation issues, please post on the workshop thread on Posit Community before the workshop and we’ll help you get sorted.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "slides/04-typst.html#same-release-new-requirement",
+    "href": "slides/04-typst.html#same-release-new-requirement",
+    "title": "Why Typst matters",
+    "section": "Same release, new requirement",
+    "text": "Same release, new requirement\nThe Bureau of Regional Statistics quarterly release. Every one must carry:\n\nthe agency mark\nthe reference period and the region\nthe release status — Provisional, Revised, or Final\n\n\nLast module we built all three into an HTML title block. Now it has to be a PDF.\n\n\nDo not sell Typst yet. Get them to render one first.\nThe starter is the document without the title block work — a clean sheet, not their module 03 folder."
+  },
+  {
+    "objectID": "slides/04-typst.html#your-turn-1-render-it-as-a-pdf",
+    "href": "slides/04-typst.html#your-turn-1-render-it-as-a-pdf",
+    "title": "Why Typst matters",
+    "section": "Your turn 1: render it as a PDF",
+    "text": "Your turn 1: render it as a PDF\n\n\nAdd typst as a second format in report.qmd. Keep html:\n\n\nreport.qmd\n\nformat:\n  html: default\n  typst: default\n\nRender with Quarto: Preview Format… and pick Typst.\nRender the HTML too. What came across? What didn’t?\n\n\n\nExercise: 04-typst/01-first-pdf\n\n\n \n\nNo TeX install.\nQuarto: Preview Format… — the command from this morning.\nAdd, don’t replace. They end holding both outputs, which is what makes step 3 possible.\nSteer the comparison to the logo, and to the status with nothing marking it."
+  },
+  {
+    "objectID": "slides/04-typst.html#section",
+    "href": "slides/04-typst.html#section",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Same brand in both: Atkinson Hyperlegible, brand ink for the text, forest links.\nThe logo only shows up in the PDF. Brand cannot place it in a standalone HTML document — module 03 built a partial for exactly that. Here it arrives with no configuration.\nThe date is 2026-09-14 here and September 14, 2026 in the HTML.\n{{&lt; meta brs-release.status &gt;}} in the Summary works in both."
+  },
+  {
+    "objectID": "slides/04-typst.html#why-typst",
+    "href": "slides/04-typst.html#why-typst",
+    "title": "Why Typst matters",
+    "section": "Why Typst?",
+    "text": "Why Typst?\n\nAlready installed. format: pdf needs a LaTeX distribution. Typst ships inside Quarto.\nFaster. Render, look, change, look again.\nUses your brand. Colors, fonts, and the logo, from the same _brand.yml.\n\n\nTypst is a binary dependency, in the same quarto check list as Pandoc.\nBrand reaches none of this in LaTeX. The .tex has no trace of it.\nHeadings are brand ink here, not primary. Turn 3 changes that."
+  },
+  {
+    "objectID": "slides/04-typst.html#two-ways-to-reach-metadata",
+    "href": "slides/04-typst.html#two-ways-to-reach-metadata",
+    "title": "Why Typst matters",
+    "section": "Two ways to reach metadata",
+    "text": "Two ways to reach metadata\n\n\n\n\n\n\n\n\n\nLast module\nThis module\n\n\n\n\nWhere you write it\ntitle-block.html, a partial\nreport.qmd, the body\n\n\nWhat you write\n$brs-release.status$\n{{&lt; meta brs-release.status &gt;}}\n\n\nWhat it is\nPandoc template syntax\na Quarto shortcode\n\n\n\n\nPandoc’s template syntax only runs when Pandoc is filling a template.\n\nPandoc’s template syntax →\nQuarto’s meta shortcode →\n\n$brs-release.status$ typed in the body is just text.\nBoth reach a nested key with a dot.\nThe shortcode also works inside a raw Typst block too."
+  },
+  {
+    "objectID": "slides/04-typst.html#qmd-.typ-.pdf",
+    "href": "slides/04-typst.html#qmd-.typ-.pdf",
+    "title": "Why Typst matters",
+    "section": ".qmd → .typ → .pdf",
+    "text": ".qmd → .typ → .pdf\n\n\n\n\n\nKeep the intermediate .typ:\n\n\nreport.qmd\n\nformat:\n  typst:\n    keep-typ: true\n\n\nTwo renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.\nThe middle file is normally deleted. Keep it and you can read it, and errors point into it."
+  },
+  {
+    "objectID": "slides/04-typst.html#your-content-translated-to-typst",
+    "href": "slides/04-typst.html#your-content-translated-to-typst",
+    "title": "Why Typst matters",
+    "section": "Your content translated to Typst",
+    "text": "Your content translated to Typst\n\n\nreport.typ\n\n= Summary\n&lt;summary&gt;\nThis is a Provisional release covering Oregon for the reference period Q3 2026.\n\nTotal employment in the region rose by 4,300 jobs over the quarter, an increase of 0.4%. Sector detail is in #ref(&lt;tbl-sectors&gt;, supplement: [Table]), and the full method is in the #link(\"https://example.gov/brs/methods\")[methodology notes].\n\n#strong[All figures in this release are #emph[provisional].]\n\n#quote(block: true)[\nBenchmarking aligns the survey estimates with the annual census of employment.\n]\n\n\nTemplate contributes 431 lines above it…\n\n\nEvery line above 432 came from the template and its partials, or from the brand.\n475 lines in total for a two-page release.\nScroll up through it live. Do not read it out — just show the scale, then land on #show: doc =&gt; article( and brand-color."
+  },
+  {
+    "objectID": "slides/04-typst.html#template-format-typst",
+    "href": "slides/04-typst.html#template-format-typst",
+    "title": "Why Typst matters",
+    "section": "Template: format: typst",
+    "text": "Template: format: typst\n\n\nThe boilerplate, in order. Their content is the box in the middle."
+  },
+  {
+    "objectID": "slides/04-typst.html#text-is-content",
+    "href": "slides/04-typst.html#text-is-content",
+    "title": "Why Typst matters",
+    "section": "Text is content",
+    "text": "Text is content\n\n\n\n\nbadge.typ\n\nProvisional\n\n\n\n\n\nA .typ starts in markup mode. Text is text.\n= is a heading, - a list item. Typst has *bold* and _italic_ too — Pandoc just does not use them."
+  },
+  {
+    "objectID": "slides/04-typst.html#switches-into-code",
+    "href": "slides/04-typst.html#switches-into-code",
+    "title": "Why Typst matters",
+    "section": "# switches into code",
+    "text": "# switches into code\n\n\n\n\nbadge.typ\n\nrect()\n\n\n\n\n\nbadge.typ\n\n#rect()\n\n\n\n\n\n\nEmpty parentheses: a call with no arguments.\n\nTypst: rect →\n\nOne character is the whole difference. Without the # you get the characters rect() back as text.\nThe docs page for rect is the next two slides, ahead of time."
+  },
+  {
+    "objectID": "slides/04-typst.html#arguments-go-in-the-parentheses",
+    "href": "slides/04-typst.html#arguments-go-in-the-parentheses",
+    "title": "Why Typst matters",
+    "section": "Arguments go in the parentheses",
+    "text": "Arguments go in the parentheses\n\n\n\n\nbadge.typ\n\n#rect(fill: green)\n\n\n\n\n\nNamed arguments. A function’s reference page is a list of these.\ngreen is built in."
+  },
+  {
+    "objectID": "slides/04-typst.html#use-to-pass-content-arguments",
+    "href": "slides/04-typst.html#use-to-pass-content-arguments",
+    "title": "Why Typst matters",
+    "section": "Use [] to pass content arguments",
+    "text": "Use [] to pass content arguments\n\n\n\n\nbadge.typ\n\n#rect(fill: green)[Provisional]\n\n\n\n\n\nThis is the same call:\n#rect(fill: green, [Provisional])\n\nTypst: trailing content blocks →\n\n[...] is a content block. The box now has something in it.\nTypst calls the [...] after the parentheses a trailing content block, and you will see both spellings in the docs.\nWith nothing else in the parentheses they can go too: #rect[Provisional]. A function can even take several trailing blocks — #enum(start: 2)[A][B]."
+  },
+  {
+    "objectID": "slides/04-typst.html#your-turn-2-read-the-typst",
+    "href": "slides/04-typst.html#your-turn-2-read-the-typst",
+    "title": "Why Typst matters",
+    "section": "Your turn 2: read the Typst",
+    "text": "Your turn 2: read the Typst\n\n\nRender, then open report.typ. Scroll down to = Summary — everything below it is your content.\nFind a call — it starts with #.\nLook it up in the Typst reference. Say in plain words what it does, and whether any arguments are being passed to it.\nAgain, with another one.\n\n\n\nExercise: 04-typst/02-read-the-typ\n\n\n \n\nAll four are in the first section: #ref, #link, #quote, and a #strong with an #emph nested inside it.\nArguments vary on purpose — #strong takes none, #quote(block: true) takes a named one, #link and #ref take one unnamed and then content.\nCollect two or three out loud. The reference being readable is the point, not finishing."
+  },
+  {
+    "objectID": "slides/04-typst.html#you-can-nest-content-and-calls",
+    "href": "slides/04-typst.html#you-can-nest-content-and-calls",
+    "title": "Why Typst matters",
+    "section": "You can nest content and calls",
+    "text": "You can nest content and calls\n\n\n\n\nbadge.typ\n\n#rect(fill: green)[\n  #text(fill: white)[Provisional]\n]\n\n\n\n\n\nThey just met this in their own file — #strong[... #emph[provisional] ...].\nInside [...] you are back in content mode, so the second # does the same job as the first.\nThis is the shape the status badge needs."
+  },
+  {
+    "objectID": "slides/04-typst.html#writing-typst-in-a-.qmd",
+    "href": "slides/04-typst.html#writing-typst-in-a-.qmd",
+    "title": "Why Typst matters",
+    "section": "Writing Typst in a .qmd",
+    "text": "Writing Typst in a .qmd\nA raw block passes straight through:\n\n\nreport.qmd\n\n```{=typst}\n#rect(fill: green)[Provisional]\n```\n\n\nLands in report.typ untouched. Every other format ignores it.\n\n\nSame mechanism as {=html}. The = means “this is already in the target language, do not translate it”.\nRender this document to HTML and the block is dropped, silently.\nThis is how the status badge gets into the document."
+  },
+  {
+    "objectID": "slides/04-typst.html#the-release-status-badge",
+    "href": "slides/04-typst.html#the-release-status-badge",
+    "title": "Why Typst matters",
+    "section": "The release status badge",
+    "text": "The release status badge\n\n\n\n\nreport.qmd\n\n```{=typst}\n#rect(fill: brand-color.primary, radius: 3pt)[\n  #text(fill: white)[\n    {{&lt; meta brs-release.status &gt;}}\n  ]\n]\n```\n\n\n\n\n\nRead it inside out: take the status, make it white text, put it inside a primary-coloured rectangle.\nEverything from the last section, one step each: a call, an argument, a content block, and a call inside it.\nbrand-color.primary instead of a hex code, and {{&lt; meta &gt;}} instead of $status$.\nThis block is in the next exercise folder already."
+  },
+  {
+    "objectID": "slides/04-typst.html#every-element-has-a-function",
+    "href": "slides/04-typst.html#every-element-has-a-function",
+    "title": "Why Typst matters",
+    "section": "Every element has a function",
+    "text": "Every element has a function\nAll layout and styling happens with functions\n\n\n\n\n\n\n\nElement\nIts function\n\n\n\n\nText\ntext()\n\n\nHeading\nheading()\n\n\nParagraphs\npar()\n\n\nPage\npage()\n\n\n\n\nNothing is exempt. Provisional on its own is a text element — we just never named the function.\nTypst’s own word for these is element function, and its docs say every one of them can be customised with set and show rules. That is the next two slides.\nTheir .typ already has set par, set text, set heading and set page, all written by Quarto from the YAML and the brand."
+  },
+  {
+    "objectID": "slides/04-typst.html#a-set-rule-changes-the-default",
+    "href": "slides/04-typst.html#a-set-rule-changes-the-default",
+    "title": "Why Typst matters",
+    "section": "A set rule changes the default",
+    "text": "A set rule changes the default\n\n\n\n\nstyles.typ\n\nProvisional\n\n#set text(fill: brand-color.primary)\n\nProvisional\n\n\n\n\n\nFrom here on, not everywhere. The first one was already rendered.\n#set f(arg: value) — the arguments are the function’s own."
+  },
+  {
+    "objectID": "slides/04-typst.html#adding-show-scopes-it-to-an-element",
+    "href": "slides/04-typst.html#adding-show-scopes-it-to-an-element",
+    "title": "Why Typst matters",
+    "section": "Adding show scopes it to an element",
+    "text": "Adding show scopes it to an element\n\n\n\n\nstyles.typ\n\n#show heading: set text(fill: brand-color.primary)\n\n= Summary\n\nOrdinary text here\n\n== Manufacturing\n\n\n\n\n\nA show-set rule: the show keyword, a selector, a colon, then a set rule.\n\nTypst: styling →\n\nRead it as: wherever a heading appears, apply this.\nNothing had to be marked up — show finds the elements itself."
+  },
+  {
+    "objectID": "slides/04-typst.html#where-narrows-the-selector",
+    "href": "slides/04-typst.html#where-narrows-the-selector",
+    "title": "Why Typst matters",
+    "section": ".where() narrows the selector",
+    "text": ".where() narrows the selector\n\n\n\n\nstyles.typ\n\n#show heading.where(level: 1): set text(fill: brand-color.primary)\n\n= Summary\n== Manufacturing\n\n\n\n\n\nSame rule, narrower selector. heading.where(level: 1) is still the heading function, with a filter on it.\nCareful: Quarto shifts levels down by one, so a markdown ## is Typst level 1."
+  },
+  {
+    "objectID": "slides/04-typst.html#your-.typ-is-already-full-of-these",
+    "href": "slides/04-typst.html#your-.typ-is-already-full-of-these",
+    "title": "Why Typst matters",
+    "section": "Your .typ is already full of these",
+    "text": "Your .typ is already full of these\n\n\nreport.typ\n\n#set page(\n  paper: \"us-letter\",\n  margin: (x: 1.25in, y: 1.25in),\n  numbering: \"1\",\n  columns: 1,\n)\n\n#set text(fill: brand-color.foreground)\n#show heading: set text(font: (\"Atkinson Hyperlegible\",), weight: 600, )\n#show link: set text(fill: rgb(\"#1b5e4f\"), )\n\n\nThe page block is page.typ, filled from defaults you never set.\nThe brand lines are the module 03 callback — brand was unreachable from an HTML partial, and here it is, in scope, in the body. Yours can say brand-color.primary instead of a hex code."
+  },
+  {
+    "objectID": "slides/04-typst.html#your-turn-3-set-and-show-rules",
+    "href": "slides/04-typst.html#your-turn-3-set-and-show-rules",
+    "title": "Why Typst matters",
+    "section": "Your turn 3: set and show rules",
+    "text": "Your turn 3: set and show rules\nIn report.qmd, add a new raw block above the badge, so the rules apply to everything below.\n\n\nWrite a set rule to loosen the paragraphs — par has a leading argument. par\nWrite a show-set rule to centre the section headings. align\nBonus: step 2 caught ### Manufacturing too. Narrow the selector to the top-level sections only.\n\n\n\nExercise: 04-typst/03-set-and-show\n\n\n \n\nreport.qmd, not report.typ — the .typ is generated, and anything typed there is gone on the next render.\nBoth rules have a model in that generated file, though.\nStep 1 is #set, step 2 is #show. Say that if nobody moves.\nThe bonus needs the heading shift — ## is level 1. Staged in the README.\nFast finishers: the menu of free wins."
+  },
+  {
+    "objectID": "slides/04-typst.html#one-answer",
+    "href": "slides/04-typst.html#one-answer",
+    "title": "Why Typst matters",
+    "section": "One answer",
+    "text": "One answer\n\nResultThe block\n\n\n\n\n\n\n\nreport.qmd\n\n```{=typst}\n#set par(leading: 1em)\n#show heading.where(level: 1): set align(center)\n```\n\n\n\n\n\nTwo lines. One changes a default everywhere, one changes it inside headings only.\nThe ### Manufacturing subsection staying left is the selector doing its job."
+  },
+  {
+    "objectID": "slides/04-typst.html#when-a-raw-block-is-not-enough",
+    "href": "slides/04-typst.html#when-a-raw-block-is-not-enough",
+    "title": "Why Typst matters",
+    "section": "When a raw block is not enough",
+    "text": "When a raw block is not enough\n\n\n\n\n\n\n\nYou want\nReach for\n\n\n\n\nrules used across documents\ninclude-before: styles.typ\n\n\na header or footer on every page\noverride page.typ\n\n\na different title block\noverride typst-show.typ, typst-template.typ\n\n\n\n\nA raw block styles what is already there. It cannot touch the title block — that is built before your content arrives.\n#set page() in the body starts a new page too, so a body raw block cannot even reach page one."
+  },
+  {
+    "objectID": "slides/04-typst.html#seed-with-the-defaults-hand-to-an-agent",
+    "href": "slides/04-typst.html#seed-with-the-defaults-hand-to-an-agent",
+    "title": "Why Typst matters",
+    "section": "Seed with the defaults, hand to an agent",
+    "text": "Seed with the defaults, hand to an agent\nI've added page.typ, typst-show.typ and typst-template.typ, \nunedited copies of Quarto's Typst partials, already registered in report.qmd. \nEdit the partials to rebuild the title block: \ntitle and subtitle alongside a right aligned the brand logo, \nthe reference period and region, \nthen the release status as a badge. \n\nDo not ask for partials from scratch — it will drop the machinery behind cross-references, footnotes and the bibliography.\npage.typ is the interesting change: a deletion. Editing a partial is as often about removing default behaviour as adding to it.\nThe logo comes from _brand.yml, not a document key. $logo$ on its own renders the string true; you want $logo.path$.\nBrand colours are not template variables — only brand.typography.* is. brand-color is a Typst variable, so pass it from typst-show.typ."
+  },
+  {
+    "objectID": "slides/04-typst.html#with-a-little-iteration",
+    "href": "slides/04-typst.html#with-a-little-iteration",
+    "title": "Why Typst matters",
+    "section": "With a little iteration…",
+    "text": "With a little iteration…\n\n\nExample: 04-typst/05-title-block\n\n\nThe same layout as the HTML title block from module 03, in the format that could not have it.\nRead the folder, don’t work through it. The README lists what the first pass got wrong and what is still not right."
+  },
+  {
+    "objectID": "slides/04-typst.html#when-latex-is-still-right",
+    "href": "slides/04-typst.html#when-latex-is-still-right",
+    "title": "Why Typst matters",
+    "section": "When LaTeX is still right",
+    "text": "When LaTeX is still right\n\nan existing journal template — different language, no path across\nan established math workflow built on LaTeX packages\nHTML, when screen-reader users are a primary audience\n\n\nSay this plainly. Typst is not a replacement for all of it."
+  },
+  {
+    "objectID": "slides/04-typst.html#free-with-typst",
+    "href": "slides/04-typst.html#free-with-typst",
+    "title": "Why Typst matters",
+    "section": "Free with Typst",
+    "text": "Free with Typst\n\ngt tables. Structure and CSS styling both translate. Stay in R.\npdf-standard: ua-1. One line, and a tagged PDF.\nPage layout. papersize, margin, page-numbering, columns.\n\n\nua-1 needs quarto install verapdf to be validated. Without it the render still succeeds and the check is skipped.\nPassing validation is not the same as meeting the standard."
+  },
+  {
+    "objectID": "slides/04-typst.html#reading-.typ-in-your-editor",
+    "href": "slides/04-typst.html#reading-.typ-in-your-editor",
+    "title": "Why Typst matters",
+    "section": "Reading .typ in your editor",
+    "text": "Reading .typ in your editor\nTinymist Typst — syntax highlighting and completion for .typ files.\nmyriad-dreamin.tinymist\nOpen VSX · VS Code Marketplace · Docs\n\nPositron installs extensions from Open VSX, and this one is there.\nIt covers .typ files. A {=typst} raw block inside a .qmd is not highlighted — the grammar only injects into fences labelled typ or typst.\nnvarner.typst-lsp is the predecessor and contributes no grammar. Uninstall it if you have both."
+  },
+  {
+    "objectID": "slides/04-typst.html#where-the-typst-partials-live",
+    "href": "slides/04-typst.html#where-the-typst-partials-live",
+    "title": "Why Typst matters",
+    "section": "Where the Typst partials live",
+    "text": "Where the Typst partials live\nnumbering.typ\ndefinitions.typ\ntypst-template.typ\npage.typ\ntypst-show.typ\nnotes.typ\nbiblio.typ\nSource for a version: quarto-cli/src/resources/formats/typst/pandoc/quarto"
   }
 ]
