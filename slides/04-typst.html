@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <title>Level up your Quarto – Why Typst matters</title>
@@ -33,8 +35,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-c6dfb1fe39422d4d60113c575ee8dbb6.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2bc0d8ad01e7aa6fb805ef0bfa84df5a.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -126,6 +194,8 @@
       margin-right: 0; 
     }
   </style>
+  <!-- Countdown Global CSS -->
+  <style text="text/css">:root {--countdown-color-background: #283c4d;--countdown-color-text: #ffffff;}</style>
 <meta property="og:title" content="Why Typst matters – Level up your Quarto">
 <meta property="og:description" content="Level up your Quarto: Patterns, templates, and tooling @ posit::conf(2026)">
 <meta property="og:site_name" content="Level up your Quarto">
@@ -158,12 +228,969 @@ Mine Çetinkaya-Rundel
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="m17.303 9.524l3.182 3.182a5.5 5.5 0 1 1-7.778 7.778l-1.06-1.06a1.5 1.5 0 1 1 2.12-2.122l1.062 1.061a2.5 2.5 0 0 0 3.535-3.536l-3.182-3.182a2.5 2.5 0 0 0-2.681-.56q-.242.096-.454.196l-.464.217c-.62.28-1.097.4-1.704-.206c-.872-.872-.646-1.677.417-2.41a5.5 5.5 0 0 1 7.007.642m-6.01-6.01l1.06 1.06a1.5 1.5 0 0 1-2.12 2.122l-1.061-1.06A2.5 2.5 0 1 0 5.636 9.17l3.182 3.182a2.5 2.5 0 0 0 2.681.56q.242-.096.454-.196l.464-.217c.62-.28 1.098-.4 1.704.206c.872.872.646 1.677-.417 2.41a5.5 5.5 0 0 1-7.007-.642l-3.182-3.182a5.5 5.5 0 1 1 7.778-7.778Z"></path></g></svg> <a href="http://pos.it/practical-quarto-conf26">pos.it/practical-quarto-conf26</a>
   </div>
 </section>
+<section>
+<section id="the-release-ships-as-a-pdf" class="title-slide slide level1 center">
+<h1>The release ships as a PDF</h1>
+
+</section>
+<section id="same-release-new-requirement" class="slide level2 smaller">
+<h2>Same release, new requirement</h2>
+<p>The Bureau of Regional Statistics quarterly release. Every one must carry:</p>
+<ul>
+<li class="fragment">the agency mark</li>
+<li class="fragment">the reference period and the region</li>
+<li class="fragment">the release status — Provisional, Revised, or Final</li>
+</ul>
+<div class="fragment">
+<p>Last module we built all three into an HTML title block. Now it has to be a PDF.</p>
+</div>
+<aside class="notes">
+<p>Do not sell Typst yet. Get them to render one first.</p>
+<p>The starter is the document without the title block work — a clean sheet, not their module 03 folder.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-1-render-it-as-a-pdf" class="slide level2">
+<h2>Your turn 1: render it as a PDF</h2>
+<div class="your-turn">
+<ol type="1">
+<li><p>Add <code>typst</code> as a second format in <code>report.qmd</code>. Keep <code>html</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="report.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p>Render with <strong>Quarto: Preview Format…</strong> and pick Typst.</p></li>
+<li><p>Render the HTML too. What came across? What didn’t?</p></li>
+</ol>
+</div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/01-first-pdf</code></p>
+</div>
+<countdown-timer id="timer_4c83a0d082b409e3d81aa3bfdbd1c3358d8cb83e" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+<aside class="notes">
+<p>No TeX install.</p>
+<p><code>Quarto: Preview Format…</code> — the command from this morning.</p>
+<p>Add, don’t replace. They end holding both outputs, which is what makes step 3 possible.</p>
+<p>Steer the comparison to the <strong>logo</strong>, and to the status with nothing marking it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="../images/typst-turn1-pdf.png" class="screenshot r-stretch" alt="The first page of the rendered PDF. The agency logo and wordmark sit small at the top left. Regional Employment Indicators is centred below it in bold, with the subtitle Quarterly statistical release, then Bureau of Regional Statistics and the date 2026-09-14. The Summary section follows, with a sentence naming the status, period and region, a paragraph pointing at Table 1 and a green methodology notes link, a bold line reading All figures in this release are provisional, and an indented quotation about benchmarking. Then an Industry detail section with Table 1, Non-farm payroll employment by sector, and the start of a Notes section."><aside class="notes">
+<p>Same brand in both: Atkinson Hyperlegible, brand ink for the text, forest links.</p>
+<p>The <strong>logo</strong> only shows up in the PDF. Brand cannot place it in a standalone HTML document — module 03 built a partial for exactly that. Here it arrives with no configuration.</p>
+<p>The date is <code>2026-09-14</code> here and <code>September 14, 2026</code> in the HTML.</p>
+<p><code>{{&lt; meta brs-release.status &gt;}}</code> in the Summary works in both.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-typst" class="slide level2">
+<h2>Why Typst?</h2>
+<ul>
+<li class="fragment"><p><strong>Already installed.</strong> <code>format: pdf</code> needs a LaTeX distribution. Typst ships inside Quarto.</p></li>
+<li class="fragment"><p><strong>Faster.</strong> Render, look, change, look again.</p></li>
+<li class="fragment"><p><strong>Uses your brand.</strong> Colors, fonts, and the logo, from the same <code>_brand.yml</code>.</p></li>
+</ul>
+<aside class="notes">
+<p>Typst is a binary dependency, in the same <code>quarto check</code> list as Pandoc.</p>
+<p>Brand reaches none of this in LaTeX. The <code>.tex</code> has no trace of it.</p>
+<p>Headings are brand ink here, not primary. Turn 3 changes that.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="two-ways-to-reach-metadata" class="slide level2 smaller">
+<h2>Two ways to reach metadata</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Last module</th>
+<th><span class="fragment" data-fragment-index="1">This module</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Where you write it</strong></td>
+<td><code>title-block.html</code>, a partial</td>
+<td><span class="fragment" data-fragment-index="1"><code>report.qmd</code>, the body</span></td>
+</tr>
+<tr class="even">
+<td><strong>What you write</strong></td>
+<td><code>$brs-release.status$</code></td>
+<td><span class="fragment" data-fragment-index="1"><code>{{&lt; meta brs-release.status &gt;}}</code></span></td>
+</tr>
+<tr class="odd">
+<td><strong>What it is</strong></td>
+<td>Pandoc template syntax</td>
+<td><span class="fragment" data-fragment-index="1">a Quarto shortcode</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment" data-fragment-index="2">
+<p>Pandoc’s template syntax only runs when Pandoc is <strong>filling a template</strong>.</p>
+</div>
+<p><a href="https://pandoc.org/MANUAL.html#template-syntax">Pandoc’s template syntax →</a></p>
+<p><a href="https://quarto.org/docs/authoring/variables.html#meta">Quarto’s <code>meta</code> shortcode →</a></p>
+<aside class="notes">
+<p><code>$brs-release.status$</code> typed in the body is just text.</p>
+<p>Both reach a nested key with a dot.</p>
+<p>The shortcode also works inside a raw Typst block too.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="quarto-writes-the-typst" class="title-slide slide level1 center">
+<h1>Quarto writes the Typst</h1>
+
+</section>
+<section id="qmd-.typ-.pdf" class="slide level2 smaller">
+<h2><code>.qmd</code> → <code>.typ</code> → <code>.pdf</code></h2>
+<div class="r-stack">
+<p><img data-src="../images/typst-render-pipeline-1.svg" class="nostretch" style="width:100.0%" alt="One box, labelled report.qmd and annotated you write this, holding a YAML header that sets title and format typst, then a markdown heading reading hash hash Summary in teal."></p>
+<p><img data-src="../images/typst-render-pipeline-2.svg" class="fragment nostretch" style="width:100.0%" alt="The report.qmd box on the left, an arrow labelled Pandoc, and a second box labelled report.typ holding grey boilerplate lines — a brand-color definition, a show colon doc arrow article call, a set page call — and then in teal the line equals Summary."></p>
+<p><img data-src="../images/typst-render-pipeline-3.svg" class="fragment nostretch" style="width:100.0%" alt="Three boxes in a row joined by two labelled arrows. report.qmd on the left, an arrow labelled Pandoc, report.typ in the middle holding grey boilerplate and a teal equals Summary line, an arrow labelled Typst, and report.pdf drawn as a rendered page with a logo mark, a centred title and lines of body text."></p>
+</div>
+<p>Keep the intermediate <code>.typ</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="report.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-typ</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<aside class="notes">
+<p>Two renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.</p>
+<p>The middle file is normally deleted. Keep it and you can read it, and errors point into it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-content-translated-to-typst" class="slide level2 smaller scrollable">
+<h2>Your content translated to Typst</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-startfrom="432" data-filename="report.typ"><pre class="sourceCode numberSource typst wrap number-lines code-with-copy"><code class="sourceCode typst" style="counter-reset: source-line 431;"><span id="cb3-432"><a aria-label="432"></a><span class="fu">= Summary</span></span>
+<span id="cb3-433"><a aria-label="433"></a><span class="va">&lt;summary&gt;</span></span>
+<span id="cb3-434"><a aria-label="434"></a>This is a Provisional release covering Oregon for the reference period Q3 2026.</span>
+<span id="cb3-435"><a aria-label="435"></a></span>
+<span id="cb3-436"><a aria-label="436"></a>Total employment in the region rose by 4,300 jobs over the quarter, an increase of 0.4%. Sector detail is in <span class="kw">#</span>ref<span class="op">(</span><span class="va">&lt;tbl-sectors&gt;</span><span class="op">,</span> supplement<span class="op">:</span> <span class="op">[</span>Table<span class="op">])</span>, and the full method is in the <span class="kw">#</span>link<span class="op">(</span><span class="st">"https://example.gov/brs/methods"</span><span class="op">)[</span>methodology notes<span class="op">].</span></span>
+<span id="cb3-437"><a aria-label="437"></a></span>
+<span id="cb3-438"><a aria-label="438"></a><span class="kw">#</span>strong<span class="op">[</span>All figures in this release are <span class="kw">#</span>emph<span class="op">[</span>provisional<span class="op">].</span><span class="er">]</span></span>
+<span id="cb3-439"><a aria-label="439"></a></span>
+<span id="cb3-440"><a aria-label="440"></a><span class="kw">#</span>quote<span class="op">(</span>block<span class="op">:</span> <span class="bu">true</span><span class="op">)[</span></span>
+<span id="cb3-441"><a aria-label="441"></a>Benchmarking aligns the survey estimates with the annual census of employment.</span>
+<span id="cb3-442"><a aria-label="442"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p>Template contributes 431 lines above it…</p>
+</div>
+<aside class="notes">
+<p>Every line above 432 came from the template and its partials, or from the brand.</p>
+<p>475 lines in total for a two-page release.</p>
+<p>Scroll up through it live. Do not read it out — just show the scale, then land on <code>#show: doc =&gt; article(</code> and <code>brand-color</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="template-format-typst" class="slide level2 scrollable">
 <h2>Template: <code>format: typst</code></h2>
 
+<img data-src="../images/typst-template-partials.svg" alt="A schematic of template.typ as an ordered stack of partial files: numbering.typ (number formats), definitions.typ (helpers), typst-template.typ (defines article()), a dashed header-includes slot, page.typ (#set page()), and typst-show.typ (calls article(doc)). A box labeled passed to article() as doc holds the rest: a dashed include-before slot, the body, notes.typ (footnotes), biblio.typ (bibliography), and a dashed include-after slot." class="r-stretch"><aside class="notes">
+<p>The boilerplate, in order. Their content is the box in the middle.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="typst-syntax" class="title-slide slide level1 center">
+<h1>Typst syntax</h1>
+
+</section>
+<section id="text-is-content" class="slide level2">
+<h2>Text is content</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>Provisional</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-1.svg" class="img-fluid typst-output" alt="The word Provisional, as plain text."></p>
+</div></div>
+<aside class="notes">
+<p>A <code>.typ</code> starts in markup mode. Text is text.</p>
+<p><code>=</code> is a heading, <code>-</code> a list item. Typst has <code>*bold*</code> and <code>_italic_</code> too — Pandoc just does not use them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="switches-into-code" class="slide level2">
+<h2><code>#</code> switches into code</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>rect()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><br>
+</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-2.svg" class="img-fluid typst-output" alt="The text `rect()`."></p>
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-3.svg" class="img-fluid typst-output" alt="An empty rectangle with a thin black outline."></p>
+</div></div>
+<div class="fragment">
+<p>Empty parentheses: a call with no arguments.</p>
+</div>
+<p><a href="https://typst.app/docs/reference/visualize/rect/">Typst: <code>rect</code> →</a></p>
+<aside class="notes">
+<p>One character is the whole difference. Without the <code>#</code> you get the characters <code>rect()</code> back as text.</p>
+<p>The docs page for <code>rect</code> is the next two slides, ahead of time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="arguments-go-in-the-parentheses" class="slide level2">
+<h2>Arguments go in the parentheses</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">(</span>fill<span class="op">:</span> green<span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-4.svg" class="img-fluid typst-output" alt="A solid green rectangle."></p>
+</div></div>
+<aside class="notes">
+<p>Named arguments. A function’s reference page is a list of these.</p>
+<p><code>green</code> is built in.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="use-to-pass-content-arguments" class="slide level2">
+<h2>Use <code>[]</code> to pass content arguments</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">(</span>fill<span class="op">:</span> green<span class="op">)[</span>Provisional<span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-5.svg" class="img-fluid typst-output" alt="A small green rectangle with the word Provisional inside it in black."></p>
+</div></div>
+<div class="fragment">
+<p>This is the same call:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">(</span>fill<span class="op">:</span> green<span class="op">,</span> <span class="op">[</span>Provisional<span class="op">])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><a href="https://typst.app/docs/reference/foundations/function/">Typst: trailing content blocks →</a></p>
+<aside class="notes">
+<p><code>[...]</code> is a content block. The box now has something in it.</p>
+<p>Typst calls the <code>[...]</code> after the parentheses a <strong>trailing content block</strong>, and you will see both spellings in the docs.</p>
+<p>With nothing else in the parentheses they can go too: <code>#rect[Provisional]</code>. A function can even take several trailing blocks — <code>#enum(start: 2)[A][B]</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-2-read-the-typst" class="slide level2 smaller">
+<h2>Your turn 2: read the Typst</h2>
+<div class="your-turn">
+<ol type="1">
+<li><p>Render, then open <code>report.typ</code>. Scroll down to <code>= Summary</code> — everything below it is your content.</p></li>
+<li><p>Find a call — it starts with <code>#</code>.</p></li>
+<li><p>Look it up in the <a href="https://typst.app/docs/reference/">Typst reference</a>. Say in plain words what it does, and whether any <strong>arguments</strong> are being passed to it.</p></li>
+<li><p>Again, with another one.</p></li>
+</ol>
+</div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/02-read-the-typ</code></p>
+</div>
+<countdown-timer id="timer_4c83a0d082b409e3d81aa3bfdbd1c3358d8cb83e" minutes="06" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+<aside class="notes">
+<p>All four are in the first section: <code>#ref</code>, <code>#link</code>, <code>#quote</code>, and a <code>#strong</code> with an <code>#emph</code> nested inside it.</p>
+<p>Arguments vary on purpose — <code>#strong</code> takes none, <code>#quote(block: true)</code> takes a named one, <code>#link</code> and <code>#ref</code> take one unnamed and then content.</p>
+<p>Collect two or three out loud. The reference being readable is the point, not finishing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="you-can-nest-content-and-calls" class="slide level2">
+<h2>You can nest content and calls</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>badge.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">(</span>fill<span class="op">:</span> green<span class="op">)[</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">#</span>text<span class="op">(</span>fill<span class="op">:</span> white<span class="op">)[</span>Provisional<span class="op">]</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-6.svg" class="img-fluid typst-output" alt="A small green rectangle with the word Provisional inside it in white."></p>
+</div></div>
+<aside class="notes">
+<p>They just met this in their own file — <code>#strong[... #emph[provisional] ...]</code>.</p>
+<p>Inside <code>[...]</code> you are back in content mode, so the second <code>#</code> does the same job as the first.</p>
+<p>This is the shape the status badge needs.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="writing-typst-in-a-.qmd" class="slide level2">
+<h2>Writing Typst in a <code>.qmd</code></h2>
+<p>A raw block passes straight through:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="report.qmd" data-code-line-numbers="|1,3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-label="1"></a><span class="in">```{=typst}</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="in">#rect(fill: green)[Provisional]</span></span>
+<span id="cb11-3"><a aria-label="3"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p>Lands in <code>report.typ</code> untouched. Every other format ignores it.</p>
+</div>
+<aside class="notes">
+<p>Same mechanism as <code>{=html}</code>. The <code>=</code> means “this is already in the target language, do not translate it”.</p>
+<p>Render this document to HTML and the block is dropped, silently.</p>
+<p>This is how the status badge gets into the document.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-release-status-badge" class="slide level2 smaller">
+<h2>The release status badge</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-filename="report.qmd" data-code-line-numbers="4|3,5|2,6"><pre class="sourceCode numberSource markdown wrap number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a aria-label="1"></a><span class="in">```{=typst}</span></span>
+<span id="cb12-2"><a aria-label="2"></a><span class="in">#rect(fill: brand-color.primary, radius: 3pt)[</span></span>
+<span id="cb12-3"><a aria-label="3"></a><span class="in">  #text(fill: white)[</span></span>
+<span id="cb12-4"><a aria-label="4"></a><span class="in">    {{&lt; meta brs-release.status &gt;}}</span></span>
+<span id="cb12-5"><a aria-label="5"></a><span class="in">  ]</span></span>
+<span id="cb12-6"><a aria-label="6"></a><span class="in">]</span></span>
+<span id="cb12-7"><a aria-label="7"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="../images/typst-badge-zoom.png" class="screenshot" alt="A dark green rounded rectangle with the word Provisional inside it in white type."></p>
+</div></div>
+<aside class="notes">
+<p>Read it inside out: take the status, make it white text, put it inside a primary-coloured rectangle.</p>
+<p>Everything from the last section, one step each: a call, an argument, a content block, and a call inside it.</p>
+<p><code>brand-color.primary</code> instead of a hex code, and <code>{{&lt; meta &gt;}}</code> instead of <code>$status$</code>.</p>
+<p>This block is in the next exercise folder already.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="set-and-show-rules" class="title-slide slide level1 center">
+<h1>Set and show rules</h1>
+
+</section>
+<section id="every-element-has-a-function" class="slide level2 smaller">
+<h2>Every element has a function</h2>
+<p>All layout and styling happens with functions</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Its function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Text</td>
+<td><a href="https://typst.app/docs/reference/text/text/"><code>text()</code></a></td>
+</tr>
+<tr class="even">
+<td>Heading</td>
+<td><a href="https://typst.app/docs/reference/model/heading/"><code>heading()</code></a></td>
+</tr>
+<tr class="odd">
+<td>Paragraphs</td>
+<td><a href="https://typst.app/docs/reference/model/par/"><code>par()</code></a></td>
+</tr>
+<tr class="even">
+<td>Page</td>
+<td><a href="https://typst.app/docs/reference/layout/page/"><code>page()</code></a></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Nothing is exempt. <code>Provisional</code> on its own is a <code>text</code> element — we just never named the function.</p>
+<p>Typst’s own word for these is <strong>element function</strong>, and its docs say every one of them can be customised with set and show rules. That is the next two slides.</p>
+<p>Their <code>.typ</code> already has <code>set par</code>, <code>set text</code>, <code>set heading</code> and <code>set page</code>, all written by Quarto from the YAML and the brand.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-set-rule-changes-the-default" class="slide level2">
+<h2>A set rule changes the default</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-filename="styles.typ"><pre class="sourceCode typst wrap code-with-copy"><code class="sourceCode typst"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>Provisional</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#set</span> <span class="va">text</span><span class="op">(</span>fill<span class="op">:</span> brand-color<span class="op">.</span>primary<span class="op">)</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>Provisional</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-7.svg" class="img-fluid typst-output" alt="The word Provisional in black, then the word Provisional in brand green below it."></p>
+</div></div>
+<aside class="notes">
+<p>From here on, not everywhere. The first one was already rendered.</p>
+<p><code>#set f(arg: value)</code> — the arguments are the function’s own.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="adding-show-scopes-it-to-an-element" class="slide level2">
+<h2>Adding show scopes it to an element</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-filename="styles.typ"><pre class="sourceCode typst wrap code-with-copy"><code class="sourceCode typst"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#show</span> heading<span class="op">:</span> <span class="kw">set</span> <span class="va">text</span><span class="op">(</span>fill<span class="op">:</span> brand-color<span class="op">.</span>primary<span class="op">)</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">= Summary</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>Ordinary text here</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">== Manufacturing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-8.svg" class="img-fluid typst-output" alt="Two brand green headings, Summary large and Manufacturing smaller beneath it."></p>
+</div></div>
+<div class="fragment">
+<p>A <strong>show-set rule</strong>: the <code>show</code> keyword, a <strong>selector</strong>, a colon, then a set rule.</p>
+</div>
+<p><a href="https://typst.app/docs/reference/styling/">Typst: styling →</a></p>
+<aside class="notes">
+<p>Read it as: wherever a heading appears, apply this.</p>
+<p>Nothing had to be marked up — <code>show</code> finds the elements itself.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-narrows-the-selector" class="slide level2">
+<h2><code>.where()</code> narrows the selector</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-filename="styles.typ"><pre class="sourceCode typst wrap code-with-copy"><code class="sourceCode typst"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#show</span> heading<span class="op">.</span>where<span class="op">(</span>level<span class="op">:</span> <span class="dv">1</span><span class="op">):</span> <span class="kw">set</span> <span class="va">text</span><span class="op">(</span>fill<span class="op">:</span> brand-color<span class="op">.</span>primary<span class="op">)</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">= Summary</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">== Manufacturing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:38%;">
+<p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-9.svg" class="img-fluid typst-output" alt="A brand green Summary heading with a black Manufacturing heading beneath it."></p>
+</div></div>
+<aside class="notes">
+<p>Same rule, narrower selector. <code>heading.where(level: 1)</code> is still the <code>heading</code> function, with a filter on it.</p>
+<p>Careful: Quarto shifts levels down by one, so a markdown <code>##</code> is Typst level 1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-.typ-is-already-full-of-these" class="slide level2 smaller">
+<h2>Your <code>.typ</code> is already full of these</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.typ</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="report.typ"><pre class="sourceCode typst wrap code-with-copy"><code class="sourceCode typst"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#set</span> <span class="va">page</span><span class="op">(</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  paper<span class="op">:</span> <span class="st">"us-letter"</span><span class="op">,</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>  margin<span class="op">:</span> <span class="op">(</span>x: <span class="fl">1.25in</span><span class="op">,</span> y: <span class="fl">1.25in</span><span class="op">),</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>  numbering<span class="op">:</span> <span class="st">"1"</span><span class="op">,</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>  columns<span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#set</span> <span class="va">text</span><span class="op">(</span>fill<span class="op">:</span> brand-color<span class="op">.</span>foreground<span class="op">)</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#show</span> heading<span class="op">:</span> <span class="kw">set</span> <span class="va">text</span><span class="op">(</span>font<span class="op">:</span> <span class="op">(</span><span class="st">"Atkinson Hyperlegible"</span><span class="op">,),</span> weight<span class="op">:</span> <span class="dv">600</span><span class="op">,</span> <span class="op">)</span></span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#show</span> link<span class="op">:</span> <span class="kw">set</span> <span class="va">text</span><span class="op">(</span>fill<span class="op">:</span> rgb<span class="op">(</span><span class="st">"#1b5e4f"</span><span class="op">),</span> <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<aside class="notes">
+<p>The page block is <code>page.typ</code>, filled from defaults you never set.</p>
+<p>The brand lines are the module 03 callback — brand was unreachable from an HTML partial, and here it is, in scope, in the body. Yours can say <code>brand-color.primary</code> instead of a hex code.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-3-set-and-show-rules" class="slide level2 smaller">
+<h2>Your turn 3: set and show rules</h2>
+<p>In <code>report.qmd</code>, add a <strong>new raw block above the badge</strong>, so the rules apply to everything below.</p>
+<div class="your-turn">
+<ol type="1">
+<li><p>Write a <strong>set rule</strong> to loosen the paragraphs — <code>par</code> has a <code>leading</code> argument. <a href="https://typst.app/docs/reference/model/par/"><code>par</code></a></p></li>
+<li><p>Write a <strong>show-set rule</strong> to centre the section headings. <a href="https://typst.app/docs/reference/layout/align/"><code>align</code></a></p></li>
+<li><p><em>Bonus:</em> step 2 caught <code>### Manufacturing</code> too. Narrow the selector to the top-level sections only.</p></li>
+</ol>
+</div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/03-set-and-show</code></p>
+</div>
+<countdown-timer id="timer_4c83a0d082b409e3d81aa3bfdbd1c3358d8cb83e" minutes="12" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+<aside class="notes">
+<p><code>report.qmd</code>, not <code>report.typ</code> — the <code>.typ</code> is generated, and anything typed there is gone on the next render.</p>
+<p>Both rules have a model in that generated file, though.</p>
+<p>Step 1 is <code>#set</code>, step 2 is <code>#show</code>. Say that if nobody moves.</p>
+<p>The bonus needs the heading shift — <code>##</code> is level 1. Staged in the README.</p>
+<p>Fast finishers: the menu of free wins.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-answer" class="slide level2 smaller">
+<h2>One answer</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Result</a></li><li><a href="#tabset-1-2">The block</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img data-src="../images/typst-turn4-styled.png" class="screenshot" alt="The middle of the rendered PDF. The Summary, Industry detail and Notes headings are centred, while the Manufacturing subsection heading stays at the left margin. Paragraph lines sit further apart than before."></p>
+</div>
+<div id="tabset-1-2">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>report.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" data-filename="report.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{=typst}</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="in">#set par(leading: 1em)</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="in">#show heading.where(level: 1): set align(center)</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Two lines. One changes a default everywhere, one changes it inside headings only.</p>
+<p>The <code>### Manufacturing</code> subsection staying left is the selector doing its job.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="further-customization" class="title-slide slide level1 center">
+<h1>Further customization</h1>
+
+</section>
+<section id="when-a-raw-block-is-not-enough" class="slide level2 smaller">
+<h2>When a raw block is not enough</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>You want</th>
+<th>Reach for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>rules used across documents</td>
+<td><code>include-before: styles.typ</code></td>
+</tr>
+<tr class="even">
+<td>a header or footer on every page</td>
+<td>override <code>page.typ</code></td>
+</tr>
+<tr class="odd">
+<td>a different title block</td>
+<td>override <code>typst-show.typ</code>, <code>typst-template.typ</code></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>A raw block styles what is already there. It cannot touch the title block — that is built before your content arrives.</p>
+<p><code>#set page()</code> in the body starts a new page too, so a body raw block cannot even reach page one.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="seed-with-the-defaults-hand-to-an-agent" class="slide level2 smaller">
+<h2>Seed with the defaults, hand to an agent</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>I've added page.typ, typst-show.typ and typst-template.typ, </span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>unedited copies of Quarto's Typst partials, already registered in report.qmd. </span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>Edit the partials to rebuild the title block: </span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>title and subtitle alongside a right aligned the brand logo, </span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>the reference period and region, </span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>then the release status as a badge. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Do not ask for partials from scratch — it will drop the machinery behind cross-references, footnotes and the bibliography.</p>
+<p><code>page.typ</code> is the interesting change: a <strong>deletion</strong>. Editing a partial is as often about removing default behaviour as adding to it.</p>
+<p>The logo comes from <code>_brand.yml</code>, not a document key. <code>$logo$</code> on its own renders the string <code>true</code>; you want <code>$logo.path$</code>.</p>
+<p>Brand <strong>colours</strong> are not template variables — only <code>brand.typography.*</code> is. <code>brand-color</code> is a Typst variable, so pass it from <code>typst-show.typ</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="with-a-little-iteration" class="slide level2">
+<h2>With a little iteration…</h2>
+
+<img data-src="../images/typst-capstone-titleblock.png" class="screenshot r-stretch" alt="A rebuilt PDF title block. Regional Employment Indicators is large and bold at the left with the subtitle beneath it, and the agency logo and wordmark at the right. Below, in small grey letter-spaced capitals, Q3 2026 dot OREGON, then a dark green badge reading PROVISIONAL in white capitals. Author and Published run beneath in two labelled columns, above a dark green rule."><div class="example-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Example</a>: <code>04-typst/05-title-block</code></p>
+</div>
+<aside class="notes">
+<p>The same layout as the HTML title block from module 03, in the format that could not have it.</p>
+<p>Read the folder, don’t work through it. The README lists what the first pass got wrong and what is still not right.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="wrapping-up" class="title-slide slide level1 center">
+<h1>Wrapping up</h1>
+
+</section>
+<section id="when-latex-is-still-right" class="slide level2">
+<h2>When LaTeX is still right</h2>
+<ul>
+<li class="fragment">an existing journal template — different language, no path across</li>
+<li class="fragment">an established math workflow built on LaTeX packages</li>
+<li class="fragment">HTML, when screen-reader users are a primary audience</li>
+</ul>
+<aside class="notes">
+<p>Say this plainly. Typst is not a replacement for all of it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="free-with-typst" class="slide level2">
+<h2>Free with Typst</h2>
+<ul>
+<li class="fragment"><strong><code>gt</code> tables.</strong> Structure and CSS styling both translate. Stay in R.</li>
+<li class="fragment"><strong><code>pdf-standard: ua-1</code>.</strong> One line, and a tagged PDF.</li>
+<li class="fragment"><strong>Page layout.</strong> <code>papersize</code>, <code>margin</code>, <code>page-numbering</code>, <code>columns</code>.</li>
+</ul>
+<aside class="notes">
+<p><code>ua-1</code> needs <code>quarto install verapdf</code> to be validated. Without it the render still succeeds and the check is skipped.</p>
+<p>Passing validation is not the same as meeting the standard.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions?</h1>
+
+</section>
+
+<section>
+<section id="resources" class="title-slide slide level1 center">
+<h1>Resources</h1>
+
+</section>
+<section id="reading-.typ-in-your-editor" class="slide level2 smaller">
+<h2>Reading <code>.typ</code> in your editor</h2>
+<p><strong>Tinymist Typst</strong> — syntax highlighting and completion for <code>.typ</code> files.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>myriad-dreamin.tinymist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="https://open-vsx.org/extension/myriad-dreamin/tinymist">Open VSX</a> · <a href="https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist">VS Code Marketplace</a> · <a href="https://myriad-dreamin.github.io/tinymist/">Docs</a></p>
+<aside class="notes">
+<p>Positron installs extensions from Open VSX, and this one is there.</p>
+<p>It covers <code>.typ</code> files. A <code>{=typst}</code> raw block inside a <code>.qmd</code> is not highlighted — the grammar only injects into fences labelled <code>typ</code> or <code>typst</code>.</p>
+<p><code>nvarner.typst-lsp</code> is the predecessor and contributes no grammar. Uninstall it if you have both.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-the-typst-partials-live" class="slide level2 smaller">
+<h2>Where the Typst partials live</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>numbering.typ</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>definitions.typ</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>typst-template.typ</span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>page.typ</span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a>typst-show.typ</span>
+<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a>notes.typ</span>
+<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a>biblio.typ</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Source for a version: <a href="https://github.com/quarto-dev/quarto-cli/tree/v1.11.4/src/resources/formats/typst/pandoc/quarto"><code>quarto-cli/src/resources/formats/typst/pandoc/quarto</code></a></p>
 
 
-<img data-src="../images/typst-template-partials.svg" alt="A schematic of template.typ as an ordered stack of partial files: numbering.typ (number formats), definitions.typ (helpers), typst-template.typ (defines article()), a dashed header-includes slot, page.typ (#set page()), and typst-show.typ (calls article(doc)). A box labeled passed to article() as doc holds the rest: a dashed include-before slot, the body, notes.typ (footnotes), biblio.typ (bibliography), and a dashed include-after slot." class="r-stretch"></section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
