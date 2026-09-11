@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "slides/04-typst.html#template-format-typst",
+    "href": "slides/04-typst.html#template-format-typst",
+    "title": "Why Typst matters",
+    "section": "Template: format: typst",
+    "text": "Template: format: typst"
+  },
+  {
     "objectID": "setup.html",
     "href": "setup.html",
     "title": "Setup",
@@ -24,17 +31,7 @@
     "href": "setup.html#software-requirements",
     "title": "Setup",
     "section": "Software requirements",
-    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later with an up-to-date tidyverse:\ninstall.packages(\"tidyverse\")\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#check-your-setup",
-    "href": "setup.html#check-your-setup",
-    "title": "Setup",
-    "section": "Check your setup",
-    "text": "Check your setup\nBefore the workshop, open a terminal in Positron and confirm the following run without errors:\nquarto --version   # 1.10 or later\ngit --version\nThen create and render a test document:\nquarto create document test-setup\ncd test-setup\nquarto render test-setup.qmd --to html\nquarto render test-setup.qmd --to typst\nIf both renders succeed, you’re all set. Typst is bundled with Quarto, so no separate installation is needed.",
+    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
     "crumbs": [
       "Setup"
     ]
@@ -50,91 +47,91 @@
     ]
   },
   {
-    "objectID": "modules/03-typst.html",
-    "href": "modules/03-typst.html",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html",
+    "href": "modules/03-partials.html",
+    "title": "Build reusable structures",
     "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/03-typst.html#overview",
-    "href": "modules/03-typst.html#overview",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#overview",
+    "href": "modules/03-partials.html#overview",
+    "title": "Build reusable structures",
     "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/03-typst.html#learning-objectives",
-    "href": "modules/03-typst.html#learning-objectives",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#learning-objectives",
+    "href": "modules/03-partials.html#learning-objectives",
+    "title": "Build reusable structures",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe what Typst is and how it differs from LaTeX-based PDF generation.\nRender Quarto documents to PDF via Typst and customize their appearance.\nApply Typst “quick wins” to solve common PDF layout problems that are painful in LaTeX.\nDecide when Typst is the right choice for a PDF workflow.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nUse Pandoc’s template syntax ($title$, $if$) to render document metadata, including custom fields, in a partial.",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/03-typst.html#links",
-    "href": "modules/03-typst.html#links",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#links",
+    "href": "modules/03-partials.html#links",
+    "title": "Build reusable structures",
     "section": "Links",
-    "text": "Links\n\nQuarto Typst format\nTypst documentation\nTypst templates in Quarto",
+    "text": "Links\n\nQuarto templates\nTemplate partials\nPandoc’s template syntax\nIncludes",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/01-brand.html",
-    "href": "modules/01-brand.html",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-workflows.html",
+    "href": "modules/01-workflows.html",
+    "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/01-brand.html#overview",
-    "href": "modules/01-brand.html#overview",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-workflows.html#overview",
+    "href": "modules/01-workflows.html#overview",
+    "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/01-brand.html#learning-objectives",
-    "href": "modules/01-brand.html#learning-objectives",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-workflows.html#learning-objectives",
+    "href": "modules/01-workflows.html#learning-objectives",
+    "title": "Productive workflows in Positron",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/01-brand.html#links",
-    "href": "modules/01-brand.html#links",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-workflows.html#links",
+    "href": "modules/01-workflows.html#links",
+    "title": "Productive workflows in Positron",
     "section": "Links",
-    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
+    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
@@ -162,7 +159,7 @@
     "href": "index.html#schedule",
     "title": "Level up your Quarto: Patterns, templates, and tooling",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:30\nDesign once, use anywhere\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:30\nBuild reusable structures\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nWhy Typst matters\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 17:00\nProductive workflows in Positron",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nq2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
     "crumbs": [
       "Home"
     ]
@@ -198,91 +195,315 @@
     ]
   },
   {
-    "objectID": "modules/02-partials.html",
-    "href": "modules/02-partials.html",
-    "title": "Build reusable structures",
+    "objectID": "modules/02-brand.html",
+    "href": "modules/02-brand.html",
+    "title": "Design once, use anywhere",
     "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/02-partials.html#overview",
-    "href": "modules/02-partials.html#overview",
-    "title": "Build reusable structures",
+    "objectID": "modules/02-brand.html#overview",
+    "href": "modules/02-brand.html#overview",
+    "title": "Design once, use anywhere",
     "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/02-partials.html#learning-objectives",
-    "href": "modules/02-partials.html#learning-objectives",
-    "title": "Build reusable structures",
+    "objectID": "modules/02-brand.html#learning-objectives",
+    "href": "modules/02-brand.html#learning-objectives",
+    "title": "Design once, use anywhere",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nCustomize a template partial to change the appearance or content of specific sections without affecting the entire template.\nFactor out repeated content and layouts into reusable partials for easier maintenance.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/02-partials.html#links",
-    "href": "modules/02-partials.html#links",
-    "title": "Build reusable structures",
+    "objectID": "modules/02-brand.html#links",
+    "href": "modules/02-brand.html#links",
+    "title": "Design once, use anywhere",
     "section": "Links",
-    "text": "Links\n\nTemplate partials\nQuarto templates\nIncludes and shortcodes",
+    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/04-workflows.html",
-    "href": "modules/04-workflows.html",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/04-typst.html",
+    "href": "modules/04-typst.html",
+    "title": "Why Typst matters",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/04-workflows.html#overview",
-    "href": "modules/04-workflows.html#overview",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/04-typst.html#overview",
+    "href": "modules/04-typst.html#overview",
+    "title": "Why Typst matters",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/04-workflows.html#learning-objectives",
-    "href": "modules/04-workflows.html#learning-objectives",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/04-typst.html#learning-objectives",
+    "href": "modules/04-typst.html#learning-objectives",
+    "title": "Why Typst matters",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/04-workflows.html#links",
-    "href": "modules/04-workflows.html#links",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/04-typst.html#links",
+    "href": "modules/04-typst.html#links",
+    "title": "Why Typst matters",
     "section": "Links",
-    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
+    "text": "Links\n\nQuarto Typst format\nTypst documentation\nTypst syntax reference\nTypst styling: set and show rules\nTypst templates in Quarto",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Why Typst matters"
     ]
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-template",
+    "href": "slides/03-partials.html#what-is-a-template",
+    "title": "Partials",
+    "section": "What is a template?",
+    "text": "What is a template?\nYou write a document.\n\n\nTitle in the YAML, one line of markdown.\nTeal is yours."
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-template-1",
+    "href": "slides/03-partials.html#what-is-a-template-1",
+    "title": "Partials",
+    "section": "What is a template?",
+    "text": "What is a template?\nRender it, and you get an HTML document.\n\n\nOnly the teal came from the document. Where does the other stuff come from?"
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-template-2",
+    "href": "slides/03-partials.html#what-is-a-template-2",
+    "title": "Partials",
+    "section": "What is a template?",
+    "text": "What is a template?\nA template: boilerplate, with named holes.\n\n\nThe template provides the boilerplate: with named holes for your content. E.g. $title$ takes a value from the YAML by name. — the mechanism the next hour rests on.\nNotice $body$ is your content translated. Pandoc did that."
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-partial",
+    "href": "slides/03-partials.html#what-is-a-partial",
+    "title": "Partials",
+    "section": "What is a partial?",
+    "text": "What is a partial?\nPart of the template renders the title block.\n\n\nSame file as the previous slide, grown a little.\nThere’s a chunk that has one job, make the title block."
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-partial-1",
+    "href": "slides/03-partials.html#what-is-a-partial-1",
+    "title": "Partials",
+    "section": "What is a partial?",
+    "text": "What is a partial?\nPull it out into its own file, now its a partial.\n\n\nThat gets pulled out into it’s own file and referenced in the template. It’s called a partial, and inside looks just like a template, HTML boilerplate with holes for content."
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-partial-2",
+    "href": "slides/03-partials.html#what-is-a-partial-2",
+    "title": "Partials",
+    "section": "What is a partial?",
+    "text": "What is a partial?\nQuarto does this for many parts of the page.\n\n\nSame thing happens with other parts of the document: metadata, styles, etc."
+  },
+  {
+    "objectID": "slides/03-partials.html#what-is-a-partial-3",
+    "href": "slides/03-partials.html#what-is-a-partial-3",
+    "title": "Partials",
+    "section": "What is a partial?",
+    "text": "What is a partial?\nReplace a partial without touching the rest of the template\n\n\nPartition allows you to override a partial without touching the rest of the template. That’s what we’ll do today."
+  },
+  {
+    "objectID": "slides/03-partials.html#every-release-must-carry",
+    "href": "slides/03-partials.html#every-release-must-carry",
+    "title": "Partials",
+    "section": "Every release must carry:",
+    "text": "Every release must carry:\n\nthe agency masthead\nthe reference period and the region\nthe release status — Provisional, Revised, or Final\n\n\n\n\n\nthis is a publishing requirement, not a design preference.\nThe same shape applies to any organization’s report template: fields that must appear on every document."
+  },
+  {
+    "objectID": "slides/03-partials.html#setup-replace-the-partial",
+    "href": "slides/03-partials.html#setup-replace-the-partial",
+    "title": "Partials",
+    "section": "Setup: replace the partial",
+    "text": "Setup: replace the partial\n\n(Optional) Follow along: 03-partials/00-setup\n\n\nPull the brand:\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand\nCopy templates/title-block.html into the folder.\nRegister it:\n\n\nreport.qmd\n\nformat:\n  html:\n    template-partials:\n      - title-block.html\n\n\n\nRender before adding partial. Add partial. Render. Nothing changes.\nAdd something obvious to check its wired up.\nPoint out $title$. Dollar signs indicate Pandoc template syntax. Can access metadata values.\nNotice brand has logo, but standalone HTML docs don’t get logo."
+  },
+  {
+    "objectID": "slides/03-partials.html#our-starting-point",
+    "href": "slides/03-partials.html#our-starting-point",
+    "title": "Partials",
+    "section": "Our starting point",
+    "text": "Our starting point\n\n\nThe partial is theirs now and the page is unchanged by it."
+  },
+  {
+    "objectID": "slides/03-partials.html#your-turn-1-add-the-masthead",
+    "href": "slides/03-partials.html#your-turn-1-add-the-masthead",
+    "title": "Partials",
+    "section": "Your turn 1: add the masthead",
+    "text": "Your turn 1: add the masthead\n\n\nAdd a masthead key to the YAML of report.qmd:\nmasthead: _brand/brs-logo.svg\nAdd this line to title-block.html, right after &lt;header ...&gt;:\n&lt;img src=\"$masthead$\" alt=\"Bureau of Regional Statistics\" class=\"report-masthead\"&gt;\nRender.\n\n\n\nExercise: 03-partials/01-masthead\n\n\n \n\nTouch on review:\n\n$variable$ substitutes a value\nAny YAML key becomes a template variable. masthead is your key. Quarto has no masthead option and never reads it."
+  },
+  {
+    "objectID": "slides/03-partials.html#section",
+    "href": "slides/03-partials.html#section",
+    "title": "Partials",
+    "section": "",
+    "text": "Resist fixing styling …"
+  },
+  {
+    "objectID": "slides/03-partials.html#pandoc-template-syntax",
+    "href": "slides/03-partials.html#pandoc-template-syntax",
+    "title": "Partials",
+    "section": "Pandoc template syntax",
+    "text": "Pandoc template syntax\nWrite in the format you are targeting: HTML here\nAnything inside $...$ or ${...} is Pandoc’s template syntax.\n\n\n\nWrite\nGet\n\n\n\n\n$title$\nthe value of the title metadata key\n\n\n$brs-release.period$\nreach into nested metadata with a dot\n\n\n$title-block.html()$\ninclude a partial — the () mean a file\n\n\n\nPandoc’s template syntax →\n\nThe distinction that matters today: $name$ substitutes a value, $name.html()$ includes a file. Only the second is replaceable through template-partials.\n$title$s works, but ${title}s is clearer — both give Hellos. The two forms are interchangeable everywhere, including partial calls and ${if(x)}…${endif}.\n$$ matters the moment a partial contains a literal dollar — a price, or $(...) in a script.\nConditionals and loops are on the same page of the manual. We meet them in turns 3 and 4."
+  },
+  {
+    "objectID": "slides/03-partials.html#your-turn-2-add-period-and-region",
+    "href": "slides/03-partials.html#your-turn-2-add-period-and-region",
+    "title": "Partials",
+    "section": "Your turn 2: add period and region",
+    "text": "Your turn 2: add period and region\nAlready in your YAML, and shown by nothing:\n\n\nreport.qmd\n\nbrs-release:\n  period: \"Q3 2026\"\n  region: Oregon\n\n\n\nCopy, then complete, this line in title-block.html, below the subtitle’s $endif$:\n&lt;p class=\"report-period\"&gt;______ &middot; ______&lt;/p&gt;\nRender.\n\n\n\nExercise: 03-partials/02-period-and-region\n\n\n \n\nAfter: delete region: and render. A separator with nothing after it — the bridge to turn 3."
+  },
+  {
+    "objectID": "slides/03-partials.html#section-1",
+    "href": "slides/03-partials.html#section-1",
+    "title": "Partials",
+    "section": "",
+    "text": "Q3 2026 · Oregon, rendered exactly as written — unlike the date above it, which Quarto reformatted before the template ever saw it."
+  },
+  {
+    "objectID": "slides/03-partials.html#your-own-metadata-your-own-namespace",
+    "href": "slides/03-partials.html#your-own-metadata-your-own-namespace",
+    "title": "Partials",
+    "section": "Your own metadata, your own namespace",
+    "text": "Your own metadata, your own namespace\n\n\nreport.qmd\n\nmasthead: _brand/brs-logo.svg   # turn 1: a name at the top level\nbrs-release:                    # turn 2: a name with names inside\n  period: \"Q3 2026\"\n  region: Oregon\n\n\nEvery top-level name you invent is a bet that Quarto will never claim it.\n\n\nNest, and you place that bet once instead of once per field.\n\n\nThe obvious name is logo. It’s taken — a real Quarto option in beamer, revealjs, typst and dashboards, free in format: html only.\nRender this same file to typst with logo: set and Quarto puts the image in the page background itself. Module 04 picks this up.\nmasthead is safe. Nesting means you don’t have to know which names are."
+  },
+  {
+    "objectID": "slides/03-partials.html#condition-markup-on-presence",
+    "href": "slides/03-partials.html#condition-markup-on-presence",
+    "title": "Partials",
+    "section": "Condition markup on presence",
+    "text": "Condition markup on presence\n\n\ntitle-block.html\n\n$if(subtitle)$\n&lt;p class=\"subtitle lead\"&gt;$subtitle$&lt;/p&gt;\n$endif$\n\n\nRead as if subtitle has a value, then….\n\n\nPrevents empty &lt;p&gt;&lt;/p&gt; in the document.\n\n\nThey’ve been rendering this since setup without reading it.\nPandoc has no comparison operator. $if(x)$ asks “does this have a value?” and nothing else — which is why a default has to live in the template."
+  },
+  {
+    "objectID": "slides/03-partials.html#your-turn-3-add-status",
+    "href": "slides/03-partials.html#your-turn-3-add-status",
+    "title": "Partials",
+    "section": "Your turn 3: add status",
+    "text": "Your turn 3: add status\n\n\nAdd status: Provisional under brs-release: in report.qmd.\nIn title-block.html, below the reference period, show the status in a &lt;span class=\"report-status\"&gt; — but only when brs-release.status is set.\nRender. Then delete the status: line and render again — the badge should disappear, leaving nothing behind.\n\n\n\nExercise: 03-partials/03-release-status\n\n\n \n\nNo snippet, so the work is reading their own file and adapting it.\nThe assistant is a sanctioned escape hatch here. Prompt is in the README.\nAfter: status nests under brs-release: — the turn 2 rule, applied unprompted. The badge is unstyled and looks like nothing, which is the cue for turn 4."
+  },
+  {
+    "objectID": "slides/03-partials.html#section-2",
+    "href": "slides/03-partials.html#section-2",
+    "title": "Partials",
+    "section": "",
+    "text": "Provisional as plain text. It carries the right information and reads like nothing, which is exactly the setup for turn 4: three classes in the markup, still no CSS."
+  },
+  {
+    "objectID": "slides/03-partials.html#more-pandoc-template-syntax",
+    "href": "slides/03-partials.html#more-pandoc-template-syntax",
+    "title": "Partials",
+    "section": "More Pandoc template syntax",
+    "text": "More Pandoc template syntax\n\n\n\n\n\n\n\nWrite\nGet\n\n\n\n\n$if(x)$ … $else$ … $endif$\nconditionals, as in turn 3\n\n\n$for(x)$ … $endfor$\nloop over an array\n\n\n$sep$\ninside a loop: emitted between items, never after the last\n\n\n${x/uppercase}\na pipe — also lowercase, length, reverse, nowrap, …\n\n\n$--\na comment, to the end of the line\n\n\n\nPandoc’s template syntax →\n\nA signpost, not a lesson. You have met $if$; the rest is “this exists, the manual has it”.\n$sep$ is worth ten seconds: it is the answer to the dangling &middot; from turn 2’s optional extra — a separator that knows it is between things."
+  },
+  {
+    "objectID": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
+    "href": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
+    "title": "Partials",
+    "section": "For HTML: styling lives outside the partials",
+    "text": "For HTML: styling lives outside the partials\n\n\ntitle-block.html\n\n&lt;span class=\"report-status\"&gt;$brs-release.status$&lt;/span&gt;\n\n\nNo color. No size. No position. Just a name.\n\n\n\n\ncustom.scss\n\n.report-status { background-color: $primary; }\n\n\n\nYou have been leaving these hooks since turn 1 — report-masthead, report-period, report-status. Three classes, no CSS.\n\n\nA partial decides what appears and in what order. A stylesheet decides what it looks like. Cross that line and nobody can restyle your template.\nThis is why the snippets shipped with class names already in them."
+  },
+  {
+    "objectID": "slides/03-partials.html#your-turn-4-style-what-you-built",
+    "href": "slides/03-partials.html#your-turn-4-style-what-you-built",
+    "title": "Partials",
+    "section": "Your turn 4: style what you built",
+    "text": "Your turn 4: style what you built\n\nDon’t edit title-block.html.\n\nAsk Posit Assistant to style your title block. Start with the prompt below then describe what you want.\nRender. Not what you asked for? Say what is wrong and go again.\nSkim custom.scss. Change one of the brand variables used and render again.\n\n\nExample prompt:\nI'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.\n\nExercise: 03-partials/04-style"
+  },
+  {
+    "objectID": "slides/03-partials.html#one-answer",
+    "href": "slides/03-partials.html#one-answer",
+    "title": "Partials",
+    "section": "One answer",
+    "text": "One answer\n\nResultThe promptcustom.scss\n\n\n\n\n\nI'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.\n\nI want the masthead on the right, and the status styled like a badge.\n\n\n/*-- scss:rules --*/\n\n// Accent rule under the whole masthead block.\n#title-block-header {\n  border-bottom: 3px solid $primary;\n  padding-bottom: 1rem;\n  margin-bottom: 1.5rem;\n  // Clear the floated masthead so the description/metadata sit below.\n  overflow: hidden;\n}\n\n// Logo floats to the right of the title text.\n.report-masthead {\n  float: right;\n  width: auto;\n  max-height: 4rem;\n  margin-left: 1.5rem;\n}\n\n.subtitle {\n  color: $secondary;\n}\n\n// Release period reads as secondary metadata.\n.report-period {\n  color: $text-muted;\n  font-size: 0.9rem;\n  margin-bottom: 0.75rem;\n}\n\n// Status pill. color-contrast() picks a readable foreground from the\n// brand background instead of hard-coding black or white.\n.report-status {\n  display: inline-block;\n  padding: 0.25em 0.75em;\n  border-radius: 999px;\n  background-color: $brand-forest;\n  color: color-contrast($brand-forest);\n  font-size: 0.75rem;\n  font-weight: 600;\n  letter-spacing: 0.05em;\n  text-transform: uppercase;\n}\n\n\n\n\nIt styled #title-block-header and .subtitle which I didn’t ask for."
+  },
+  {
+    "objectID": "slides/03-partials.html#replace-partials-to",
+    "href": "slides/03-partials.html#replace-partials-to",
+    "title": "Partials",
+    "section": "Replace partials to…",
+    "text": "Replace partials to…\n\nExpose custom metadata fields in title-block for format: html\nZhuzh up your title-slide 💅 in format: revealjs\nCreate a custom layout for format: typst"
+  },
+  {
+    "objectID": "slides/03-partials.html#partials-for-various-formats",
+    "href": "slides/03-partials.html#partials-for-various-formats",
+    "title": "Partials",
+    "section": "Partials for various formats",
+    "text": "Partials for various formats\nThey exist! https://quarto.org/docs/journals/templates.html\n\nLaTeXTypstHTMLRevealjsBeamer\n\n\ndocument-metadata.latex\npassoptions.latex\ndoc-class.tex\nfonts.latex\nfont-settings.latex\ncommon.latex\npandoc.tex\n  tables.tex\n  graphics.tex\n  citations.tex\n  babel-lang.tex\n  tightlist.tex\n  biblio-config.tex\nafter-header-includes.latex\nhypersetup.latex\nbefore-title.tex\ntitle.tex\nbefore-body.tex\ntoc.tex\nbefore-bib.tex\nbiblio.tex\nafter-body.tex\n\n\nnumbering.typ \ndefinitions.typ\ntypst-template.typ\npage.typ\ntypst-show.typ\nnotes.typ\nbiblio.typ\n\n\nmetadata.html\ntitle-block.html\n  title-metadata.html \n    _title-meta-author.html\ntoc.html\n\n\ntoc-slide.html\ntitle-slide.html\n\n\npassoptions.latex\ndoc-class.tex\nfonts.latex\nfont-settings.latex\ncommon.latex\npandoc.tex\n  tables.tex\n  graphics.tex\n  citations.tex\n  babel-lang.tex\n  tightlist.tex\n  biblio-config.tex\nafter-header-includes.latex\nhypersetup.latex\nbefore-title.tex\ntitle.tex\nbefore-body.tex\ntoc.tex\nbefore-bib.tex\nbiblio.tex\nafter-body.tex"
+  },
+  {
+    "objectID": "slides/03-partials.html#full-or-partial",
+    "href": "slides/03-partials.html#full-or-partial",
+    "title": "Partials",
+    "section": "Full or partial?",
+    "text": "Full or partial?\n\nReplacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.\nSafer approaches:\n\nSelectively replace partials that exist within the master LaTeX or HTML template\nReplace the entire LaTeX or HTML template, but then include partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features"
+  },
+  {
+    "objectID": "slides/03-partials.html#sharing-a-custom-format-extension",
+    "href": "slides/03-partials.html#sharing-a-custom-format-extension",
+    "title": "Partials",
+    "section": "Sharing: a custom format extension",
+    "text": "Sharing: a custom format extension\nEverything you built, in one folder someone else can install:\n\n\n\n\n_extensions/brs/\n\n_extension.yml\ntitle-block.html\nbrs.scss\nbrs-logo.svg\n\n\n\n\n_extension.yml\n\ntitle: BRS Report\nauthor: Bureau of Regional Statistics\nversion: 1.0.0\ncontributes:\n  formats:\n    html:\n      masthead: brs-logo.svg\n      template-partials:\n        - title-block.html\n      theme: [default, brs.scss]\n\n\n\nExample: brs-format\n\nCreating formats →"
+  },
+  {
+    "objectID": "slides/03-partials.html#the-full-template.html",
+    "href": "slides/03-partials.html#the-full-template.html",
+    "title": "Partials",
+    "section": "The full template.html",
+    "text": "The full template.html"
+  },
+  {
+    "objectID": "slides/03-partials.html#there-is-more-than-one-title-block.html",
+    "href": "slides/03-partials.html#there-is-more-than-one-title-block.html",
+    "title": "Partials",
+    "section": "There is more than one title-block.html",
+    "text": "There is more than one title-block.html\nQuarto picks one for you based on your YAML, and the docs link to the wrong one for the default:\n\n\n\nYour YAML\nPartial that renders\n\n\n\n\n(nothing — Bootstrap default)\ntemplates/title-block.html ← you used this one\n\n\ntitle-block-banner: true\ntemplates/banner/title-block.html\n\n\ntitle-block-style: manuscript\ntemplates/manuscript/title-block.html\n\n\ntitle-block-style: none\npandoc/title-block.html — Pandoc’s plain block"
+  },
+  {
+    "objectID": "slides/03-partials.html#template-format-revealjs",
+    "href": "slides/03-partials.html#template-format-revealjs",
+    "title": "Partials",
+    "section": "Template: format: revealjs",
+    "text": "Template: format: revealjs"
+  },
+  {
+    "objectID": "slides/03-partials.html#template-format-pdf",
+    "href": "slides/03-partials.html#template-format-pdf",
+    "title": "Partials",
+    "section": "Template: format: pdf",
+    "text": "Template: format: pdf"
+  },
+  {
+    "objectID": "slides/03-partials.html#localized-strings-in-templates",
+    "href": "slides/03-partials.html#localized-strings-in-templates",
+    "title": "Partials",
+    "section": "Localized strings in templates",
+    "text": "Localized strings in templates\nHard-coding “Table of contents” in a partial breaks the moment someone sets lang:.\nSince Quarto 1.10, the strings Quarto already translates are template variables:\n&lt;h2&gt;${quarto.language.toc-title-document}&lt;/h2&gt;\n\n\n\n\nlang: en\nlang: fr\n\n\n\n\nTable of contents\nTable des matières\n\n\nAbstract\nRésumé\n\n\n\n\nLocalized strings in templates →\n\nThe quarto.language namespace exposes every string Quarto localizes, resolved for the document’s lang."
   }
 ]

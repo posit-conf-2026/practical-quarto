@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1af43516d04907611400c60c2389c2fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1af43516d04907611400c60c2389c2fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-1af43516d04907611400c60c2389c2fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b46bd610f87a2abb3383939bef6402a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b46bd610f87a2abb3383939bef6402a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b46bd610f87a2abb3383939bef6402a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -106,8 +109,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/quarto.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./images/quarto.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="./images/quarto.png" alt="Quarto logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/quarto.png" alt="Quarto logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Level up your Quarto</a> 
@@ -144,26 +147,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/01-brand.html" class="sidebar-item-text sidebar-link">
+  <a href="./modules/01-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Productive workflows in Positron</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modules/02-brand.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Design once, use anywhere</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/02-partials.html" class="sidebar-item-text sidebar-link">
+  <a href="./modules/03-partials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Build reusable structures</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modules/03-typst.html" class="sidebar-item-text sidebar-link">
+  <a href="./modules/04-typst.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Why Typst matters</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./modules/04-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Productive workflows in Positron</span></a>
   </div>
 </li>
       </ul>
@@ -215,16 +218,24 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">09:00 - 10:30</td>
-<td style="text-align: left;"><a href="./modules/01-brand.html">Design once, use anywhere</a></td>
+<td style="text-align: left;">09:00 - 09:15</td>
+<td style="text-align: left;">Introductions + Set-up</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">09:15 - 10:30</td>
+<td style="text-align: left;"><a href="./modules/01-workflows.html">Productive workflows in Positron</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">10:30 - 11:00</td>
 <td style="text-align: left;"><em>Coffee break</em></td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">11:00 - 12:10</td>
+<td style="text-align: left;"><a href="./modules/02-brand.html">Design once, use anywhere</a></td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">11:00 - 12:30</td>
-<td style="text-align: left;"><a href="./modules/02-partials.html">Build reusable structures</a></td>
+<td style="text-align: left;">12:10 - 12:30</td>
+<td style="text-align: left;">q2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">12:30 - 13:30</td>
@@ -232,15 +243,19 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">13:30 - 15:00</td>
-<td style="text-align: left;"><a href="./modules/03-typst.html">Why Typst matters</a></td>
+<td style="text-align: left;"><a href="./modules/03-partials.html">Build reusable structures</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">15:00 - 15:30</td>
 <td style="text-align: left;"><em>Coffee break</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">15:30 - 17:00</td>
-<td style="text-align: left;"><a href="./modules/04-workflows.html">Productive workflows in Positron</a></td>
+<td style="text-align: left;">15:30 - 16:30</td>
+<td style="text-align: left;"><a href="./modules/04-typst.html">Why Typst matters</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16:30 - 17:00</td>
+<td style="text-align: left;">Wrap-up + Q&amp;A</td>
 </tr>
 </tbody>
 </table>
@@ -690,7 +705,7 @@ ul.task-list li input[type="checkbox"] {
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/posit-conf-2026/practical-quarto">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="Github">
 </i> 
     </a>
   </li>  

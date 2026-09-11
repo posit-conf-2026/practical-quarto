@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 740 1920"
+     role="img"
+     aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">How PDF template partials assemble a Quarto document</title>
+  <desc id="svg-desc">A schematic of the file template.tex for format pdf, drawn as an ordered, top-to-bottom stack of partial files. The preamble partials come first: document-metadata.latex; passoptions.latex (package options); doc-class.tex (the documentclass command); fonts.latex (font loading); font-settings.latex (font options); then common.latex, drawn as a container nesting pandoc.tex, which holds six leaf partials — babel-lang.tex, biblio-config.tex, citations.tex, graphics.tex, tables.tex, and tightlist.tex — followed by the dashed header-includes injection slot; then after-header-includes.latex; hypersetup.latex (hyperref setup); before-title.tex (empty hook); and title.tex (the title, author, and date commands). A box delimited by the literal begin-document and end-document lines holds the rest: before-body.tex (maketitle and abstract); a dashed include-before injection slot; toc.tex (the table of contents); the document body; before-bib.tex (empty hook); biblio.tex (bibliography); a dashed include-after injection slot; and after-body.tex (empty hook).</desc>
+
+  <rect x="0" y="0" width="740" height="1920" fill="#ececec"/>
+
+  <!-- ===== title ===== -->
+  <text x="70" y="108"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+        font-size="40" font-weight="bold" fill="#222">template.tex</text>
+  <text x="400" y="108"
+        font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif"
+        font-size="26" fill="#777">format: pdf</text>
+
+  <!-- ===== template.tex container ===== -->
+  <rect x="70" y="160" width="600" height="1700" rx="10" fill="#ffffff" stroke="#333" stroke-width="4"/>
+
+  <!-- ===== document section ===== -->
+  <rect x="104" y="1202" width="546" height="632" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1.5"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+     font-size="26" fill="#555">
+    <text x="116" y="1236">\begin{document}</text>
+    <text x="116" y="1816">\end{document}</text>
+  </g>
+
+  <!-- partial cards + injection slots -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+
+    <!-- document-metadata.latex -->
+    <rect x="104" y="200" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="240" font-size="26" fill="#222">document-metadata.latex</text>
+
+    <!-- passoptions.latex -->
+    <rect x="104" y="274" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="314" font-size="26" fill="#222">passoptions.latex</text>
+    <text x="630" y="314" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">package options</text>
+
+    <!-- doc-class.tex -->
+    <rect x="104" y="348" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="388" font-size="26" fill="#222">doc-class.tex</text>
+    <text x="630" y="388" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">\documentclass</text>
+
+    <!-- fonts.latex -->
+    <rect x="104" y="422" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="462" font-size="26" fill="#222">fonts.latex</text>
+    <text x="630" y="462" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">font loading</text>
+
+    <!-- font-settings.latex -->
+    <rect x="104" y="496" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="536" font-size="26" fill="#222">font-settings.latex</text>
+    <text x="630" y="536" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">font options</text>
+
+    <!-- common.latex (nested container) -->
+    <rect x="104" y="570" width="546" height="298" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="606" font-size="26" fill="#222">common.latex</text>
+
+    <rect x="124" y="622" width="506" height="232" rx="6" fill="#ffffff" stroke="#999" stroke-width="2"/>
+    <text x="142" y="654" font-size="24" fill="#222">pandoc.tex</text>
+
+    <rect x="138" y="668" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="150" y="694" font-size="19" fill="#222">babel-lang.tex</text>
+    <rect x="381" y="668" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="393" y="694" font-size="19" fill="#222">biblio-config.tex</text>
+    <rect x="138" y="716" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="150" y="742" font-size="19" fill="#222">citations.tex</text>
+    <rect x="381" y="716" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="393" y="742" font-size="19" fill="#222">graphics.tex</text>
+    <rect x="138" y="764" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="150" y="790" font-size="19" fill="#222">tables.tex</text>
+    <rect x="381" y="764" width="235" height="38" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="393" y="790" font-size="19" fill="#222">tightlist.tex</text>
+
+    <rect x="138" y="812" width="478" height="30" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="154" y="833" font-size="20" font-style="italic" fill="#6a4c93">header-includes</text>
+
+    <!-- after-header-includes.latex -->
+    <rect x="104" y="882" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="922" font-size="26" fill="#222">after-header-includes.latex</text>
+
+    <!-- hypersetup.latex -->
+    <rect x="104" y="956" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="996" font-size="26" fill="#222">hypersetup.latex</text>
+    <text x="630" y="996" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">hyperref setup</text>
+
+    <!-- before-title.tex (empty hook) -->
+    <rect x="104" y="1030" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="1070" font-size="26" fill="#222">before-title.tex</text>
+    <text x="630" y="1070" font-size="22" font-style="italic" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">empty hook</text>
+
+    <!-- title.tex -->
+    <rect x="104" y="1104" width="546" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="126" y="1144" font-size="26" fill="#222">title.tex</text>
+    <text x="630" y="1144" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">\title, \author, \date</text>
+
+    <!-- before-body.tex -->
+    <rect x="124" y="1256" width="506" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1296" font-size="26" fill="#222">before-body.tex</text>
+    <text x="610" y="1296" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">\maketitle, abstract</text>
+
+    <!-- include-before (injection slot) -->
+    <rect x="124" y="1330" width="506" height="34" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="146" y="1354" font-size="22" font-style="italic" fill="#6a4c93">include-before</text>
+
+    <!-- toc.tex -->
+    <rect x="124" y="1378" width="506" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1418" font-size="26" fill="#222">toc.tex</text>
+    <text x="610" y="1418" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">\tableofcontents</text>
+
+    <!-- $body$ (highlight) -->
+    <rect x="124" y="1452" width="506" height="60" rx="6" fill="#d8ecea" stroke="#1b7f79" stroke-width="3"/>
+    <text x="146" y="1492" font-size="26" font-weight="bold" fill="#14625d">$body$</text>
+    <text x="610" y="1492" font-size="22" fill="#2a6f6a" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">your .qmd, translated</text>
+
+    <!-- before-bib.tex (empty hook) -->
+    <rect x="124" y="1526" width="506" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1566" font-size="26" fill="#222">before-bib.tex</text>
+    <text x="610" y="1566" font-size="22" font-style="italic" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">empty hook</text>
+
+    <!-- biblio.tex -->
+    <rect x="124" y="1600" width="506" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1640" font-size="26" fill="#222">biblio.tex</text>
+    <text x="610" y="1640" font-size="22" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">bibliography</text>
+
+    <!-- include-after (injection slot) -->
+    <rect x="124" y="1674" width="506" height="34" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="146" y="1698" font-size="22" font-style="italic" fill="#6a4c93">include-after</text>
+
+    <!-- after-body.tex (empty hook) -->
+    <rect x="124" y="1722" width="506" height="60" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1762" font-size="26" fill="#222">after-body.tex</text>
+    <text x="610" y="1762" font-size="22" font-style="italic" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">empty hook</text>
+
+  </g>
+
+</svg>

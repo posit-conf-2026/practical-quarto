@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1300 626"
+     role="img"
+     aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">A Quarto document</title>
+  <desc id="svg-desc">One box, labelled hello.qmd, your content, holding a short Quarto document: a YAML header setting title to Hello, then the line Hello asterisk asterisk world asterisk asterisk exclamation mark. The value Hello and the body line are teal.</desc>
+
+  <text x="40" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="26" font-weight="bold" fill="#222">hello.qmd</text>
+  <text x="430" y="34" text-anchor="end" font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#777">your content</text>
+  <rect x="40" y="48" width="390" height="200" rx="10" fill="#ffffff" stroke="#333" stroke-width="4"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="24" fill="#555">
+    <text x="66" y="88">---</text>
+    <text x="66" y="122">title: <tspan fill="#14625d" font-weight="bold">Hello</tspan></text>
+    <text x="66" y="156">---</text>
+    <text x="66" y="190"></text>
+    <text x="66" y="224"><tspan fill="#14625d" font-weight="bold">Hello **world**!</tspan></text>
+  </g>
+
+</svg>

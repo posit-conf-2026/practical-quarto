@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 740 1440"
+     role="img"
+     aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">How HTML template partials assemble a Quarto document</title>
+  <desc id="svg-desc">A schematic of the file template.html for format html, drawn as an ordered, top-to-bottom stack inside literal html, head, and body tags. Boxes mark the head and body sections. Inside the head: metadata.html, which emits meta tags; styles.html, which holds CSS; and a dashed header-includes injection slot. Inside the body: a dashed include-before slot; title-block.html, which renders only if title, subtitle, author, date, or similar metadata is set, drawn as a container nesting title-metadata.html, which in turn nests _title-meta-author.html; toc.html, the table of contents, only if toc is set; the document body; and a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate, such as links, scripts, and markup.</desc>
+
+  <rect x="0" y="0" width="740" height="1440" fill="#ececec"/>
+
+  <!-- ===== title ===== -->
+  <text x="70" y="108"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+        font-size="40" font-weight="bold" fill="#222">template.html</text>
+  <text x="430" y="108"
+        font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif"
+        font-size="26" fill="#777">format: html</text>
+
+  <!-- ===== template.html container ===== -->
+  <rect x="70" y="160" width="600" height="1190" rx="10" fill="#ffffff" stroke="#333" stroke-width="4"/>
+
+  <!-- literal html tags -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+     font-size="26" fill="#555">
+    <text x="92" y="204">&lt;html&gt;</text>
+    <text x="92" y="1324">&lt;/html&gt;</text>
+  </g>
+
+  <!-- ===== head section ===== -->
+  <rect x="104" y="224" width="546" height="416" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1.5"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+     font-size="26" fill="#555">
+    <text x="116" y="258">&lt;head&gt;</text>
+    <text x="116" y="622">&lt;/head&gt;</text>
+  </g>
+
+  <!-- ===== body section ===== -->
+  <rect x="104" y="660" width="546" height="626" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1.5"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+     font-size="26" fill="#555">
+    <text x="116" y="694">&lt;body&gt;</text>
+    <text x="116" y="1268">&lt;/body&gt;</text>
+  </g>
+
+  <!-- boilerplate markers -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+     font-size="34" font-weight="bold" fill="#999" text-anchor="middle">
+    <text x="377" y="296">&#183;&#183;&#183;</text>
+    <text x="377" y="416">&#183;&#183;&#183;</text>
+    <text x="377" y="586">&#183;&#183;&#183;</text>
+    <text x="377" y="1006">&#183;&#183;&#183;</text>
+  </g>
+
+  <!-- partial cards + injection slots -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+
+    <!-- metadata.html -->
+    <rect x="124" y="312" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="358" font-size="30" fill="#222">$metadata.html()$</text>
+    <text x="610" y="358" font-size="26" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">meta tags</text>
+
+    <!-- styles.html -->
+    <rect x="124" y="432" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="478" font-size="30" fill="#222">$styles.html()$</text>
+    <text x="610" y="478" font-size="26" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">CSS</text>
+
+    <!-- header-includes (injection slot) -->
+    <rect x="124" y="520" width="506" height="34" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="146" y="544" font-size="22" font-style="italic" fill="#6a4c93">header-includes</text>
+
+    <!-- include-before (injection slot) -->
+    <rect x="124" y="714" width="506" height="34" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="146" y="738" font-size="22" font-style="italic" fill="#6a4c93">include-before</text>
+
+    <!-- title-block.html (conditional, nested container) -->
+    <rect x="124" y="764" width="506" height="210" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="804" font-size="30" fill="#222">$title-block.html()$</text>
+    <text x="146" y="830" font-size="20" font-style="italic" fill="#8a5a00"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">if title, subtitle, author, date, &#8230; is set</text>
+
+    <rect x="146" y="846" width="462" height="112" rx="6" fill="#ffffff" stroke="#999" stroke-width="2"/>
+    <text x="164" y="880" font-size="26" fill="#222">$title-metadata.html()$</text>
+
+    <rect x="164" y="896" width="426" height="48" rx="4" fill="#f4f4f4" stroke="#999" stroke-width="1.5"/>
+    <text x="180" y="927" font-size="24" fill="#222">$_title-meta-author.html()$</text>
+
+    <!-- toc.html (conditional) -->
+    <rect x="124" y="1022" width="506" height="72" rx="6" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+    <text x="146" y="1054" font-size="30" fill="#222">$toc.html()$</text>
+    <text x="146" y="1082" font-size="20" font-style="italic" fill="#8a5a00"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">if toc is set</text>
+    <text x="610" y="1054" font-size="26" fill="#777" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">table of contents</text>
+
+    <!-- $body$ (highlight) -->
+    <rect x="124" y="1110" width="506" height="72" rx="6" fill="#d8ecea" stroke="#1b7f79" stroke-width="3"/>
+    <text x="146" y="1156" font-size="30" font-weight="bold" fill="#14625d">$body$</text>
+    <text x="610" y="1156" font-size="26" fill="#2a6f6a" text-anchor="end"
+          font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">your .qmd, translated</text>
+
+    <!-- include-after (injection slot) -->
+    <rect x="124" y="1198" width="506" height="34" rx="5" fill="#ece9f5" stroke="#6a4c93" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="146" y="1222" font-size="22" font-style="italic" fill="#6a4c93">include-after</text>
+
+  </g>
+
+  <!-- ===== legend ===== -->
+  <text x="92" y="1400" font-size="34" font-weight="bold" fill="#999"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace">&#183;&#183;&#183;</text>
+  <text x="170" y="1400"
+        font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif"
+        font-size="24" fill="#444">literal HTML in the template</text>
+
+</svg>
