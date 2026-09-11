@@ -21,7 +21,10 @@ By the end of this module, you will be able to:
 ## Links
 
 * [Quarto Typst format](https://quarto.org/docs/output-formats/typst.html)
+* [Typst chapter in "Quarto: the practical guide"](https://quarto-tdg.org/typst.html)
 * [Typst documentation](https://typst.app/docs/)
 * [Typst syntax reference](https://typst.app/docs/reference/syntax/)
+* [Typst functions, and trailing content blocks](https://typst.app/docs/reference/foundations/function/)
 * [Typst styling: set and show rules](https://typst.app/docs/reference/styling/)
 * [Typst templates in Quarto](https://quarto.org/docs/output-formats/typst-custom.html)
+* [Tinymist Typst](https://open-vsx.org/extension/myriad-dreamin/tinymist) — syntax highlighting for `.typ` files in Positron and VS Code
