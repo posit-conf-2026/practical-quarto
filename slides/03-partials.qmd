@@ -167,6 +167,7 @@ The partial is theirs now and the page is unchanged by it.
 
 3. Render.
 
+4. Challenge: Provide the `alt` text via metadata too.
 :::
 
 ::: exercise-folder
@@ -233,14 +234,13 @@ brs-release:
 
 ::: your-turn
 
-1. Copy, then complete, this line in `title-block.html`, below the subtitle's
-   `$endif$`:
+1. Copy, then complete, this line to `title-block.html`, below the subtitle's `$endif$`:
 
    ```html
    <p class="report-period">______ &middot; ______</p>
    ```
 
-2. Render.
+2. Render. What happens you remove `brs-release` from `report.qmd`?
 
 :::
 
@@ -267,8 +267,8 @@ which Quarto reformatted before the template ever saw it.
 ## Your own metadata, your own namespace
 
 ```{.wrap .yaml filename="report.qmd"}
-masthead: _brand/brs-logo.svg   # turn 1: a name at the top level
-brs-release:                    # turn 2: a name with names inside
+masthead: _brand/brs-logo.svg   # our name at the top level
+brs-release:                    # our name with names inside
   period: "Q3 2026"
   region: Oregon
 ```
@@ -358,7 +358,7 @@ still no CSS.
 
 | Write | Get |
 |---|---|
-| `$if(x)$` … `$else$` … `$endif$` | conditionals, as in turn 3 |
+| `$if(x)$` … `$else$` … `$endif$` | conditionals |
 | `$for(x)$` … `$endfor$` | loop over an array |
 | `$sep$` | inside a loop: emitted **between** items, never after the last |
 | `${x/uppercase}` | a pipe — also `lowercase`, `length`, `reverse`, `nowrap`, … |
@@ -381,18 +381,20 @@ turn 2's optional extra — a separator that knows it is between things.
 ```
 
 ::: {.fragment}
-No color. No size. No position. Just a name.
+No color. No size. No position. Just a `class`.
 :::
 
+
 ::: {.fragment}
+Style using SCSS:
 ```{.scss filename="custom.scss"}
+/*-- scss:rules --*/
 .report-status { background-color: $primary; }
 ```
 :::
 
 ::: {.fragment}
-You have been leaving these hooks since turn 1 — `report-masthead`,
-`report-period`, `report-status`. **Three classes, no CSS.**
+Three classes:`report-masthead`,`report-period`, `report-status`. 
 :::
 
 ::: notes
@@ -667,11 +669,11 @@ the docs link to the wrong one for the default:
 
 ## Template: `format: revealjs` {.scrollable}
 
-![](../images/revealjs-template-partials.svg){fig-alt="A schematic of template.html for revealjs as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: styles.html (shared with the html format) and a dashed header-includes slot. Inside the body: a dashed include-before slot, then a box marking the div with class slides, holding title-slide.html, toc-slide.html (only if toc is set), and the body (one section element per slide), then the template's literal reveal.js setup scripts shown as a dotted mark, and last a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
+![](../images/revealjs-template-partials.svg){.nostretch width="80%"  fig-alt="A schematic of template.html for revealjs as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: styles.html (shared with the html format) and a dashed header-includes slot. Inside the body: a dashed include-before slot, then a box marking the div with class slides, holding title-slide.html, toc-slide.html (only if toc is set), and the body (one section element per slide), then the template's literal reveal.js setup scripts shown as a dotted mark, and last a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
 
 ## Template: `format: pdf` {.scrollable}
 
-![](../images/pdf-template-partials.svg){fig-alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)."}
+![](../images/pdf-template-partials.svg){.nostretch width="80%"  fig-alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)."}
 
 ## Localized strings in templates {.smaller}
 
