@@ -17,7 +17,7 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 | 09:15 - 10:30 | [Productive workflows in Positron](modules/01-workflows.qmd)        |
 | 10:30 - 11:00 | *Coffee break*   |
 | 11:00 - 12:10 | [Design once, use anywhere](modules/02-brand.qmd)         |
-| 12:10 - 12:30 | q2 |
+| 12:10 - 12:30 | Interlude: q2 |
 | 12:30 - 13:30 | *Lunch break*    |
 | 13:30 - 15:00 | [Build reusable structures](modules/03-partials.qmd)      |
 | 15:00 - 15:30 | *Coffee break*   |
