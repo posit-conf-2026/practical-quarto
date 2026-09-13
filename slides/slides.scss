@@ -107,6 +107,10 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
   font-family: "Gochi Hand", cursive;
 }
 
+.center {
+  text-align: center;
+}
+
 .small {
   font-size: 0.75em;
 }
@@ -118,6 +122,7 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
 .reveal .slide .your-turn {
   border-left: 3px solid #283c4d;
   padding-left: 0.5em;
+  padding-right: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   background: #9cbbbd50;
@@ -128,7 +133,7 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
   padding-left: 0.5em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  margin-top: 0.25em;
+  margin-bottom: 0.25em;
   background: #ddb24550;
   font-size: 0.8em;
 }

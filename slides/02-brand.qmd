@@ -34,20 +34,23 @@ One key, a whole look. Free, and nobody's brand.
 about.
 :::
 
-## But you don't want *a* theme, you want *your* theme
+## But you don't want *a* theme...
 
-![](../images/brand-whr-outputs.png){.screenshot fig-alt="Four branded outputs from the World Happiness Report overlapping each other: the organisation's website in a browser window, its wordmark logo, a slide reading Key insights, and an interactive world map coloured by change in happiness score. All four carry the same purple and pink palette and the same typeface."}
+You want *your* theme
 
-::: notes
-TO DO: may need to update image
+::: center
 
-Same palette, same type, same logo — a website, a logo, a deck, a dashboard.
+![](../images/brand-brs-website-light.png){.screenshot fig-alt="Branded website for Bureau of Regional Statistics, light mode." width="33%"}
+![](../images/brand-brs-website-dark.png){.screenshot fig-alt="Branded website for Bureau of Regional Statistics, dark mode." width="33%"}
+![](../images/brand-brs-slides.png){.screenshot fig-alt="Branded slide deck for Bureau of Regional Statistics." width="33%"}
 
-Ask: how many places would you have to set that today? A theme per format,
-per project.
 :::
 
-## The same look, in how many places? {.smaller}
+::: notes
+Same palette, same type, same logo — a website, a logo, a deck, a dashboard.
+:::
+
+## The same look, in how many places?
 
 ::: {.incremental}
 - `theme:` — one SCSS file for `html`, another for `revealjs`
@@ -95,23 +98,13 @@ libraries all read the same file.
 
 ## Two steps
 
-::: {.fragment}
-[1. Describe the brand in one `_brand.yml`.]{style="font-size: 1.5em;"}
+1. Describe the brand in one `_brand.yml`.
 
-[2. Quarto applies it to almost every format.]{style="font-size: 1.5em;"}
-:::
+2. Quarto applies it to almost every format.
 
 <br>
 
-::: {.fragment}
-No format-specific theming to write. No SCSS unless you want it.
-:::
-
-::: notes
-Step 2 is the part that is hard to believe until you render it twice.
-
-"Almost" — the exceptions are worth knowing, and we get to them.
-:::
+No format-specific theming to write. No SCSS -- unless you want to tweak bits of your document/website/slide deck brand doesn't control via a YAML field.
 
 ## Who reads `_brand.yml`? {.smaller}
 
@@ -136,7 +129,7 @@ flowchart LR
     by-->Python
     Python-->py-brand_yml["brand_yml"]
     py-brand_yml-->py-shiny[Shiny for Python]
-    py-brand_yml-->py-plots[seaborn, matplotlib, ...]
+    py-brand_yml-->py-plots[seaborn, matplotlib, plotnine, ...]
 ```
 :::
 
@@ -169,19 +162,21 @@ several tools.
 * `logo` — the image files, at a few sizes
 * `color` — the palette, and the roles colors play
 * `typography` — fonts for base, headings, links, code
-* `defaults` — per-tool escape hatches
+* `defaults` — escape hatches for specific output formats
 :::
 
 ::: notes
 `color` and `typography` do most of the work. `defaults` is where you put the
 thing brand.yml has no word for.
-
-Nothing here mentions a format. That is the whole idea.
 :::
 
 ## `_brand.yml` {.smaller}
 
-```{.yaml code-line-numbers="1-4|6-11|13-24|26-42" filename="_brand.yml"}
+::: {.columns}
+
+::: {.column width="70%"}
+
+```{.yaml code-line-numbers="|1-4|6-11|13-24|26-42" filename="_brand.yml"}
 meta:
   name: Bureau of Regional Statistics
   link:
@@ -191,7 +186,7 @@ logo:
   images:
     mark:
       path: brs-logo.svg
-      alt: Bureau of Regional Statistics logo featuring a simple bar chart
+      alt: Bureau of Regional Statistics logo featuring a stylized bar chart
   small: mark
 
 color:
@@ -226,19 +221,18 @@ typography:
     decoration: underline
 ```
 
-::: notes
-The Bureau of Regional Statistics — the same agency whose quarterly release we
-rebuild in modules 03 and 04.
+:::
 
-Two halves to `color`: **name** your colors in `palette`, then say what
-**role** each one plays. `primary: forest`, not `primary: "#1b5e4f"`.
+::: {.column width="30%"}
 
-Roles are what formats consume. Rename the palette and nothing downstream
-breaks.
+- `meta` is documentation for humans only, Quarto doesn't use it
 
-Paths in a brand file resolve relative to **the brand file**, not the document.
+- In `logo`, paths resolve relative to the brand file
 
-`meta` is documentation for humans — Quarto does nothing with it yet.
+- `color` works in two steps: **name** your colors in `palette`, then say what **role** each one plays, e.g., `primary: forest`, not `primary: "#1b5e4f"`
+
+:::
+
 :::
 
 ## Naming, then roles
@@ -252,9 +246,9 @@ color:
 
 ::: incremental
 
-- In your SCSS these arrive as `$brand-forest` and `$primary`.
+- In SCSS these arrive as `$brand-forest` and `$primary`.
 
-- In Typst, as `brand-color.primary`.
+- In Typst these arrive as `brand-color.primary`.
 
 :::
 
@@ -383,7 +377,7 @@ of `_brand.yml`, it does not merge with it.
 `false` is the door out: one document that must not carry the brand.
 :::
 
-## Using brand values in your document
+## Using brand values in document
 
 Use the `brand` shortcode, `{{{< brand color primary >}}}` anywhere a value goes — a div attribute, a background color, inline text:
 
@@ -412,7 +406,15 @@ styling.
 
 ## Your turn 1: write a brand by hand {.smaller}
 
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/01-first-brand`
+:::
+
 ::: your-turn
+
+::: {.columns}
+
+::: {.column width="47%"}
 
 1. Render `report.qmd` first, so you have something to compare against.
 
@@ -424,32 +426,54 @@ styling.
        forest: "#1B5E4F"
    ```
 
-3. Render. Nothing changed. Now give the colors jobs:
+3. Render. What happened? 
+
+:::
+
+::: {.column width="6%"}
+
+:::
+
+::: {.column width="47%"}
+
+4. Now give the colors jobs:
 
    ```yaml
      foreground: ink
      primary: forest
    ```
 
-4. Render. Then add `typography` with Atkinson Hyperlegible and render again.
+5. Render. Then add `typography` with Atkinson Hyperlegible and render again.
+
+More detailed instructions in the exercise folder `README`.
 
 :::
 
-::: exercise-folder
-[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/01-first-brand`
+Once done with the steps above, discuss with your neighbors: 
+The palette colors are the agency's. 
+The role names are Quarto's. 
+Which of the two would you expect to change more often?
+
 :::
 
-{{< countdown minutes=8 >}}
+:::
 
-::: notes
-The full palette and the typography block are in the README — nobody has to
-type from this slide.
+{{< countdown minutes=5 >}}
 
-Step 3 is the beat: naming a color does nothing, assigning it does. Steer them
-to the body text and the link to the methodology notes.
+## Your turn 1: takeaways
 
-No `_quarto.yml`, no `theme:`, no `css:`. They never named the file in
-`report.qmd` and Quarto found it anyway.
+::: incremental
+
+- No `_quarto.yml`, no `theme:`, no `css:`, no need to name `_brand.yml` in `report.qmd`, just place in the same directory
+
+- Naming a color does nothing, assigning it does: `palette` names colors. 
+The keys below it — `foreground`, `background`, `primary`, `secondary` — assign them
+
+- `background: white` is a literal CSS color, not a palette name. Both are legal in a role
+
+- `source: google` fetches the font at render time. 
+`base` sets body text; `headings` sets every level of heading.
+
 :::
 
 # Light and dark
@@ -555,10 +579,10 @@ logo:
   images:
     mark:
       path: brs-logo.svg
-      alt: Bureau of Regional Statistics
+      alt: Bureau of Regional Statistics logo featuring a stylized bar chart
     mark-reversed:
       path: brs-logo-white.svg
-      alt: Bureau of Regional Statistics
+      alt: Bureau of Regional Statistics logo featuring a stylized bar chart
   medium:
     light: mark
     dark: mark-reversed
@@ -573,7 +597,7 @@ Override for one document:
 logo:
   light:
     path: large
-    alt: Bureau of Regional Statistics
+    alt: Bureau of Regional Statistics logo featuring a stylized bar chart
   dark: brs-logo-white.svg
 ```
 
@@ -593,11 +617,13 @@ Document-level `logo:` can name a brand resource (`large`), a file, or a pair.
 
 ## Formats that can't toggle
 
-Revealjs and Typst produce one appearance and offer no toggle between light/dark:
- 
+Some formats produce only one appearance and offer no toggle between light/dark:
+
 ::: {.columns}
 
 ::: {.column}
+
+**Revealjs:**
 
 ```{.yaml filename="slides.qmd"}
 format:
@@ -608,6 +634,8 @@ format:
 :::
 
 ::: {.column}
+
+**Typst:**
 
 ```{.yaml filename="report.qmd"}
 format:
@@ -629,10 +657,19 @@ is the one key that does it.
 Both formats default to light, whatever order your brand lists.
 :::
 
-## Content for one mode only {.smaller}
+## Content for one mode only
 
-Use `light-content` and `.dark-content` divs -- they place the content in the same place, same size, so the layout doesn't jump when the reader toggles.
+::: {.columns}
 
+::: {.column}
+
+- `light-content` / `.dark-content` divs place the content in the same place, same size, so the layout doesn't jump when the reader toggles
+
+- `{{{< brand logo mark >}}}` already does this for you: it emits both, classed
+
+:::
+
+::: {.column}
 
 ```{.markdown filename="report.qmd"}
 
@@ -646,8 +683,8 @@ Use `light-content` and `.dark-content` divs -- they place the content in the sa
 
 ```
 
-::: {.fragment}
-`{{{< brand logo mark >}}}` already does this for you: it emits both, classed.
+:::
+
 :::
 
 ::: notes
@@ -662,6 +699,10 @@ argument is the variant.
 :::
 
 ## Your turn 2: one brand, two modes {.smaller}
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/02-dark-mode`
+:::
 
 ::: your-turn
 
@@ -681,22 +722,19 @@ argument is the variant.
 
 :::
 
-::: exercise-folder
-[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/02-dark-mode`
-:::
+{{< countdown minutes=5 >}}
 
-{{< countdown minutes=8 >}}
 
-::: notes
-Forest on ink is not a link anybody can read. Let them find it rather than
-telling them.
+## Your turn 2: takeaways
 
-Step 3 is where the palette/roles split earns its keep: a palette color is one
-hex value, so this needs a *new name*, not a second value for `forest`.
+::: exercise-takeaways
 
-A standalone page has no toggle in the corner — that button lives in a
-website's navbar. `respect-user-color-scheme` is how they get at the dark
-version, and without it the dark stylesheet ships unused.
+- Getting colors and color contrast right, especially in light/dark mode, requires careful review and iteration.
+
+- A standalone page, unlike a website, has no toggle in the corner;`respect-user-color-scheme` is how single pages use the dark stylesheet.
+
+
+
 :::
 
 # What brand doesn't reach
