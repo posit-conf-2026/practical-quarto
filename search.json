@@ -273,195 +273,43 @@
     "text": "Localized strings in templates\nHard-coding “Table of contents” in a partial breaks the moment someone sets lang:.\nSince Quarto 1.10, the strings Quarto already translates are template variables:\n&lt;h2&gt;${quarto.language.toc-title-document}&lt;/h2&gt;\n\n\n\n\nlang: en\nlang: fr\n\n\n\n\nTable of contents\nTable des matières\n\n\nAbstract\nRésumé\n\n\n\n\nLocalized strings in templates →\n\nThe quarto.language namespace exposes every string Quarto localizes, resolved for the document’s lang."
   },
   {
-    "objectID": "modules/04-typst.html",
-    "href": "modules/04-typst.html",
-    "title": "Why Typst matters",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
     "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "text": "Please complete the following steps before the workshop so we can dive straight into the material.",
     "crumbs": [
-      "Modules",
-      "Why Typst matters"
+      "Setup"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#overview",
-    "href": "modules/04-typst.html#overview",
-    "title": "Why Typst matters",
-    "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "objectID": "setup.html#accounts",
+    "href": "setup.html#accounts",
+    "title": "Setup",
+    "section": "Accounts",
+    "text": "Accounts\n\nGitHub account — needed to clone and work with the workshop materials. Sign up at https://github.com if you don’t have one.\nPosit AI account — we’ll use Posit Assistant in Positron during the workshop. If you don’t already have one, create a free account at https://posit.ai. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.",
     "crumbs": [
-      "Modules",
-      "Why Typst matters"
+      "Setup"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#learning-objectives",
-    "href": "modules/04-typst.html#learning-objectives",
-    "title": "Why Typst matters",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
+    "objectID": "setup.html#software-requirements",
+    "href": "setup.html#software-requirements",
+    "title": "Setup",
+    "section": "Software requirements",
+    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
     "crumbs": [
-      "Modules",
-      "Why Typst matters"
+      "Setup"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#links",
-    "href": "modules/04-typst.html#links",
-    "title": "Why Typst matters",
-    "section": "Links",
-    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
+    "objectID": "setup.html#having-trouble",
+    "href": "setup.html#having-trouble",
+    "title": "Setup",
+    "section": "Having trouble?",
+    "text": "Having trouble?\nIf you run into installation issues, please post on the workshop thread on Posit Community before the workshop and we’ll help you get sorted.",
     "crumbs": [
-      "Modules",
-      "Why Typst matters"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html",
-    "href": "modules/02-brand.html",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#overview",
-    "href": "modules/02-brand.html#overview",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#learning-objectives",
-    "href": "modules/02-brand.html#learning-objectives",
-    "title": "Design once, use anywhere",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#links",
-    "href": "modules/02-brand.html#links",
-    "title": "Design once, use anywhere",
-    "section": "Links",
-    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "",
-    "text": "September 14th, 2026\nposit::conf(2026)",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Setup",
-    "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nq2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#instructors",
-    "href": "index.html#instructors",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Instructors",
-    "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#description",
-    "href": "index.html#description",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "Description",
-    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nMaster freezing and reproducibility: Demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
-    "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html",
-    "href": "modules/01-workflows.html",
-    "title": "Productive workflows in Positron",
-    "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#overview",
-    "href": "modules/01-workflows.html#overview",
-    "title": "Productive workflows in Positron",
-    "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#learning-objectives",
-    "href": "modules/01-workflows.html#learning-objectives",
-    "title": "Productive workflows in Positron",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
-    ]
-  },
-  {
-    "objectID": "modules/01-workflows.html#links",
-    "href": "modules/01-workflows.html#links",
-    "title": "Productive workflows in Positron",
-    "section": "Links",
-    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
-    "crumbs": [
-      "Modules",
-      "Productive workflows in Positron"
+      "Setup"
     ]
   },
   {
@@ -509,44 +357,455 @@
     ]
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
+    "objectID": "modules/01-workflows.html",
+    "href": "modules/01-workflows.html",
+    "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Please complete the following steps before the workshop so we can dive straight into the material.",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
     "crumbs": [
-      "Setup"
+      "Modules",
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "setup.html#accounts",
-    "href": "setup.html#accounts",
-    "title": "Setup",
-    "section": "Accounts",
-    "text": "Accounts\n\nGitHub account — needed to clone and work with the workshop materials. Sign up at https://github.com if you don’t have one.\nPosit AI account — we’ll use Posit Assistant in Positron during the workshop. If you don’t already have one, create a free account at https://posit.ai. Use the same email address you registered for the workshop with, because this is how we attach your workshop credits.",
+    "objectID": "modules/01-workflows.html#overview",
+    "href": "modules/01-workflows.html#overview",
+    "title": "Productive workflows in Positron",
+    "section": "",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
     "crumbs": [
-      "Setup"
+      "Modules",
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "setup.html#software-requirements",
-    "href": "setup.html#software-requirements",
-    "title": "Setup",
-    "section": "Software requirements",
-    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
+    "objectID": "modules/01-workflows.html#learning-objectives",
+    "href": "modules/01-workflows.html#learning-objectives",
+    "title": "Productive workflows in Positron",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
     "crumbs": [
-      "Setup"
+      "Modules",
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "setup.html#having-trouble",
-    "href": "setup.html#having-trouble",
-    "title": "Setup",
-    "section": "Having trouble?",
-    "text": "Having trouble?\nIf you run into installation issues, please post on the workshop thread on Posit Community before the workshop and we’ll help you get sorted.",
+    "objectID": "modules/01-workflows.html#links",
+    "href": "modules/01-workflows.html#links",
+    "title": "Productive workflows in Positron",
+    "section": "Links",
+    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
     "crumbs": [
-      "Setup"
+      "Modules",
+      "Productive workflows in Positron"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "",
+    "text": "September 14th, 2026\nposit::conf(2026)",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Setup",
+    "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nInterlude: q2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#instructors",
+    "href": "index.html#instructors",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Instructors",
+    "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "Description",
+    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\n\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html",
+    "href": "modules/02-brand.html",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#overview",
+    "href": "modules/02-brand.html#overview",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#learning-objectives",
+    "href": "modules/02-brand.html#learning-objectives",
+    "title": "Design once, use anywhere",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/02-brand.html#links",
+    "href": "modules/02-brand.html#links",
+    "title": "Design once, use anywhere",
+    "section": "Links",
+    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
+    "crumbs": [
+      "Modules",
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html",
+    "href": "modules/04-typst.html",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#overview",
+    "href": "modules/04-typst.html#overview",
+    "title": "Why Typst matters",
+    "section": "",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#learning-objectives",
+    "href": "modules/04-typst.html#learning-objectives",
+    "title": "Why Typst matters",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "modules/04-typst.html#links",
+    "href": "modules/04-typst.html#links",
+    "title": "Why Typst matters",
+    "section": "Links",
+    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
+    "crumbs": [
+      "Modules",
+      "Why Typst matters"
+    ]
+  },
+  {
+    "objectID": "slides/02-brand.html#a-theme-gets-you-started",
+    "href": "slides/02-brand.html#a-theme-gets-you-started",
+    "title": "Design once, use anywhere",
+    "section": "A theme gets you started",
+    "text": "A theme gets you started\nQuarto ships 25 Bootswatch themes:\n\n\ndefault, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen\n\nlux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy\n\nslate, solar, spacelab, superhero, united, vapor, yeti, zephyr\n\n\n\nreport.qmd\n\nformat:\n  html:\n    theme: flatly\n\n\nOne key, a whole look. Free, and nobody’s brand.\ntheme: is format: html only — the first hint of the problem this module is about."
+  },
+  {
+    "objectID": "slides/02-brand.html#but-you-dont-want-a-theme-you-want-your-theme",
+    "href": "slides/02-brand.html#but-you-dont-want-a-theme-you-want-your-theme",
+    "title": "Design once, use anywhere",
+    "section": "But you don’t want a theme, you want your theme",
+    "text": "But you don’t want a theme, you want your theme\n\n\nTO DO: may need to update image\nSame palette, same type, same logo — a website, a logo, a deck, a dashboard.\nAsk: how many places would you have to set that today? A theme per format, per project."
+  },
+  {
+    "objectID": "slides/02-brand.html#the-same-look-in-how-many-places",
+    "href": "slides/02-brand.html#the-same-look-in-how-many-places",
+    "title": "Design once, use anywhere",
+    "section": "The same look, in how many places?",
+    "text": "The same look, in how many places?\n\ntheme: — one SCSS file for html, another for revealjs\ninclude-in-header: — fonts, again\nmainfont:, colorlinks: — pdf has its own names\nyour plots — theme_*() in R, theme() in Python\nand again in the next project\n\n\nFive descriptions of one brand, each drifting on its own schedule.\n\n\nThe problem is not that any one of these is hard. It’s that there is no single place where the brand is written down.\nThis is the same shape as module 03 and 04: say it once, in the right place."
+  },
+  {
+    "objectID": "slides/02-brand.html#section",
+    "href": "slides/02-brand.html#section",
+    "title": "Design once, use anywhere",
+    "section": "",
+    "text": "Unified branding with a simple YAML file\n\n\nOne file, written once, applied across Quarto formats — and beyond Quarto.\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nTO DO: may need to update image\nA specification, not a Quarto feature. Quarto, Shiny, bslib and the plotting libraries all read the same file."
+  },
+  {
+    "objectID": "slides/02-brand.html#two-steps",
+    "href": "slides/02-brand.html#two-steps",
+    "title": "Design once, use anywhere",
+    "section": "Two steps",
+    "text": "Two steps\n\n1. Describe the brand in one _brand.yml.\n2. Quarto applies it to almost every format.\n\n\n\nNo format-specific theming to write. No SCSS unless you want it.\n\n\nStep 2 is the part that is hard to believe until you render it twice.\n“Almost” — the exceptions are worth knowing, and we get to them."
+  },
+  {
+    "objectID": "slides/02-brand.html#who-reads-_brand.yml",
+    "href": "slides/02-brand.html#who-reads-_brand.yml",
+    "title": "Design once, use anywhere",
+    "section": "Who reads _brand.yml?",
+    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
+  },
+  {
+    "objectID": "slides/02-brand.html#five-keys",
+    "href": "slides/02-brand.html#five-keys",
+    "title": "Design once, use anywhere",
+    "section": "Five keys",
+    "text": "Five keys\n\nmeta — who the brand belongs to: name, links\nlogo — the image files, at a few sizes\ncolor — the palette, and the roles colors play\ntypography — fonts for base, headings, links, code\ndefaults — per-tool escape hatches\n\n\ncolor and typography do most of the work. defaults is where you put the thing brand.yml has no word for.\nNothing here mentions a format. That is the whole idea."
+  },
+  {
+    "objectID": "slides/02-brand.html#brand.yml-1",
+    "href": "slides/02-brand.html#brand.yml-1",
+    "title": "Design once, use anywhere",
+    "section": "_brand.yml",
+    "text": "_brand.yml\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a simple bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\nThe Bureau of Regional Statistics — the same agency whose quarterly release we rebuild in modules 03 and 04.\nTwo halves to color: name your colors in palette, then say what role each one plays. primary: forest, not primary: \"#1b5e4f\".\nRoles are what formats consume. Rename the palette and nothing downstream breaks.\nPaths in a brand file resolve relative to the brand file, not the document.\nmeta is documentation for humans — Quarto does nothing with it yet."
+  },
+  {
+    "objectID": "slides/02-brand.html#naming-then-roles",
+    "href": "slides/02-brand.html#naming-then-roles",
+    "title": "Design once, use anywhere",
+    "section": "Naming, then roles",
+    "text": "Naming, then roles\n\n\n_brand.yml\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"   # a name for a hex code\n  primary: forest       # a job for a name\n\n\nIn your SCSS these arrive as $brand-forest and $primary.\nIn Typst, as brand-color.primary.\n\n\nThis is the callback in both remaining modules — module 03’s custom.scss reaches for $primary and $brand-forest, module 04’s raw block for brand-color.primary.\nNeither one hard-codes #1b5e4f. That is the payoff for writing the roles down.\nThe semantic list is longer than these two: secondary, tertiary, success, info, warning, danger, light, dark. In html and dashboard they land on the Bootstrap variables of the same name."
+  },
+  {
+    "objectID": "slides/02-brand.html#defaults-the-escape-hatch",
+    "href": "slides/02-brand.html#defaults-the-escape-hatch",
+    "title": "Design once, use anywhere",
+    "section": "defaults: the escape hatch",
+    "text": "defaults: the escape hatch\n\n\nFor the thing brand.yml has no word for:\n\n\n\n_brand.yml\n\ndefaults:\n  bootstrap:\n    defaults:\n      link-decoration: underline\n      navbar-fg: \"#fff\"\n    rules: |\n      h2 {\n        border: none;\n      }\n\n\n\n\nhtml and dashboard only\nAlso takes uses, functions, mixins\n\n\n\nThese are SCSS variables and rules, merged into the right layer of Quarto’s SCSS system.\nThis deck uses it: the h2 border rule is in our _brand.yml.\nReach for it last. Anything you can say in color or typography reaches all four formats; this reaches two."
+  },
+  {
+    "objectID": "slides/02-brand.html#applying-it",
+    "href": "slides/02-brand.html#applying-it",
+    "title": "Design once, use anywhere",
+    "section": "Applying it",
+    "text": "Applying it\n\nSave _brand.yml in the root of your project.\nRender.\n\n\nQuarto finds it, and applies it to every document in the project that supports it.\n\n\n\n\n\nWhen it isn’t at the root: Use brand in a document or in _quarto.yml:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: ../brand/brs.yml\n\n\nWhen you want to turn it off: Use brand: false:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: false\n\n\n\nNo key in the YAML. No line in _quarto.yml. The file’s location is the configuration.\nAlso works for a single document with no project around it — same directory is enough.\nbrand: takes a path — which means a brand can live outside the project. Hold that thought; the last section is about exactly this.\nIt also takes brand elements inline. Careful: doing that replaces the whole of _brand.yml, it does not merge with it.\nfalse is the door out: one document that must not carry the brand."
+  },
+  {
+    "objectID": "slides/02-brand.html#using-brand-values-in-your-document",
+    "href": "slides/02-brand.html#using-brand-values-in-your-document",
+    "title": "Design once, use anywhere",
+    "section": "Using brand values in your document",
+    "text": "Using brand values in your document\nUse the brand shortcode, {{&lt; brand color primary &gt;}} anywhere a value goes — a div attribute, a background color, inline text:\n\n\n\nslides.qmd\n\n## Findings {background-color=\"{{&lt; brand color primary &gt;}}\"}\n\n\nLearn more: https://quarto.org/docs/authoring/brand.html#using-brand-values\n\n\nA shortcode, like {{&lt; meta &gt;}} in module 04 — resolved by Quarto, in the body, before Pandoc.\n{{&lt; brand logo mark &gt;}} does the same for images.\nColors and logos only. typography, meta and defaults are not reachable this way.\nReach for it when Quarto hasn’t already wired the brand into the thing you’re styling."
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-1-write-a-brand-by-hand",
+    "href": "slides/02-brand.html#your-turn-1-write-a-brand-by-hand",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 1: write a brand by hand",
+    "text": "Your turn 1: write a brand by hand\n\n\nRender report.qmd first, so you have something to compare against.\nCreate _brand.yml in the same folder and name the agency’s colors:\ncolor:\n  palette:\n    forest: \"#1B5E4F\"\nRender. Nothing changed. Now give the colors jobs:\n  foreground: ink\n  primary: forest\nRender. Then add typography with Atkinson Hyperlegible and render again.\n\n\n\nExercise: 02-brand/01-first-brand\n\n\n \n\nThe full palette and the typography block are in the README — nobody has to type from this slide.\nStep 3 is the beat: naming a color does nothing, assigning it does. Steer them to the body text and the link to the methodology notes.\nNo _quarto.yml, no theme:, no css:. They never named the file in report.qmd and Quarto found it anyway."
+  },
+  {
+    "objectID": "slides/02-brand.html#two-appearances-one-document",
+    "href": "slides/02-brand.html#two-appearances-one-document",
+    "title": "Design once, use anywhere",
+    "section": "Two appearances, one document",
+    "text": "Two appearances, one document\nGive theme a pair, and Quarto builds both:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: flatly\n      dark: darkly\n\n\na toggle appears, top right\nthe one listed first is the default\nrespect-user-color-scheme: true defers to the reader’s OS or browser\n\n\nThis is the pre-brand version, and worth showing because the shape repeats: everything about light and dark is “give it two of something”.\nOrder matters. light first means light by default.\nrespect-user-color-scheme needs JavaScript; without it readers get the first one."
+  },
+  {
+    "objectID": "slides/02-brand.html#one-brand-two-modes",
+    "href": "slides/02-brand.html#one-brand-two-modes",
+    "title": "Design once, use anywhere",
+    "section": "One brand, two modes",
+    "text": "One brand, two modes\n\n\n\nAny color in color or typography takes a light/dark pair\nColors in palette cannot take a pair — name the color once, choose per mode where the role is assigned\n\n\n\n\n_brand.yml\n\ncolor:\n  background:\n    light: white\n    dark: ink\n  foreground:\n    light: ink\n    dark: sand\n\ntypography:\n  headings:\n    color:\n      light: forest\n      dark: sand\n\n\n\nOne file, both modes. This is the cheapest version and it covers most brands.\nThe limitation is the reason the palette/roles split matters: forest is one hex code in both modes, but which role it plays can differ."
+  },
+  {
+    "objectID": "slides/02-brand.html#two-brands-two-modes",
+    "href": "slides/02-brand.html#two-brands-two-modes",
+    "title": "Design once, use anywhere",
+    "section": "Two brands, two modes",
+    "text": "Two brands, two modes\nWhen the modes differ by more than color, split the files and define use brand field in either the YAML of your document or in _quarto.yml:\n\n\nreport.qmd\n\nbrand:\n  light: brs-light.yml\n  dark: brs-dark.yml\n\n\nSame shape as theme, one level up.\nReach for this when typography or logos differ, not just colors.\nIn _quarto.yml this has to be file paths — inline brand metadata there is not supported yet."
+  },
+  {
+    "objectID": "slides/02-brand.html#logos-for-both-modes",
+    "href": "slides/02-brand.html#logos-for-both-modes",
+    "title": "Design once, use anywhere",
+    "section": "Logos for both modes",
+    "text": "Logos for both modes\n\n\nFor the project:\n\n\n_brand.yml\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics\n    mark-reversed:\n      path: brs-logo-white.svg\n      alt: Bureau of Regional Statistics\n  medium:\n    light: mark\n    dark: mark-reversed\n\n\nOverride for one document:\n\n\nreport.qmd\n\nlogo:\n  light:\n    path: large\n    alt: Bureau of Regional Statistics\n  dark: brs-logo-white.svg\n\n\n\nA dark logo is not a recolored light logo — that is why this is a separate file, not a filter.\nimages is where alt text lives. Name the image once, then use the name in small, medium, large.\nDocument-level logo: can name a brand resource (large), a file, or a pair."
+  },
+  {
+    "objectID": "slides/02-brand.html#formats-that-cant-toggle",
+    "href": "slides/02-brand.html#formats-that-cant-toggle",
+    "title": "Design once, use anywhere",
+    "section": "Formats that can’t toggle",
+    "text": "Formats that can’t toggle\nRevealjs and Typst produce one appearance and offer no toggle between light/dark:\n\n\n\n\nslides.qmd\n\nformat:\n  revealjs:\n    brand-mode: dark\n\n\n\n\nreport.qmd\n\nformat:\n  typst:\n    brand-mode: dark\n\n\n\nThere is no runtime in a PDF and no toggle in a deck, so the choice moves to the YAML.\nWorth saying out loud: a dark deck for a dark room is a real use case, and this is the one key that does it.\nBoth formats default to light, whatever order your brand lists."
+  },
+  {
+    "objectID": "slides/02-brand.html#content-for-one-mode-only",
+    "href": "slides/02-brand.html#content-for-one-mode-only",
+    "title": "Design once, use anywhere",
+    "section": "Content for one mode only",
+    "text": "Content for one mode only\nUse light-content and .dark-content divs – they place the content in the same place, same size, so the layout doesn’t jump when the reader toggles.\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed.\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-2-one-brand-two-modes",
+    "href": "slides/02-brand.html#your-turn-2-one-brand-two-modes",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 2: one brand, two modes",
+    "text": "Your turn 2: one brand, two modes\n\n\nGive background, foreground and primary a value per mode:\n  background:\n    light: white\n    dark: ink\nAdd respect-user-color-scheme: true to report.qmd, render, and switch your system appearance back and forth with the page open.\nLook at the link to the methodology notes in dark mode. Fix it: add a lighter green to the palette and use it for the dark half of primary.\n\n\n\nExercise: 02-brand/02-dark-mode\n\n\n \n\nForest on ink is not a link anybody can read. Let them find it rather than telling them.\nStep 3 is where the palette/roles split earns its keep: a palette color is one hex value, so this needs a new name, not a second value for forest.\nA standalone page has no toggle in the corner — that button lives in a website’s navbar. respect-user-color-scheme is how they get at the dark version, and without it the dark stylesheet ships unused."
+  },
+  {
+    "objectID": "slides/02-brand.html#the-plot-didnt-get-the-memo",
+    "href": "slides/02-brand.html#the-plot-didnt-get-the-memo",
+    "title": "Design once, use anywhere",
+    "section": "The plot didn’t get the memo",
+    "text": "The plot didn’t get the memo\n\n\nTO DO: may need to update image\nThe document is branded. The plot inside it is not — the plotting library never saw the file."
+  },
+  {
+    "objectID": "slides/02-brand.html#theme-helpers",
+    "href": "slides/02-brand.html#theme-helpers",
+    "title": "Design once, use anywhere",
+    "section": "Theme helpers",
+    "text": "Theme helpers\nThe quarto packages turn a brand into a plot theme:\n\nRPython\n\n\nlibrary(quarto)\n\ntheme_set(theme_brand_ggplot2(\"_brand.yml\"))\n\n\nfrom quarto import theme_brand_plotnine\n\ntheme = theme_brand_plotnine(\"_brand.yml\")\n\n\n\n\n\nHelpers exist for ggplot2, plotnine, and others — same brand, so the plot matches the page without anyone picking a color.\nThe R helper applies theme_minimal() underneath, which you may or may not want.\nOne brand file in, one theme out. Which leaves the toggle unsolved.\n\n\nR · Python"
+  },
+  {
+    "objectID": "slides/02-brand.html#or-read-the-brand-yourself",
+    "href": "slides/02-brand.html#or-read-the-brand-yourself",
+    "title": "Design once, use anywhere",
+    "section": "Or read the brand yourself",
+    "text": "Or read the brand yourself\n\nRPython\n\n\nlibrary(brand.yml)\n\nbrand &lt;- read_brand_yml(\"_brand.yml\")\nbrand$color$primary\n\n\nfrom brand_yml import Brand\n\nbrand = Brand.from_yaml(\"_brand.yml\")\nbrand.color.primary\n\n\n\n\nOne source of truth, reachable from code.\n\n\nFor the case the helpers don’t cover: a hand-built figure, a table, a badge in a Shiny app.\nSame rule as the SCSS variables — ask for the role, not the hex code."
+  },
+  {
+    "objectID": "slides/02-brand.html#two-modes-need-two-plots",
+    "href": "slides/02-brand.html#two-modes-need-two-plots",
+    "title": "Design once, use anywhere",
+    "section": "Two modes need two plots",
+    "text": "Two modes need two plots\nrenderings says: this cell produces one output per mode.\n\n\nreport.qmd\n\n```{r}\n#| renderings: [light, dark]\npar(bg = \"#FFFFFF\", fg = \"#000000\")\nplot(1:10)\n\npar(bg = \"#000000\", fg = \"#FFFFFF\", col.axis = \"#FFFFFF\")\nplot(1:10)\n```\n\n\nThe number of outputs must match the number of renderings.\n\n\nQuarto tags the outputs .light-content and .dark-content — the same mechanism as two slides ago, applied to computational output.\nTwo modes means two themes: build one from each brand file and emit a plot for each. Nothing here is automatic.\nAn image is baked at render time. This is the only way a plot follows the toggle."
+  },
+  {
+    "objectID": "slides/02-brand.html#renderings-caption-or-crossref",
+    "href": "slides/02-brand.html#renderings-caption-or-crossref",
+    "title": "Design once, use anywhere",
+    "section": "renderings + caption or crossref",
+    "text": "renderings + caption or crossref\nrenderings and fig-/tbl- labels don’t mix. Wrap the cell instead:\n\n\nreport.qmd\n\n::: {#fig-employment}\n\n```{r}\n#| label: employment-plot\n#| renderings: [light, dark]\n```\n\nNon-farm payroll employment, by quarter\n\n:::\n\n\nThe cell’s label must not start with fig- or tbl-. The div’s may.\n\n\nThe div carries the crossref and the caption; the cell just makes the pictures.\nStill label the cell — stable file names, and errors you can read.\nThis is the kind of gotcha worth knowing exists rather than memorizing."
+  },
+  {
+    "objectID": "slides/02-brand.html#brand-is-the-bottom-layer",
+    "href": "slides/02-brand.html#brand-is-the-bottom-layer",
+    "title": "Design once, use anywhere",
+    "section": "Brand is the bottom layer",
+    "text": "Brand is the bottom layer\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, tweaks.scss]\n\n\nQuarto reads this as:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [brand, cosmo, tweaks.scss]   # brand is lowest priority\n\n\n\nWant the brand to win? Say where it goes:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, brand, tweaks.scss]\n\n\n\nThis is the fragile one. A Bootswatch theme listed after brand quietly overrides your brand, and the file that did it never mentions the brand.\nYour own SCSS goes last either way — module 03’s custom.scss sits on top of all of this.\nIf you are not combining with a Bootswatch theme, none of this matters."
+  },
+  {
+    "objectID": "slides/02-brand.html#same-trick-light-and-dark",
+    "href": "slides/02-brand.html#same-trick-light-and-dark",
+    "title": "Design once, use anywhere",
+    "section": "Same trick, light and dark",
+    "text": "Same trick, light and dark\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: [cosmo, brand]\n      dark: [slate, brand]\n\n\nTwo lists, each ordered. brand last in both, so the brand beats the theme in both modes.\nEverything in this section is html and dashboard only — SCSS is a Bootstrap story."
+  },
+  {
+    "objectID": "slides/02-brand.html#brand-reaches-four-formats",
+    "href": "slides/02-brand.html#brand-reaches-four-formats",
+    "title": "Design once, use anywhere",
+    "section": "Brand reaches four formats",
+    "text": "Brand reaches four formats\nhtml · dashboard · revealjs · typst\n\n\n\n\n\n\n\nKey\nWhere it lands\n\n\n\n\nforeground, background\nbody text and page, in all four\n\n\nprimary\nlinks, navbar (html), progress bar (revealjs)\n\n\ntypography\nbase, headings, links, code\n\n\nlogo\nnavbar, sidebar, slide corner, page corner\n\n\ndefaults: bootstrap\nhtml and dashboard only\n\n\n\n\nNot pdf. Not docx. Not pptx. The brand.yml implementation is still growing — the docs mark the gaps with limitation callouts.\npdf missing is module 04’s whole argument: render to typst instead and the brand comes with you."
+  },
+  {
+    "objectID": "slides/02-brand.html#logos-land-in-different-places",
+    "href": "slides/02-brand.html#logos-land-in-different-places",
+    "title": "Design once, use anywhere",
+    "section": "Logos land in different places",
+    "text": "Logos land in different places\nSet small, medium, large — Quarto picks per location:\n\n\n\n\n\n\n\n\nFormat\nLocation\nPrefers\n\n\n\n\nhtml, dashboard\ntop navbar\nsmall › medium › large\n\n\nhtml\nside navigation\nmedium › small › large\n\n\nrevealjs\nbottom right of slides\nmedium › small › large\n\n\ntypst\ntop left of the page\nmedium › small › large\n\n\nwebsite, book\nbrowser tab favicon\nsmall\n\n\n\n\nYou don’t have to set all three. One logo is fine until it looks wrong somewhere.\nTurn it off per location in _quarto.yml — navbar: logo: false, sidebar: logo: false — when you want the colors but not the mark.\nThe gap module 03 fills: a standalone HTML document has no navbar, so the brand logo has nowhere to go."
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-3-a-second-format-and-a-logo",
+    "href": "slides/02-brand.html#your-turn-3-a-second-format-and-a-logo",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 3: a second format, and a logo",
+    "text": "Your turn 3: a second format, and a logo\n\n\nAdd a deck as a second format in report.qmd, keeping the HTML:\nformat:\n  html:\n    respect-user-color-scheme: true\n  revealjs:\n    output-file: slides.html\nRender both. You wrote no revealjs theme.\nRegister brs-logo.svg in _brand.yml as mark, and set small and medium to it. Render both — only one of them shows it.\nPut it in the report yourself, above ## Summary:\n::: {.content-hidden when-format=\"revealjs\"}\n{{&lt; brand logo medium &gt;}}\n:::\nIn dark mode the mark is ink on ink. Register brs-logo-white.svg too, and give both sizes a light/dark pair.\n\n\n\nExercise: 02-brand/03-both-formats\n\n\n \n\nStep 1: output-file is not optional. Both formats write report.html and the second render silently overwrites the first.\nStep 2 is the point of the module: nothing in the deck’s YAML mentions the brand, and the deck is branded.\nStep 3 is the gap module 03 fills — placement is a format decision, and format: html has nowhere to put a logo.\nStep 4’s shortcode lands the mark under the title, because the body starts where the title block ends. Note that too; it is the bridge after lunch."
+  },
+  {
+    "objectID": "slides/02-brand.html#a-brand-is-a-file-so-it-can-be-a-repo",
+    "href": "slides/02-brand.html#a-brand-is-a-file-so-it-can-be-a-repo",
+    "title": "Design once, use anywhere",
+    "section": "A brand is a file, so it can be a repo",
+    "text": "A brand is a file, so it can be a repo\n\none brand, several projects — a website, a report, a deck, an app\nedited in one place, by whoever owns the brand\nversioned, so a change is a commit and not a surprise\n\n\nThe catch: Quarto needs the assets inside your project. Logos and font files can’t be referenced across the filesystem or the network.\n\n\nSo “share” means “copy, and keep the copy in sync”. Say that plainly — it sounds like a compromise until you consider a font file that vanishes mid render.\nCommit the copies. A brand you can’t rebuild from a clone is not shared."
+  },
+  {
+    "objectID": "slides/02-brand.html#quarto-use-brand",
+    "href": "slides/02-brand.html#quarto-use-brand",
+    "title": "Design once, use anywhere",
+    "section": "quarto use brand",
+    "text": "quarto use brand\n\n\nTerminal\n\nquarto use brand ./brand-repo         # a local directory\nquarto use brand myorg/shared-brand   # a GitHub repository\nquarto use brand https://example.com/brand.zip\n\n\nCopies into _brand/, then makes it match the source: it asks before creating the directory, before overwriting a file, and before removing one the source no longer has.\n\n\n\n\nTerminal\n\nquarto use brand myorg/shared-brand --dry-run   # show me first\nquarto use brand myorg/shared-brand --force     # no prompts, for CI\n\n\n\nQuarto 1.9. Re-run it to pick up changes to the shared brand — that is the sync story, and it is one command.\n--dry-run prints would-overwrite / would-create / would-remove. Use it the first time on a project you care about.\n--force trusts the source and answers every prompt yes. Fine in a workflow, not at a terminal."
+  },
+  {
+    "objectID": "slides/02-brand.html#or-a-brand-extension",
+    "href": "slides/02-brand.html#or-a-brand-extension",
+    "title": "Design once, use anywhere",
+    "section": "Or a brand extension",
+    "text": "Or a brand extension\n\n\n_extensions/\n\n_extensions/\n  myorg/\n    brs-brand/\n\n\ninstalls like any other Quarto extension\nupdate with quarto update\ndistributed from a Git repository\n\nBrand extensions →\n\nSame idea, different plumbing: still a copy in your project, tracked as an extension instead of a _brand/ directory.\nPick one and be consistent. Two copies of a brand in one project is the fragility we’re trying to avoid."
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-4-stop-writing-the-brand",
+    "href": "slides/02-brand.html#your-turn-4-stop-writing-the-brand",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 4: stop writing the brand",
+    "text": "Your turn 4: stop writing the brand\n\n\nDelete the brand you wrote, and both SVGs:\nrm _brand.yml brs-logo.svg brs-logo-white.svg\nRender. Default Quarto, in both formats.\nTake the agency’s brand — with --dry-run first, then without:\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run\nLook at what landed in _brand/, render both formats, then switch your system appearance to dark.\n\n\n\nExercise: 02-brand/04-shared-brand\n\n\n \n\nStep 1 proves how much was coming from those two files.\nStep 3: the colors and fonts come back. Dark mode does not, and the reversed mark is not in the agency brand at all. Adopting the shared brand cost them something real.\nSay this out loud: do not fix that by editing _brand/_brand.yml. It is a copy, the next quarto use brand overwrites it, and dark mode is a request to whoever owns the brand.\nSame command that starts module 03 — they run it again after lunch, knowing what it does."
+  },
+  {
+    "objectID": "slides/02-brand.html#why-_brand.yml",
+    "href": "slides/02-brand.html#why-_brand.yml",
+    "title": "Design once, use anywhere",
+    "section": "Why _brand.yml?",
+    "text": "Why _brand.yml?\n\nOne description, not one per format.\nTwo modes from one file, or two files.\nSame syntax everywhere — Quarto, Shiny, plots.\nShareable — a brand is a file, so it can be a repo.\n\n\nWhat it does not do: pdf, docx, pptx, and plots without a helper.\nEverything after lunch assumes the brand is in place and asks a different question: not what it looks like, but what’s on the page."
+  },
+  {
+    "objectID": "slides/02-brand.html#reaching-brand-values-from-code",
+    "href": "slides/02-brand.html#reaching-brand-values-from-code",
+    "title": "Design once, use anywhere",
+    "section": "Reaching brand values from code",
+    "text": "Reaching brand values from code\n\n\n\n\n\n\n\nWhere\nHow\n\n\n\n\nSCSS\n$brand-forest, $primary\n\n\nTypst\nbrand-color.primary, brand-logo-images.mark.path\n\n\nMarkdown\n{{&lt; brand color primary dark &gt;}}, {{&lt; brand logo mark &gt;}}\n\n\nR\nread_brand_yml(\"_brand.yml\")\n\n\nPython\nBrand.from_yaml(\"_brand.yml\")\n\n\nLua filter\nrequire('modules/brand/brand'), brand.get_color('primary')\n\n\n\n\nThe Lua row is for the workshop we point at in the wrap-up — a filter can read the brand too."
+  },
+  {
+    "objectID": "slides/02-brand.html#the-full-reference",
+    "href": "slides/02-brand.html#the-full-reference",
+    "title": "Design once, use anywhere",
+    "section": "The full reference",
+    "text": "The full reference\n\nMultiformat branding with _brand.yml — the semantic color list, the typography fields, every limitation callout\nbrand.yml — the specification, and the other tools that read it\nDark mode — the toggle, respect-user-color-scheme, mode-specific content\nCell renderings — renderings: [light, dark]\nMore about Quarto themes — the SCSS layers, if you need to know what beats what"
   },
   {
     "objectID": "slides/04-typst.html#same-release-new-requirement",

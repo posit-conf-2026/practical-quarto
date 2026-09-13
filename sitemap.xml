@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://posit-conf-2026.github.io/practical-quarto/slides/05-wrap-up.html</loc>
-    <lastmod>2026-09-11T20:09:37.567Z</lastmod>
+    <lastmod>2026-09-13T05:37:33.446Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2026.github.io/practical-quarto/slides/03-partials.html</loc>
-    <lastmod>2026-09-11T20:09:37.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/04-typst.html</loc>
-    <lastmod>2026-09-11T20:09:37.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/02-brand.html</loc>
-    <lastmod>2026-09-11T20:09:37.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2026.github.io/practical-quarto/index.html</loc>
-    <lastmod>2026-09-11T20:09:37.565Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/01-workflows.html</loc>
-    <lastmod>2026-09-11T20:09:37.565Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/03-partials.html</loc>
-    <lastmod>2026-09-11T20:09:37.566Z</lastmod>
+    <lastmod>2026-09-13T05:37:33.446Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2026.github.io/practical-quarto/setup.html</loc>
-    <lastmod>2026-09-11T20:09:37.567Z</lastmod>
+    <lastmod>2026-09-13T05:37:33.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/03-partials.html</loc>
+    <lastmod>2026-09-13T05:37:33.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/01-workflows.html</loc>
+    <lastmod>2026-09-13T05:37:33.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/index.html</loc>
+    <lastmod>2026-09-13T05:37:33.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/02-brand.html</loc>
+    <lastmod>2026-09-13T05:37:33.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/modules/04-typst.html</loc>
+    <lastmod>2026-09-13T05:37:33.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2026.github.io/practical-quarto/slides/02-brand.html</loc>
+    <lastmod>2026-09-13T05:37:33.446Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2026.github.io/practical-quarto/slides/04-typst.html</loc>
-    <lastmod>2026-09-11T20:09:37.567Z</lastmod>
+    <lastmod>2026-09-13T05:37:33.446Z</lastmod>
   </url>
 </urlset>
