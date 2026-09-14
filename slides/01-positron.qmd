@@ -73,7 +73,7 @@ We'll have lots of screenshots throughout — they're there so the steps are eas
 
 - **Preview** button in the editor toolbar
 
-- Shortcut: `cmd/ctrl + shift + K` — the same chord as Render in RStudio
+- Shortcut: `cmd/ctrl + shift + K` — same as Render in RStudio
 
 - Quarto version in the status bar
 
@@ -81,13 +81,19 @@ We'll have lots of screenshots throughout — they're there so the steps are eas
 
 - Opens the rendered document in the Viewer
 
-- Want a real browser instead? Set `quarto.render.previewType` to `external`
-
 :::
 
 :::
 
 :::
+
+::: {.callout-tip .fragment}
+Want a real browser instead? Set `quarto.render.previewType` to `external`.
+:::
+
+## Aside: Setting preferences in Positron
+
+
 
 ## Preview a specific format
 
