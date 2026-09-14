@@ -445,7 +445,7 @@ styling.
 
 5. Render. Then add `typography` with Atkinson Hyperlegible and render again.
 
-More detailed instructions in the exercise folder `README`.
+More details in the exercise folder `README`.
 
 :::
 
@@ -706,6 +706,10 @@ argument is the variant.
 
 ::: your-turn
 
+::: {.columns}
+
+::: {.column width="47%"}
+
 1. Give `background`, `foreground` and `primary` a value per mode:
 
    ```yaml
@@ -714,26 +718,42 @@ argument is the variant.
        dark: ink
    ```
 
-2. Add `respect-user-color-scheme: true` to `report.qmd`, render, and switch
-   your system appearance back and forth with the page open.
+2. Add `respect-user-color-scheme: true` to `report.qmd`, render, and switch your system appearance back and forth with the page open.
 
-3. Look at the link to the methodology notes in dark mode. Fix it: add a
-   lighter green to the palette and use it for the dark half of `primary`.
+:::
+
+::: {.column width="6%"}
+
+:::
+
+::: {.column width="47%"}
+
+3. Look at the link to the methodology notes in dark mode. Fix it: add a lighter green to the palette and use it for the dark half of `primary`.
+
+**Stretch goal:** Give `secondary` and `tertiary` mode values, then find something in the document that uses them, if any.
+
+More details in the exercise folder `README`.
+
+:::
+
+:::
+
+Once done with the steps above, discuss with your neighbors: 
+The style guide gave you four colors and no dark mode. 
+You invented `mint`. 
+Is that a decision you are allowed to make, and who would you ask?
 
 :::
 
 {{< countdown minutes=5 >}}
 
-
 ## Your turn 2: takeaways
 
-::: exercise-takeaways
+::: incremental
 
 - Getting colors and color contrast right, especially in light/dark mode, requires careful review and iteration.
 
 - A standalone page, unlike a website, has no toggle in the corner;`respect-user-color-scheme` is how single pages use the dark stylesheet.
-
-
 
 :::
 
@@ -741,14 +761,7 @@ argument is the variant.
 
 ## The plot didn't get the memo
 
-![](../images/brand-plot-unbranded.png){.screenshot fig-alt="A branded HTML report with an unbranded plot in it: purple headings and body type in the brand font, and below them a stacked bar chart of happiness factors for the top ten countries using the plotting library's default pink, purple, blue and green palette."}
-
-::: notes
-TO DO: may need to update image
-
-The document is branded. The plot inside it is not — the plotting library never
-saw the file.
-:::
+![](../images/brand-plot-unbranded.png){.screenshot fig-alt="A brandedwebsite with an unbranded plot in it: barplot of sector and value (same values as table above) using the plotting library's default pink, purple, blue and green palette."}
 
 ## Theme helpers
 
@@ -824,9 +837,9 @@ a Shiny app.
 Same rule as the SCSS variables — ask for the **role**, not the hex code.
 :::
 
-## Two modes need two plots {.smaller}
+## Two modes need two plots
 
-`renderings` says: this cell produces one output per mode.
+- `renderings` says: this cell produces one output per mode.
 
 ````{.markdown filename="report.qmd"}
 ```{{r}}
@@ -840,7 +853,7 @@ plot(1:10)
 ````
 
 ::: {.fragment}
-The number of outputs must match the number of renderings.
+- The number of outputs must match the number of renderings.
 :::
 
 ::: notes
@@ -854,9 +867,15 @@ An image is baked at render time. This is the only way a plot follows the
 toggle.
 :::
 
-## `renderings` + caption or crossref {.smaller}
+## `renderings` + caption or crossref
 
-`renderings` and `fig-`/`tbl-` labels don't mix. Wrap the cell instead:
+`renderings` and `fig-`/`tbl-` labels don't mix
+
+::: {.columns}
+
+::: {.column width="65%" .fragment}
+
+**Solution:** Wrap the cell instead
 
 ````{.markdown filename="report.qmd"}
 ::: {#fig-employment}
@@ -871,8 +890,19 @@ Non-farm payroll employment, by quarter
 :::
 ````
 
-::: {.fragment}
-The cell's `label` must **not** start with `fig-` or `tbl-`. The div's may.
+:::
+
+::: {.column width="5%"}
+
+:::
+
+
+::: {.column width="30%" .fragment}
+
+**Caution** The cell's `label` must **not** start with `fig-` or `tbl-`, the divs may
+
+:::
+
 :::
 
 ::: notes
@@ -886,6 +916,8 @@ This is the kind of gotcha worth knowing exists rather than memorizing.
 # Layering and formats
 
 ## Brand is the bottom layer {.smaller}
+
+Suppose you have the following and a `_brand.yml` file in the directory:
 
 ```{.yaml filename="_quarto.yml"}
 format:
@@ -914,11 +946,9 @@ format:
 :::
 
 ::: notes
-This is the fragile one. A Bootswatch theme listed after `brand` quietly
-overrides your brand, and the file that did it never mentions the brand.
+This is the fragile one. A Bootswatch theme listed after `brand` quietly overrides your brand, and the file that did it never mentions the brand.
 
-Your own SCSS goes last either way — module 03's `custom.scss` sits on top of
-all of this.
+Your own SCSS goes last either way — module 03's `custom.scss` sits on top of all of this.
 
 If you are not combining with a Bootswatch theme, none of this matters.
 :::
@@ -988,11 +1018,19 @@ The gap module 03 fills: a standalone HTML document has no navbar, so the brand
 logo has nowhere to go.
 :::
 
-## Your turn 3: a second format, and a logo {.smaller}
+## Your turn 3: second format + logo {.smaller}
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/03-both-formats`
+:::
 
 ::: your-turn
 
-1. Add a deck as a second format in `report.qmd`, keeping the HTML:
+::: {.columns}
+
+::: {.column width="45%"}
+
+1. Add a deck as a second format in `report.qmd` and set a different output file name for it:
 
    ```yaml
    format:
@@ -1002,12 +1040,18 @@ logo has nowhere to go.
        output-file: slides.html
    ```
 
-2. Render both. You wrote no revealjs theme.
+2. Preview each format and discuss with your neighbor how brand is applied to each.
 
 3. Register `brs-logo.svg` in `_brand.yml` as `mark`, and set `small` and
-   `medium` to it. Render both — only one of them shows it.
+   `medium` to it. 
+   
+:::
 
-4. Put it in the report yourself, above `## Summary`:
+::: {.column width="55%"}
+
+4. Preview each format, do both show the logo? Discuss with your neighbor.
+
+5. Explicitly insert the logo it in the report, above `## Summary`:
 
    ```markdown
    ::: {.content-hidden when-format="revealjs"}
@@ -1015,30 +1059,22 @@ logo has nowhere to go.
    :::
    ```
 
-5. In dark mode the mark is ink on ink. Register `brs-logo-white.svg` too, and
-   give both sizes a `light`/`dark` pair.
+6. In dark mode the mark is ink on ink. Register `brs-logo-white.svg` too, and give both sizes a `light`/`dark` pair.
 
 :::
 
-::: exercise-folder
-[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/03-both-formats`
 :::
+
+:::
+
 
 {{< countdown minutes=10 >}}
 
-::: notes
-Step 1: `output-file` is not optional. Both formats write `report.html` and the
-second render silently overwrites the first.
+## Your turn 3: takeaways
 
-Step 2 is the point of the module: nothing in the deck's YAML mentions the
-brand, and the deck is branded.
+- When both formats generate HTML, one of them need to output a filename that's different than the name of the .qmd file, defined with `output-file`.
 
-Step 3 is the gap module 03 fills — placement is a format decision, and
-`format: html` has nowhere to put a logo.
-
-Step 4's shortcode lands the mark *under* the title, because the body starts
-where the title block ends. Note that too; it is the bridge after lunch.
-:::
+- Not all formats use all inputs in `_brand.yml`, e.g., HTML documents don't get a `logo` by default, but elements defined in `_brand.yml` can be called explicitly with the `brand` shortcode.
 
 # Sharing a brand
 
