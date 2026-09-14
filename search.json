@@ -838,7 +838,7 @@
     "href": "slides/00-welcome.html#practical-quarto-welcome",
     "title": "Welcome",
     "section": "Practical Quarto: Welcome!",
-    "text": "Practical Quarto: Welcome!\nWifi: Posit Conf 2026 Password: conf2026\n\n\n\nMaterials: pos.it/practical-quarto-conf26\nGet Quarto version 1.10\nGet a copy of exercises: https://github.com/posit-conf-2026/practical-quarto-exercises\n\nOption 1: Fork and clone the repo or use usethis::create_from_github(\"posit-conf-2026/practical-quarto-exercises\")\nOption 2: Download the zip file and unzip it to your working directory\n\nJoin the discord: #workshop-quarto"
+    "text": "Practical Quarto: Welcome!\nWifi: Posit Conf 2026 Password: conf2026\n\n\n\nMaterials: pos.it/practical-quarto-conf26\nGet Quarto version 1.10\nGet a copy of exercises: https://github.com/posit-conf-2026/practical-quarto-exercises\n\nOption 1: Fork and clone the repo or use usethis::create_from_github(\"posit-conf-2026/practical-quarto-exercises\")\nOption 2: Download the zip file and unzip it to your working directory\n\nJoin the discord: #workshop-quarto\nLog in to Posit Assistant with the email address you signed up for the conference, or let a TA know ASAP if you need to use a different address"
   },
   {
     "objectID": "slides/00-welcome.html#housekeeping",
