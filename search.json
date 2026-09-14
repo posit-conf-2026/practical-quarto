@@ -602,7 +602,7 @@
     "href": "slides/02-brand.html#brand.yml-1",
     "title": "Design once, use anywhere",
     "section": "_brand.yml",
-    "text": "_brand.yml\n\n\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\n\nmeta is documentation for humans only, Quarto doesn’t use it\nIn logo, paths resolve relative to the brand file\ncolor works in two steps: name your colors in palette, then say what role each one plays, e.g., primary: forest, not primary: \"#1b5e4f\""
+    "text": "_brand.yml\n\n\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\n\nmeta is documentation for humans only, Quarto doesn’t use it.\nIn logo, paths resolve relative to the brand file.\ncolor works in two steps: name your colors in palette, then say what role each one plays, e.g., primary: forest, not primary: \"#1b5e4f\"."
   },
   {
     "objectID": "slides/02-brand.html#naming-then-roles",
@@ -616,7 +616,7 @@
     "href": "slides/02-brand.html#defaults-the-escape-hatch",
     "title": "Design once, use anywhere",
     "section": "defaults: the escape hatch",
-    "text": "defaults: the escape hatch\n\n\nFor the thing brand.yml has no word for:\n\n\n\n_brand.yml\n\ndefaults:\n  bootstrap:\n    defaults:\n      link-decoration: underline\n      navbar-fg: \"#fff\"\n    rules: |\n      h2 {\n        border: none;\n      }\n\n\n\n\nhtml and dashboard only\nAlso takes uses, functions, mixins\n\n\n\nThese are SCSS variables and rules, merged into the right layer of Quarto’s SCSS system.\nThis deck uses it: the h2 border rule is in our _brand.yml.\nReach for it last. Anything you can say in color or typography reaches all four formats; this reaches two."
+    "text": "defaults: the escape hatch\n\n\nFor the thing brand.yml has no word for:\n\n\n\n_brand.yml\n\ndefaults:\n  bootstrap:\n    defaults:\n      link-decoration: underline\n      navbar-fg: \"#fff\"\n    rules: |\n      h2 {\n        border: none;\n      }\n\n\n\n\nhtml and dashboard only.\nAlso takes uses, functions, mixins.\n\n\n\nThese are SCSS variables and rules, merged into the right layer of Quarto’s SCSS system.\nThis deck uses it: the h2 border rule is in our _brand.yml.\nReach for it last. Anything you can say in color or typography reaches all four formats; this reaches two."
   },
   {
     "objectID": "slides/02-brand.html#applying-it",
@@ -644,7 +644,7 @@
     "href": "slides/02-brand.html#your-turn-1-takeaways",
     "title": "Design once, use anywhere",
     "section": "Your turn 1: takeaways",
-    "text": "Your turn 1: takeaways\n\nNo _quarto.yml, no theme:, no css:, no need to name _brand.yml in report.qmd, just place in the same directory\nNaming a color does nothing, assigning it does: palette names colors. The keys below it — foreground, background, primary, secondary — assign them\nbackground: white is a literal CSS color, not a palette name. Both are legal in a role\nsource: google fetches the font at render time. base sets body text; headings sets every level of heading."
+    "text": "Your turn 1: takeaways\n\nNo _quarto.yml, no theme:, no css:, no need to name _brand.yml in report.qmd, just place in the same directory.\nNaming a color does nothing, assigning it does: palette names colors. The keys below it — foreground, background, primary, secondary — assign them.\nbackground: white is a literal CSS color, not a palette name\nsource: google fetches the font at render time. base sets body text; headings sets every level of heading."
   },
   {
     "objectID": "slides/02-brand.html#two-appearances-one-document",
@@ -658,7 +658,7 @@
     "href": "slides/02-brand.html#one-brand-two-modes",
     "title": "Design once, use anywhere",
     "section": "One brand, two modes",
-    "text": "One brand, two modes\n\n\n\nAny color in color or typography takes a light/dark pair\nColors in palette cannot take a pair — name the color once, choose per mode where the role is assigned\n\n\n\n\n_brand.yml\n\ncolor:\n  background:\n    light: white\n    dark: ink\n  foreground:\n    light: ink\n    dark: sand\n\ntypography:\n  headings:\n    color:\n      light: forest\n      dark: sand\n\n\n\nOne file, both modes. This is the cheapest version and it covers most brands.\nThe limitation is the reason the palette/roles split matters: forest is one hex code in both modes, but which role it plays can differ."
+    "text": "One brand, two modes\n\n\n\nAny color in color or typography takes a light/dark pair.\nColors in palette cannot take a pair — name the color once, choose per mode where the role is assigned.\n\n\n\n\n_brand.yml\n\ncolor:\n  background:\n    light: white\n    dark: ink\n  foreground:\n    light: ink\n    dark: sand\n\ntypography:\n  headings:\n    color:\n      light: forest\n      dark: sand\n\n\n\nOne file, both modes. This is the cheapest version and it covers most brands.\nThe limitation is the reason the palette/roles split matters: forest is one hex code in both modes, but which role it plays can differ."
   },
   {
     "objectID": "slides/02-brand.html#two-brands-two-modes",
@@ -686,7 +686,7 @@
     "href": "slides/02-brand.html#content-for-one-mode-only",
     "title": "Design once, use anywhere",
     "section": "Content for one mode only",
-    "text": "Content for one mode only\n\n\n\nlight-content / .dark-content divs place the content in the same place, same size, so the layout doesn’t jump when the reader toggles\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed\n\n\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
+    "text": "Content for one mode only\n\n\n\nlight-content / .dark-content divs place the content in the same place, same size, so the layout doesn’t jump when the reader toggles.\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed.\n\n\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
   },
   {
     "objectID": "slides/02-brand.html#your-turn-2-one-brand-two-modes",
@@ -826,7 +826,7 @@
     "href": "slides/02-brand.html#dark-mode-comes-built-in",
     "title": "Design once, use anywhere",
     "section": "Dark mode comes built in",
-    "text": "Dark mode comes built in\n\nWebsites get a light/dark toggle in the navbar automatically when the theme has two halves:\n\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: brand\n      dark: brand\n\n\n\nWith light/dark pairs in _brand.yml, the toggle flips the whole site, including navbar, links, code, and logo"
+    "text": "Dark mode comes built in\n\nWebsites get a light/dark toggle in the navbar automatically when the theme has two halves:\n\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: brand\n      dark: brand\n\n\n\nWith light/dark pairs in _brand.yml, the toggle flips the whole site, including navbar, links, code, and logo."
   },
   {
     "objectID": "slides/02-brand.html#your-turn-5-brand-the-website",
