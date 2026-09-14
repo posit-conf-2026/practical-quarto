@@ -29,12 +29,6 @@ format: revealjs
 
 :::
 
-::: notes
-No separate install is required to get started: Positron bundles the Quarto CLI and ships the Quarto VS Code extension pre-installed.
-
-The Quarto version in use is shown in the status bar at the bottom of the window.
-:::
-
 ::: footer
 Learn more: <https://quarto.org/docs/tools/positron/>
 :::
@@ -52,9 +46,7 @@ Learn more: <https://quarto.org/docs/tools/positron/>
 4. Rendered output opens in the **Viewer** pane
 
 ::: notes
-Demo this live, then show the annotated screenshots on the next slides.
-
-We'll have lots of screenshots throughout — they're there so the steps are easy to retrace later.
+Demo this live.
 :::
 
 ## The Preview button {.smaller}
@@ -91,9 +83,59 @@ We'll have lots of screenshots throughout — they're there so the steps are eas
 Want a real browser instead? Set `quarto.render.previewType` to `external`.
 :::
 
-## Aside: Setting preferences in Positron
+## Aside: Preferences in Positron {.smaller}
 
+::: {.columns}
 
+::: {.column width="40%"}
+
+**In the UI**
+
+- Command palette: `Preferences: Open User Settings` or `Preferences: Open Workspace Settings`
+
+- Search by setting name, e.g. `quarto.render`
+
+:::
+
+::: {.column .fragment width="60%"}
+
+**In JSON**
+
+- Command palette: `Preferences: Open User Settings (JSON)` or `Preferences: Open Workspace Settings (JSON)`
+
+- User settings stored at user level (outside of the workspace), specific location depends on OS:
+
+  ::: {.small}
+  - macOS: `~/Library/Application Support/Positron/User/settings.json`
+  - Windows: `%APPDATA%\Positron\User\settings.json`
+  - Linux: `~/.config/Positron/User/settings.json`
+  :::
+
+- Workspace settings in `.vscode/settings.json` in the workspace
+
+:::
+
+:::
+
+::: footer
+Learn more: <https://code.visualstudio.com/docs/configure/settings>
+:::
+
+## Aside: Preferences in Positron {.smaller}
+
+::: incremental
+- Any setting you change in the UI is written to the JSON
+
+- **Workspace wins over User** — so a project can set its own rules, and `.vscode/settings.json` can be checked into Git for all collaborators.
+
+- Settings can be scoped to a language, with a `"[quarto]": { ... }` block.
+
+- Filter for **Modified** settings (`@modified`) to see settings you've changed.
+
+- Right-clicking a setting offers **Copy Setting as JSON**.
+
+- For RStudio switchers: <https://positron.posit.co/migrate-rstudio-settings-and-extensions.html> covers bringing RStudio settings and keybindings across.
+:::
 
 ## Preview a specific format
 
@@ -138,9 +180,7 @@ Want a real browser instead? Set `quarto.render.previewType` to `external`.
 :::
 
 ::: notes
-Scroll the list live, and demo a command someone in the room suggests.
-
-Render and Preview are the two you will reach for most: Preview watches and re-renders, Render is the one-shot.
+Demo this live.
 :::
 
 ## Render on Save {.smaller}
@@ -151,9 +191,9 @@ Three ways to turn it on:
 
 ::: {.incremental}
 
-1. The **Render on Save** checkbox in the editor toolbar — this editor only:
+1. The **Render on Save** checkbox in the editor toolbar:
 
-   ![](../images/positron-render-on-save.png){.screenshot fig-alt="The editor toolbar of hello.qmd showing the Preview button, the Render on Save checkbox, and the Source and Visual toggle."}
+   ![](../images/positron-render-on-save.png){.screenshot fig-alt="The editor toolbar showing the Preview button, the Render on Save checkbox, and a floppy disc icon for save."}
 
 2. The setting `quarto.render.renderOnSave` — search `quarto.render` in Settings
 
@@ -164,17 +204,6 @@ Three ways to turn it on:
      render-on-save: true
    ```
 
-:::
-
-::: notes
-The default is off for a reason: a render may include long-running computations, and you want to be able to save freely without paying for one.
-
-The checkbox is the quick, throwaway version: it applies to the editor in front of you, not to every document you open.
-
-The YAML option travels with the document or project — another setting that can live in version control, like the Air setup.
-`render-on-save` is not the only thing that lives under `editor:` — `editor: visual` is there too, coming up in a couple of slides.
-
-Hold that thought about long-running computations — it's exactly the problem freeze solves, later in the workshop.
 :::
 
 ## Start a new document
@@ -201,18 +230,14 @@ or the command palette:
 
 # Document workflow
 
-## Demo: document workflow {.smaller}
+## Demo: document workflow
 
-- **Code cells**: the actions above each cell, the `Quarto: Run ...` commands, output in the Console or inline
+- **Code cells:** the actions above each cell, the `Quarto: Run ...` commands, output in the Console or inline
 
-- **Navigation**: Breadcrumbs, Outline pane, Go to Symbol in Editor
-
-- **Visual mode**: Insert Anything with `/`
+- **Navigation:** Breadcrumbs, Outline pane, Go to Symbol in Editor
 
 ::: notes
 Demo each live, then walk through the screenshots.
-
-Save the visual mode caveat for its own slide a few slides from now — for the demo, just show Insert Anything and switch back to Source.
 :::
 
 ## Code cells
@@ -243,11 +268,7 @@ Save the visual mode caveat for its own slide a few slides from now — for the 
 
 ![](../images/positron-run-commands.png){.screenshot fig-alt="The command palette filtered to Quarto Run, showing Quarto: Run All Cells, Run Cell, Run Cell and Advance, Run Cells Above, Run Cells Below, Run Current Code, Run Next Cell, Run Previous Cell, and Run Selected Lines, with their keyboard shortcuts."}
 
-::: notes
-Every one of these has a shortcut, listed on the right of the palette — no need to memorize them, just know where to look.
-:::
-
-## Inline output {.smaller}
+## Inline output
 
 Output from code cells, in the editor, next to the code that made it — the `.Rmd` experience RStudio users are used to.
 
@@ -268,14 +289,26 @@ Learn more: <https://positron.posit.co/quarto-inline-output.html>
 :::
 
 ::: notes
-This is the single biggest quality-of-life setting for anyone arriving from RStudio, and it is off by default, so nobody discovers it by accident.
-
 The isolated session is the part worth dwelling on: cells run in a kernel scoped to that document, with the document's directory as the working directory.
 That is the same contract `quarto render` gives you, which is why the "it worked interactively" class of bug mostly goes away.
 
 Trade-off to name out loud: it is a different mental model from one shared Console for everything.
 If someone leans on objects created in the Console, inline output will feel like it took something away.
 :::
+
+## Your turn 1: Enable inline output
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `01-positron`
+:::
+
+::: your-turn
+Enable inline output for `hello.qmd` and run the code cells one at a time and then all at once.
+
+**Optional:** Go to settings and turn on `Console: Show Notebook Console`.
+:::
+
+{{< countdown minutes=5 >}}
 
 ## Insert a code cell
 
@@ -329,147 +362,159 @@ If someone leans on objects created in the Console, inline output will feel like
 Headings and labelled cells both show up as symbols — one more reason to label your cells.
 :::
 
-## Three ways to edit a Quarto document {.smaller}
+## Editing assistance {.smaller}
 
-::: {.columns}
+::: incremental
 
-::: {.column width="33%"}
+- **YAML intelligence:** Completion for YAML options, red squiggles for invalid ones on save.
+  - Works in the front matter, in `_quarto.yml`, and in cell options; the diagnostics fire when the document is saved.
 
-**Source**
+- **Help pane:** Hover for tooltips, `F1` opens full help for the function under the cursor.
 
-Plain text, everything works
+- **Live preview:** LaTeX math and Mermaid/Graphviz diagrams preview as you type (`cmd/ctrl + shift + L`).
+  - `Quarto: Show Assist Panel` opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math.
 
-:::
-
-::: {.column width="33%"}
-
-**Visual**
-
-Rich text, `/` to insert anything
-
-⚠️ Running code and other language features are **not supported**
+- **Snippets:** `Insert Snippet` for boilerplate: code blocks, callouts, divs.
+  - Snippets only show up in IntelliSense if `editor.snippetSuggestions` is set to something other than `none`.
+  - The `Insert Snippet` command works either way.
 
 :::
 
-::: {.column width="33%"}
+# Settings worth adopting
 
-**Notebook**
-
-For `.ipynb` files rendered with Quarto
-
-:::
-
-:::
-
-Set the default for a document or project in YAML:
-
-```{.yaml filename="hello.qmd"}
-editor: visual
-```
-
-::: footer
-Learn more: <https://quarto.org/docs/tools/positron/notebook.html>
-:::
-
-::: notes
-The visual mode caveat is the one to say out loud, because it catches RStudio switchers: visual mode in Positron is for writing, not for running.
-Statement execution and other language features don't work there — switch back to Source to run code.
-Point anyone who cares to <https://github.com/posit-dev/positron/issues/1805> for updates.
-
-`editor: visual` is the same `editor:` key as `render-on-save` from earlier — so a project can open in visual mode for everyone by default.
-
-The Notebook Editor is the third option people forget exists: `.ipynb` notebooks can be rendered by Quarto, with YAML in a raw cell and `#|` options in code cells.
-`Quarto: New Notebook` starts one, and you can convert between `.ipynb` and `.qmd`.
-:::
-
-## Editing assistance
-
-::: {.columns}
-
-::: {.column}
-
-**YAML intelligence**
-
-Completion for YAML options, red squiggles for invalid ones on save
-
-**Help pane**
-
-Hover for tooltips, `F1` opens full help for the function under the cursor
-
-:::
-
-::: {.column}
-
-**Live preview**
-
-LaTeX math and Mermaid/Graphviz diagrams preview as you type (`cmd/ctrl + shift + L`)
-
-**Snippets**
-
-`Insert Snippet` for boilerplate: code blocks, callouts, divs
-
-:::
-
-:::
-
-::: notes
-All four come from the Quarto extension — nothing to install.
-
-One configuration caveat: snippets only show up in IntelliSense if `editor.snippetSuggestions` is set to something other than `none`.
-The `Insert Snippet` command works either way.
-
-YAML completion works in the front matter, in `_quarto.yml`, and in cell options; the diagnostics fire when the document is saved.
-
-Also worth a mention: `Quarto: Show Assist Panel` opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math.
-:::
-
-## Settings worth stealing {.smaller}
+## Settings worth adopting {.smaller}
 
 ```{.json filename="settings.json"}
 {
-  "[quarto]": {
-    "editor.wordWrap": "off",
-    "editor.guides.bracketPairs": "active",
-    "editor.language.brackets": [[":::", ":::"]],
-    "editor.language.colorizedBracketPairs": [[":::", ":::"]]
-  },
-  "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
-  "files.watcherExclude": { "**/.quarto/**": true },
-  "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
 }
 ```
 
-::: {.incremental}
-
-- **Word wrap off** — long lines run off the edge instead of wrapping, so you break lines yourself; break at sentences, and Git diffs show the sentence that changed, not the whole paragraph (bonus: pipe tables stay on one line)
-
-- **Rulers at 80 and 120** — visual guides, and a backstop for runaway lines (long URLs, table rows)
-
-- **`:::` as a bracket pair** — fold and color-match fenced divs
-
-- **Exclude `.quarto/` and `_freeze/`** from search and file watching — faster in big projects
-
+::: aside
+Adapted from: CANOUIL, M. (2025-11-20). Optimising VS Code and Positron for Quarto: Essential Settings for Better Editing. Mickael.canouil.fr. <https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings> (CC BY-NC-SA 4.0)
 :::
 
-::: footer
-Adapted from: [Mickaël Canouil, *Optimising VS Code and Positron for Quarto*](https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings/) (CC BY-NC-SA)
+## Formatting
+
+```{.json filename="settings.json" code-line-numbers="2-4,9"}
+{
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+}
+```
+
+## Word wrap
+
+Long lines wrap -- recommend breaking at sentences:
+
+```{.json filename="settings.json" code-line-numbers="2,5,9"}
+{
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+}
+```
+
+## Rulers {.smaller}
+
+Rulers at 80 and 120 as visual guides:
+
+```{.json filename="settings.json" code-line-numbers="10"}
+{
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+}
+```
+
+## Bracket pairs
+
+Fold and color-match fenced divs:
+
+```{.json filename="settings.json" code-line-numbers="2,6-8,9"}
+{
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+}
+```
+
+## Exclude {.smaller}
+
+Exclude files in `.quarto/` and `_freeze/` from search and file watching to gain speed, especially helpful in big projects:
+
+```{.json filename="settings.json" code-line-numbers="11-12"}
+{
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto",
+        "editor.wordWrap": "on",
+        "editor.guides.bracketPairs": "active",
+        "editor.language.brackets": [[":::", ":::"]],
+        "editor.language.colorizedBracketPairs": [[":::", ":::"]]
+    },
+    "editor.rulers": [80, { "color": "#b22222", "column": 120 }],
+    "files.watcherExclude": { "**/.quarto/**": true },
+    "search.exclude": { "**/.quarto": true, "**/_freeze": true }
+}
+```
+
+## Your turn 2: Adopt the recommended settings
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `01-positron`
 :::
 
-::: notes
-These are opinionated settings — encourage attendees to try them and adjust.
+::: your-turn
+Grab the recommended settings from `settings-worth-adopting.txt` and add them to your workspace or user settings.
 
-Be precise about what word wrap off does and doesn't do: it does not put one sentence per line for you.
-It makes the convention visible — a long line runs off the edge, so you notice and break it.
-The habit is yours; the setting just stops hiding it.
-
-Break at sentence boundaries, not at a character count — that is what makes the Git diffs sentence-level.
-The rulers help you see where you are: 80 is a subtle vertical line, a soft guide; 120 is firebrick red (`#b22222`), flagging a runaway line — usually a long URL, a pipe-table row, or code — not a place to break a sentence.
-
-`editor.guides.bracketPairs` is the piece people leave out, and then wonder why the `:::` colors never show up.
-
-The settings can live in user settings (everywhere) or in a project's `.vscode/settings.json` — same pattern as the Air setup, so it can be checked into version control and shared.
-The Quarto formatter setting belongs in the same `[quarto]` block; we let `Air: Initialize Workspace Folder` write that one for us, a few slides from now.
+Access these settings via the command palette: `Preferences: Open User Settings (JSON)` or `Preferences: Open Workspace Settings (JSON)`.
 :::
+
+{{< countdown minutes=5 >}}
 
 # Coming from RStudio
 
@@ -477,15 +522,15 @@ The Quarto formatter setting belongs in the same `[quarto]` block; we let `Air: 
 
 ::: {.incremental}
 
-- **Publishing**: no button in the editor toolbar, but the pre-installed [Posit Publisher extension](https://positron.posit.co/publish-to-connect.html) deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub
+- **Publishing**: no button in the editor toolbar, but the pre-installed [Posit Publisher extension](https://positron.posit.co/publish-to-connect.html) deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub.
 
-- **Inline output**: off by default, and each document gets its own session — see earlier
+- **Inline output**: off by default, and each document gets its own session, we already saw how to turn it on.
 
-- R Markdown (`.Rmd`) files preview with Quarto
-
-- `R: Render Document With R Markdown` renders with {rmarkdown} instead, and `R: New R Markdown from Template` starts from a template
-
-- Advanced `.Rmd` features like `params` have no interactive support
+- **R Markdown:**
+  - R Markdown (`.Rmd`) files preview with Quarto by default.
+  - `R: Render Document With R Markdown` renders with `rmarkdown` instead.
+  - `R: New R Markdown from Template` starts from a template.
+  - Advanced `.Rmd` features like `params` have no interactive support
 
 :::
 
@@ -520,88 +565,6 @@ Learn more: <https://positron.posit.co/quarto.html>
 :::
 
 Either way: the status bar tells you which one won, and changing `quarto.path` takes a restart.
-
-::: footer
-Download: <https://quarto.org/docs/download/>
-:::
-
-# Git
-
-## Demo: Git
-
-- **Changes** pane
-
-- Open a change: the diff opens in an editor — closest to RStudio's diff
-
-- Add, commit
-
-- **Graph**: pull/push, like RStudio's History view
-
-- Current branch
-
-::: notes
-Demo this live, then walk through the screenshots.
-:::
-
-## Examine changes
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-![](../images/positron-git-changes.png){.screenshot fig-alt="The Source Control pane in Positron listing changed files, with a commit message box and Commit button, the commit Graph below, and diff editors open for hello.qmd and new-document.qmd."}
-
-:::
-
-::: {.column width="35%"}
-
-- Changes live in the **Source Control** pane
-
-- Click a file and the diff opens in an editor
-
-- Message + **Commit**
-
-- **Graph**: commit history
-
-:::
-
-:::
-
-::: notes
-Point out where changes live and what they look like: files, repo, branches, etc.
-The buttons give a basic set of actions, the menus more, and then the command line.
-:::
-
-## Git workflow
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-![](../images/positron-git-workflow.png){.screenshot fig-alt="The Source Control pane with staged and unstaged changes, the commit message box, and the commit Graph showing the current branch main."}
-
-:::
-
-::: {.column width="35%"}
-
-- **Current branch**: click to switch, create new...
-
-- **Stage and commit**
-
-- **Pull / Push**
-
-:::
-
-:::
-
-::: notes
-The branch name in the status bar is also the branch switcher — click it to change branches or create a new one, no dialog hunting required.
-
-Staging is more explicit here than in RStudio's checkbox column: the `+` on a file stages it, and you can stage a single hunk from the diff editor.
-
-Pull and push live behind the `...` menu and the sync button.
-Anything the UI doesn't cover, the Terminal does — same repo, same Git.
-:::
 
 # Formatting with Air
 
