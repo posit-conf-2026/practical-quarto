@@ -7,10 +7,13 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <title>Practical Quarto: Patterns, templates, and tooling – Wrap-up</title>
+  <title>Practical Quarto: Patterns, templates, and tooling – Welcome</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,7 +130,9 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Wrap-up – Practical Quarto: Patterns, templates, and tooling">
+  <!-- Countdown Global CSS -->
+  <style text="text/css">:root {--countdown-color-background: #EB4FEE;--countdown-color-text: #ffffff;}</style>
+<meta property="og:title" content="Welcome – Practical Quarto: Patterns, templates, and tooling">
 <meta property="og:description" content="Practical Quarto: Patterns, templates, and tooling @ posit::conf(2026)">
 <meta property="og:site_name" content="Practical Quarto: Patterns, templates, and tooling">
 </head>
@@ -136,7 +141,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#419CF5" class="quarto-title-block center">
-  <h1 class="title">Wrap-up</h1>
+  <h1 class="title">Welcome</h1>
   <p class="subtitle">Practical Quarto: Patterns, templates, and tooling @ <code>posit::conf(2026)</code></p>
 
 <div class="quarto-title-authors">
@@ -159,123 +164,164 @@ Mine Çetinkaya-Rundel
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="m17.303 9.524l3.182 3.182a5.5 5.5 0 1 1-7.778 7.778l-1.06-1.06a1.5 1.5 0 1 1 2.12-2.122l1.062 1.061a2.5 2.5 0 0 0 3.535-3.536l-3.182-3.182a2.5 2.5 0 0 0-2.681-.56q-.242.096-.454.196l-.464.217c-.62.28-1.097.4-1.704-.206c-.872-.872-.646-1.677.417-2.41a5.5 5.5 0 0 1 7.007.642m-6.01-6.01l1.06 1.06a1.5 1.5 0 0 1-2.12 2.122l-1.061-1.06A2.5 2.5 0 1 0 5.636 9.17l3.182 3.182a2.5 2.5 0 0 0 2.681.56q.242-.096.454-.196l.464-.217c.62-.28 1.098-.4 1.704.206c.872.872.646 1.677-.417 2.41a5.5 5.5 0 0 1-7.007-.642l-3.182-3.182a5.5 5.5 0 1 1 7.778-7.778Z"></path></g></svg> <a href="http://pos.it/practical-quarto-conf26">pos.it/practical-quarto-conf26</a>
   </div>
 </section>
-<section id="four-problems-four-patterns" class="slide level2">
-<h2>Four problems, four patterns</h2>
+<section>
+<section id="logistics" class="title-slide slide level1 center">
+<h1>Logistics</h1>
+
+</section>
+<section id="practical-quarto-welcome" class="slide level2 center smaller">
+<h2>Practical Quarto: Welcome!</h2>
+<p><strong>Wifi</strong>: Posit Conf 2026 <strong>Password</strong>: conf2026</p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ol type="1">
+<li><p>Materials: <a href="http://pos.it/practical-quarto-conf26">pos.it/practical-quarto-conf26</a></p></li>
+<li><p>Get <a href="https://quarto.org/docs/download/">Quarto version 1.10</a></p></li>
+<li><p>Get a copy of exercises: <a href="https://github.com/posit-conf-2026/practical-quarto-exercises" class="uri">https://github.com/posit-conf-2026/practical-quarto-exercises</a></p>
 <ul>
-<li class="fragment"><strong>Productive workflows</strong> — the friction between you and the render</li>
-<li class="fragment"><strong>Design once, use anywhere</strong> — one brand, every format</li>
-<li class="fragment"><strong>Build reusable structures</strong> — the boilerplate around your content</li>
-<li class="fragment"><strong>Why Typst matters</strong> — a PDF you can restyle</li>
-</ul>
-<aside class="notes">
-<p>Each one stands alone. Pick up the ones that match what you already fight with.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<li>Option 1: Fork and clone the repo or use <code>usethis::create_from_github("posit-conf-2026/practical-quarto-exercises")</code></li>
+<li>Option 2: Download the zip file and unzip it to your working directory</li>
+</ul></li>
+<li><p>Join the discord: <code>#workshop-quarto</code></p></li>
+</ol>
+</div><div class="column" style="width:25%;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"300","text":"http://pos.it/practical-quarto-conf26","width":"300"});
+  script.remove();
+})();
+</script>
+    
+</div></div>
 </section>
-<section id="which-piece-for-which-job" class="slide level2">
-<h2>Which piece for which job?</h2>
+<section id="housekeeping" class="slide level2 smaller">
+<h2>Housekeeping</h2>
+</section>
+<section id="venue-information" class="slide level2">
+<h2>Venue information</h2>
 <ul>
-<li class="fragment"><p><code>_brand.yml</code> — the <strong>same look</strong> across formats and projects. One repo, not a theme per project.</p></li>
-<li class="fragment"><p>Template partials — the <strong>same structure</strong>, different content. Format specific, and driven by metadata.</p></li>
+<li><p>Meditation/Prayer Room: Room 332</p></li>
+<li><p>Mother’s Room: Room 333</p></li>
+<li><p>Speaker’s Lounge: Room 334</p></li>
+<li><p>Gender-neutral bathrooms: 4th floor, one on either side of ballroom</p></li>
 </ul>
-<aside class="notes">
-<p>Look, structure, distribution. Three different problems.</p>
-<p>Reach for the smallest piece that solves yours.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="what-we-did-not-get-to" class="slide level2">
-<h2>What we did not get to</h2>
-<p><strong>Lua filters</strong> — change the document while Pandoc holds it as an AST.</p>
-<p>Not format specific, so one filter can serve <code>html</code>, <code>typst</code>, and <code>revealjs</code>. Reach for one when the change you want is to the <em>content</em>, not the boilerplate around it.</p>
-<p><a href="https://posit-conf-2025.github.io/quarto-extend">Extending Quarto →</a> — a whole workshop on filters, shortcodes, and extensions</p>
-<aside class="notes">
-<p>Partials are the boilerplate. Filters are the content.</p>
-<p>That workshop’s materials are open, same license as these.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="where-to-go-next" class="slide level2">
-<h2>Where to go next</h2>
+<section id="workshop-policies" class="slide level2">
+<h2>Workshop policies</h2>
 <ul>
-<li class="fragment"><p><a href="https://quarto.org">quarto.org</a> — the reference, and the changelog for each release</p></li>
-<li class="fragment"><p><a href="https://quarto-tdg.org">Quarto: the practical guide</a> — the long-form version of today</p></li>
-<li class="fragment"><p><a href="https://github.com/quarto-dev/quarto-cli/discussions">GitHub Discussions</a> — where the maintainers answer, and where the good examples end up</p></li>
-<li class="fragment"><p><strong>Discord</strong>, <code>#workshop-quarto</code> — we’ll keep an eye on it for a while</p></li>
+<li><p>Please review the posit::conf code of conduct, which applies to all workshops: <a href="https://posit.co/code-of-conduct" class="uri">https://posit.co/code-of-conduct</a></p></li>
+<li><p>The Code of Conduct site has info on how to report a problem (in person, email, phone)</p></li>
+<li><p>Please do not photograph people wearing red lanyards</p></li>
 </ul>
-<aside class="notes">
-<p>File an issue when something is genuinely broken. Discussions for “how do I”.</p>
-<p>Discord is not forever. Ask there while we are still watching.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="these-materials" class="slide level2">
-<h2>These materials</h2>
-<p>This site, and every exercise folder, stay up.</p>
+<section id="instructors" class="slide level2">
+<h2>Instructors</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Charlotte</strong> <a href="https://www.linkedin.com/in/cvwickham/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/cwickham"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a></p>
+<p>Senior Developer Advocate @ Posit <br> <em>Focus on Quarto</em></p>
+</div><div class="column">
+<p><strong>Mine</strong> <a href="https://www.linkedin.com/in/minec/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/mine-cetinkaya-rundel"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://bsky.app/profile/minecr.bsky.social"><iconify-icon role="img" inline="" icon="fa7-brands:bluesky" aria-label="Icon bluesky from fa7-brands Iconify.design set." title="Icon bluesky from fa7-brands Iconify.design set."></iconify-icon></a></p>
+<p>Professor @ Duke University <br> Senior Developer Advocate @ Posit <br> <em>Focus on Quarto, Tidyverse, and Positron</em></p>
+</div></div>
+</section>
+<section id="teaching-assistants" class="slide level2">
+<h2>Teaching Assistants</h2>
+<div class="columns">
+<div class="column">
+<p>Carlos Scheidegger</p>
+</div><div class="column">
+<p>Charlie Gao</p>
+</div></div>
+</section>
+<section id="your-turn-introductions" class="slide level2">
+<h2>Your turn: Introductions</h2>
+<div class="your-turn">
+<p>Introduce yourself to your neighbor(s):</p>
 <ul>
-<li class="fragment">Slides and modules: <a href="http://pos.it/practical-quarto-conf26">pos.it/practical-quarto-conf26</a></li>
-<li class="fragment">Exercises: <a href="https://github.com/posit-conf-2026/practical-quarto-exercises">github.com/posit-conf-2026/practical-quarto-exercises</a></li>
+<li>Name</li>
+<li>Affiliation</li>
+<li>What you use Quarto for</li>
 </ul>
-<p><br></p>
-<p>Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> — reuse them, teach from them, just say where they came from.</p>
-</section>
-<section id="workshop-survey" class="slide level2">
-<h2>Workshop survey</h2>
-<p>Before we move on to Q&amp;A, please take a note of the workshop survey:</p>
-<p><br></p>
-<div class="large">
-<p><iconify-icon role="img" inline="" icon="ri:survey-line" aria-label="Icon survey-line from ri Iconify.design set." title="Icon survey-line from ri Iconify.design set."></iconify-icon> <a href="http://pos.it/conf26-workshop-survey">pos.it/conf26-workshop-survey</a></p>
 </div>
+<countdown-timer id="timer_c9d9f5686bd4dd156da8bbe151abc9fbafb1c769" minutes="02" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
 </section>
-<section id="questions" class="slide level2">
-<h2>Questions?</h2>
-<p>Any questions, but especially of the kind:</p>
+<section id="how-to-get-help" class="slide level2">
+<h2>How to get help?</h2>
 <ul>
-<li class="fragment"><p>How would I solve <code>_</code><span class="handwriting">my problem</span><code>_</code> with a brand, a partial, or Typst?</p></li>
-<li class="fragment"><p>Which of those do I even need for <code>_</code><span class="handwriting">my problem</span><code>_</code>?</p></li>
+<li><p>Raise your <em>color</em> post-it note</p>
+<p><iconify-icon role="img" inline="" icon="streamline-sharp:new-sticky-note-solid" style="color:#ff65a3;" aria-label="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." title="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." width="60" height="60"></iconify-icon> “I’m stuck and need help!”</p>
+<p><iconify-icon role="img" inline="" icon="streamline-sharp:new-sticky-note-solid" style="color:#46c45a;" aria-label="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." title="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." width="60" height="60"></iconify-icon> “I’ve finished, and ready to move on.”</p></li>
+<li><p>Ask in Discord</p></li>
+<li><p>Talk to us during breaks or your-turns</p></li>
 </ul>
 </section>
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>Thank you!</h1>
-
-
+<section id="agenda" class="slide level2 smaller">
+<h2>Agenda</h2>
+<p>Full schedule at: <a href="https://pos.it/practical-quarto-conf26">pos.it/practical-quarto-conf26</a></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Time</th>
+<th style="text-align: left;">Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">09:00 - 09:15</td>
+<td style="text-align: left;">Welcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">09:15 - 10:30</td>
+<td style="text-align: left;">Productive workflows in Positron</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10:30 - 11:00</td>
+<td style="text-align: left;"><em>Coffee break</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11:00 - 12:10</td>
+<td style="text-align: left;">Design once, use anywhere</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12:10 - 12:30</td>
+<td style="text-align: left;">Interlude: q2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12:30 - 13:30</td>
+<td style="text-align: left;"><em>Lunch break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13:30 - 15:00</td>
+<td style="text-align: left;">Build reusable structures</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15:00 - 15:30</td>
+<td style="text-align: left;"><em>Coffee break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15:30 - 16:30</td>
+<td style="text-align: left;">Why Typst matters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16:30 - 17:00</td>
+<td style="text-align: left;">Wrap-up + Q&amp;A</td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+<div class="marker r-fit-text">
+<p>Let’s jump in!</p>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
