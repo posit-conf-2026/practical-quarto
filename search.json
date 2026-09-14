@@ -613,7 +613,7 @@
     "href": "modules/01-positron.html",
     "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Productive workflows in Positron"
@@ -624,7 +624,7 @@
     "href": "modules/01-positron.html#overview",
     "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Productive workflows in Positron"
@@ -635,7 +635,7 @@
     "href": "modules/01-positron.html#learning-objectives",
     "title": "Productive workflows in Positron",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.",
     "crumbs": [
       "Modules",
       "Productive workflows in Positron"
@@ -646,7 +646,7 @@
     "href": "modules/01-positron.html#links",
     "title": "Productive workflows in Positron",
     "section": "Links",
-    "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
+    "text": "Links\n\nPositron\nQuarto in Positron\nInline output in Positron\nAir formatter\nPosit Assistant",
     "crumbs": [
       "Modules",
       "Productive workflows in Positron"
@@ -697,7 +697,7 @@
     "href": "index.html#description",
     "title": "Practical Quarto",
     "section": "Description",
-    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\n\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
+    "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\n\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
     "crumbs": [
       "Home"
     ]
@@ -717,7 +717,7 @@
     "href": "modules/00-welcome.html",
     "title": "Welcome",
     "section": "",
-    "text": "Get set up for the workshop: install Quarto, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Welcome"
@@ -728,7 +728,7 @@
     "href": "modules/00-welcome.html#overview",
     "title": "Welcome",
     "section": "",
-    "text": "Get set up for the workshop: install Quarto, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Welcome"
@@ -739,7 +739,7 @@
     "href": "modules/00-welcome.html#links",
     "title": "Welcome",
     "section": "Links",
-    "text": "Links\n\nWorkshop materials\nExercises\nDownload Quarto\nposit::conf code of conduct",
+    "text": "Links\n\nWorkshop materials\nExercises\nDownload Quarto\nDownload Positron\nposit::conf code of conduct",
     "crumbs": [
       "Modules",
       "Welcome"
@@ -750,7 +750,7 @@
     "href": "modules/02-brand.html",
     "title": "Design once, use anywhere",
     "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
+    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Design once, use anywhere"
@@ -761,7 +761,7 @@
     "href": "modules/02-brand.html#overview",
     "title": "Design once, use anywhere",
     "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
+    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
       "Design once, use anywhere"
@@ -772,7 +772,7 @@
     "href": "modules/02-brand.html#learning-objectives",
     "title": "Design once, use anywhere",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nProduce renderings of the same content in multiple formats while preserving brand consistency.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nRender the same branded content to multiple formats while preserving brand consistency.",
     "crumbs": [
       "Modules",
       "Design once, use anywhere"
@@ -783,7 +783,7 @@
     "href": "modules/02-brand.html#links",
     "title": "Design once, use anywhere",
     "section": "Links",
-    "text": "Links\n\nQuarto Branding\nDark mode\nHTML themes",
+    "text": "Links\n\nQuarto Branding\nbrand.yml specification\nDark mode\nCell renderings\nHTML themes",
     "crumbs": [
       "Modules",
       "Design once, use anywhere"
