@@ -86,7 +86,7 @@ One file, written once, applied across Quarto formats — and beyond Quarto.
 :::
 
 ::: footer
-Learn more: <https://posit-dev.github.io/brand-yml/>
+Learn more: <https://posit-dev.github.io/brand-yml>
 :::
 
 ::: notes
@@ -144,7 +144,7 @@ flowchart LR
 </style>
 
 ::: footer
-Learn more: <https://posit-dev.github.io/brand-yml/>
+Learn more: <https://posit-dev.github.io/brand-yml>
 :::
 
 ::: notes

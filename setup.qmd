@@ -30,7 +30,7 @@ Please complete the following steps before the workshop so we can dive straight 
     quarto --version
     ```
 
-    Download at: <https://quarto.org/docs/download/>
+    Download at: <https://quarto.org/docs/download>
 
 3. **R or Python**
 

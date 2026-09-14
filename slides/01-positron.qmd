@@ -30,7 +30,7 @@ format: revealjs
 :::
 
 ::: footer
-Learn more: <https://quarto.org/docs/tools/positron/>
+Learn more: <https://quarto.org/docs/tools/positron>
 :::
 
 # Basic workflow
@@ -579,7 +579,7 @@ Either way: the status bar tells you which one won, and changing `quarto.path` t
 4. Mangle the cell again, save, watch it snap back
 
 ::: notes
-Demo this live, then the next slides explain what just happened.
+Demo this live.
 
 Point out that formatting only touches code cells — prose and YAML are left alone.
 The format-on-save setup lands in `.vscode/settings.json`; the last slide of this section shows exactly what was written.
@@ -598,7 +598,7 @@ The format-on-save setup lands in `.vscode/settings.json`; the last slide of thi
 :::
 
 ::: footer
-Learn more: <https://www.tidyverse.org/blog/2025/02/air/>
+Learn more: <https://posit-dev.github.io/air>
 :::
 
 ::: notes
@@ -629,14 +629,10 @@ So "Air formats my document" is shorthand; the honest version is "Quarto routes 
 
 - Command: `Air: Initialize Workspace Folder`
 
-- Writes `.vscode/settings.json` and `air.toml` — check them in, and the whole team gets the same setup
+- Writes `.vscode/settings.json` and `air.toml` — check them in so all collaborators get the same setup
 
 :::
 
-:::
-
-::: notes
-The workspace settings land in version control — a nice callback to the Git section: formatting stops being a per-person preference and becomes a project property.
 :::
 
 ## What format on save looks like
@@ -657,15 +653,38 @@ The workspace settings land in version control — a nice callback to the Git se
 ::: notes
 This is what `Air: Initialize Workspace Folder` writes for you.
 The `[quarto]` block is the piece that makes it apply to R cells in `.qmd` files.
-
-Nobody needs to memorize this — the point is that it exists and is one command away.
 :::
+
+## Your turn 3: Format with Air
+
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `01-positron`
+:::
+
+::: your-turn
+1. Open `hello.qmd` and mangle an R cell — odd spacing, one long pipe chain
+
+2. Fix it once: `Quarto: Format Cell`
+
+3. Turn on format on save: `Air: Initialize Workspace Folder`
+
+4. Mangle the cell again, save, watch it snap back
+
+5. Inspect the `.vscode/settings.json` and `air.toml` files that were written
+:::
+
+{{< countdown minutes=5 >}}
 
 # LLM assistance
 
-## Demo: Posit Assistant
+## Your turn 4: Posit Assistant {.smaller}
 
-1. Open the Posit Assistant pane in the sidebar
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `01-positron`
+:::
+
+::: your-turn
+1. Open the Posit Assistant pane in the sidebar, log in with the email address you registered for the conference
 
 2. Ask it to explain the `plot-penguins` cell in `hello.qmd` — it can see the open document and the session
 
@@ -674,15 +693,9 @@ Nobody needs to memorize this — the point is that it exists and is one command
 4. Run `/report` to export the conversation as a `.qmd`
 
 5. Read it, check it's accurate, *then* keep it
-
-::: notes
-Demo this live.
-Step 2 is the moment to point out session awareness: it describes the data frame you actually have loaded, not one you described.
-
-Step 4 is the one people don't expect — the chat becomes a document, code cells and prose, and the work continues in Quarto instead of in a transcript.
-
-Step 5 is the deliberate part — model the review habit out loud before moving on.
 :::
+
+{{< countdown minutes=5 >}}
 
 ## Posit Assistant
 
@@ -701,17 +714,7 @@ AI assistance built into Positron, aware of your R/Python session:
 :::
 
 ::: footer
-Learn more: <https://assistant.posit.co/docs/getting-started/>
-:::
-
-::: notes
-Pre-installed in recent versions of Positron.
-Note the completions caveat before anyone tries: chat works with a provider signed in, and inline completions need a Posit AI Pass or GitHub Copilot — so some of the room may not have them.
-
-`/report` is the one to remember for this workshop: you explore in chat, then export the whole thing as a `.qmd` with code cells and prose, and carry on in the document.
-It is the Quarto-shaped exit from a chat window.
-
-Session awareness is the differentiator from a generic chatbot: it can see the data frame you actually have loaded, not the one you describe.
+Learn more: <https://assistant.posit.co/docs/getting-started>
 :::
 
 ## Practical, deliberate uses in a Quarto workflow {.smaller}
@@ -736,7 +739,7 @@ Session awareness is the differentiator from a generic chatbot: it can see the d
 
 **Your job, not its job:**
 
-- Review every word before it ships
+- Review every word before finalizing
 
 - Run every line of code it writes
 
@@ -748,13 +751,6 @@ Session awareness is the differentiator from a generic chatbot: it can see the d
 
 :::
 
-::: notes
-"Deliberate" is the operative word: decide what to delegate.
-A useful rule of thumb — delegate the tedious (formatting, alt text, boilerplate), keep the judgment calls (what the analysis means, whether the code is right).
-
-The figure alt-text suggestion is a quiet superpower: it makes accessibility cheap enough to actually happen.
-:::
-
 # Wrap-up
 
 ## Learn more {.smaller}
@@ -764,8 +760,6 @@ The figure alt-text suggestion is a quiet superpower: it makes accessibility che
 - [Positron docs: Quarto](https://positron.posit.co/quarto.html) — `quarto.path`, rendering `.Rmd` files with {rmarkdown}
 
 - [Positron docs: inline output](https://positron.posit.co/quarto-inline-output.html) — per-document sessions, output in the editor
-
-- [VS Code docs: Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview) — the Git pane Positron inherits
 
 - [Formatting R code with Air](https://positron.posit.co/guide-r-air.html) — setup, format on save, `air.toml`
 
