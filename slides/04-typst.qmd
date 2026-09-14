@@ -17,7 +17,9 @@ extensions:
       - "#let brand-color = (primary: rgb(27, 94, 79))"
 ---
 
-# The release ships as a PDF
+# Case study
+
+The **Bureau of Regional Statistics** publishes a quarterly release.
 
 ## Same release, new requirement {.smaller}
 
@@ -52,9 +54,9 @@ their module 03 folder.
      typst: default
    ```
 
-2. Render with **Quarto: Preview Format…** and pick Typst.
+2. Render with **Quarto: Preview Format…** command and pick Typst.
 
-3. Render the HTML too. What came across? What didn't?
+3. Render the HTML too. Compare the two formats.
 
 :::
 
@@ -149,6 +151,7 @@ The shortcode also works inside a raw Typst block too.
 ![](../images/typst-render-pipeline-3.svg){.fragment .nostretch width="100%" fig-alt="Three boxes in a row joined by two labelled arrows. report.qmd on the left, an arrow labelled Pandoc, report.typ in the middle holding grey boilerplate and a teal equals Summary line, an arrow labelled Typst, and report.pdf drawn as a rendered page with a logo mark, a centred title and lines of body text."}
 :::
 
+::: fragment
 Keep the intermediate `.typ`:
 
 ```{.yaml filename="report.qmd"}
@@ -156,6 +159,7 @@ format:
   typst:
     keep-typ: true
 ```
+:::
 
 ::: notes
 Two renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.
@@ -239,6 +243,7 @@ rect()
 #rect()
 ```
 :::
+
 ::: {.column width="38%"}
 ```{typst}
 //| alt: "The text `rect()`."
@@ -332,9 +337,8 @@ A function can even take several trailing blocks — `#enum(start: 2)[A][B]`.
 
 2. Find a call — it starts with `#`.
 
-3. Look it up in the [Typst reference](https://typst.app/docs/reference/).
-   Say in plain words what it does, and whether any **arguments** are being
-   passed to it.
+3. Search for the function in the [Typst reference](https://typst.app/docs/reference/).
+   Say in plain words what it does, and whether any **arguments** are being passed to it.
 
 4. Again, with another one.
 
@@ -445,7 +449,7 @@ This block is in the next exercise folder already.
 
 ## Every element has a function {.smaller}
 
-All layout and styling happens with functions
+Even if not explicitly called, all layout and styling happens with functions:
 
 | Element | Its function |
 |---|---|
@@ -467,7 +471,7 @@ Their `.typ` already has `set par`, `set text`, `set heading` and `set page`,
 all written by Quarto from the YAML and the brand.
 :::
 
-## A set rule changes the default
+## A `set` rule changes the default
 
 ::: {.columns}
 ::: {.column width="62%"}
@@ -497,7 +501,7 @@ From here on, not everywhere. The first one was already rendered.
 `#set f(arg: value)` — the arguments are the function's own.
 :::
 
-## Adding show scopes it to an element
+## Adding `show` scopes it to an element
 
 ::: {.columns}
 ::: {.column width="62%"}
@@ -604,8 +608,7 @@ everything below.
 2. Write a **show-set rule** to centre the section headings.
    [`align`](https://typst.app/docs/reference/layout/align/)
 
-3. *Bonus:* step 2 caught `### Manufacturing` too. Narrow the selector to the
-   top-level sections only.
+3. Challenge: step 2 caught `### Manufacturing` too. Narrow the selector to the top-level sections only.
 
 :::
 
