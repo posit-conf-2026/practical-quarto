@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why Typst matters – Practical Quarto: Patterns, templates, and tooling</title>
+<title>Wrap-up + G&amp;A – Practical Quarto: Patterns, templates, and tooling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,8 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/05-wrap-up.html" rel="next">
-<link href="../modules/03-partials.html" rel="prev">
+<link href="../modules/04-typst.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Why Typst matters – Practical Quarto: Patterns, templates, and tooling">
+<meta property="og:title" content="Wrap-up + G&amp;A – Practical Quarto: Patterns, templates, and tooling">
 <meta property="og:description" content="A one day workshop at posit::conf(2026) on patterns, templates, and tooling for Quarto.">
 <meta property="og:site_name" content="Practical Quarto: Patterns, templates, and tooling">
 </head>
@@ -94,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-welcome.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/04-typst.html">Why Typst matters</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-welcome.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/05-wrap-up.html">Wrap-up + G&amp;A</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -171,13 +170,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/04-typst.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/04-typst.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Why Typst matters</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/05-wrap-up.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/05-wrap-up.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Wrap-up + G&amp;A</span></a>
   </div>
 </li>
@@ -192,9 +191,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-welcome.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/04-typst.html">Why Typst matters</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-welcome.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/05-wrap-up.html">Wrap-up + G&amp;A</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Why Typst matters</h1>
+<h1 class="title">Wrap-up + G&amp;A</h1>
 </div>
 
 
@@ -211,38 +210,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.</p>
-<p><a href="../slides/04-typst.html">Open slides in fullscreen</a></p>
-<iframe class="slide-deck" title="Slide deck" src="../slides/04-typst.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>By the end of this module, you will be able to:</p>
-<ul>
-<li>Render a Quarto document to PDF with <code>format: typst</code>, and style it with an existing brand.</li>
-<li>Explain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.</li>
-<li>Read the intermediate <code>.typ</code> file to see how your content becomes a PDF, and to locate the source of an error.</li>
-<li>Write raw Typst blocks, using the Typst documentation to find the functions you need.</li>
-<li>Restyle a document with Typst set and show rules.</li>
-</ul>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<ul>
-<li><a href="https://quarto.org/docs/output-formats/typst.html">Quarto Typst format</a></li>
-<li><a href="https://quarto-tdg.org/typst.html">Typst chapter in “Quarto: the practical guide”</a></li>
-<li><a href="https://typst.app/docs/">Typst documentation</a></li>
-<li><a href="https://typst.app/docs/reference/syntax/">Typst syntax reference</a></li>
-<li><a href="https://typst.app/docs/reference/foundations/function/">Typst functions, and trailing content blocks</a></li>
-<li><a href="https://typst.app/docs/reference/styling/">Typst styling: set and show rules</a></li>
-<li><a href="https://quarto.org/docs/output-formats/typst-custom.html">Typst templates in Quarto</a></li>
-<li><a href="https://open-vsx.org/extension/myriad-dreamin/tinymist">Tinymist Typst</a> — syntax highlighting for <code>.typ</code> files in Positron and VS Code</li>
-</ul>
+<p>Please don’t forget to fill out the post-workshop survey!</p>
+<p><a href="../slides/05-wrap-up.html">Open slides in fullscreen</a></p>
+<iframe class="slide-deck" title="Slide deck" src="../slides/05-wrap-up.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<p>And enjoy the rest of the conference!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -647,14 +620,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../modules/03-partials.html" class="pagination-link" aria-label="Build reusable structures">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Build reusable structures</span>
+      <a href="../modules/04-typst.html" class="pagination-link" aria-label="Why Typst matters">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Why Typst matters</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../modules/05-wrap-up.html" class="pagination-link" aria-label="Wrap-up + G&amp;A">
-        <span class="nav-page-text">Wrap-up + G&amp;A</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

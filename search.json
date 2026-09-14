@@ -4,35 +4,35 @@
     "href": "slides/05-wrap-up.html#four-problems-four-patterns",
     "title": "Wrap-up",
     "section": "Four problems, four patterns",
-    "text": "Four problems, four patterns\n\nProductive workflows — the friction between you and the render\nDesign once, use anywhere — one brand, every format\nBuild reusable structures — the boilerplate around your content\nWhy Typst matters — a PDF you can restyle\n\n\nEach one stands alone. Pick up the ones that match what you already fight with."
+    "text": "Four problems, four patterns\n\nProductive workflows with Positron — making the most of your IDE\nDesign once, use anywhere — one brand, every format\nBuild reusable structures — the meta data around your content\nWhy Typst matters — a PDF you can restyle"
   },
   {
     "objectID": "slides/05-wrap-up.html#which-piece-for-which-job",
     "href": "slides/05-wrap-up.html#which-piece-for-which-job",
     "title": "Wrap-up",
     "section": "Which piece for which job?",
-    "text": "Which piece for which job?\n\n_brand.yml — the same look across formats and projects. One repo, not a theme per project.\nTemplate partials — the same structure, different content. Format specific, and driven by metadata.\n\n\nLook, structure, distribution. Three different problems.\nReach for the smallest piece that solves yours."
+    "text": "Which piece for which job?\n\n_brand.yml — the same look across formats and projects. One repo, not a theme per project.\nTemplate partials — the same structure, different content. Format specific, and driven by metadata."
   },
   {
     "objectID": "slides/05-wrap-up.html#what-we-did-not-get-to",
     "href": "slides/05-wrap-up.html#what-we-did-not-get-to",
     "title": "Wrap-up",
     "section": "What we did not get to",
-    "text": "What we did not get to\nLua filters — change the document while Pandoc holds it as an AST.\nNot format specific, so one filter can serve html, typst, and revealjs. Reach for one when the change you want is to the content, not the boilerplate around it.\nExtending Quarto → — a whole workshop on filters, shortcodes, and extensions\n\nPartials are the boilerplate. Filters are the content.\nThat workshop’s materials are open, same license as these."
+    "text": "What we did not get to\nLua filters — change the document while Pandoc holds it as an AST.\nNot format specific, so one filter can serve html, typst, and revealjs. Reach for one when the change you want is to the content, not the boilerplate around it.\nExtending Quarto → — a whole workshop on filters, shortcodes, and extensions"
   },
   {
     "objectID": "slides/05-wrap-up.html#where-to-go-next",
     "href": "slides/05-wrap-up.html#where-to-go-next",
     "title": "Wrap-up",
     "section": "Where to go next",
-    "text": "Where to go next\n\nquarto.org — the reference, and the changelog for each release\nQuarto: the practical guide — the long-form version of today\nGitHub Discussions — where the maintainers answer, and where the good examples end up\nDiscord, #workshop-quarto — we’ll keep an eye on it for a while\n\n\nFile an issue when something is genuinely broken. Discussions for “how do I”.\nDiscord is not forever. Ask there while we are still watching."
+    "text": "Where to go next\n\nquarto.org — the reference, and the changelog for each release\nGitHub Discussions — where the maintainers answer, and where the good examples end up\nDiscord, #workshop-quarto — we’ll keep an eye on it for a while"
   },
   {
     "objectID": "slides/05-wrap-up.html#these-materials",
     "href": "slides/05-wrap-up.html#these-materials",
     "title": "Wrap-up",
     "section": "These materials",
-    "text": "These materials\nThis site, and every exercise folder, stay up.\n\nSlides and modules: pos.it/practical-quarto-conf26\nExercises: github.com/posit-conf-2026/practical-quarto-exercises\n\n\nLicensed CC BY-SA 4.0 — reuse them, teach from them, just say where they came from."
+    "text": "These materials\nThis site and exercise folders will stay up!\n\nSlides and modules: pos.it/practical-quarto-conf26\nExercises: github.com/posit-conf-2026/practical-quarto-exercises\n\n\nLicensed CC BY-SA 4.0 — reuse them, teach from them, just say where they came from."
   },
   {
     "objectID": "slides/05-wrap-up.html#workshop-survey",
@@ -565,91 +565,124 @@
     ]
   },
   {
-    "objectID": "modules/03-partials.html",
-    "href": "modules/03-partials.html",
-    "title": "Build reusable structures",
+    "objectID": "modules/04-typst.html",
+    "href": "modules/04-typst.html",
+    "title": "Why Typst matters",
     "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/03-partials.html#overview",
-    "href": "modules/03-partials.html#overview",
-    "title": "Build reusable structures",
+    "objectID": "modules/04-typst.html#overview",
+    "href": "modules/04-typst.html#overview",
+    "title": "Why Typst matters",
     "section": "",
-    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
+    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/03-partials.html#learning-objectives",
-    "href": "modules/03-partials.html#learning-objectives",
-    "title": "Build reusable structures",
+    "objectID": "modules/04-typst.html#learning-objectives",
+    "href": "modules/04-typst.html#learning-objectives",
+    "title": "Why Typst matters",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nUse Pandoc’s template syntax ($title$, $if$) to render document metadata, including custom fields, in a partial.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/03-partials.html#links",
-    "href": "modules/03-partials.html#links",
-    "title": "Build reusable structures",
+    "objectID": "modules/04-typst.html#links",
+    "href": "modules/04-typst.html#links",
+    "title": "Why Typst matters",
     "section": "Links",
-    "text": "Links\n\nQuarto templates\nTemplate partials\nPandoc’s template syntax\nIncludes",
+    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
     "crumbs": [
       "Modules",
-      "Build reusable structures"
+      "Why Typst matters"
     ]
   },
   {
-    "objectID": "modules/01-positron.html",
-    "href": "modules/01-positron.html",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/02-brand.html",
+    "href": "modules/02-brand.html",
+    "title": "Design once, use anywhere",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
+    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/01-positron.html#overview",
-    "href": "modules/01-positron.html#overview",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/02-brand.html#overview",
+    "href": "modules/02-brand.html#overview",
+    "title": "Design once, use anywhere",
     "section": "",
-    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
+    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/01-positron.html#learning-objectives",
-    "href": "modules/01-positron.html#learning-objectives",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/02-brand.html#learning-objectives",
+    "href": "modules/02-brand.html#learning-objectives",
+    "title": "Design once, use anywhere",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nRender the same branded content to multiple formats while preserving brand consistency.",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Design once, use anywhere"
     ]
   },
   {
-    "objectID": "modules/01-positron.html#links",
-    "href": "modules/01-positron.html#links",
-    "title": "Productive workflows in Positron",
+    "objectID": "modules/02-brand.html#links",
+    "href": "modules/02-brand.html#links",
+    "title": "Design once, use anywhere",
     "section": "Links",
-    "text": "Links\n\nPositron\nQuarto in Positron\nInline output in Positron\nAir formatter\nPosit Assistant",
+    "text": "Links\n\nQuarto Branding\nbrand.yml specification\nDark mode\nCell renderings\nHTML themes",
     "crumbs": [
       "Modules",
-      "Productive workflows in Positron"
+      "Design once, use anywhere"
+    ]
+  },
+  {
+    "objectID": "modules/00-welcome.html",
+    "href": "modules/00-welcome.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "modules/00-welcome.html#overview",
+    "href": "modules/00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "",
+    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "modules/00-welcome.html#links",
+    "href": "modules/00-welcome.html#links",
+    "title": "Welcome",
+    "section": "Links",
+    "text": "Links\n\nWorkshop materials\nExercises\nDownload Quarto\nDownload Positron\nposit::conf code of conduct",
+    "crumbs": [
+      "Modules",
+      "Welcome"
     ]
   },
   {
@@ -713,124 +746,102 @@
     ]
   },
   {
-    "objectID": "modules/00-welcome.html",
-    "href": "modules/00-welcome.html",
-    "title": "Welcome",
+    "objectID": "modules/01-positron.html",
+    "href": "modules/01-positron.html",
+    "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Welcome"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/00-welcome.html#overview",
-    "href": "modules/00-welcome.html#overview",
-    "title": "Welcome",
+    "objectID": "modules/01-positron.html#overview",
+    "href": "modules/01-positron.html#overview",
+    "title": "Productive workflows in Positron",
     "section": "",
-    "text": "Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.\nOpen slides in fullscreen",
+    "text": "Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Welcome"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/00-welcome.html#links",
-    "href": "modules/00-welcome.html#links",
-    "title": "Welcome",
-    "section": "Links",
-    "text": "Links\n\nWorkshop materials\nExercises\nDownload Quarto\nDownload Positron\nposit::conf code of conduct",
-    "crumbs": [
-      "Modules",
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html",
-    "href": "modules/02-brand.html",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#overview",
-    "href": "modules/02-brand.html#overview",
-    "title": "Design once, use anywhere",
-    "section": "",
-    "text": "Learn how to work effectively with light and dark modes, brands, renderings, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nOpen slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Design once, use anywhere"
-    ]
-  },
-  {
-    "objectID": "modules/02-brand.html#learning-objectives",
-    "href": "modules/02-brand.html#learning-objectives",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-positron.html#learning-objectives",
+    "href": "modules/01-positron.html#learning-objectives",
+    "title": "Productive workflows in Positron",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nEnable and customize light and dark modes for HTML documents and websites.\nDefine a brand with _brand.yml, including colors, typography, and logos.\nApply a single brand consistently across multiple Quarto projects without duplication.\nRender the same branded content to multiple formats while preserving brand consistency.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/02-brand.html#links",
-    "href": "modules/02-brand.html#links",
-    "title": "Design once, use anywhere",
+    "objectID": "modules/01-positron.html#links",
+    "href": "modules/01-positron.html#links",
+    "title": "Productive workflows in Positron",
     "section": "Links",
-    "text": "Links\n\nQuarto Branding\nbrand.yml specification\nDark mode\nCell renderings\nHTML themes",
+    "text": "Links\n\nPositron\nQuarto in Positron\nInline output in Positron\nAir formatter\nPosit Assistant",
     "crumbs": [
       "Modules",
-      "Design once, use anywhere"
+      "Productive workflows in Positron"
     ]
   },
   {
-    "objectID": "modules/04-typst.html",
-    "href": "modules/04-typst.html",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html",
+    "href": "modules/03-partials.html",
+    "title": "Build reusable structures",
     "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#overview",
-    "href": "modules/04-typst.html#overview",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#overview",
+    "href": "modules/03-partials.html#overview",
+    "title": "Build reusable structures",
     "section": "",
-    "text": "Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\nOpen slides in fullscreen",
+    "text": "Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nOpen slides in fullscreen",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#learning-objectives",
-    "href": "modules/04-typst.html#learning-objectives",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#learning-objectives",
+    "href": "modules/03-partials.html#learning-objectives",
+    "title": "Build reusable structures",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nRender a Quarto document to PDF with format: typst, and style it with an existing brand.\nExplain how Typst differs from LaTeX-based PDF generation, and when each is the right choice.\nRead the intermediate .typ file to see how your content becomes a PDF, and to locate the source of an error.\nWrite raw Typst blocks, using the Typst documentation to find the functions you need.\nRestyle a document with Typst set and show rules.",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nUse Pandoc’s template syntax ($title$, $if$) to render document metadata, including custom fields, in a partial.",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
     ]
   },
   {
-    "objectID": "modules/04-typst.html#links",
-    "href": "modules/04-typst.html#links",
-    "title": "Why Typst matters",
+    "objectID": "modules/03-partials.html#links",
+    "href": "modules/03-partials.html#links",
+    "title": "Build reusable structures",
     "section": "Links",
-    "text": "Links\n\nQuarto Typst format\nTypst chapter in “Quarto: the practical guide”\nTypst documentation\nTypst syntax reference\nTypst functions, and trailing content blocks\nTypst styling: set and show rules\nTypst templates in Quarto\nTinymist Typst — syntax highlighting for .typ files in Positron and VS Code",
+    "text": "Links\n\nQuarto templates\nTemplate partials\nPandoc’s template syntax\nIncludes",
     "crumbs": [
       "Modules",
-      "Why Typst matters"
+      "Build reusable structures"
+    ]
+  },
+  {
+    "objectID": "modules/05-wrap-up.html",
+    "href": "modules/05-wrap-up.html",
+    "title": "Wrap-up + G&A",
+    "section": "",
+    "text": "Please don’t forget to fill out the post-workshop survey!\nOpen slides in fullscreen\n\nAnd enjoy the rest of the conference!",
+    "crumbs": [
+      "Modules",
+      "Wrap-up + G&A"
     ]
   },
   {
