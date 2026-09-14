@@ -277,21 +277,35 @@
     "href": "slides/01-positron.html#positron-is-quarto-ready-out-of-the-box",
     "title": "Work productively in Positron",
     "section": "Positron is Quarto-ready out of the box",
-    "text": "Positron is Quarto-ready out of the box\n\n\nBundled Quarto CLI\n(or one it finds on your path)\n= what you need to run quarto commands in the Terminal\n\nQuarto extension\n= provides the Quarto: ... commands and UI support\n\n\nNo separate install is required to get started: Positron bundles the Quarto CLI and ships the Quarto VS Code extension pre-installed.\nThe Quarto version in use is shown in the status bar at the bottom of the window.\n\n\nLearn more: https://quarto.org/docs/tools/positron/"
+    "text": "Positron is Quarto-ready out of the box\n\n\nBundled Quarto CLI\n(or one it finds on your path)\n= what you need to run quarto commands in the Terminal\n\nQuarto extension\n= provides the Quarto: ... commands and UI support\n\n\nLearn more: https://quarto.org/docs/tools/positron"
   },
   {
     "objectID": "slides/01-positron.html#demo-basic-workflow",
     "href": "slides/01-positron.html#demo-basic-workflow",
     "title": "Work productively in Positron",
     "section": "Demo: basic workflow",
-    "text": "Demo: basic workflow\n\nOpen hello.qmd\nClick Preview (aka the Render button in RStudio)\nQuarto commands are run in the Terminal pane\nRendered output opens in the Viewer pane\n\n\nDemo this live, then show the annotated screenshots on the next slides.\nWe’ll have lots of screenshots throughout — they’re there so the steps are easy to retrace later."
+    "text": "Demo: basic workflow\n\nOpen hello.qmd\nClick Preview (aka the Render button in RStudio)\nQuarto commands are run in the Terminal pane\nRendered output opens in the Viewer pane\n\n\nDemo this live."
   },
   {
     "objectID": "slides/01-positron.html#the-preview-button",
     "href": "slides/01-positron.html#the-preview-button",
     "title": "Work productively in Positron",
     "section": "The Preview button",
-    "text": "The Preview button\n\n\n\n\n\nPreview button in the editor toolbar\nShortcut: cmd/ctrl + shift + K — the same chord as Render in RStudio\nQuarto version in the status bar\nRuns quarto preview in the Terminal\nOpens the rendered document in the Viewer\nWant a real browser instead? Set quarto.render.previewType to external"
+    "text": "The Preview button\n\n\n\n\n\nPreview button in the editor toolbar\nShortcut: cmd/ctrl + shift + K — same as Render in RStudio\nQuarto version in the status bar\nRuns quarto preview in the Terminal\nOpens the rendered document in the Viewer\n\n\n\n\n\n\n\n\n\nTip\n\n\nWant a real browser instead? Set quarto.render.previewType to external."
+  },
+  {
+    "objectID": "slides/01-positron.html#aside-preferences-in-positron",
+    "href": "slides/01-positron.html#aside-preferences-in-positron",
+    "title": "Work productively in Positron",
+    "section": "Aside: Preferences in Positron",
+    "text": "Aside: Preferences in Positron\n\n\nIn the UI\n\nCommand palette: Preferences: Open User Settings or Preferences: Open Workspace Settings\nSearch by setting name, e.g. quarto.render\n\n\nIn JSON\n\nCommand palette: Preferences: Open User Settings (JSON) or Preferences: Open Workspace Settings (JSON)\nUser settings stored at user level (outside of the workspace), specific location depends on OS:\n\n\nmacOS: ~/Library/Application Support/Positron/User/settings.json\nWindows: %APPDATA%\\Positron\\User\\settings.json\nLinux: ~/.config/Positron/User/settings.json\n\n\nWorkspace settings in .vscode/settings.json in the workspace\n\n\n\nLearn more: https://code.visualstudio.com/docs/configure/settings"
+  },
+  {
+    "objectID": "slides/01-positron.html#aside-preferences-in-positron-1",
+    "href": "slides/01-positron.html#aside-preferences-in-positron-1",
+    "title": "Work productively in Positron",
+    "section": "Aside: Preferences in Positron",
+    "text": "Aside: Preferences in Positron\n\nAny setting you change in the UI is written to the JSON\nWorkspace wins over User — so a project can set its own rules, and .vscode/settings.json can be checked into Git for all collaborators.\nSettings can be scoped to a language, with a \"[quarto]\": { ... } block.\nFilter for Modified settings (@modified) to see settings you’ve changed.\nRight-clicking a setting offers Copy Setting as JSON.\nFor RStudio switchers: https://positron.posit.co/migrate-rstudio-settings-and-extensions.html covers bringing RStudio settings and keybindings across."
   },
   {
     "objectID": "slides/01-positron.html#preview-a-specific-format",
@@ -305,14 +319,14 @@
     "href": "slides/01-positron.html#everything-is-a-command",
     "title": "Work productively in Positron",
     "section": "Everything is a command",
-    "text": "Everything is a command\n\n\n\n\n\nFilter the command palette with Quarto: to see the whole set\nQuarto: Render Document renders all declared formats\nQuarto: Render Project renders every file in the project\n\n\n\nScroll the list live, and demo a command someone in the room suggests.\nRender and Preview are the two you will reach for most: Preview watches and re-renders, Render is the one-shot."
+    "text": "Everything is a command\n\n\n\n\n\nFilter the command palette with Quarto: to see the whole set\nQuarto: Render Document renders all declared formats\nQuarto: Render Project renders every file in the project\n\n\n\nDemo this live."
   },
   {
     "objectID": "slides/01-positron.html#render-on-save",
     "href": "slides/01-positron.html#render-on-save",
     "title": "Work productively in Positron",
     "section": "Render on Save",
-    "text": "Render on Save\nBy default, saving does not re-render — renders can be slow.\nThree ways to turn it on:\n\nThe Render on Save checkbox in the editor toolbar — this editor only:\n\nThe setting quarto.render.renderOnSave — search quarto.render in Settings\nPer document or project, in YAML — supersedes the setting:\n\n\nhello.qmd\n\neditor:\n  render-on-save: true\n\n\n\nThe default is off for a reason: a render may include long-running computations, and you want to be able to save freely without paying for one.\nThe checkbox is the quick, throwaway version: it applies to the editor in front of you, not to every document you open.\nThe YAML option travels with the document or project — another setting that can live in version control, like the Air setup. render-on-save is not the only thing that lives under editor: — editor: visual is there too, coming up in a couple of slides.\nHold that thought about long-running computations — it’s exactly the problem freeze solves, later in the workshop."
+    "text": "Render on Save\nBy default, saving does not re-render — renders can be slow.\nThree ways to turn it on:\n\nThe Render on Save checkbox in the editor toolbar:\n\nThe setting quarto.render.renderOnSave — search quarto.render in Settings\nPer document or project, in YAML — supersedes the setting:\n\n\nhello.qmd\n\neditor:\n  render-on-save: true"
   },
   {
     "objectID": "slides/01-positron.html#start-a-new-document",
@@ -326,7 +340,7 @@
     "href": "slides/01-positron.html#demo-document-workflow",
     "title": "Work productively in Positron",
     "section": "Demo: document workflow",
-    "text": "Demo: document workflow\n\nCode cells: the actions above each cell, the Quarto: Run ... commands, output in the Console or inline\nNavigation: Breadcrumbs, Outline pane, Go to Symbol in Editor\nVisual mode: Insert Anything with /\n\n\nDemo each live, then walk through the screenshots.\nSave the visual mode caveat for its own slide a few slides from now — for the demo, just show Insert Anything and switch back to Source."
+    "text": "Demo: document workflow\n\nCode cells: the actions above each cell, the Quarto: Run ... commands, output in the Console or inline\nNavigation: Breadcrumbs, Outline pane, Go to Symbol in Editor\n\n\nDemo each live, then walk through the screenshots."
   },
   {
     "objectID": "slides/01-positron.html#code-cells",
@@ -340,14 +354,21 @@
     "href": "slides/01-positron.html#code-cells-from-the-command-palette",
     "title": "Work productively in Positron",
     "section": "Code cells, from the command palette",
-    "text": "Code cells, from the command palette\n\n\nEvery one of these has a shortcut, listed on the right of the palette — no need to memorize them, just know where to look."
+    "text": "Code cells, from the command palette"
   },
   {
     "objectID": "slides/01-positron.html#inline-output",
     "href": "slides/01-positron.html#inline-output",
     "title": "Work productively in Positron",
     "section": "Inline output",
-    "text": "Inline output\nOutput from code cells, in the editor, next to the code that made it — the .Rmd experience RStudio users are used to.\n\nOff by default: turn on quarto.inlineOutput.enabled\nEach .qmd gets its own isolated R or Python session\nPaths behave like they do at render time — no more “works in the console, breaks on render”\nWant a console alongside it? Console: Show Notebook Console, or set console.showNotebookConsoles\n\n\nLearn more: https://positron.posit.co/quarto-inline-output.html\n\n\nThis is the single biggest quality-of-life setting for anyone arriving from RStudio, and it is off by default, so nobody discovers it by accident.\nThe isolated session is the part worth dwelling on: cells run in a kernel scoped to that document, with the document’s directory as the working directory. That is the same contract quarto render gives you, which is why the “it worked interactively” class of bug mostly goes away.\nTrade-off to name out loud: it is a different mental model from one shared Console for everything. If someone leans on objects created in the Console, inline output will feel like it took something away."
+    "text": "Inline output\nOutput from code cells, in the editor, next to the code that made it — the .Rmd experience RStudio users are used to.\n\nOff by default: turn on quarto.inlineOutput.enabled\nEach .qmd gets its own isolated R or Python session\nPaths behave like they do at render time — no more “works in the console, breaks on render”\nWant a console alongside it? Console: Show Notebook Console, or set console.showNotebookConsoles\n\n\nLearn more: https://positron.posit.co/quarto-inline-output.html\n\n\nThe isolated session is the part worth dwelling on: cells run in a kernel scoped to that document, with the document’s directory as the working directory. That is the same contract quarto render gives you, which is why the “it worked interactively” class of bug mostly goes away.\nTrade-off to name out loud: it is a different mental model from one shared Console for everything. If someone leans on objects created in the Console, inline output will feel like it took something away."
+  },
+  {
+    "objectID": "slides/01-positron.html#your-turn-1-enable-inline-output",
+    "href": "slides/01-positron.html#your-turn-1-enable-inline-output",
+    "title": "Work productively in Positron",
+    "section": "Your turn 1: Enable inline output",
+    "text": "Your turn 1: Enable inline output\n\nExercise: 01-positron\n\n\nEnable inline output for hello.qmd and run the code cells one at a time and then all at once.\nOptional: Go to settings and turn on Console: Show Notebook Console."
   },
   {
     "objectID": "slides/01-positron.html#insert-a-code-cell",
@@ -371,116 +392,137 @@
     "text": "Go to Symbol in Editor\n\n\nHeadings and labelled cells both show up as symbols — one more reason to label your cells."
   },
   {
-    "objectID": "slides/01-positron.html#three-ways-to-edit-a-quarto-document",
-    "href": "slides/01-positron.html#three-ways-to-edit-a-quarto-document",
-    "title": "Work productively in Positron",
-    "section": "Three ways to edit a Quarto document",
-    "text": "Three ways to edit a Quarto document\n\n\nSource\nPlain text, everything works\n\nVisual\nRich text, / to insert anything\n⚠️ Running code and other language features are not supported\n\nNotebook\nFor .ipynb files rendered with Quarto\n\nSet the default for a document or project in YAML:\n\n\nhello.qmd\n\neditor: visual\n\n\nLearn more: https://quarto.org/docs/tools/positron/notebook.html\n\n\nThe visual mode caveat is the one to say out loud, because it catches RStudio switchers: visual mode in Positron is for writing, not for running. Statement execution and other language features don’t work there — switch back to Source to run code. Point anyone who cares to https://github.com/posit-dev/positron/issues/1805 for updates.\neditor: visual is the same editor: key as render-on-save from earlier — so a project can open in visual mode for everyone by default.\nThe Notebook Editor is the third option people forget exists: .ipynb notebooks can be rendered by Quarto, with YAML in a raw cell and #| options in code cells. Quarto: New Notebook starts one, and you can convert between .ipynb and .qmd."
-  },
-  {
     "objectID": "slides/01-positron.html#editing-assistance",
     "href": "slides/01-positron.html#editing-assistance",
     "title": "Work productively in Positron",
     "section": "Editing assistance",
-    "text": "Editing assistance\n\n\nYAML intelligence\nCompletion for YAML options, red squiggles for invalid ones on save\nHelp pane\nHover for tooltips, F1 opens full help for the function under the cursor\n\nLive preview\nLaTeX math and Mermaid/Graphviz diagrams preview as you type (cmd/ctrl + shift + L)\nSnippets\nInsert Snippet for boilerplate: code blocks, callouts, divs\n\n\nAll four come from the Quarto extension — nothing to install.\nOne configuration caveat: snippets only show up in IntelliSense if editor.snippetSuggestions is set to something other than none. The Insert Snippet command works either way.\nYAML completion works in the front matter, in _quarto.yml, and in cell options; the diagnostics fire when the document is saved.\nAlso worth a mention: Quarto: Show Assist Panel opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math."
+    "text": "Editing assistance\n\nYAML intelligence: Completion for YAML options, red squiggles for invalid ones on save.\n\nWorks in the front matter, in _quarto.yml, and in cell options; the diagnostics fire when the document is saved.\n\nHelp pane: Hover for tooltips, F1 opens full help for the function under the cursor.\nLive preview: LaTeX math and Mermaid/Graphviz diagrams preview as you type (cmd/ctrl + shift + L).\n\nQuarto: Show Assist Panel opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math.\n\nSnippets: Insert Snippet for boilerplate: code blocks, callouts, divs.\n\nSnippets only show up in IntelliSense if editor.snippetSuggestions is set to something other than none.\nThe Insert Snippet command works either way."
   },
   {
-    "objectID": "slides/01-positron.html#settings-worth-stealing",
-    "href": "slides/01-positron.html#settings-worth-stealing",
+    "objectID": "slides/01-positron.html#settings-worth-adopting-1",
+    "href": "slides/01-positron.html#settings-worth-adopting-1",
     "title": "Work productively in Positron",
-    "section": "Settings worth stealing",
-    "text": "Settings worth stealing\n\n\nsettings.json\n\n{\n  \"[quarto]\": {\n    \"editor.wordWrap\": \"off\",\n    \"editor.guides.bracketPairs\": \"active\",\n    \"editor.language.brackets\": [[\":::\", \":::\"]],\n    \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n  },\n  \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n  \"files.watcherExclude\": { \"**/.quarto/**\": true },\n  \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}\n\n\nWord wrap off — long lines run off the edge instead of wrapping, so you break lines yourself; break at sentences, and Git diffs show the sentence that changed, not the whole paragraph (bonus: pipe tables stay on one line)\nRulers at 80 and 120 — visual guides, and a backstop for runaway lines (long URLs, table rows)\n::: as a bracket pair — fold and color-match fenced divs\nExclude .quarto/ and _freeze/ from search and file watching — faster in big projects\n\n\nAdapted from: Mickaël Canouil, Optimising VS Code and Positron for Quarto (CC BY-NC-SA)\n\n\nThese are opinionated settings — encourage attendees to try them and adjust.\nBe precise about what word wrap off does and doesn’t do: it does not put one sentence per line for you. It makes the convention visible — a long line runs off the edge, so you notice and break it. The habit is yours; the setting just stops hiding it.\nBreak at sentence boundaries, not at a character count — that is what makes the Git diffs sentence-level. The rulers help you see where you are: 80 is a subtle vertical line, a soft guide; 120 is firebrick red (#b22222), flagging a runaway line — usually a long URL, a pipe-table row, or code — not a place to break a sentence.\neditor.guides.bracketPairs is the piece people leave out, and then wonder why the ::: colors never show up.\nThe settings can live in user settings (everywhere) or in a project’s .vscode/settings.json — same pattern as the Air setup, so it can be checked into version control and shared. The Quarto formatter setting belongs in the same [quarto] block; we let Air: Initialize Workspace Folder write that one for us, a few slides from now."
+    "section": "Settings worth adopting",
+    "text": "Settings worth adopting\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}\n\n\n\nAdapted from: CANOUIL, M. (2025-11-20). Optimising VS Code and Positron for Quarto: Essential Settings for Better Editing. Mickael.canouil.fr. https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings (CC BY-NC-SA 4.0)"
+  },
+  {
+    "objectID": "slides/01-positron.html#formatting",
+    "href": "slides/01-positron.html#formatting",
+    "title": "Work productively in Positron",
+    "section": "Formatting",
+    "text": "Formatting\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}"
+  },
+  {
+    "objectID": "slides/01-positron.html#word-wrap",
+    "href": "slides/01-positron.html#word-wrap",
+    "title": "Work productively in Positron",
+    "section": "Word wrap",
+    "text": "Word wrap\nLong lines wrap – recommend breaking at sentences:\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}"
+  },
+  {
+    "objectID": "slides/01-positron.html#rulers",
+    "href": "slides/01-positron.html#rulers",
+    "title": "Work productively in Positron",
+    "section": "Rulers",
+    "text": "Rulers\nRulers at 80 and 120 as visual guides:\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}"
+  },
+  {
+    "objectID": "slides/01-positron.html#bracket-pairs",
+    "href": "slides/01-positron.html#bracket-pairs",
+    "title": "Work productively in Positron",
+    "section": "Bracket pairs",
+    "text": "Bracket pairs\nFold and color-match fenced divs:\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}"
+  },
+  {
+    "objectID": "slides/01-positron.html#exclude",
+    "href": "slides/01-positron.html#exclude",
+    "title": "Work productively in Positron",
+    "section": "Exclude",
+    "text": "Exclude\nExclude files in .quarto/ and _freeze/ from search and file watching to gain speed, especially helpful in big projects:\n\n\nsettings.json\n\n{\n    \"[quarto]\": {\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"quarto.quarto\",\n        \"editor.wordWrap\": \"on\",\n        \"editor.guides.bracketPairs\": \"active\",\n        \"editor.language.brackets\": [[\":::\", \":::\"]],\n        \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n    },\n    \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n    \"files.watcherExclude\": { \"**/.quarto/**\": true },\n    \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}"
+  },
+  {
+    "objectID": "slides/01-positron.html#your-turn-2-adopt-the-recommended-settings",
+    "href": "slides/01-positron.html#your-turn-2-adopt-the-recommended-settings",
+    "title": "Work productively in Positron",
+    "section": "Your turn 2: Adopt the recommended settings",
+    "text": "Your turn 2: Adopt the recommended settings\n\nExercise: 01-positron\n\n\nGrab the recommended settings from settings-worth-adopting.txt and add them to your workspace or user settings.\nAccess these settings via the command palette: Preferences: Open User Settings (JSON) or Preferences: Open Workspace Settings (JSON)."
   },
   {
     "objectID": "slides/01-positron.html#whats-different",
     "href": "slides/01-positron.html#whats-different",
     "title": "Work productively in Positron",
     "section": "What’s different?",
-    "text": "What’s different?\n\nPublishing: no button in the editor toolbar, but the pre-installed Posit Publisher extension deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub\nInline output: off by default, and each document gets its own session — see earlier\nR Markdown (.Rmd) files preview with Quarto\nR: Render Document With R Markdown renders with {rmarkdown} instead, and R: New R Markdown from Template starts from a template\nAdvanced .Rmd features like params have no interactive support\n\n\nLearn more: https://positron.posit.co/quarto.html"
+    "text": "What’s different?\n\nPublishing: no button in the editor toolbar, but the pre-installed Posit Publisher extension deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub.\nInline output: off by default, and each document gets its own session, we already saw how to turn it on.\nR Markdown:\n\nR Markdown (.Rmd) files preview with Quarto by default.\nR: Render Document With R Markdown renders with rmarkdown instead.\nR: New R Markdown from Template starts from a template.\nAdvanced .Rmd features like params have no interactive support\n\n\n\nLearn more: https://positron.posit.co/quarto.html"
   },
   {
     "objectID": "slides/01-positron.html#updating-quarto",
     "href": "slides/01-positron.html#updating-quarto",
     "title": "Work productively in Positron",
     "section": "Updating Quarto",
-    "text": "Updating Quarto\n\n\nStrategy 1: Rely entirely on Positron’s bundled Quarto\n\nGet updates as Positron is updated (with auto-update on)\nCurrently, no easy way to use this version outside of Positron\n\n\nStrategy 2: Manage Quarto manually from quarto.org\n\nPositron will prefer this install, even if it’s older\nYou can specify a path with the quarto.path setting\n\n\nEither way: the status bar tells you which one won, and changing quarto.path takes a restart.\n\nDownload: https://quarto.org/docs/download/"
-  },
-  {
-    "objectID": "slides/01-positron.html#demo-git",
-    "href": "slides/01-positron.html#demo-git",
-    "title": "Work productively in Positron",
-    "section": "Demo: Git",
-    "text": "Demo: Git\n\nChanges pane\nOpen a change: the diff opens in an editor — closest to RStudio’s diff\nAdd, commit\nGraph: pull/push, like RStudio’s History view\nCurrent branch\n\n\nDemo this live, then walk through the screenshots."
-  },
-  {
-    "objectID": "slides/01-positron.html#examine-changes",
-    "href": "slides/01-positron.html#examine-changes",
-    "title": "Work productively in Positron",
-    "section": "Examine changes",
-    "text": "Examine changes\n\n\n\n\n\nChanges live in the Source Control pane\nClick a file and the diff opens in an editor\nMessage + Commit\nGraph: commit history\n\n\n\nPoint out where changes live and what they look like: files, repo, branches, etc. The buttons give a basic set of actions, the menus more, and then the command line."
-  },
-  {
-    "objectID": "slides/01-positron.html#git-workflow",
-    "href": "slides/01-positron.html#git-workflow",
-    "title": "Work productively in Positron",
-    "section": "Git workflow",
-    "text": "Git workflow\n\n\n\n\n\nCurrent branch: click to switch, create new…\nStage and commit\nPull / Push\n\n\n\nThe branch name in the status bar is also the branch switcher — click it to change branches or create a new one, no dialog hunting required.\nStaging is more explicit here than in RStudio’s checkbox column: the + on a file stages it, and you can stage a single hunk from the diff editor.\nPull and push live behind the ... menu and the sync button. Anything the UI doesn’t cover, the Terminal does — same repo, same Git."
+    "text": "Updating Quarto\n\n\nStrategy 1: Rely entirely on Positron’s bundled Quarto\n\nGet updates as Positron is updated (with auto-update on)\nCurrently, no easy way to use this version outside of Positron\n\n\nStrategy 2: Manage Quarto manually from quarto.org\n\nPositron will prefer this install, even if it’s older\nYou can specify a path with the quarto.path setting\n\n\nEither way: the status bar tells you which one won, and changing quarto.path takes a restart."
   },
   {
     "objectID": "slides/01-positron.html#demo-formatting-with-air",
     "href": "slides/01-positron.html#demo-formatting-with-air",
     "title": "Work productively in Positron",
     "section": "Demo: formatting with Air",
-    "text": "Demo: formatting with Air\n\nOpen hello.qmd and mangle an R cell — odd spacing, one long pipe chain\nFix it once: Quarto: Format Cell\nTurn on format on save: Air: Initialize Workspace Folder\nMangle the cell again, save, watch it snap back\n\n\nDemo this live, then the next slides explain what just happened.\nPoint out that formatting only touches code cells — prose and YAML are left alone. The format-on-save setup lands in .vscode/settings.json; the last slide of this section shows exactly what was written."
+    "text": "Demo: formatting with Air\n\nOpen hello.qmd and mangle an R cell — odd spacing, one long pipe chain\nFix it once: Quarto: Format Cell\nTurn on format on save: Air: Initialize Workspace Folder\nMangle the cell again, save, watch it snap back\n\n\nDemo this live.\nPoint out that formatting only touches code cells — prose and YAML are left alone. The format-on-save setup lands in .vscode/settings.json; the last slide of this section shows exactly what was written."
   },
   {
     "objectID": "slides/01-positron.html#air-an-r-code-formatter",
     "href": "slides/01-positron.html#air-an-r-code-formatter",
     "title": "Work productively in Positron",
     "section": "Air: an R code formatter",
-    "text": "Air: an R code formatter\n\nAn extremely fast R code formatter, from Posit\nShips with Positron — nothing to install, nothing to update\nFormats R code in .R files, and R cells in .qmd files when the Quarto extension is active\n\n\nLearn more: https://www.tidyverse.org/blog/2025/02/air/\n\n\nSame idea as usethis::use_tidy_style(), but automatic and instantaneous.\nAir itself is R-only. But note what format-on-save actually does in a .qmd: the Quarto formatter takes the save and dispatches cell by cell to whatever formatter is registered for that language — Air for R, Ruff for Python. So “Air formats my document” is shorthand; the honest version is “Quarto routes each cell to its language’s formatter, and Air is the R one.”"
+    "text": "Air: an R code formatter\n\nAn extremely fast R code formatter, from Posit\nShips with Positron — nothing to install, nothing to update\nFormats R code in .R files, and R cells in .qmd files when the Quarto extension is active\n\n\nLearn more: https://posit-dev.github.io/air\n\n\nSame idea as usethis::use_tidy_style(), but automatic and instantaneous.\nAir itself is R-only. But note what format-on-save actually does in a .qmd: the Quarto formatter takes the save and dispatches cell by cell to whatever formatter is registered for that language — Air for R, Ruff for Python. So “Air formats my document” is shorthand; the honest version is “Quarto routes each cell to its language’s formatter, and Air is the R one.”"
   },
   {
     "objectID": "slides/01-positron.html#air-in-a-quarto-document",
     "href": "slides/01-positron.html#air-in-a-quarto-document",
     "title": "Work productively in Positron",
     "section": "Air in a Quarto document",
-    "text": "Air in a Quarto document\n\n\nFormat once:\n\nCommand: Quarto: Format Cell — formats the cell the cursor is in\nOr format just a selection: cmd/ctrl + K, then cmd/ctrl + F\n\n\nFormat on save:\n\nCommand: Air: Initialize Workspace Folder\nWrites .vscode/settings.json and air.toml — check them in, and the whole team gets the same setup\n\n\n\nThe workspace settings land in version control — a nice callback to the Git section: formatting stops being a per-person preference and becomes a project property."
+    "text": "Air in a Quarto document\n\n\nFormat once:\n\nCommand: Quarto: Format Cell — formats the cell the cursor is in\nOr format just a selection: cmd/ctrl + K, then cmd/ctrl + F\n\n\nFormat on save:\n\nCommand: Air: Initialize Workspace Folder\nWrites .vscode/settings.json and air.toml — check them in so all collaborators get the same setup"
   },
   {
     "objectID": "slides/01-positron.html#what-format-on-save-looks-like",
     "href": "slides/01-positron.html#what-format-on-save-looks-like",
     "title": "Work productively in Positron",
     "section": "What format on save looks like",
-    "text": "What format on save looks like\n\n\n.vscode/settings.json\n\n{\n  \"[r]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"Posit.air-vscode\"\n  },\n  \"[quarto]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"quarto.quarto\"\n  }\n}\n\n\nThis is what Air: Initialize Workspace Folder writes for you. The [quarto] block is the piece that makes it apply to R cells in .qmd files.\nNobody needs to memorize this — the point is that it exists and is one command away."
+    "text": "What format on save looks like\n\n\n.vscode/settings.json\n\n{\n  \"[r]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"Posit.air-vscode\"\n  },\n  \"[quarto]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"quarto.quarto\"\n  }\n}\n\n\nThis is what Air: Initialize Workspace Folder writes for you. The [quarto] block is the piece that makes it apply to R cells in .qmd files."
   },
   {
-    "objectID": "slides/01-positron.html#demo-posit-assistant",
-    "href": "slides/01-positron.html#demo-posit-assistant",
+    "objectID": "slides/01-positron.html#your-turn-3-format-with-air",
+    "href": "slides/01-positron.html#your-turn-3-format-with-air",
     "title": "Work productively in Positron",
-    "section": "Demo: Posit Assistant",
-    "text": "Demo: Posit Assistant\n\nOpen the Posit Assistant pane in the sidebar\nAsk it to explain the plot-penguins cell in hello.qmd — it can see the open document and the session\nAsk it to write alt text for the penguins plot, then paste the result into fig-alt\nRun /report to export the conversation as a .qmd\nRead it, check it’s accurate, then keep it\n\n\nDemo this live. Step 2 is the moment to point out session awareness: it describes the data frame you actually have loaded, not one you described.\nStep 4 is the one people don’t expect — the chat becomes a document, code cells and prose, and the work continues in Quarto instead of in a transcript.\nStep 5 is the deliberate part — model the review habit out loud before moving on."
+    "section": "Your turn 3: Format with Air",
+    "text": "Your turn 3: Format with Air\n\nExercise: 01-positron\n\n\n\nOpen hello.qmd and mangle an R cell — odd spacing, one long pipe chain\nFix it once: Quarto: Format Cell\nTurn on format on save: Air: Initialize Workspace Folder\nMangle the cell again, save, watch it snap back\nInspect the .vscode/settings.json and air.toml files that were written"
+  },
+  {
+    "objectID": "slides/01-positron.html#your-turn-4-posit-assistant",
+    "href": "slides/01-positron.html#your-turn-4-posit-assistant",
+    "title": "Work productively in Positron",
+    "section": "Your turn 4: Posit Assistant",
+    "text": "Your turn 4: Posit Assistant\n\nExercise: 01-positron\n\n\n\nOpen the Posit Assistant pane in the sidebar, log in with the email address you registered for the conference\nAsk it to explain the plot-penguins cell in hello.qmd — it can see the open document and the session\nAsk it to write alt text for the penguins plot, then paste the result into fig-alt\nRun /report to export the conversation as a .qmd\nRead it, check it’s accurate, then keep it"
   },
   {
     "objectID": "slides/01-positron.html#posit-assistant",
     "href": "slides/01-positron.html#posit-assistant",
     "title": "Work productively in Positron",
     "section": "Posit Assistant",
-    "text": "Posit Assistant\nAI assistance built into Positron, aware of your R/Python session:\n\nChat in the sidebar — sees your console, variables, and files, and can edit the open document\nInline completions as you type — needs a Posit AI Pass or a Copilot sign-in\n/report turns the conversation into a reproducible .qmd\nFix and Explain buttons on error output\n\n\nLearn more: https://assistant.posit.co/docs/getting-started/\n\n\nPre-installed in recent versions of Positron. Note the completions caveat before anyone tries: chat works with a provider signed in, and inline completions need a Posit AI Pass or GitHub Copilot — so some of the room may not have them.\n/report is the one to remember for this workshop: you explore in chat, then export the whole thing as a .qmd with code cells and prose, and carry on in the document. It is the Quarto-shaped exit from a chat window.\nSession awareness is the differentiator from a generic chatbot: it can see the data frame you actually have loaded, not the one you describe."
+    "text": "Posit Assistant\nAI assistance built into Positron, aware of your R/Python session:\n\nChat in the sidebar — sees your console, variables, and files, and can edit the open document\nInline completions as you type — needs a Posit AI Pass or a Copilot sign-in\n/report turns the conversation into a reproducible .qmd\nFix and Explain buttons on error output\n\n\nLearn more: https://assistant.posit.co/docs/getting-started"
   },
   {
     "objectID": "slides/01-positron.html#practical-deliberate-uses-in-a-quarto-workflow",
     "href": "slides/01-positron.html#practical-deliberate-uses-in-a-quarto-workflow",
     "title": "Work productively in Positron",
     "section": "Practical, deliberate uses in a Quarto workflow",
-    "text": "Practical, deliberate uses in a Quarto workflow\n\n\nGood fits:\n\nDraft and revise prose; tighten wording\nWrite alt text for figures\nExplain or debug a code cell; interpret an error message\nFix YAML indentation and option typos\n\n\nYour job, not its job:\n\nReview every word before it ships\nRun every line of code it writes\nCheck every factual claim\nKeep secrets and credentials out of prompts\n\n\n\n“Deliberate” is the operative word: decide what to delegate. A useful rule of thumb — delegate the tedious (formatting, alt text, boilerplate), keep the judgment calls (what the analysis means, whether the code is right).\nThe figure alt-text suggestion is a quiet superpower: it makes accessibility cheap enough to actually happen."
+    "text": "Practical, deliberate uses in a Quarto workflow\n\n\nGood fits:\n\nDraft and revise prose; tighten wording\nWrite alt text for figures\nExplain or debug a code cell; interpret an error message\nFix YAML indentation and option typos\n\n\nYour job, not its job:\n\nReview every word before finalizing\nRun every line of code it writes\nCheck every factual claim\nKeep secrets and credentials out of prompts"
   },
   {
     "objectID": "slides/01-positron.html#learn-more",
     "href": "slides/01-positron.html#learn-more",
     "title": "Work productively in Positron",
     "section": "Learn more",
-    "text": "Learn more\n\nQuarto docs: Guide &gt; Tools &gt; Positron — the Positron-specific Quarto features\nPositron docs: Quarto — quarto.path, rendering .Rmd files with {rmarkdown}\nPositron docs: inline output — per-document sessions, output in the editor\nVS Code docs: Source Control — the Git pane Positron inherits\nFormatting R code with Air — setup, format on save, air.toml\nPosit Assistant docs and the AI + Quarto tutorial"
+    "text": "Learn more\n\nQuarto docs: Guide &gt; Tools &gt; Positron — the Positron-specific Quarto features\nPositron docs: Quarto — quarto.path, rendering .Rmd files with {rmarkdown}\nPositron docs: inline output — per-document sessions, output in the editor\nFormatting R code with Air — setup, format on save, air.toml\nPosit Assistant docs and the AI + Quarto tutorial"
   },
   {
     "objectID": "setup.html",
@@ -507,7 +549,7 @@
     "href": "setup.html#software-requirements",
     "title": "Setup",
     "section": "Software requirements",
-    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download/\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
+    "text": "Software requirements\n\nPositron\nWe’ll be live-coding in Positron. Download and install the latest Positron (2026.07 or newer) from https://positron.posit.co/download.\nThe following extensions are the ones we’ll be relying on and Positron already ships with them — nothing extra to install.\n\nQuarto\nAir\nPosit Assistant\n\nQuarto (latest release)\nWe’ll rely on recent features of Quarto, so please make sure you have the latest version installed — v1.10 or later. Check your version with:\nquarto --version\nDownload at: https://quarto.org/docs/download\nR or Python\nBring whichever language you usually use with Quarto. For R, we recommend R 4.6 or later, an up-to-date tidyverse, and the quarto package (we use it for a few R-side rendering tricks):\ninstall.packages(c(\"tidyverse\", \"quarto\"))\nGit\nWe’ll clone workshop materials and discuss version control workflows. If you don’t already have Git, install it from https://git-scm.com/downloads.\nPosit AI\nIn Positron, open the Command Palette and run Authentication: Configure Language Model Providers, choose Posit AI, and sign in through your browser. That’s it! During the workshop, usage draws from the workshop’s credit pool first, not your personal balance.",
     "crumbs": [
       "Setup"
     ]
@@ -887,7 +929,7 @@
     "href": "slides/02-brand.html#section",
     "title": "Design once, use anywhere",
     "section": "",
-    "text": "Unified branding with a simple YAML file\n\n\nOne file, written once, applied across Quarto formats — and beyond Quarto.\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nTO DO: may need to update image\nA specification, not a Quarto feature. Quarto, Shiny, bslib and the plotting libraries all read the same file."
+    "text": "Unified branding with a simple YAML file\n\n\nOne file, written once, applied across Quarto formats — and beyond Quarto.\n\n\nLearn more: https://posit-dev.github.io/brand-yml\n\n\nTO DO: may need to update image\nA specification, not a Quarto feature. Quarto, Shiny, bslib and the plotting libraries all read the same file."
   },
   {
     "objectID": "slides/02-brand.html#two-steps",
@@ -901,7 +943,7 @@
     "href": "slides/02-brand.html#who-reads-_brand.yml",
     "title": "Design once, use anywhere",
     "section": "Who reads _brand.yml?",
-    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, plotnine, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
+    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, plotnine, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
   },
   {
     "objectID": "slides/02-brand.html#five-keys",

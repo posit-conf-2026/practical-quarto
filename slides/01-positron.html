@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <title>Practical Quarto: Patterns, templates, and tooling – Work productively in Positron</title>
@@ -100,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5ac5461d7c3214bc7bea76dda4b6e39d.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e138138edf85ec8ec21ac629b5fe54f6.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -192,6 +194,8 @@
       margin-right: 0; 
     }
   </style>
+  <!-- Countdown Global CSS -->
+  <style text="text/css">:root {--countdown-color-background: #EB4FEE;--countdown-color-text: #ffffff;}</style>
 <meta property="og:title" content="Work productively in Positron – Practical Quarto: Patterns, templates, and tooling">
 <meta property="og:description" content="Practical Quarto: Patterns, templates, and tooling @ posit::conf(2026)">
 <meta property="og:site_name" content="Practical Quarto: Patterns, templates, and tooling">
@@ -240,22 +244,8 @@ Mine Çetinkaya-Rundel
 <p><strong>Quarto extension</strong></p>
 <p>= provides the <code>Quarto: ...</code> commands and UI support</p>
 </div></div>
-<aside class="notes">
-<p>No separate install is required to get started: Positron bundles the Quarto CLI and ships the Quarto VS Code extension pre-installed.</p>
-<p>The Quarto version in use is shown in the status bar at the bottom of the window.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 <div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/tools/positron/" class="uri">https://quarto.org/docs/tools/positron/</a></p>
+<p>Learn more: <a href="https://quarto.org/docs/tools/positron" class="uri">https://quarto.org/docs/tools/positron</a></p>
 </div>
 </section></section>
 <section>
@@ -272,8 +262,7 @@ Mine Çetinkaya-Rundel
 <li><p>Rendered output opens in the <strong>Viewer</strong> pane</p></li>
 </ol>
 <aside class="notes">
-<p>Demo this live, then show the annotated screenshots on the next slides.</p>
-<p>We’ll have lots of screenshots throughout — they’re there so the steps are easy to retrace later.</p>
+<p>Demo this live.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -294,13 +283,66 @@ Mine Çetinkaya-Rundel
 </div><div class="column" style="width:35%;">
 <ul>
 <li class="fragment"><p><strong>Preview</strong> button in the editor toolbar</p></li>
-<li class="fragment"><p>Shortcut: <code>cmd/ctrl + shift + K</code> — the same chord as Render in RStudio</p></li>
+<li class="fragment"><p>Shortcut: <code>cmd/ctrl + shift + K</code> — same as Render in RStudio</p></li>
 <li class="fragment"><p>Quarto version in the status bar</p></li>
 <li class="fragment"><p>Runs <code>quarto preview</code> in the Terminal</p></li>
 <li class="fragment"><p>Opens the rendered document in the Viewer</p></li>
-<li class="fragment"><p>Want a real browser instead? Set <code>quarto.render.previewType</code> to <code>external</code></p></li>
 </ul>
 </div></div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Want a real browser instead? Set <code>quarto.render.previewType</code> to <code>external</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aside-preferences-in-positron" class="slide level2 smaller">
+<h2>Aside: Preferences in Positron</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>In the UI</strong></p>
+<ul>
+<li><p>Command palette: <code>Preferences: Open User Settings</code> or <code>Preferences: Open Workspace Settings</code></p></li>
+<li><p>Search by setting name, e.g.&nbsp;<code>quarto.render</code></p></li>
+</ul>
+</div><div class="column fragment" style="width:60%;">
+<p><strong>In JSON</strong></p>
+<ul>
+<li><p>Command palette: <code>Preferences: Open User Settings (JSON)</code> or <code>Preferences: Open Workspace Settings (JSON)</code></p></li>
+<li><p>User settings stored at user level (outside of the workspace), specific location depends on OS:</p>
+<div class="small">
+<ul>
+<li>macOS: <code>~/Library/Application Support/Positron/User/settings.json</code></li>
+<li>Windows: <code>%APPDATA%\Positron\User\settings.json</code></li>
+<li>Linux: <code>~/.config/Positron/User/settings.json</code></li>
+</ul>
+</div></li>
+<li><p>Workspace settings in <code>.vscode/settings.json</code> in the workspace</p></li>
+</ul>
+</div></div>
+<div class="footer">
+<p>Learn more: <a href="https://code.visualstudio.com/docs/configure/settings" class="uri">https://code.visualstudio.com/docs/configure/settings</a></p>
+</div>
+</section>
+<section id="aside-preferences-in-positron-1" class="slide level2 smaller">
+<h2>Aside: Preferences in Positron</h2>
+<ul>
+<li class="fragment"><p>Any setting you change in the UI is written to the JSON</p></li>
+<li class="fragment"><p><strong>Workspace wins over User</strong> — so a project can set its own rules, and <code>.vscode/settings.json</code> can be checked into Git for all collaborators.</p></li>
+<li class="fragment"><p>Settings can be scoped to a language, with a <code>"[quarto]": { ... }</code> block.</p></li>
+<li class="fragment"><p>Filter for <strong>Modified</strong> settings (<code>@modified</code>) to see settings you’ve changed.</p></li>
+<li class="fragment"><p>Right-clicking a setting offers <strong>Copy Setting as JSON</strong>.</p></li>
+<li class="fragment"><p>For RStudio switchers: <a href="https://positron.posit.co/migrate-rstudio-settings-and-extensions.html" class="uri">https://positron.posit.co/migrate-rstudio-settings-and-extensions.html</a> covers bringing RStudio settings and keybindings across.</p></li>
+</ul>
 </section>
 <section id="preview-a-specific-format" class="slide level2">
 <h2>Preview a specific format</h2>
@@ -327,8 +369,7 @@ Mine Çetinkaya-Rundel
 </ul>
 </div></div>
 <aside class="notes">
-<p>Scroll the list live, and demo a command someone in the room suggests.</p>
-<p>Render and Preview are the two you will reach for most: Preview watches and re-renders, Render is the one-shot.</p>
+<p>Demo this live.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -346,8 +387,8 @@ Mine Çetinkaya-Rundel
 <p>By default, saving does <strong>not</strong> re-render — renders can be slow.</p>
 <p>Three ways to turn it on:</p>
 <ol type="1">
-<li class="fragment"><p>The <strong>Render on Save</strong> checkbox in the editor toolbar — this editor only:</p>
-<p><img data-src="../images/positron-render-on-save.png" class="screenshot" alt="The editor toolbar of hello.qmd showing the Preview button, the Render on Save checkbox, and the Source and Visual toggle."></p></li>
+<li class="fragment"><p>The <strong>Render on Save</strong> checkbox in the editor toolbar:</p>
+<p><img data-src="../images/positron-render-on-save.png" class="screenshot" alt="The editor toolbar showing the Preview button, the Render on Save checkbox, and a floppy disc icon for save."></p></li>
 <li class="fragment"><p>The setting <code>quarto.render.renderOnSave</code> — search <code>quarto.render</code> in Settings</p></li>
 <li class="fragment"><p>Per document or project, in YAML — supersedes the setting:</p>
 <div class="code-with-filename">
@@ -358,22 +399,6 @@ Mine Çetinkaya-Rundel
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">render-on-save</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 </ol>
-<aside class="notes">
-<p>The default is off for a reason: a render may include long-running computations, and you want to be able to save freely without paying for one.</p>
-<p>The checkbox is the quick, throwaway version: it applies to the editor in front of you, not to every document you open.</p>
-<p>The YAML option travels with the document or project — another setting that can live in version control, like the Air setup. <code>render-on-save</code> is not the only thing that lives under <code>editor:</code> — <code>editor: visual</code> is there too, coming up in a couple of slides.</p>
-<p>Hold that thought about long-running computations — it’s exactly the problem freeze solves, later in the workshop.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="start-a-new-document" class="slide level2">
 <h2>Start a new document</h2>
@@ -391,16 +416,14 @@ Mine Çetinkaya-Rundel
 <h1>Document workflow</h1>
 
 </section>
-<section id="demo-document-workflow" class="slide level2 smaller">
+<section id="demo-document-workflow" class="slide level2">
 <h2>Demo: document workflow</h2>
 <ul>
-<li><p><strong>Code cells</strong>: the actions above each cell, the <code>Quarto: Run ...</code> commands, output in the Console or inline</p></li>
-<li><p><strong>Navigation</strong>: Breadcrumbs, Outline pane, Go to Symbol in Editor</p></li>
-<li><p><strong>Visual mode</strong>: Insert Anything with <code>/</code></p></li>
+<li><p><strong>Code cells:</strong> the actions above each cell, the <code>Quarto: Run ...</code> commands, output in the Console or inline</p></li>
+<li><p><strong>Navigation:</strong> Breadcrumbs, Outline pane, Go to Symbol in Editor</p></li>
 </ul>
 <aside class="notes">
 <p>Demo each live, then walk through the screenshots.</p>
-<p>Save the visual mode caveat for its own slide a few slides from now — for the demo, just show Insert Anything and switch back to Source.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -430,21 +453,8 @@ Mine Çetinkaya-Rundel
 <section id="code-cells-from-the-command-palette" class="slide level2">
 <h2>Code cells, from the command palette</h2>
 
-<img data-src="../images/positron-run-commands.png" class="screenshot r-stretch" alt="The command palette filtered to Quarto Run, showing Quarto: Run All Cells, Run Cell, Run Cell and Advance, Run Cells Above, Run Cells Below, Run Current Code, Run Next Cell, Run Previous Cell, and Run Selected Lines, with their keyboard shortcuts."><aside class="notes">
-<p>Every one of these has a shortcut, listed on the right of the palette — no need to memorize them, just know where to look.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="inline-output" class="slide level2 smaller">
+<img data-src="../images/positron-run-commands.png" class="screenshot r-stretch" alt="The command palette filtered to Quarto Run, showing Quarto: Run All Cells, Run Cell, Run Cell and Advance, Run Cells Above, Run Cells Below, Run Current Code, Run Next Cell, Run Previous Cell, and Run Selected Lines, with their keyboard shortcuts."></section>
+<section id="inline-output" class="slide level2">
 <h2>Inline output</h2>
 <p>Output from code cells, in the editor, next to the code that made it — the <code>.Rmd</code> experience RStudio users are used to.</p>
 <ul>
@@ -457,7 +467,6 @@ Mine Çetinkaya-Rundel
 <p>Learn more: <a href="https://positron.posit.co/quarto-inline-output.html" class="uri">https://positron.posit.co/quarto-inline-output.html</a></p>
 </div>
 <aside class="notes">
-<p>This is the single biggest quality-of-life setting for anyone arriving from RStudio, and it is off by default, so nobody discovers it by accident.</p>
 <p>The isolated session is the part worth dwelling on: cells run in a kernel scoped to that document, with the document’s directory as the working directory. That is the same contract <code>quarto render</code> gives you, which is why the “it worked interactively” class of bug mostly goes away.</p>
 <p>Trade-off to name out loud: it is a different mental model from one shared Console for everything. If someone leans on objects created in the Console, inline output will feel like it took something away.</p>
 <style type="text/css">
@@ -471,6 +480,18 @@ Mine Çetinkaya-Rundel
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="your-turn-1-enable-inline-output" class="slide level2">
+<h2>Your turn 1: Enable inline output</h2>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>01-positron</code></p>
+</div>
+<div class="your-turn">
+<p>Enable inline output for <code>hello.qmd</code> and run the code cells one at a time and then all at once.</p>
+<p><strong>Optional:</strong> Go to settings and turn on <code>Console: Show Notebook Console</code>.</p>
+</div>
+<countdown-timer id="timer_317ddf4dfd624df5bf2d0681010012feffe896f4" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
 </section>
 <section id="insert-a-code-cell" class="slide level2">
 <h2>Insert a code cell</h2>
@@ -515,121 +536,174 @@ Mine Çetinkaya-Rundel
           display:block!important;
       }</style></aside>
 </section>
-<section id="three-ways-to-edit-a-quarto-document" class="slide level2 smaller">
-<h2>Three ways to edit a Quarto document</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<p><strong>Source</strong></p>
-<p>Plain text, everything works</p>
-</div><div class="column" style="width:33%;">
-<p><strong>Visual</strong></p>
-<p>Rich text, <code>/</code> to insert anything</p>
-<p>⚠️ Running code and other language features are <strong>not supported</strong></p>
-</div><div class="column" style="width:33%;">
-<p><strong>Notebook</strong></p>
-<p>For <code>.ipynb</code> files rendered with Quarto</p>
-</div></div>
-<p>Set the default for a document or project in YAML:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>hello.qmd</strong></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="hello.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/tools/positron/notebook.html" class="uri">https://quarto.org/docs/tools/positron/notebook.html</a></p>
-</div>
-<aside class="notes">
-<p>The visual mode caveat is the one to say out loud, because it catches RStudio switchers: visual mode in Positron is for writing, not for running. Statement execution and other language features don’t work there — switch back to Source to run code. Point anyone who cares to <a href="https://github.com/posit-dev/positron/issues/1805" class="uri">https://github.com/posit-dev/positron/issues/1805</a> for updates.</p>
-<p><code>editor: visual</code> is the same <code>editor:</code> key as <code>render-on-save</code> from earlier — so a project can open in visual mode for everyone by default.</p>
-<p>The Notebook Editor is the third option people forget exists: <code>.ipynb</code> notebooks can be rendered by Quarto, with YAML in a raw cell and <code>#|</code> options in code cells. <code>Quarto: New Notebook</code> starts one, and you can convert between <code>.ipynb</code> and <code>.qmd</code>.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="editing-assistance" class="slide level2">
+<section id="editing-assistance" class="slide level2 smaller">
 <h2>Editing assistance</h2>
-<div class="columns">
-<div class="column">
-<p><strong>YAML intelligence</strong></p>
-<p>Completion for YAML options, red squiggles for invalid ones on save</p>
-<p><strong>Help pane</strong></p>
-<p>Hover for tooltips, <code>F1</code> opens full help for the function under the cursor</p>
-</div><div class="column">
-<p><strong>Live preview</strong></p>
-<p>LaTeX math and Mermaid/Graphviz diagrams preview as you type (<code>cmd/ctrl + shift + L</code>)</p>
-<p><strong>Snippets</strong></p>
-<p><code>Insert Snippet</code> for boilerplate: code blocks, callouts, divs</p>
-</div></div>
-<aside class="notes">
-<p>All four come from the Quarto extension — nothing to install.</p>
-<p>One configuration caveat: snippets only show up in IntelliSense if <code>editor.snippetSuggestions</code> is set to something other than <code>none</code>. The <code>Insert Snippet</code> command works either way.</p>
-<p>YAML completion works in the front matter, in <code>_quarto.yml</code>, and in cell options; the diagnostics fire when the document is saved.</p>
-<p>Also worth a mention: <code>Quarto: Show Assist Panel</code> opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<ul>
+<li class="fragment"><p><strong>YAML intelligence:</strong> Completion for YAML options, red squiggles for invalid ones on save.</p>
+<ul>
+<li class="fragment">Works in the front matter, in <code>_quarto.yml</code>, and in cell options; the diagnostics fire when the document is saved.</li>
+</ul></li>
+<li class="fragment"><p><strong>Help pane:</strong> Hover for tooltips, <code>F1</code> opens full help for the function under the cursor.</p></li>
+<li class="fragment"><p><strong>Live preview:</strong> LaTeX math and Mermaid/Graphviz diagrams preview as you type (<code>cmd/ctrl + shift + L</code>).</p>
+<ul>
+<li class="fragment"><code>Quarto: Show Assist Panel</code> opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math.</li>
+</ul></li>
+<li class="fragment"><p><strong>Snippets:</strong> <code>Insert Snippet</code> for boilerplate: code blocks, callouts, divs.</p>
+<ul>
+<li class="fragment">Snippets only show up in IntelliSense if <code>editor.snippetSuggestions</code> is set to something other than <code>none</code>.</li>
+<li class="fragment">The <code>Insert Snippet</code> command works either way.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="settings-worth-adopting" class="title-slide slide level1 center">
+<h1>Settings worth adopting</h1>
+
 </section>
-<section id="settings-worth-stealing" class="slide level2 smaller">
-<h2>Settings worth stealing</h2>
+<section id="settings-worth-adopting-1" class="slide level2 smaller">
+<h2>Settings worth adopting</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>settings.json</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="settings.json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"off"</span><span class="fu">,</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="settings.json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ul>
-<li class="fragment"><p><strong>Word wrap off</strong> — long lines run off the edge instead of wrapping, so you break lines yourself; break at sentences, and Git diffs show the sentence that changed, not the whole paragraph (bonus: pipe tables stay on one line)</p></li>
-<li class="fragment"><p><strong>Rulers at 80 and 120</strong> — visual guides, and a backstop for runaway lines (long URLs, table rows)</p></li>
-<li class="fragment"><p><strong><code>:::</code> as a bracket pair</strong> — fold and color-match fenced divs</p></li>
-<li class="fragment"><p><strong>Exclude <code>.quarto/</code> and <code>_freeze/</code></strong> from search and file watching — faster in big projects</p></li>
-</ul>
-<div class="footer">
-<p>Adapted from: <a href="https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings/">Mickaël Canouil, <em>Optimising VS Code and Positron for Quarto</em></a> (CC BY-NC-SA)</p>
+
+<aside><div>
+<p>Adapted from: CANOUIL, M. (2025-11-20). Optimising VS Code and Positron for Quarto: Essential Settings for Better Editing. Mickael.canouil.fr. <a href="https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings" class="uri">https://mickael.canouil.fr/posts/2025-11-20-quarto-editor-settings</a> (CC BY-NC-SA 4.0)</p>
+</div></aside></section>
+<section id="formatting" class="slide level2">
+<h2>Formatting</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings.json</strong></pre>
 </div>
-<aside class="notes">
-<p>These are opinionated settings — encourage attendees to try them and adjust.</p>
-<p>Be precise about what word wrap off does and doesn’t do: it does not put one sentence per line for you. It makes the convention visible — a long line runs off the edge, so you notice and break it. The habit is yours; the setting just stops hiding it.</p>
-<p>Break at sentence boundaries, not at a character count — that is what makes the Git diffs sentence-level. The rulers help you see where you are: 80 is a subtle vertical line, a soft guide; 120 is firebrick red (<code>#b22222</code>), flagging a runaway line — usually a long URL, a pipe-table row, or code — not a place to break a sentence.</p>
-<p><code>editor.guides.bracketPairs</code> is the piece people leave out, and then wonder why the <code>:::</code> colors never show up.</p>
-<p>The settings can live in user settings (everywhere) or in a project’s <code>.vscode/settings.json</code> — same pattern as the Air setup, so it can be checked into version control and shared. The Quarto formatter setting belongs in the same <code>[quarto]</code> block; we let <code>Air: Initialize Workspace Folder</code> write that one for us, a few slides from now.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="settings.json" data-code-line-numbers="2-4,9"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a aria-label="2"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a aria-label="3"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb3-4"><a aria-label="4"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb3-5"><a aria-label="5"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb3-6"><a aria-label="6"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb3-7"><a aria-label="7"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb3-8"><a aria-label="8"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb3-9"><a aria-label="9"></a>    <span class="fu">},</span></span>
+<span id="cb3-10"><a aria-label="10"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-11"><a aria-label="11"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb3-12"><a aria-label="12"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb3-13"><a aria-label="13"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="word-wrap" class="slide level2">
+<h2>Word wrap</h2>
+<p>Long lines wrap – recommend breaking at sentences:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings.json</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="settings.json" data-code-line-numbers="2,5,9"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a aria-label="2"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-3"><a aria-label="3"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb4-4"><a aria-label="4"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb4-5"><a aria-label="5"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb4-6"><a aria-label="6"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb4-7"><a aria-label="7"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb4-8"><a aria-label="8"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb4-9"><a aria-label="9"></a>    <span class="fu">},</span></span>
+<span id="cb4-10"><a aria-label="10"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-11"><a aria-label="11"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb4-12"><a aria-label="12"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb4-13"><a aria-label="13"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="rulers" class="slide level2 smaller">
+<h2>Rulers</h2>
+<p>Rulers at 80 and 120 as visual guides:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings.json</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="settings.json" data-code-line-numbers="10"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a aria-label="2"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-3"><a aria-label="3"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-4"><a aria-label="4"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb5-5"><a aria-label="5"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb5-6"><a aria-label="6"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb5-7"><a aria-label="7"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb5-8"><a aria-label="8"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb5-9"><a aria-label="9"></a>    <span class="fu">},</span></span>
+<span id="cb5-10"><a aria-label="10"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-11"><a aria-label="11"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb5-12"><a aria-label="12"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb5-13"><a aria-label="13"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="bracket-pairs" class="slide level2">
+<h2>Bracket pairs</h2>
+<p>Fold and color-match fenced divs:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings.json</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="settings.json" data-code-line-numbers="2,6-8,9"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a aria-label="2"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb6-3"><a aria-label="3"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb6-4"><a aria-label="4"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb6-5"><a aria-label="5"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb6-6"><a aria-label="6"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb6-7"><a aria-label="7"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb6-8"><a aria-label="8"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb6-9"><a aria-label="9"></a>    <span class="fu">},</span></span>
+<span id="cb6-10"><a aria-label="10"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-11"><a aria-label="11"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb6-12"><a aria-label="12"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb6-13"><a aria-label="13"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exclude" class="slide level2 smaller">
+<h2>Exclude</h2>
+<p>Exclude files in <code>.quarto/</code> and <code>_freeze/</code> from search and file watching to gain speed, especially helpful in big projects:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>settings.json</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="settings.json" data-code-line-numbers="11-12"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a aria-label="1"></a><span class="fu">{</span></span>
+<span id="cb7-2"><a aria-label="2"></a>    <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb7-3"><a aria-label="3"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb7-4"><a aria-label="4"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span><span class="fu">,</span></span>
+<span id="cb7-5"><a aria-label="5"></a>        <span class="dt">"editor.wordWrap"</span><span class="fu">:</span> <span class="st">"on"</span><span class="fu">,</span></span>
+<span id="cb7-6"><a aria-label="6"></a>        <span class="dt">"editor.guides.bracketPairs"</span><span class="fu">:</span> <span class="st">"active"</span><span class="fu">,</span></span>
+<span id="cb7-7"><a aria-label="7"></a>        <span class="dt">"editor.language.brackets"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span><span class="fu">,</span></span>
+<span id="cb7-8"><a aria-label="8"></a>        <span class="dt">"editor.language.colorizedBracketPairs"</span><span class="fu">:</span> <span class="ot">[[</span><span class="st">":::"</span><span class="ot">,</span> <span class="st">":::"</span><span class="ot">]]</span></span>
+<span id="cb7-9"><a aria-label="9"></a>    <span class="fu">},</span></span>
+<span id="cb7-10"><a aria-label="10"></a>    <span class="dt">"editor.rulers"</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">80</span><span class="ot">,</span> <span class="fu">{</span> <span class="dt">"color"</span><span class="fu">:</span> <span class="st">"#b22222"</span><span class="fu">,</span> <span class="dt">"column"</span><span class="fu">:</span> <span class="dv">120</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb7-11"><a aria-label="11"></a>    <span class="dt">"files.watcherExclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto/**"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">},</span></span>
+<span id="cb7-12"><a aria-label="12"></a>    <span class="dt">"search.exclude"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"**/.quarto"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span> <span class="dt">"**/_freeze"</span><span class="fu">:</span> <span class="kw">true</span> <span class="fu">}</span></span>
+<span id="cb7-13"><a aria-label="13"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="your-turn-2-adopt-the-recommended-settings" class="slide level2">
+<h2>Your turn 2: Adopt the recommended settings</h2>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>01-positron</code></p>
+</div>
+<div class="your-turn">
+<p>Grab the recommended settings from <code>settings-worth-adopting.txt</code> and add them to your workspace or user settings.</p>
+<p>Access these settings via the command palette: <code>Preferences: Open User Settings (JSON)</code> or <code>Preferences: Open Workspace Settings (JSON)</code>.</p>
+</div>
+<countdown-timer id="timer_317ddf4dfd624df5bf2d0681010012feffe896f4" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
 </section></section>
 <section>
 <section id="coming-from-rstudio" class="title-slide slide level1 center">
@@ -639,11 +713,15 @@ Mine Çetinkaya-Rundel
 <section id="whats-different" class="slide level2 smaller">
 <h2>What’s different?</h2>
 <ul>
-<li class="fragment"><p><strong>Publishing</strong>: no button in the editor toolbar, but the pre-installed <a href="https://positron.posit.co/publish-to-connect.html">Posit Publisher extension</a> deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub</p></li>
-<li class="fragment"><p><strong>Inline output</strong>: off by default, and each document gets its own session — see earlier</p></li>
-<li class="fragment"><p>R Markdown (<code>.Rmd</code>) files preview with Quarto</p></li>
-<li class="fragment"><p><code>R: Render Document With R Markdown</code> renders with {rmarkdown} instead, and <code>R: New R Markdown from Template</code> starts from a template</p></li>
-<li class="fragment"><p>Advanced <code>.Rmd</code> features like <code>params</code> have no interactive support</p></li>
+<li class="fragment"><p><strong>Publishing</strong>: no button in the editor toolbar, but the pre-installed <a href="https://positron.posit.co/publish-to-connect.html">Posit Publisher extension</a> deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub.</p></li>
+<li class="fragment"><p><strong>Inline output</strong>: off by default, and each document gets its own session, we already saw how to turn it on.</p></li>
+<li class="fragment"><p><strong>R Markdown:</strong></p>
+<ul>
+<li class="fragment">R Markdown (<code>.Rmd</code>) files preview with Quarto by default.</li>
+<li class="fragment"><code>R: Render Document With R Markdown</code> renders with <code>rmarkdown</code> instead.</li>
+<li class="fragment"><code>R: New R Markdown from Template</code> starts from a template.</li>
+<li class="fragment">Advanced <code>.Rmd</code> features like <code>params</code> have no interactive support</li>
+</ul></li>
 </ul>
 <div class="footer">
 <p>Learn more: <a href="https://positron.posit.co/quarto.html" class="uri">https://positron.posit.co/quarto.html</a></p>
@@ -666,92 +744,6 @@ Mine Çetinkaya-Rundel
 </ul>
 </div></div>
 <p>Either way: the status bar tells you which one won, and changing <code>quarto.path</code> takes a restart.</p>
-<div class="footer">
-<p>Download: <a href="https://quarto.org/docs/download/" class="uri">https://quarto.org/docs/download/</a></p>
-</div>
-</section></section>
-<section>
-<section id="git" class="title-slide slide level1 center">
-<h1>Git</h1>
-
-</section>
-<section id="demo-git" class="slide level2">
-<h2>Demo: Git</h2>
-<ul>
-<li><p><strong>Changes</strong> pane</p></li>
-<li><p>Open a change: the diff opens in an editor — closest to RStudio’s diff</p></li>
-<li><p>Add, commit</p></li>
-<li><p><strong>Graph</strong>: pull/push, like RStudio’s History view</p></li>
-<li><p>Current branch</p></li>
-</ul>
-<aside class="notes">
-<p>Demo this live, then walk through the screenshots.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="examine-changes" class="slide level2">
-<h2>Examine changes</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p><img data-src="../images/positron-git-changes.png" class="screenshot" alt="The Source Control pane in Positron listing changed files, with a commit message box and Commit button, the commit Graph below, and diff editors open for hello.qmd and new-document.qmd."></p>
-</div><div class="column" style="width:35%;">
-<ul>
-<li><p>Changes live in the <strong>Source Control</strong> pane</p></li>
-<li><p>Click a file and the diff opens in an editor</p></li>
-<li><p>Message + <strong>Commit</strong></p></li>
-<li><p><strong>Graph</strong>: commit history</p></li>
-</ul>
-</div></div>
-<aside class="notes">
-<p>Point out where changes live and what they look like: files, repo, branches, etc. The buttons give a basic set of actions, the menus more, and then the command line.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="git-workflow" class="slide level2">
-<h2>Git workflow</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p><img data-src="../images/positron-git-workflow.png" class="screenshot" alt="The Source Control pane with staged and unstaged changes, the commit message box, and the commit Graph showing the current branch main."></p>
-</div><div class="column" style="width:35%;">
-<ul>
-<li><p><strong>Current branch</strong>: click to switch, create new…</p></li>
-<li><p><strong>Stage and commit</strong></p></li>
-<li><p><strong>Pull / Push</strong></p></li>
-</ul>
-</div></div>
-<aside class="notes">
-<p>The branch name in the status bar is also the branch switcher — click it to change branches or create a new one, no dialog hunting required.</p>
-<p>Staging is more explicit here than in RStudio’s checkbox column: the <code>+</code> on a file stages it, and you can stage a single hunk from the diff editor.</p>
-<p>Pull and push live behind the <code>...</code> menu and the sync button. Anything the UI doesn’t cover, the Terminal does — same repo, same Git.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
 <section>
 <section id="formatting-with-air" class="title-slide slide level1 center">
@@ -767,7 +759,7 @@ Mine Çetinkaya-Rundel
 <li><p>Mangle the cell again, save, watch it snap back</p></li>
 </ol>
 <aside class="notes">
-<p>Demo this live, then the next slides explain what just happened.</p>
+<p>Demo this live.</p>
 <p>Point out that formatting only touches code cells — prose and YAML are left alone. The format-on-save setup lands in <code>.vscode/settings.json</code>; the last slide of this section shows exactly what was written.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -789,7 +781,7 @@ Mine Çetinkaya-Rundel
 <li class="fragment"><p>Formats R code in <code>.R</code> files, and R cells in <code>.qmd</code> files when the Quarto extension is active</p></li>
 </ul>
 <div class="footer">
-<p>Learn more: <a href="https://www.tidyverse.org/blog/2025/02/air/" class="uri">https://www.tidyverse.org/blog/2025/02/air/</a></p>
+<p>Learn more: <a href="https://posit-dev.github.io/air" class="uri">https://posit-dev.github.io/air</a></p>
 </div>
 <aside class="notes">
 <p>Same idea as <code>usethis::use_tidy_style()</code>, but automatic and instantaneous.</p>
@@ -819,22 +811,9 @@ Mine Çetinkaya-Rundel
 <p><strong>Format on save:</strong></p>
 <ul>
 <li><p>Command: <code>Air: Initialize Workspace Folder</code></p></li>
-<li><p>Writes <code>.vscode/settings.json</code> and <code>air.toml</code> — check them in, and the whole team gets the same setup</p></li>
+<li><p>Writes <code>.vscode/settings.json</code> and <code>air.toml</code> — check them in so all collaborators get the same setup</p></li>
 </ul>
 </div></div>
-<aside class="notes">
-<p>The workspace settings land in version control — a nice callback to the Git section: formatting stops being a per-person preference and becomes a project property.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="what-format-on-save-looks-like" class="slide level2">
 <h2>What format on save looks like</h2>
@@ -842,20 +821,19 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>.vscode/settings.json</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename=".vscode/settings.json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"[r]"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"Posit.air-vscode"</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span></span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename=".vscode/settings.json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"[r]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"Posit.air-vscode"</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"[quarto]"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"quarto.quarto"</span></span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <aside class="notes">
 <p>This is what <code>Air: Initialize Workspace Folder</code> writes for you. The <code>[quarto]</code> block is the piece that makes it apply to R cells in <code>.qmd</code> files.</p>
-<p>Nobody needs to memorize this — the point is that it exists and is one command away.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -867,36 +845,45 @@ Mine Çetinkaya-Rundel
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="your-turn-3-format-with-air" class="slide level2">
+<h2>Your turn 3: Format with Air</h2>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>01-positron</code></p>
+</div>
+<div class="your-turn">
+<ol type="1">
+<li><p>Open <code>hello.qmd</code> and mangle an R cell — odd spacing, one long pipe chain</p></li>
+<li><p>Fix it once: <code>Quarto: Format Cell</code></p></li>
+<li><p>Turn on format on save: <code>Air: Initialize Workspace Folder</code></p></li>
+<li><p>Mangle the cell again, save, watch it snap back</p></li>
+<li><p>Inspect the <code>.vscode/settings.json</code> and <code>air.toml</code> files that were written</p></li>
+</ol>
+</div>
+<countdown-timer id="timer_317ddf4dfd624df5bf2d0681010012feffe896f4" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
 </section></section>
 <section>
 <section id="llm-assistance" class="title-slide slide level1 center">
 <h1>LLM assistance</h1>
 
 </section>
-<section id="demo-posit-assistant" class="slide level2">
-<h2>Demo: Posit Assistant</h2>
+<section id="your-turn-4-posit-assistant" class="slide level2 smaller">
+<h2>Your turn 4: Posit Assistant</h2>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>01-positron</code></p>
+</div>
+<div class="your-turn">
 <ol type="1">
-<li><p>Open the Posit Assistant pane in the sidebar</p></li>
+<li><p>Open the Posit Assistant pane in the sidebar, log in with the email address you registered for the conference</p></li>
 <li><p>Ask it to explain the <code>plot-penguins</code> cell in <code>hello.qmd</code> — it can see the open document and the session</p></li>
 <li><p>Ask it to write alt text for the penguins plot, then paste the result into <code>fig-alt</code></p></li>
 <li><p>Run <code>/report</code> to export the conversation as a <code>.qmd</code></p></li>
 <li><p>Read it, check it’s accurate, <em>then</em> keep it</p></li>
 </ol>
-<aside class="notes">
-<p>Demo this live. Step 2 is the moment to point out session awareness: it describes the data frame you actually have loaded, not one you described.</p>
-<p>Step 4 is the one people don’t expect — the chat becomes a document, code cells and prose, and the work continues in Quarto instead of in a transcript.</p>
-<p>Step 5 is the deliberate part — model the review habit out loud before moving on.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+<countdown-timer id="timer_317ddf4dfd624df5bf2d0681010012feffe896f4" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
 </section>
 <section id="posit-assistant" class="slide level2">
 <h2>Posit Assistant</h2>
@@ -908,23 +895,8 @@ Mine Çetinkaya-Rundel
 <li class="fragment"><p><strong>Fix</strong> and <strong>Explain</strong> buttons on error output</p></li>
 </ul>
 <div class="footer">
-<p>Learn more: <a href="https://assistant.posit.co/docs/getting-started/" class="uri">https://assistant.posit.co/docs/getting-started/</a></p>
+<p>Learn more: <a href="https://assistant.posit.co/docs/getting-started" class="uri">https://assistant.posit.co/docs/getting-started</a></p>
 </div>
-<aside class="notes">
-<p>Pre-installed in recent versions of Positron. Note the completions caveat before anyone tries: chat works with a provider signed in, and inline completions need a Posit AI Pass or GitHub Copilot — so some of the room may not have them.</p>
-<p><code>/report</code> is the one to remember for this workshop: you explore in chat, then export the whole thing as a <code>.qmd</code> with code cells and prose, and carry on in the document. It is the Quarto-shaped exit from a chat window.</p>
-<p>Session awareness is the differentiator from a generic chatbot: it can see the data frame you actually have loaded, not the one you describe.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="practical-deliberate-uses-in-a-quarto-workflow" class="slide level2 smaller">
 <h2>Practical, deliberate uses in a Quarto workflow</h2>
@@ -940,26 +912,12 @@ Mine Çetinkaya-Rundel
 </div><div class="column">
 <p><strong>Your job, not its job:</strong></p>
 <ul>
-<li><p>Review every word before it ships</p></li>
+<li><p>Review every word before finalizing</p></li>
 <li><p>Run every line of code it writes</p></li>
 <li><p>Check every factual claim</p></li>
 <li><p>Keep secrets and credentials out of prompts</p></li>
 </ul>
 </div></div>
-<aside class="notes">
-<p>“Deliberate” is the operative word: decide what to delegate. A useful rule of thumb — delegate the tedious (formatting, alt text, boilerplate), keep the judgment calls (what the analysis means, whether the code is right).</p>
-<p>The figure alt-text suggestion is a quiet superpower: it makes accessibility cheap enough to actually happen.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
@@ -972,7 +930,6 @@ Mine Çetinkaya-Rundel
 <li><p><a href="https://quarto.org/docs/tools/positron/">Quarto docs: Guide &gt; Tools &gt; Positron</a> — the Positron-specific Quarto features</p></li>
 <li><p><a href="https://positron.posit.co/quarto.html">Positron docs: Quarto</a> — <code>quarto.path</code>, rendering <code>.Rmd</code> files with {rmarkdown}</p></li>
 <li><p><a href="https://positron.posit.co/quarto-inline-output.html">Positron docs: inline output</a> — per-document sessions, output in the editor</p></li>
-<li><p><a href="https://code.visualstudio.com/docs/sourcecontrol/overview">VS Code docs: Source Control</a> — the Git pane Positron inherits</p></li>
 <li><p><a href="https://positron.posit.co/guide-r-air.html">Formatting R code with Air</a> — setup, format on save, <code>air.toml</code></p></li>
 <li><p><a href="https://assistant.posit.co/docs/getting-started/">Posit Assistant docs</a> and the <a href="https://positron.posit.co/tutorial-ai-quarto.html">AI + Quarto tutorial</a></p></li>
 </ul>
