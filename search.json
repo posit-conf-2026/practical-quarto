@@ -39,7 +39,7 @@
     "href": "slides/05-wrap-up.html#workshop-survey",
     "title": "Wrap-up",
     "section": "Workshop survey",
-    "text": "Workshop survey\nBefore we move on to Q&A, please take a note of the workshop survey:\n\n\n pos.it/conf-workshop-survey"
+    "text": "Workshop survey\nBefore we move on to Q&A, please take a note of the workshop survey:\n\n\n pos.it/conf26-workshop-survey"
   },
   {
     "objectID": "slides/05-wrap-up.html#questions",
@@ -123,7 +123,7 @@
     "href": "slides/03-partials.html#your-turn-1-add-the-masthead",
     "title": "Partials",
     "section": "Your turn 1: add the masthead",
-    "text": "Your turn 1: add the masthead\n\n\nAdd a masthead key to the YAML of report.qmd:\nmasthead: _brand/brs-logo.svg\nAdd this line to title-block.html, right after &lt;header ...&gt;:\n&lt;img src=\"$masthead$\" alt=\"Bureau of Regional Statistics\" class=\"report-masthead\"&gt;\nRender.\n\n\n\nExercise: 03-partials/01-masthead\n\n\n \n\nTouch on review:\n\n$variable$ substitutes a value\nAny YAML key becomes a template variable. masthead is your key. Quarto has no masthead option and never reads it."
+    "text": "Your turn 1: add the masthead\n\n\nAdd a masthead key to the YAML of report.qmd:\nmasthead: _brand/brs-logo.svg\nAdd this line to title-block.html, right after &lt;header ...&gt;:\n&lt;img src=\"$masthead$\" alt=\"Bureau of Regional Statistics\" class=\"report-masthead\"&gt;\nRender.\nChallenge: Provide the alt text via metadata too.\n\n\n\nExercise: 03-partials/01-masthead\n\n\n \n\nTouch on review:\n\n$variable$ substitutes a value\nAny YAML key becomes a template variable. masthead is your key. Quarto has no masthead option and never reads it."
   },
   {
     "objectID": "slides/03-partials.html#section",
@@ -144,7 +144,7 @@
     "href": "slides/03-partials.html#your-turn-2-add-period-and-region",
     "title": "Partials",
     "section": "Your turn 2: add period and region",
-    "text": "Your turn 2: add period and region\nAlready in your YAML, and shown by nothing:\n\n\nreport.qmd\n\nbrs-release:\n  period: \"Q3 2026\"\n  region: Oregon\n\n\n\nCopy, then complete, this line in title-block.html, below the subtitle’s $endif$:\n&lt;p class=\"report-period\"&gt;______ &middot; ______&lt;/p&gt;\nRender.\n\n\n\nExercise: 03-partials/02-period-and-region\n\n\n \n\nAfter: delete region: and render. A separator with nothing after it — the bridge to turn 3."
+    "text": "Your turn 2: add period and region\nAlready in your YAML, and shown by nothing:\n\n\nreport.qmd\n\nbrs-release:\n  period: \"Q3 2026\"\n  region: Oregon\n\n\n\nCopy, then complete, this line to title-block.html, below the subtitle’s $endif$:\n&lt;p class=\"report-period\"&gt;______ &middot; ______&lt;/p&gt;\nRender. What happens when you remove brs-release from report.qmd?\n\n\n\nExercise: 03-partials/02-period-and-region\n\n\n \n\nAfter: delete region: and render. A separator with nothing after it — the bridge to turn 3."
   },
   {
     "objectID": "slides/03-partials.html#section-1",
@@ -158,7 +158,7 @@
     "href": "slides/03-partials.html#your-own-metadata-your-own-namespace",
     "title": "Partials",
     "section": "Your own metadata, your own namespace",
-    "text": "Your own metadata, your own namespace\n\n\nreport.qmd\n\nmasthead: _brand/brs-logo.svg   # turn 1: a name at the top level\nbrs-release:                    # turn 2: a name with names inside\n  period: \"Q3 2026\"\n  region: Oregon\n\n\nEvery top-level name you invent is a bet that Quarto will never claim it.\n\n\nNest, and you place that bet once instead of once per field.\n\n\nThe obvious name is logo. It’s taken — a real Quarto option in beamer, revealjs, typst and dashboards, free in format: html only.\nRender this same file to typst with logo: set and Quarto puts the image in the page background itself. Module 04 picks this up.\nmasthead is safe. Nesting means you don’t have to know which names are."
+    "text": "Your own metadata, your own namespace\n\n\nreport.qmd\n\nmasthead: _brand/brs-logo.svg   # our name at the top level\nbrs-release:                    # our name with names inside\n  period: \"Q3 2026\"\n  region: Oregon\n\n\nEvery top-level name you invent is a bet that Quarto will never claim it.\n\n\nNest, and you place that bet once instead of once per field.\n\n\nThe obvious name is logo. It’s taken — a real Quarto option in beamer, revealjs, typst and dashboards, free in format: html only.\nRender this same file to typst with logo: set and Quarto puts the image in the page background itself. Module 04 picks this up.\nmasthead is safe. Nesting means you don’t have to know which names are."
   },
   {
     "objectID": "slides/03-partials.html#condition-markup-on-presence",
@@ -172,7 +172,7 @@
     "href": "slides/03-partials.html#your-turn-3-add-status",
     "title": "Partials",
     "section": "Your turn 3: add status",
-    "text": "Your turn 3: add status\n\n\nAdd status: Provisional under brs-release: in report.qmd.\nIn title-block.html, below the reference period, show the status in a &lt;span class=\"report-status\"&gt; — but only when brs-release.status is set.\nRender. Then delete the status: line and render again — the badge should disappear, leaving nothing behind.\n\n\n\nExercise: 03-partials/03-release-status\n\n\n \n\nNo snippet, so the work is reading their own file and adapting it.\nThe assistant is a sanctioned escape hatch here. Prompt is in the README.\nAfter: status nests under brs-release: — the turn 2 rule, applied unprompted. The badge is unstyled and looks like nothing, which is the cue for turn 4."
+    "text": "Your turn 3: add status\n\n\nAdd status: Provisional under brs-release: in report.qmd.\nIn title-block.html, below the reference period, show the status in a &lt;span class=\"report-status\"&gt; — but only when brs-release.status is set.\nRender. Then delete the status: line and render again — the badge should disappear, leaving nothing behind.\n\n\n\nExercise: 03-partials/03-release-status\n\n\n \n\nNo snippet, so the work is reading their own file and adapting it.\nThe assistant is a sanctioned escape hatch here.\nAfter: status nests under brs-release: — the turn 2 rule, applied unprompted. The badge is unstyled and looks like nothing, which is the cue for turn 4."
   },
   {
     "objectID": "slides/03-partials.html#section-2",
@@ -186,14 +186,14 @@
     "href": "slides/03-partials.html#more-pandoc-template-syntax",
     "title": "Partials",
     "section": "More Pandoc template syntax",
-    "text": "More Pandoc template syntax\n\n\n\n\n\n\n\nWrite\nGet\n\n\n\n\n$if(x)$ … $else$ … $endif$\nconditionals, as in turn 3\n\n\n$for(x)$ … $endfor$\nloop over an array\n\n\n$sep$\ninside a loop: emitted between items, never after the last\n\n\n${x/uppercase}\na pipe — also lowercase, length, reverse, nowrap, …\n\n\n$--\na comment, to the end of the line\n\n\n\nPandoc’s template syntax →\n\nA signpost, not a lesson. You have met $if$; the rest is “this exists, the manual has it”.\n$sep$ is worth ten seconds: it is the answer to the dangling &middot; from turn 2’s optional extra — a separator that knows it is between things."
+    "text": "More Pandoc template syntax\n\n\n\n\n\n\n\nWrite\nGet\n\n\n\n\n$if(x)$ … $else$ … $endif$\nconditionals\n\n\n$for(x)$ … $endfor$\nloop over an array\n\n\n$sep$\ninside a loop: emitted between items, never after the last\n\n\n${x/uppercase}\na pipe — also lowercase, length, reverse, nowrap, …\n\n\n$--\na comment, to the end of the line\n\n\n\nPandoc’s template syntax →\n\nA signpost, not a lesson. You have met $if$; the rest is “this exists, the manual has it”.\n$sep$ is worth ten seconds: a separator that knows it is between things."
   },
   {
     "objectID": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
     "href": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
     "title": "Partials",
     "section": "For HTML: styling lives outside the partials",
-    "text": "For HTML: styling lives outside the partials\n\n\ntitle-block.html\n\n&lt;span class=\"report-status\"&gt;$brs-release.status$&lt;/span&gt;\n\n\nNo color. No size. No position. Just a name.\n\n\n\n\ncustom.scss\n\n.report-status { background-color: $primary; }\n\n\n\nYou have been leaving these hooks since turn 1 — report-masthead, report-period, report-status. Three classes, no CSS.\n\n\nA partial decides what appears and in what order. A stylesheet decides what it looks like. Cross that line and nobody can restyle your template.\nThis is why the snippets shipped with class names already in them."
+    "text": "For HTML: styling lives outside the partials\n\n\ntitle-block.html\n\n&lt;span class=\"report-status\"&gt;$brs-release.status$&lt;/span&gt;\n\n\nNo color. No size. No position. Just a class.\n\n\nStyle using SCSS:\n\n\ncustom.scss\n\n/*-- scss:rules --*/\n.report-status { background-color: $primary; }\n\n\n\nThree classes:report-masthead,report-period, report-status.\n\n\nA partial decides what appears and in what order. A stylesheet decides what it looks like. Cross that line and nobody can restyle your template.\nThis is why the snippets shipped with class names already in them."
   },
   {
     "objectID": "slides/03-partials.html#your-turn-4-style-what-you-built",
@@ -242,7 +242,7 @@
     "href": "slides/03-partials.html#the-full-template.html",
     "title": "Partials",
     "section": "The full template.html",
-    "text": "The full template.html"
+    "text": "The full template.html\n\n\n\n\n\nhtml/pandoc/template.html →"
   },
   {
     "objectID": "slides/03-partials.html#there-is-more-than-one-title-block.html",
@@ -256,14 +256,14 @@
     "href": "slides/03-partials.html#template-format-revealjs",
     "title": "Partials",
     "section": "Template: format: revealjs",
-    "text": "Template: format: revealjs"
+    "text": "Template: format: revealjs\n\nrevealjs/pandoc/template.html →"
   },
   {
     "objectID": "slides/03-partials.html#template-format-pdf",
     "href": "slides/03-partials.html#template-format-pdf",
     "title": "Partials",
     "section": "Template: format: pdf",
-    "text": "Template: format: pdf"
+    "text": "Template: format: pdf\n\npdf/pandoc/template.tex →"
   },
   {
     "objectID": "slides/03-partials.html#localized-strings-in-templates",
@@ -868,7 +868,7 @@
     "href": "slides/04-typst.html#your-turn-1-render-it-as-a-pdf",
     "title": "Why Typst matters",
     "section": "Your turn 1: render it as a PDF",
-    "text": "Your turn 1: render it as a PDF\n\n\nAdd typst as a second format in report.qmd. Keep html:\n\n\nreport.qmd\n\nformat:\n  html: default\n  typst: default\n\nRender with Quarto: Preview Format… and pick Typst.\nRender the HTML too. What came across? What didn’t?\n\n\n\nExercise: 04-typst/01-first-pdf\n\n\n \n\nNo TeX install.\nQuarto: Preview Format… — the command from this morning.\nAdd, don’t replace. They end holding both outputs, which is what makes step 3 possible.\nSteer the comparison to the logo, and to the status with nothing marking it."
+    "text": "Your turn 1: render it as a PDF\n\n\nAdd typst as a second format in report.qmd. Keep html:\n\n\nreport.qmd\n\nformat:\n  html: default\n  typst: default\n\nRender with Quarto: Preview Format… command and pick Typst.\nRender the HTML too. Compare the two formats.\n\n\n\nExercise: 04-typst/01-first-pdf\n\n\n \n\nNo TeX install.\nQuarto: Preview Format… — the command from this morning.\nAdd, don’t replace. They end holding both outputs, which is what makes step 3 possible.\nSteer the comparison to the logo, and to the status with nothing marking it."
   },
   {
     "objectID": "slides/04-typst.html#section",
@@ -896,7 +896,7 @@
     "href": "slides/04-typst.html#qmd-.typ-.pdf",
     "title": "Why Typst matters",
     "section": ".qmd → .typ → .pdf",
-    "text": ".qmd → .typ → .pdf\n\n\n\n\n\nKeep the intermediate .typ:\n\n\nreport.qmd\n\nformat:\n  typst:\n    keep-typ: true\n\n\nTwo renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.\nThe middle file is normally deleted. Keep it and you can read it, and errors point into it."
+    "text": ".qmd → .typ → .pdf\n\n\n\n\n\n\nKeep the intermediate .typ:\n\n\nreport.qmd\n\nformat:\n  typst:\n    keep-typ: true\n\n\n\nTwo renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.\nThe middle file is normally deleted. Keep it and you can read it, and errors point into it."
   },
   {
     "objectID": "slides/04-typst.html#your-content-translated-to-typst",
@@ -924,7 +924,7 @@
     "href": "slides/04-typst.html#switches-into-code",
     "title": "Why Typst matters",
     "section": "# switches into code",
-    "text": "# switches into code\n\n\n\n\nbadge.typ\n\nrect()\n\n\n\n\n\nbadge.typ\n\n#rect()\n\n\n\n\n\n\nEmpty parentheses: a call with no arguments.\n\nTypst: rect →\n\nOne character is the whole difference. Without the # you get the characters rect() back as text.\nThe docs page for rect is the next two slides, ahead of time."
+    "text": "# switches into code\n\n\n\n\nbadge.typ\n\nrect()\n\n\n\n\n\n\nbadge.typ\n\n#rect()\n\n\n\n\n\n\n\n\n\nEmpty parentheses: a call with no arguments.\n\nTypst: rect →\n\nOne character is the whole difference. Without the # you get the characters rect() back as text.\nThe docs page for rect is the next two slides, ahead of time."
   },
   {
     "objectID": "slides/04-typst.html#arguments-go-in-the-parentheses",
@@ -945,7 +945,7 @@
     "href": "slides/04-typst.html#your-turn-2-read-the-typst",
     "title": "Why Typst matters",
     "section": "Your turn 2: read the Typst",
-    "text": "Your turn 2: read the Typst\n\n\nRender, then open report.typ. Scroll down to = Summary — everything below it is your content.\nFind a call — it starts with #.\nLook it up in the Typst reference. Say in plain words what it does, and whether any arguments are being passed to it.\nAgain, with another one.\n\n\n\nExercise: 04-typst/02-read-the-typ\n\n\n \n\nAll four are in the first section: #ref, #link, #quote, and a #strong with an #emph nested inside it.\nArguments vary on purpose — #strong takes none, #quote(block: true) takes a named one, #link and #ref take one unnamed and then content.\nCollect two or three out loud. The reference being readable is the point, not finishing."
+    "text": "Your turn 2: read the Typst\n\n\nRender, then open report.typ. Scroll down to = Summary — everything below it is your content.\nFind a call — it starts with #.\nSearch for the function in the Typst reference. Say in plain words what it does, and whether any arguments are being passed to it.\nAgain, with another one.\n\n\n\nExercise: 04-typst/02-read-the-typ\n\n\n \n\nAll four are in the first section: #ref, #link, #quote, and a #strong with an #emph nested inside it.\nArguments vary on purpose — #strong takes none, #quote(block: true) takes a named one, #link and #ref take one unnamed and then content.\nCollect two or three out loud. The reference being readable is the point, not finishing."
   },
   {
     "objectID": "slides/04-typst.html#you-can-nest-content-and-calls",
@@ -973,7 +973,7 @@
     "href": "slides/04-typst.html#every-element-has-a-function",
     "title": "Why Typst matters",
     "section": "Every element has a function",
-    "text": "Every element has a function\nAll layout and styling happens with functions\n\n\n\n\n\n\n\nElement\nIts function\n\n\n\n\nText\ntext()\n\n\nHeading\nheading()\n\n\nParagraphs\npar()\n\n\nPage\npage()\n\n\n\n\nNothing is exempt. Provisional on its own is a text element — we just never named the function.\nTypst’s own word for these is element function, and its docs say every one of them can be customised with set and show rules. That is the next two slides.\nTheir .typ already has set par, set text, set heading and set page, all written by Quarto from the YAML and the brand."
+    "text": "Every element has a function\nEven if not explicitly called, all layout and styling happens with functions:\n\n\n\n\n\n\n\nElement\nIts function\n\n\n\n\nText\ntext()\n\n\nHeading\nheading()\n\n\nParagraphs\npar()\n\n\nPage\npage()\n\n\n\n\nNothing is exempt. Provisional on its own is a text element — we just never named the function.\nTypst’s own word for these is element function, and its docs say every one of them can be customised with set and show rules. That is the next two slides.\nTheir .typ already has set par, set text, set heading and set page, all written by Quarto from the YAML and the brand."
   },
   {
     "objectID": "slides/04-typst.html#a-set-rule-changes-the-default",
@@ -1008,7 +1008,7 @@
     "href": "slides/04-typst.html#your-turn-3-set-and-show-rules",
     "title": "Why Typst matters",
     "section": "Your turn 3: set and show rules",
-    "text": "Your turn 3: set and show rules\nIn report.qmd, add a new raw block above the badge, so the rules apply to everything below.\n\n\nWrite a set rule to loosen the paragraphs — par has a leading argument. par\nWrite a show-set rule to centre the section headings. align\nBonus: step 2 caught ### Manufacturing too. Narrow the selector to the top-level sections only.\n\n\n\nExercise: 04-typst/03-set-and-show\n\n\n \n\nreport.qmd, not report.typ — the .typ is generated, and anything typed there is gone on the next render.\nBoth rules have a model in that generated file, though.\nStep 1 is #set, step 2 is #show. Say that if nobody moves.\nThe bonus needs the heading shift — ## is level 1. Staged in the README.\nFast finishers: the menu of free wins."
+    "text": "Your turn 3: set and show rules\nIn report.qmd, add a new raw block above the badge, so the rules apply to everything below.\n\n\nWrite a set rule to loosen the paragraphs — par has a leading argument. par →\nWrite a show-set rule to centre the section headings. align →\nChallenge: step 2 caught ### Manufacturing too. Narrow the selector to the top-level sections only.\n\n\n\nExercise: 04-typst/03-set-and-show\n\n\n \n\nreport.qmd, not report.typ — the .typ is generated, and anything typed there is gone on the next render.\nBoth rules have a model in that generated file, though.\nStep 1 is #set, step 2 is #show. Say that if nobody moves.\nThe bonus needs the heading shift — ## is level 1. Staged in the README.\nFast finishers: the menu of free wins."
   },
   {
     "objectID": "slides/04-typst.html#one-answer",

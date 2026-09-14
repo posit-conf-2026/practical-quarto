@@ -229,9 +229,9 @@ Mine Çetinkaya-Rundel
   </div>
 </section>
 <section>
-<section id="the-release-ships-as-a-pdf" class="title-slide slide level1 center">
-<h1>The release ships as a PDF</h1>
-
+<section id="case-study" class="title-slide slide level1 center">
+<h1>Case study</h1>
+<p>The <strong>Bureau of Regional Statistics</strong> publishes a quarterly release.</p>
 </section>
 <section id="same-release-new-requirement" class="slide level2 smaller">
 <h2>Same release, new requirement</h2>
@@ -272,14 +272,14 @@ Mine Çetinkaya-Rundel
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
-<li><p>Render with <strong>Quarto: Preview Format…</strong> and pick Typst.</p></li>
-<li><p>Render the HTML too. What came across? What didn’t?</p></li>
+<li><p>Render with <strong>Quarto: Preview Format…</strong> command and pick Typst.</p></li>
+<li><p>Render the HTML too. Compare the two formats.</p></li>
 </ol>
 </div>
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/01-first-pdf</code></p>
 </div>
-<countdown-timer id="timer_d8f4292cc2827b1a3bac74b5ac351b6433c37847" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_997511b1083419a12d983ae86df4dab3944431bd" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>No TeX install.</p>
@@ -407,6 +407,7 @@ Mine Çetinkaya-Rundel
 <p><img data-src="../images/typst-render-pipeline-2.svg" class="fragment nostretch" style="width:100.0%" alt="The report.qmd box on the left, an arrow labelled Pandoc, and a second box labelled report.typ holding grey boilerplate lines — a brand-color definition, a show colon doc arrow article call, a set page call — and then in teal the line equals Summary."></p>
 <p><img data-src="../images/typst-render-pipeline-3.svg" class="fragment nostretch" style="width:100.0%" alt="Three boxes in a row joined by two labelled arrows. report.qmd on the left, an arrow labelled Pandoc, report.typ in the middle holding grey boilerplate and a teal equals Summary line, an arrow labelled Typst, and report.pdf drawn as a rendered page with a logo mark, a centred title and lines of body text."></p>
 </div>
+<div class="fragment">
 <p>Keep the intermediate <code>.typ</code>:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -415,6 +416,7 @@ Mine Çetinkaya-Rundel
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="report.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-typ</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 <aside class="notes">
 <p>Two renders, not one. Pandoc gets you to Typst; Typst gets you to PDF.</p>
@@ -530,17 +532,21 @@ Mine Çetinkaya-Rundel
 </div>
 <p><br>
 </p>
+<div class="fragment" data-fragment-index="1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>badge.typ</strong></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="badge.typ"><pre class="sourceCode typst code-with-copy"><code class="sourceCode typst"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">#</span>rect<span class="op">()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</div>
 </div><div class="column" style="width:38%;">
 <p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-2.svg" class="img-fluid typst-output" alt="The text `rect()`."></p>
+<div class="fragment" data-fragment-index="1">
 <p><img data-src="../slides/./assets/typst-render/04-typst/typst-block-3.svg" class="img-fluid typst-output" alt="An empty rectangle with a thin black outline."></p>
+</div>
 </div></div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <p>Empty parentheses: a call with no arguments.</p>
 </div>
 <p><a href="https://typst.app/docs/reference/visualize/rect/">Typst: <code>rect</code> →</a></p>
@@ -627,14 +633,14 @@ Mine Çetinkaya-Rundel
 <ol type="1">
 <li><p>Render, then open <code>report.typ</code>. Scroll down to <code>= Summary</code> — everything below it is your content.</p></li>
 <li><p>Find a call — it starts with <code>#</code>.</p></li>
-<li><p>Look it up in the <a href="https://typst.app/docs/reference/">Typst reference</a>. Say in plain words what it does, and whether any <strong>arguments</strong> are being passed to it.</p></li>
+<li><p>Search for the function in the <a href="https://typst.app/docs/reference/">Typst reference</a>. Say in plain words what it does, and whether any <strong>arguments</strong> are being passed to it.</p></li>
 <li><p>Again, with another one.</p></li>
 </ol>
 </div>
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/02-read-the-typ</code></p>
 </div>
-<countdown-timer id="timer_d8f4292cc2827b1a3bac74b5ac351b6433c37847" minutes="06" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_997511b1083419a12d983ae86df4dab3944431bd" minutes="06" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>All four are in the first section: <code>#ref</code>, <code>#link</code>, <code>#quote</code>, and a <code>#strong</code> with an <code>#emph</code> nested inside it.</p>
@@ -756,7 +762,7 @@ Mine Çetinkaya-Rundel
 </section>
 <section id="every-element-has-a-function" class="slide level2 smaller">
 <h2>Every element has a function</h2>
-<p>All layout and styling happens with functions</p>
+<p>Even if not explicitly called, all layout and styling happens with functions:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 45%">
@@ -804,7 +810,7 @@ Mine Çetinkaya-Rundel
       }</style></aside>
 </section>
 <section id="a-set-rule-changes-the-default" class="slide level2">
-<h2>A set rule changes the default</h2>
+<h2>A <code>set</code> rule changes the default</h2>
 <div class="columns">
 <div class="column" style="width:62%;">
 <div class="code-with-filename">
@@ -836,7 +842,7 @@ Mine Çetinkaya-Rundel
       }</style></aside>
 </section>
 <section id="adding-show-scopes-it-to-an-element" class="slide level2">
-<h2>Adding show scopes it to an element</h2>
+<h2>Adding <code>show</code> scopes it to an element</h2>
 <div class="columns">
 <div class="column" style="width:62%;">
 <div class="code-with-filename">
@@ -941,15 +947,15 @@ Mine Çetinkaya-Rundel
 <p>In <code>report.qmd</code>, add a <strong>new raw block above the badge</strong>, so the rules apply to everything below.</p>
 <div class="your-turn">
 <ol type="1">
-<li><p>Write a <strong>set rule</strong> to loosen the paragraphs — <code>par</code> has a <code>leading</code> argument. <a href="https://typst.app/docs/reference/model/par/"><code>par</code></a></p></li>
-<li><p>Write a <strong>show-set rule</strong> to centre the section headings. <a href="https://typst.app/docs/reference/layout/align/"><code>align</code></a></p></li>
-<li><p><em>Bonus:</em> step 2 caught <code>### Manufacturing</code> too. Narrow the selector to the top-level sections only.</p></li>
+<li><p>Write a <strong>set rule</strong> to loosen the paragraphs — <code>par</code> has a <code>leading</code> argument. <a href="https://typst.app/docs/reference/model/par/"><code>par</code> →</a></p></li>
+<li><p>Write a <strong>show-set rule</strong> to centre the section headings. <a href="https://typst.app/docs/reference/layout/align/"><code>align</code> →</a></p></li>
+<li><p>Challenge: step 2 caught <code>### Manufacturing</code> too. Narrow the selector to the top-level sections only.</p></li>
 </ol>
 </div>
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>04-typst/03-set-and-show</code></p>
 </div>
-<countdown-timer id="timer_d8f4292cc2827b1a3bac74b5ac351b6433c37847" minutes="12" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_997511b1083419a12d983ae86df4dab3944431bd" minutes="12" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p><code>report.qmd</code>, not <code>report.typ</code> — the <code>.typ</code> is generated, and anything typed there is gone on the next render.</p>

@@ -455,12 +455,13 @@ Mine Çetinkaya-Rundel
 <li><p>Add this line to <code>title-block.html</code>, right after <code>&lt;header ...&gt;</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html wrap code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"$masthead$"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Bureau of Regional Statistics"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"report-masthead"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Render.</p></li>
+<li><p>Challenge: Provide the <code>alt</code> text via metadata too.</p></li>
 </ol>
 </div>
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>03-partials/01-masthead</code></p>
 </div>
-<countdown-timer id="timer_83a9017b76bbd78d299673647144ddcd4ae0f085" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_a7f956f942f0f9522ae778f60bc3add171348284" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>Touch on review:</p>
@@ -554,15 +555,15 @@ Mine Çetinkaya-Rundel
 </div>
 <div class="your-turn">
 <ol type="1">
-<li><p>Copy, then complete, this line in <code>title-block.html</code>, below the subtitle’s <code>$endif$</code>:</p>
+<li><p>Copy, then complete, this line to <code>title-block.html</code>, below the subtitle’s <code>$endif$</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"report-period"</span><span class="dt">&gt;</span>______ <span class="dv">&amp;middot;</span> ______<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Render.</p></li>
+<li><p>Render. What happens when you remove <code>brs-release</code> from <code>report.qmd</code>?</p></li>
 </ol>
 </div>
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>03-partials/02-period-and-region</code></p>
 </div>
-<countdown-timer id="timer_83a9017b76bbd78d299673647144ddcd4ae0f085" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_a7f956f942f0f9522ae778f60bc3add171348284" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>After: delete <code>region:</code> and render. A separator with nothing after it — the bridge to turn 3.</p>
@@ -601,8 +602,8 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>report.qmd</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="report.qmd"><pre class="sourceCode wrap yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">masthead</span><span class="kw">:</span><span class="at"> _brand/brs-logo.svg</span><span class="co">   # turn 1: a name at the top level</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">brs-release</span><span class="kw">:</span><span class="co">                    # turn 2: a name with names inside</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="report.qmd"><pre class="sourceCode wrap yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">masthead</span><span class="kw">:</span><span class="at"> _brand/brs-logo.svg</span><span class="co">   # our name at the top level</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">brs-release</span><span class="kw">:</span><span class="co">                    # our name with names inside</span></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">period</span><span class="kw">:</span><span class="at"> </span><span class="st">"Q3 2026"</span></span>
 <span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">region</span><span class="kw">:</span><span class="at"> Oregon</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -671,11 +672,11 @@ Mine Çetinkaya-Rundel
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>03-partials/03-release-status</code></p>
 </div>
-<countdown-timer id="timer_83a9017b76bbd78d299673647144ddcd4ae0f085" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_a7f956f942f0f9522ae778f60bc3add171348284" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 <aside class="notes">
 <p>No snippet, so the work is reading their own file and adapting it.</p>
-<p>The assistant is a sanctioned escape hatch here. Prompt is in the README.</p>
+<p>The assistant is a sanctioned escape hatch here.</p>
 <p>After: <code>status</code> nests under <code>brs-release:</code> — the turn 2 rule, applied unprompted. The badge is unstyled and looks like nothing, which is the cue for turn 4.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -722,7 +723,7 @@ Mine Çetinkaya-Rundel
 <tbody>
 <tr class="odd">
 <td><code>$if(x)$</code> … <code>$else$</code> … <code>$endif$</code></td>
-<td>conditionals, as in turn 3</td>
+<td>conditionals</td>
 </tr>
 <tr class="even">
 <td><code>$for(x)$</code> … <code>$endfor$</code></td>
@@ -745,7 +746,7 @@ Mine Çetinkaya-Rundel
 <p><a href="https://pandoc.org/MANUAL.html#template-syntax">Pandoc’s template syntax →</a></p>
 <aside class="notes">
 <p>A signpost, not a lesson. You have met <code>$if$</code>; the rest is “this exists, the manual has it”.</p>
-<p><code>$sep$</code> is worth ten seconds: it is the answer to the dangling <code>&amp;middot;</code> from turn 2’s optional extra — a separator that knows it is between things.</p>
+<p><code>$sep$</code> is worth ten seconds: a separator that knows it is between things.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -767,18 +768,20 @@ Mine Çetinkaya-Rundel
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="title-block.html"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"report-status"</span><span class="dt">&gt;</span>$brs-release.status$<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p>No color. No size. No position. Just a name.</p>
+<p>No color. No size. No position. Just a <code>class</code>.</p>
 </div>
 <div class="fragment">
+<p>Style using SCSS:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>custom.scss</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="custom.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.report-status</span> { <span class="kw">background-color</span>: <span class="va">$primary</span><span class="op">;</span> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="custom.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.report-status</span> { <span class="kw">background-color</span>: <span class="va">$primary</span><span class="op">;</span> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
-<p>You have been leaving these hooks since turn 1 — <code>report-masthead</code>, <code>report-period</code>, <code>report-status</code>. <strong>Three classes, no CSS.</strong></p>
+<p>Three classes:<code>report-masthead</code>,<code>report-period</code>, <code>report-status</code>.</p>
 </div>
 <aside class="notes">
 <p>A partial decides <em>what</em> appears and in what order. A stylesheet decides what it looks like. Cross that line and nobody can restyle your template.</p>
@@ -810,7 +813,7 @@ Mine Çetinkaya-Rundel
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2026/practical-quarto-exercises">Exercise</a>: <code>03-partials/04-style</code></p>
 </div>
-<countdown-timer id="timer_83a9017b76bbd78d299673647144ddcd4ae0f085" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<countdown-timer id="timer_a7f956f942f0f9522ae778f60bc3add171348284" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
  </countdown-timer>
 </section>
 <section id="one-answer" class="slide level2 scrollable">
@@ -1040,6 +1043,7 @@ after-body.tex</code></pre>
 <p><img data-src="../images/html-template-partials.svg" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A schematic of template.html as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: metadata.html (meta tags), styles.html (CSS), and a dashed header-includes slot. Inside the body: a dashed include-before slot; title-block.html (only if title, subtitle, author, date, or similar metadata is set), drawn as a container nesting title-metadata.html, which nests _title-meta-author.html; toc.html (table of contents, only if toc is set); the body; and a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."></p>
 </figure>
 </div>
+<p><a href="https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/pandoc/template.html"><code>html/pandoc/template.html</code> →</a></p>
 </section>
 <section id="there-is-more-than-one-title-block.html" class="slide level2 smaller">
 <h2>There is more than one <code>title-block.html</code></h2>
@@ -1073,12 +1077,14 @@ after-body.tex</code></pre>
 </section>
 <section id="template-format-revealjs" class="slide level2 scrollable">
 <h2>Template: <code>format: revealjs</code></h2>
-
-<img data-src="../images/revealjs-template-partials.svg" alt="A schematic of template.html for revealjs as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: styles.html (shared with the html format) and a dashed header-includes slot. Inside the body: a dashed include-before slot, then a box marking the div with class slides, holding title-slide.html, toc-slide.html (only if toc is set), and the body (one section element per slide), then the template's literal reveal.js setup scripts shown as a dotted mark, and last a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate." class="r-stretch"></section>
+<p><img data-src="../images/revealjs-template-partials.svg" class="" style="width:80.0%" alt="A schematic of template.html for revealjs as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: styles.html (shared with the html format) and a dashed header-includes slot. Inside the body: a dashed include-before slot, then a box marking the div with class slides, holding title-slide.html, toc-slide.html (only if toc is set), and the body (one section element per slide), then the template's literal reveal.js setup scripts shown as a dotted mark, and last a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."></p>
+<p><a href="https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/revealjs/pandoc/template.html"><code>revealjs/pandoc/template.html</code> →</a></p>
+</section>
 <section id="template-format-pdf" class="slide level2 scrollable">
 <h2>Template: <code>format: pdf</code></h2>
-
-<img data-src="../images/pdf-template-partials.svg" alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)." class="r-stretch"></section>
+<p><img data-src="../images/pdf-template-partials.svg" class="" style="width:80.0%" alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)."></p>
+<p><a href="https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/pdf/pandoc/template.tex"><code>pdf/pandoc/template.tex</code> →</a></p>
+</section>
 <section id="localized-strings-in-templates" class="slide level2 smaller">
 <h2>Localized strings in templates</h2>
 <p>Hard-coding “Table of contents” in a partial breaks the moment someone sets <code>lang:</code>.</p>
