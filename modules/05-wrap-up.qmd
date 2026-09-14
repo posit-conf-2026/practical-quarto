@@ -1,0 +1,9 @@
+---
+title: "Wrap-up + G&A"
+---
+
+Please don't forget to fill out the post-workshop survey!
+
+{{< include _slides.md >}}
+
+And enjoy the rest of the conference!

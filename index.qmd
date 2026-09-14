@@ -23,7 +23,7 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 | 13:30 - 15:00 | [Build reusable structures](modules/03-partials.qmd) |
 | 15:00 - 15:30 | *Coffee break*   |
 | 15:30 - 16:30 | [Why Typst matters](modules/04-typst.qmd) |
-| 16:30 - 17:00 | Wrap-up + Q&A    |
+| 16:30 - 17:00 | [Wrap-up + Q&A](modules/05-wrap-up.qmd)    |
 
 ## Instructors
 

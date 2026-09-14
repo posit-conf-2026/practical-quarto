@@ -5,33 +5,21 @@ format: revealjs
 
 ## Four problems, four patterns
 
-::: {.incremental}
-- **Productive workflows** — the friction between you and the render
-- **Design once, use anywhere** — one brand, every format
-- **Build reusable structures** — the boilerplate around your content
-- **Why Typst matters** — a PDF you can restyle
-:::
+- **Productive workflows with Positron** — making the most of your IDE
 
-::: notes
-Each one stands alone. 
-Pick up the ones that match what you already fight with.
-:::
+- **Design once, use anywhere** — one brand, every format
+
+- **Build reusable structures** — the meta data around your content
+
+- **Why Typst matters** — a PDF you can restyle
 
 ## Which piece for which job? 
 
-::: {.incremental}
 - `_brand.yml` — the **same look** across formats and projects.
   One repo, not a theme per project.
 
 - Template partials — the **same structure**, different content.
   Format specific, and driven by metadata.
-:::
-
-::: notes
-Look, structure, distribution. Three different problems.
-
-Reach for the smallest piece that solves yours.
-:::
 
 ## What we did not get to 
 
@@ -44,39 +32,22 @@ around it.
 [Extending Quarto →](https://posit-conf-2025.github.io/quarto-extend) — a whole
 workshop on filters, shortcodes, and extensions
 
-::: notes
-Partials are the boilerplate. Filters are the content.
-
-That workshop's materials are open, same license as these.
-:::
-
 ## Where to go next 
 
-::: {.incremental}
 - [quarto.org](https://quarto.org) — the reference, and the changelog for each release
-
-- [Quarto: the practical guide](https://quarto-tdg.org) — the long-form version of today
 
 - [GitHub Discussions](https://github.com/quarto-dev/quarto-cli/discussions) — where
   the maintainers answer, and where the good examples end up
 
 - **Discord**, `#workshop-quarto` — we'll keep an eye on it for a while 
-:::
-
-::: notes
-File an issue when something is genuinely broken. Discussions for "how do I".
-
-Discord is not forever. Ask there while we are still watching.
-:::
 
 ## These materials
 
-This site, and every exercise folder, stay up.
+This site and exercise folders will stay up!
 
-::: {.incremental}
 - Slides and modules: [pos.it/practical-quarto-conf26](http://pos.it/practical-quarto-conf26)
+
 - Exercises: [github.com/posit-conf-2026/practical-quarto-exercises](https://github.com/posit-conf-2026/practical-quarto-exercises)
-:::
 
 <br>
 
@@ -99,10 +70,10 @@ Before we move on to Q&A, please take a note of the workshop survey:
 
 Any questions, but especially of the kind:
 
-::: {.incremental}
 - How would I solve `_`[my problem]{.handwriting}`_` with a brand, a partial, or Typst?
 
 - Which of those do I even need for `_`[my problem]{.handwriting}`_`?
-:::
 
 # Thank you!
+
+{{< iconify ri survey-line >}} [pos.it/conf26-workshop-survey](http://pos.it/conf26-workshop-survey)
