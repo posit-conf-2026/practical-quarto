@@ -13,7 +13,8 @@ format: revealjs
 :::
 
 ::: notes
-Each one stands alone. Pick up the ones that match what you already fight with.
+Each one stands alone. 
+Pick up the ones that match what you already fight with.
 :::
 
 ## Which piece for which job? 
