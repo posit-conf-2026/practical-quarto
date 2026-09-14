@@ -21,6 +21,8 @@ format: revealjs
 
 4. Join the discord: `#workshop-quarto`
 
+5. Log in to Posit Assistant with the email address you signed up for the conference, or let a TA know ASAP if you need to use a different address
+
 :::
 ::: {.column width="25%"}
 {{< qrcode http://pos.it/practical-quarto-conf26 width=300 height=300 >}}
