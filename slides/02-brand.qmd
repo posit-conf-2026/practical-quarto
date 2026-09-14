@@ -158,11 +158,11 @@ several tools.
 ## Five keys
 
 ::: {.incremental}
-* `meta` — who the brand belongs to: name, links
-* `logo` — the image files, at a few sizes
-* `color` — the palette, and the roles colors play
-* `typography` — fonts for base, headings, links, code
-* `defaults` — escape hatches for specific output formats
+- `meta` — who the brand belongs to: name, links
+- `logo` — the image files, at a few sizes
+- `color` — the palette, and the roles colors play
+- `typography` — fonts for base, headings, links, code
+- `defaults` — escape hatches for specific output formats
 :::
 
 ::: notes
@@ -225,11 +225,11 @@ typography:
 
 ::: {.column width="30%"}
 
-- `meta` is documentation for humans only, Quarto doesn't use it
+- `meta` is documentation for humans only, Quarto doesn't use it.
 
-- In `logo`, paths resolve relative to the brand file
+- In `logo`, paths resolve relative to the brand file.
 
-- `color` works in two steps: **name** your colors in `palette`, then say what **role** each one plays, e.g., `primary: forest`, not `primary: "#1b5e4f"`
+- `color` works in two steps: **name** your colors in `palette`, then say what **role** each one plays, e.g., `primary: forest`, not `primary: "#1b5e4f"`.
 
 :::
 
@@ -295,9 +295,9 @@ defaults:
 
 ::: incremental
 
-- `html` and `dashboard` only
+- `html` and `dashboard` only.
 
-- Also takes `uses`, `functions`, `mixins`
+- Also takes `uses`, `functions`, `mixins`.
 
 :::
 
@@ -464,12 +464,12 @@ Which of the two would you expect to change more often?
 
 ::: incremental
 
-- No `_quarto.yml`, no `theme:`, no `css:`, no need to name `_brand.yml` in `report.qmd`, just place in the same directory
+- No `_quarto.yml`, no `theme:`, no `css:`, no need to name `_brand.yml` in `report.qmd`, just place in the same directory.
 
 - Naming a color does nothing, assigning it does: `palette` names colors. 
-The keys below it — `foreground`, `background`, `primary`, `secondary` — assign them
+The keys below it — `foreground`, `background`, `primary`, `secondary` — assign them.
 
-- `background: white` is a literal CSS color, not a palette name. Both are legal in a role
+- `background: white` is a literal CSS color, not a palette name
 
 - `source: google` fetches the font at render time. 
 `base` sets body text; `headings` sets every level of heading.
@@ -512,9 +512,9 @@ one.
 
 ::: {.column}
 
-- Any color in `color` or `typography` takes a `light`/`dark` pair
+- Any color in `color` or `typography` takes a `light`/`dark` pair.
 
-- Colors in `palette` **cannot** take a pair — name the color once, choose per mode where the role is assigned
+- Colors in `palette` **cannot** take a pair — name the color once, choose per mode where the role is assigned.
 
 :::
 
@@ -663,9 +663,9 @@ Both formats default to light, whatever order your brand lists.
 
 ::: {.column}
 
-- `light-content` / `.dark-content` divs place the content in the same place, same size, so the layout doesn't jump when the reader toggles
+- `light-content` / `.dark-content` divs place the content in the same place, same size, so the layout doesn't jump when the reader toggles.
 
-- `{{{< brand logo mark >}}}` already does this for you: it emits both, classed
+- `{{{< brand logo mark >}}}` already does this for you: it emits both, classed.
 
 :::
 
@@ -1234,7 +1234,7 @@ format:
 ```
 
 ::: {.fragment}
-- With `light`/`dark` pairs in `_brand.yml`, the toggle flips the whole site, including navbar, links, code, and logo
+- With `light`/`dark` pairs in `_brand.yml`, the toggle flips the whole site, including navbar, links, code, and logo.
 :::
 
 ## Your turn 5: brand the website {.smaller}
@@ -1297,7 +1297,7 @@ website:
 
 :::
 
-# Wrap up
+# Wrap-up
 
 ## Reaching brand values from code {.smaller}
 
