@@ -5,29 +5,38 @@ format: revealjs
 
 # Logistics
 
-## Practical Quarto: Welcome! {.center .smaller}
+## Practical Quarto: Welcome! {.smaller}
+
+::: {.columns}
+::: {.column width="80%"}
 
 **Wifi**: Posit Conf 2026 **Password**: conf2026
 
-::: {.columns}
-::: {.column width="75%"}
 1. Materials: [pos.it/practical-quarto-conf26](http://pos.it/practical-quarto-conf26)
 
-2. Get [Quarto version 1.10](https://quarto.org/docs/download/)
+2. Get Positron: [positron.posit.co/download.html](https://positron.posit.co/download.html)
 
-3. Get a copy of exercises: <https://github.com/posit-conf-2026/practical-quarto-exercises>
-   - Option 1: Fork and clone the repo or use `usethis::create_from_github("posit-conf-2026/practical-quarto-exercises")`
-   - Option 2: Download the zip file and unzip it to your working directory
+3. Get Quarto version 1.10+: [quarto.org/docs/download](https://quarto.org/docs/download/)
 
 4. Join the discord: `#workshop-quarto`
 
-5. Log in to Posit Assistant with the email address you signed up for the conference, or let a TA know ASAP if you need to use a different address
-
 :::
-::: {.column width="25%"}
+::: {.column width="20%"}
 {{< qrcode http://pos.it/practical-quarto-conf26 width=300 height=300 >}}
 :::
 ::: 
+
+5. Get a copy of exercises: [github.com/posit-conf-2026/practical-quarto-exercises](https://github.com/posit-conf-2026/practical-quarto-exercises)
+   - Option 1: Fork and clone the repo
+   - Option 2: Download the zip file and unzip it to your working directory
+
+6. Log in to Posit Assistant with the email address you signed up for the conference
+
+::: callout-important
+## Troubleshooting
+
+Can't download Positron or need to use a different email for Posit Assistant? Flag a TA asap!
+:::
 
 ## Housekeeping {.smaller}
 
