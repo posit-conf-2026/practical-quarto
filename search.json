@@ -273,312 +273,214 @@
     "text": "Localized strings in templates\nHard-coding “Table of contents” in a partial breaks the moment someone sets lang:.\nSince Quarto 1.10, the strings Quarto already translates are template variables:\n&lt;h2&gt;${quarto.language.toc-title-document}&lt;/h2&gt;\n\n\n\n\nlang: en\nlang: fr\n\n\n\n\nTable of contents\nTable des matières\n\n\nAbstract\nRésumé\n\n\n\n\nLocalized strings in templates →\n\nThe quarto.language namespace exposes every string Quarto localizes, resolved for the document’s lang."
   },
   {
-    "objectID": "slides/01-positron.html#a-theme-gets-you-started",
-    "href": "slides/01-positron.html#a-theme-gets-you-started",
+    "objectID": "slides/01-positron.html#positron-is-quarto-ready-out-of-the-box",
+    "href": "slides/01-positron.html#positron-is-quarto-ready-out-of-the-box",
     "title": "Work productively in Positron",
-    "section": "A theme gets you started",
-    "text": "A theme gets you started\nQuarto ships 25 Bootswatch themes:\n\n\ndefault, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen\n\nlux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy\n\nslate, solar, spacelab, superhero, united, vapor, yeti, zephyr\n\n\n\nreport.qmd\n\nformat:\n  html:\n    theme: flatly\n\n\nOne key, a whole look. Free, and nobody’s brand.\ntheme: is format: html only — the first hint of the problem this module is about."
+    "section": "Positron is Quarto-ready out of the box",
+    "text": "Positron is Quarto-ready out of the box\n\n\nBundled Quarto CLI\n(or one it finds on your path)\n= what you need to run quarto commands in the Terminal\n\nQuarto extension\n= provides the Quarto: ... commands and UI support\n\n\nNo separate install is required to get started: Positron bundles the Quarto CLI and ships the Quarto VS Code extension pre-installed.\nThe Quarto version in use is shown in the status bar at the bottom of the window.\n\n\nLearn more: https://quarto.org/docs/tools/positron/"
   },
   {
-    "objectID": "slides/01-positron.html#but-you-dont-want-a-theme",
-    "href": "slides/01-positron.html#but-you-dont-want-a-theme",
+    "objectID": "slides/01-positron.html#demo-basic-workflow",
+    "href": "slides/01-positron.html#demo-basic-workflow",
     "title": "Work productively in Positron",
-    "section": "But you don’t want a theme…",
-    "text": "But you don’t want a theme…\nYou want your theme\n\n  \n\n\nSame palette, same type, same logo — a website, a logo, a deck, a dashboard."
+    "section": "Demo: basic workflow",
+    "text": "Demo: basic workflow\n\nOpen hello.qmd\nClick Preview (aka the Render button in RStudio)\nQuarto commands are run in the Terminal pane\nRendered output opens in the Viewer pane\n\n\nDemo this live, then show the annotated screenshots on the next slides.\nWe’ll have lots of screenshots throughout — they’re there so the steps are easy to retrace later."
   },
   {
-    "objectID": "slides/01-positron.html#the-same-look-in-how-many-places",
-    "href": "slides/01-positron.html#the-same-look-in-how-many-places",
+    "objectID": "slides/01-positron.html#the-preview-button",
+    "href": "slides/01-positron.html#the-preview-button",
     "title": "Work productively in Positron",
-    "section": "The same look, in how many places?",
-    "text": "The same look, in how many places?\n\ntheme: — one SCSS file for html, another for revealjs\ninclude-in-header: — fonts, again\nmainfont:, colorlinks: — pdf has its own names\nyour plots — theme_*() in R, theme() in Python\nand again in the next project\n\n\nFive descriptions of one brand, each drifting on its own schedule.\n\n\nThe problem is not that any one of these is hard. It’s that there is no single place where the brand is written down.\nThis is the same shape as module 03 and 04: say it once, in the right place."
+    "section": "The Preview button",
+    "text": "The Preview button\n\n\n\n\n\nPreview button in the editor toolbar\nShortcut: cmd/ctrl + shift + K — the same chord as Render in RStudio\nQuarto version in the status bar\nRuns quarto preview in the Terminal\nOpens the rendered document in the Viewer\nWant a real browser instead? Set quarto.render.previewType to external"
   },
   {
-    "objectID": "slides/01-positron.html#section",
-    "href": "slides/01-positron.html#section",
+    "objectID": "slides/01-positron.html#preview-a-specific-format",
+    "href": "slides/01-positron.html#preview-a-specific-format",
     "title": "Work productively in Positron",
-    "section": "",
-    "text": "Unified branding with a simple YAML file\n\n\nOne file, written once, applied across Quarto formats — and beyond Quarto.\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nTO DO: may need to update image\nA specification, not a Quarto feature. Quarto, Shiny, bslib and the plotting libraries all read the same file."
+    "section": "Preview a specific format",
+    "text": "Preview a specific format\n\n\n\n\n\nThe Preview dropdown lists the formats declared in the document\nCommand: Quarto: Preview Format..."
   },
   {
-    "objectID": "slides/01-positron.html#two-steps",
-    "href": "slides/01-positron.html#two-steps",
+    "objectID": "slides/01-positron.html#everything-is-a-command",
+    "href": "slides/01-positron.html#everything-is-a-command",
     "title": "Work productively in Positron",
-    "section": "Two steps",
-    "text": "Two steps\n\nDescribe the brand in one _brand.yml.\nQuarto applies it to almost every format.\n\n\nNo format-specific theming to write. No SCSS – unless you want to tweak bits of your document/website/slide deck brand doesn’t control via a YAML field."
+    "section": "Everything is a command",
+    "text": "Everything is a command\n\n\n\n\n\nFilter the command palette with Quarto: to see the whole set\nQuarto: Render Document renders all declared formats\nQuarto: Render Project renders every file in the project\n\n\n\nScroll the list live, and demo a command someone in the room suggests.\nRender and Preview are the two you will reach for most: Preview watches and re-renders, Render is the one-shot."
   },
   {
-    "objectID": "slides/01-positron.html#who-reads-_brand.yml",
-    "href": "slides/01-positron.html#who-reads-_brand.yml",
+    "objectID": "slides/01-positron.html#render-on-save",
+    "href": "slides/01-positron.html#render-on-save",
     "title": "Work productively in Positron",
-    "section": "Who reads _brand.yml?",
-    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, plotnine, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
+    "section": "Render on Save",
+    "text": "Render on Save\nBy default, saving does not re-render — renders can be slow.\nThree ways to turn it on:\n\nThe Render on Save checkbox in the editor toolbar — this editor only:\n\nThe setting quarto.render.renderOnSave — search quarto.render in Settings\nPer document or project, in YAML — supersedes the setting:\n\n\nhello.qmd\n\neditor:\n  render-on-save: true\n\n\n\nThe default is off for a reason: a render may include long-running computations, and you want to be able to save freely without paying for one.\nThe checkbox is the quick, throwaway version: it applies to the editor in front of you, not to every document you open.\nThe YAML option travels with the document or project — another setting that can live in version control, like the Air setup. render-on-save is not the only thing that lives under editor: — editor: visual is there too, coming up in a couple of slides.\nHold that thought about long-running computations — it’s exactly the problem freeze solves, later in the workshop."
   },
   {
-    "objectID": "slides/01-positron.html#five-keys",
-    "href": "slides/01-positron.html#five-keys",
+    "objectID": "slides/01-positron.html#start-a-new-document",
+    "href": "slides/01-positron.html#start-a-new-document",
     "title": "Work productively in Positron",
-    "section": "Five keys",
-    "text": "Five keys\n\nmeta — who the brand belongs to: name, links\nlogo — the image files, at a few sizes\ncolor — the palette, and the roles colors play\ntypography — fonts for base, headings, links, code\ndefaults — escape hatches for specific output formats\n\n\ncolor and typography do most of the work. defaults is where you put the thing brand.yml has no word for."
+    "section": "Start a new document",
+    "text": "Start a new document\n\n\n\n\nFile &gt; New File… then Quarto Document\nor the command palette:"
   },
   {
-    "objectID": "slides/01-positron.html#brand.yml-1",
-    "href": "slides/01-positron.html#brand.yml-1",
+    "objectID": "slides/01-positron.html#demo-document-workflow",
+    "href": "slides/01-positron.html#demo-document-workflow",
     "title": "Work productively in Positron",
-    "section": "_brand.yml",
-    "text": "_brand.yml\n\n\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\n\nmeta is documentation for humans only, Quarto doesn’t use it.\nIn logo, paths resolve relative to the brand file.\ncolor works in two steps: name your colors in palette, then say what role each one plays, e.g., primary: forest, not primary: \"#1b5e4f\"."
+    "section": "Demo: document workflow",
+    "text": "Demo: document workflow\n\nCode cells: the actions above each cell, the Quarto: Run ... commands, output in the Console or inline\nNavigation: Breadcrumbs, Outline pane, Go to Symbol in Editor\nVisual mode: Insert Anything with /\n\n\nDemo each live, then walk through the screenshots.\nSave the visual mode caveat for its own slide a few slides from now — for the demo, just show Insert Anything and switch back to Source."
   },
   {
-    "objectID": "slides/01-positron.html#naming-then-roles",
-    "href": "slides/01-positron.html#naming-then-roles",
+    "objectID": "slides/01-positron.html#code-cells",
+    "href": "slides/01-positron.html#code-cells",
     "title": "Work productively in Positron",
-    "section": "Naming, then roles",
-    "text": "Naming, then roles\n\n\n_brand.yml\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"   # a name for a hex code\n  primary: forest       # a job for a name\n\n\nIn SCSS these arrive as $brand-forest and $primary.\nIn Typst these arrive as brand-color.primary.\n\n\nThis is the callback in both remaining modules — module 03’s custom.scss reaches for $primary and $brand-forest, module 04’s raw block for brand-color.primary.\nNeither one hard-codes #1b5e4f. That is the payoff for writing the roles down.\nThe semantic list is longer than these two: secondary, tertiary, success, info, warning, danger, light, dark. In html and dashboard they land on the Bootstrap variables of the same name."
+    "section": "Code cells",
+    "text": "Code cells\n\n\n\n\n\nRun Cell | Run Next Cell actions above each cell\nRun selection: cmd/ctrl + enter\nRun cell: shift + cmd/ctrl + enter\nRun all cells: opt/alt + cmd/ctrl + R"
   },
   {
-    "objectID": "slides/01-positron.html#defaults-the-escape-hatch",
-    "href": "slides/01-positron.html#defaults-the-escape-hatch",
+    "objectID": "slides/01-positron.html#code-cells-from-the-command-palette",
+    "href": "slides/01-positron.html#code-cells-from-the-command-palette",
     "title": "Work productively in Positron",
-    "section": "defaults: the escape hatch",
-    "text": "defaults: the escape hatch\n\n\nFor the thing brand.yml has no word for:\n\n\n\n_brand.yml\n\ndefaults:\n  bootstrap:\n    defaults:\n      link-decoration: underline\n      navbar-fg: \"#fff\"\n    rules: |\n      h2 {\n        border: none;\n      }\n\n\n\n\nhtml and dashboard only.\nAlso takes uses, functions, mixins.\n\n\n\nThese are SCSS variables and rules, merged into the right layer of Quarto’s SCSS system.\nThis deck uses it: the h2 border rule is in our _brand.yml.\nReach for it last. Anything you can say in color or typography reaches all four formats; this reaches two."
+    "section": "Code cells, from the command palette",
+    "text": "Code cells, from the command palette\n\n\nEvery one of these has a shortcut, listed on the right of the palette — no need to memorize them, just know where to look."
   },
   {
-    "objectID": "slides/01-positron.html#applying-it",
-    "href": "slides/01-positron.html#applying-it",
+    "objectID": "slides/01-positron.html#inline-output",
+    "href": "slides/01-positron.html#inline-output",
     "title": "Work productively in Positron",
-    "section": "Applying it",
-    "text": "Applying it\n\nSave _brand.yml in the root of your project.\nRender.\n\n\nQuarto finds it, and applies it to every document in the project that supports it.\n\n\n\n\n\nWhen it isn’t at the root: Use brand in a document or in _quarto.yml:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: ../brand/brs.yml\n\n\nWhen you want to turn it off: Use brand: false:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: false\n\n\n\nNo key in the YAML. No line in _quarto.yml. The file’s location is the configuration.\nAlso works for a single document with no project around it — same directory is enough.\nbrand: takes a path — which means a brand can live outside the project. Hold that thought; the last section is about exactly this.\nIt also takes brand elements inline. Careful: doing that replaces the whole of _brand.yml, it does not merge with it.\nfalse is the door out: one document that must not carry the brand."
+    "section": "Inline output",
+    "text": "Inline output\nOutput from code cells, in the editor, next to the code that made it — the .Rmd experience RStudio users are used to.\n\nOff by default: turn on quarto.inlineOutput.enabled\nEach .qmd gets its own isolated R or Python session\nPaths behave like they do at render time — no more “works in the console, breaks on render”\nWant a console alongside it? Console: Show Notebook Console, or set console.showNotebookConsoles\n\n\nLearn more: https://positron.posit.co/quarto-inline-output.html\n\n\nThis is the single biggest quality-of-life setting for anyone arriving from RStudio, and it is off by default, so nobody discovers it by accident.\nThe isolated session is the part worth dwelling on: cells run in a kernel scoped to that document, with the document’s directory as the working directory. That is the same contract quarto render gives you, which is why the “it worked interactively” class of bug mostly goes away.\nTrade-off to name out loud: it is a different mental model from one shared Console for everything. If someone leans on objects created in the Console, inline output will feel like it took something away."
   },
   {
-    "objectID": "slides/01-positron.html#using-brand-values-in-document",
-    "href": "slides/01-positron.html#using-brand-values-in-document",
+    "objectID": "slides/01-positron.html#insert-a-code-cell",
+    "href": "slides/01-positron.html#insert-a-code-cell",
     "title": "Work productively in Positron",
-    "section": "Using brand values in document",
-    "text": "Using brand values in document\nUse the brand shortcode, {{&lt; brand color primary &gt;}} anywhere a value goes — a div attribute, a background color, inline text:\n\n\n\nslides.qmd\n\n## Findings {background-color=\"{{&lt; brand color primary &gt;}}\"}\n\n\nLearn more: https://quarto.org/docs/authoring/brand.html#using-brand-values\n\n\nA shortcode, like {{&lt; meta &gt;}} in module 04 — resolved by Quarto, in the body, before Pandoc.\n{{&lt; brand logo mark &gt;}} does the same for images.\nColors and logos only. typography, meta and defaults are not reachable this way.\nReach for it when Quarto hasn’t already wired the brand into the thing you’re styling."
+    "section": "Insert a code cell",
+    "text": "Insert a code cell\n\n\n\n\n\nInsert Code Cell in the editor toolbar\nShortcut: shift + cmd/ctrl + I\nCommand: Quarto: Insert Code Cell"
   },
   {
-    "objectID": "slides/01-positron.html#your-turn-1-write-a-brand-by-hand",
-    "href": "slides/01-positron.html#your-turn-1-write-a-brand-by-hand",
+    "objectID": "slides/01-positron.html#navigation",
+    "href": "slides/01-positron.html#navigation",
     "title": "Work productively in Positron",
-    "section": "Your turn 1: write a brand by hand",
-    "text": "Your turn 1: write a brand by hand\n\nExercise: 02-brand/01-first-brand\n\n\n\n\n\nRender report.qmd first, so you have something to compare against.\nCreate _brand.yml in the same folder and name the agency’s colors:\n\ncolor:\n  palette:\n    forest: \"#1B5E4F\"\n\nRender. What happened?\n\n\n\n\n\nNow give the colors jobs:\n\n  foreground: ink\n  primary: forest\n\nRender. Then add typography with Atkinson Hyperlegible and render again.\n\nMore details in exercise README.\nOnce done, discuss with your neighbors: The palette colors are the agency’s. The role names are Quarto’s. Which of the two would you expect to change more often?"
+    "section": "Navigation",
+    "text": "Navigation\n\n\n\n\n\nBreadcrumbs at the top of the editor\nOutline pane in the sidebar\nGo to Symbol in Editor: cmd/ctrl + shift + O, or type @ in the command palette"
   },
   {
-    "objectID": "slides/01-positron.html#your-turn-1-takeaways",
-    "href": "slides/01-positron.html#your-turn-1-takeaways",
+    "objectID": "slides/01-positron.html#go-to-symbol-in-editor",
+    "href": "slides/01-positron.html#go-to-symbol-in-editor",
     "title": "Work productively in Positron",
-    "section": "Your turn 1: takeaways",
-    "text": "Your turn 1: takeaways\n\nNo _quarto.yml, no theme:, no css:, no need to name _brand.yml in report.qmd, just place in the same directory.\nNaming a color does nothing, assigning it does: palette names colors. The keys below it — foreground, background, primary, secondary — assign them.\nbackground: white is a literal CSS color, not a palette name\nsource: google fetches the font at render time. base sets body text; headings sets every level of heading."
+    "section": "Go to Symbol in Editor",
+    "text": "Go to Symbol in Editor\n\n\nHeadings and labelled cells both show up as symbols — one more reason to label your cells."
   },
   {
-    "objectID": "slides/01-positron.html#two-appearances-one-document",
-    "href": "slides/01-positron.html#two-appearances-one-document",
+    "objectID": "slides/01-positron.html#three-ways-to-edit-a-quarto-document",
+    "href": "slides/01-positron.html#three-ways-to-edit-a-quarto-document",
     "title": "Work productively in Positron",
-    "section": "Two appearances, one document",
-    "text": "Two appearances, one document\nGive theme a pair, and Quarto builds both:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: flatly\n      dark: darkly\n\n\na toggle appears, top right\nthe one listed first is the default\nrespect-user-color-scheme: true defers to the reader’s OS or browser\n\n\nThis is the pre-brand version, and worth showing because the shape repeats: everything about light and dark is “give it two of something”.\nOrder matters. light first means light by default.\nrespect-user-color-scheme needs JavaScript; without it readers get the first one."
+    "section": "Three ways to edit a Quarto document",
+    "text": "Three ways to edit a Quarto document\n\n\nSource\nPlain text, everything works\n\nVisual\nRich text, / to insert anything\n⚠️ Running code and other language features are not supported\n\nNotebook\nFor .ipynb files rendered with Quarto\n\nSet the default for a document or project in YAML:\n\n\nhello.qmd\n\neditor: visual\n\n\nLearn more: https://quarto.org/docs/tools/positron/notebook.html\n\n\nThe visual mode caveat is the one to say out loud, because it catches RStudio switchers: visual mode in Positron is for writing, not for running. Statement execution and other language features don’t work there — switch back to Source to run code. Point anyone who cares to https://github.com/posit-dev/positron/issues/1805 for updates.\neditor: visual is the same editor: key as render-on-save from earlier — so a project can open in visual mode for everyone by default.\nThe Notebook Editor is the third option people forget exists: .ipynb notebooks can be rendered by Quarto, with YAML in a raw cell and #| options in code cells. Quarto: New Notebook starts one, and you can convert between .ipynb and .qmd."
   },
   {
-    "objectID": "slides/01-positron.html#one-brand-two-modes",
-    "href": "slides/01-positron.html#one-brand-two-modes",
+    "objectID": "slides/01-positron.html#editing-assistance",
+    "href": "slides/01-positron.html#editing-assistance",
     "title": "Work productively in Positron",
-    "section": "One brand, two modes",
-    "text": "One brand, two modes\n\n\n\nAny color in color or typography takes a light/dark pair.\nColors in palette cannot take a pair — name the color once, choose per mode where the role is assigned.\n\n\n\n\n_brand.yml\n\ncolor:\n  background:\n    light: white\n    dark: ink\n  foreground:\n    light: ink\n    dark: sand\n\ntypography:\n  headings:\n    color:\n      light: forest\n      dark: sand\n\n\n\nOne file, both modes. This is the cheapest version and it covers most brands.\nThe limitation is the reason the palette/roles split matters: forest is one hex code in both modes, but which role it plays can differ."
+    "section": "Editing assistance",
+    "text": "Editing assistance\n\n\nYAML intelligence\nCompletion for YAML options, red squiggles for invalid ones on save\nHelp pane\nHover for tooltips, F1 opens full help for the function under the cursor\n\nLive preview\nLaTeX math and Mermaid/Graphviz diagrams preview as you type (cmd/ctrl + shift + L)\nSnippets\nInsert Snippet for boilerplate: code blocks, callouts, divs\n\n\nAll four come from the Quarto extension — nothing to install.\nOne configuration caveat: snippets only show up in IntelliSense if editor.snippetSuggestions is set to something other than none. The Insert Snippet command works either way.\nYAML completion works in the front matter, in _quarto.yml, and in cell options; the diagnostics fire when the document is saved.\nAlso worth a mention: Quarto: Show Assist Panel opens a sidebar panel that shows an image thumbnail when the cursor is on an image path, and a live equation preview when editing LaTeX math."
   },
   {
-    "objectID": "slides/01-positron.html#two-brands-two-modes",
-    "href": "slides/01-positron.html#two-brands-two-modes",
+    "objectID": "slides/01-positron.html#settings-worth-stealing",
+    "href": "slides/01-positron.html#settings-worth-stealing",
     "title": "Work productively in Positron",
-    "section": "Two brands, two modes",
-    "text": "Two brands, two modes\nWhen the modes differ by more than color, split the files and define use brand field in either the YAML of your document or in _quarto.yml:\n\n\nreport.qmd\n\nbrand:\n  light: brs-light.yml\n  dark: brs-dark.yml\n\n\nSame shape as theme, one level up.\nReach for this when typography or logos differ, not just colors.\nIn _quarto.yml this has to be file paths — inline brand metadata there is not supported yet."
+    "section": "Settings worth stealing",
+    "text": "Settings worth stealing\n\n\nsettings.json\n\n{\n  \"[quarto]\": {\n    \"editor.wordWrap\": \"off\",\n    \"editor.guides.bracketPairs\": \"active\",\n    \"editor.language.brackets\": [[\":::\", \":::\"]],\n    \"editor.language.colorizedBracketPairs\": [[\":::\", \":::\"]]\n  },\n  \"editor.rulers\": [80, { \"color\": \"#b22222\", \"column\": 120 }],\n  \"files.watcherExclude\": { \"**/.quarto/**\": true },\n  \"search.exclude\": { \"**/.quarto\": true, \"**/_freeze\": true }\n}\n\n\nWord wrap off — long lines run off the edge instead of wrapping, so you break lines yourself; break at sentences, and Git diffs show the sentence that changed, not the whole paragraph (bonus: pipe tables stay on one line)\nRulers at 80 and 120 — visual guides, and a backstop for runaway lines (long URLs, table rows)\n::: as a bracket pair — fold and color-match fenced divs\nExclude .quarto/ and _freeze/ from search and file watching — faster in big projects\n\n\nAdapted from: Mickaël Canouil, Optimising VS Code and Positron for Quarto (CC BY-NC-SA)\n\n\nThese are opinionated settings — encourage attendees to try them and adjust.\nBe precise about what word wrap off does and doesn’t do: it does not put one sentence per line for you. It makes the convention visible — a long line runs off the edge, so you notice and break it. The habit is yours; the setting just stops hiding it.\nBreak at sentence boundaries, not at a character count — that is what makes the Git diffs sentence-level. The rulers help you see where you are: 80 is a subtle vertical line, a soft guide; 120 is firebrick red (#b22222), flagging a runaway line — usually a long URL, a pipe-table row, or code — not a place to break a sentence.\neditor.guides.bracketPairs is the piece people leave out, and then wonder why the ::: colors never show up.\nThe settings can live in user settings (everywhere) or in a project’s .vscode/settings.json — same pattern as the Air setup, so it can be checked into version control and shared. The Quarto formatter setting belongs in the same [quarto] block; we let Air: Initialize Workspace Folder write that one for us, a few slides from now."
   },
   {
-    "objectID": "slides/01-positron.html#logos-for-both-modes",
-    "href": "slides/01-positron.html#logos-for-both-modes",
+    "objectID": "slides/01-positron.html#whats-different",
+    "href": "slides/01-positron.html#whats-different",
     "title": "Work productively in Positron",
-    "section": "Logos for both modes",
-    "text": "Logos for both modes\n\n\nFor the project:\n\n\n_brand.yml\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n    mark-reversed:\n      path: brs-logo-white.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  medium:\n    light: mark\n    dark: mark-reversed\n\n\nOverride for one document:\n\n\nreport.qmd\n\nlogo:\n  light:\n    path: large\n    alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  dark: brs-logo-white.svg\n\n\n\nA dark logo is not a recolored light logo — that is why this is a separate file, not a filter.\nimages is where alt text lives. Name the image once, then use the name in small, medium, large.\nDocument-level logo: can name a brand resource (large), a file, or a pair."
+    "section": "What’s different?",
+    "text": "What’s different?\n\nPublishing: no button in the editor toolbar, but the pre-installed Posit Publisher extension deploys to Connect and Connect Cloud in one click — no shinyapps.io, RPubs, or Quarto Pub\nInline output: off by default, and each document gets its own session — see earlier\nR Markdown (.Rmd) files preview with Quarto\nR: Render Document With R Markdown renders with {rmarkdown} instead, and R: New R Markdown from Template starts from a template\nAdvanced .Rmd features like params have no interactive support\n\n\nLearn more: https://positron.posit.co/quarto.html"
   },
   {
-    "objectID": "slides/01-positron.html#formats-that-cant-toggle",
-    "href": "slides/01-positron.html#formats-that-cant-toggle",
+    "objectID": "slides/01-positron.html#updating-quarto",
+    "href": "slides/01-positron.html#updating-quarto",
     "title": "Work productively in Positron",
-    "section": "Formats that can’t toggle",
-    "text": "Formats that can’t toggle\nSome formats produce only one appearance and offer no toggle between light/dark:\n\n\nRevealjs:\n\n\nslides.qmd\n\nformat:\n  revealjs:\n    brand-mode: dark\n\n\nTypst:\n\n\nreport.qmd\n\nformat:\n  typst:\n    brand-mode: dark\n\n\n\nThere is no runtime in a PDF and no toggle in a deck, so the choice moves to the YAML.\nWorth saying out loud: a dark deck for a dark room is a real use case, and this is the one key that does it.\nBoth formats default to light, whatever order your brand lists."
+    "section": "Updating Quarto",
+    "text": "Updating Quarto\n\n\nStrategy 1: Rely entirely on Positron’s bundled Quarto\n\nGet updates as Positron is updated (with auto-update on)\nCurrently, no easy way to use this version outside of Positron\n\n\nStrategy 2: Manage Quarto manually from quarto.org\n\nPositron will prefer this install, even if it’s older\nYou can specify a path with the quarto.path setting\n\n\nEither way: the status bar tells you which one won, and changing quarto.path takes a restart.\n\nDownload: https://quarto.org/docs/download/"
   },
   {
-    "objectID": "slides/01-positron.html#content-for-one-mode-only",
-    "href": "slides/01-positron.html#content-for-one-mode-only",
+    "objectID": "slides/01-positron.html#demo-git",
+    "href": "slides/01-positron.html#demo-git",
     "title": "Work productively in Positron",
-    "section": "Content for one mode only",
-    "text": "Content for one mode only\n\n\n\nlight-content / .dark-content divs place the content in the same place, same size, so the layout doesn’t jump when the reader toggles.\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed.\n\n\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
+    "section": "Demo: Git",
+    "text": "Demo: Git\n\nChanges pane\nOpen a change: the diff opens in an editor — closest to RStudio’s diff\nAdd, commit\nGraph: pull/push, like RStudio’s History view\nCurrent branch\n\n\nDemo this live, then walk through the screenshots."
   },
   {
-    "objectID": "slides/01-positron.html#your-turn-2-one-brand-two-modes",
-    "href": "slides/01-positron.html#your-turn-2-one-brand-two-modes",
+    "objectID": "slides/01-positron.html#examine-changes",
+    "href": "slides/01-positron.html#examine-changes",
     "title": "Work productively in Positron",
-    "section": "Your turn 2: one brand, two modes",
-    "text": "Your turn 2: one brand, two modes\n\nExercise: 02-brand/02-dark-mode\n\n\n\n\n\nGive background, foreground and primary a value per mode:\n\n  background:\n    light: white\n    dark: ink\n\nAdd respect-user-color-scheme: true to report.qmd, render, and switch your system appearance back and forth with the page open.\n\n\n\n\n\nLook at the link to the methodology notes in dark mode. Fix it: add a lighter green to the palette and use it for the dark half of primary.\n\nStretch goal: Give secondary and tertiary mode values, then find something in the document that uses them, if any.\nMore details in exercise README.\n\nOnce done, discuss with your neighbors: The style guide gave you four colors and no dark mode. You invented mint. Is that a decision you are allowed to make, and who would you ask?"
+    "section": "Examine changes",
+    "text": "Examine changes\n\n\n\n\n\nChanges live in the Source Control pane\nClick a file and the diff opens in an editor\nMessage + Commit\nGraph: commit history\n\n\n\nPoint out where changes live and what they look like: files, repo, branches, etc. The buttons give a basic set of actions, the menus more, and then the command line."
   },
   {
-    "objectID": "slides/01-positron.html#your-turn-2-takeaways",
-    "href": "slides/01-positron.html#your-turn-2-takeaways",
+    "objectID": "slides/01-positron.html#git-workflow",
+    "href": "slides/01-positron.html#git-workflow",
     "title": "Work productively in Positron",
-    "section": "Your turn 2: takeaways",
-    "text": "Your turn 2: takeaways\n\nGetting colors and color contrast right, especially in light/dark mode, requires careful review and iteration.\nA standalone page, unlike a website, has no toggle in the corner;respect-user-color-scheme is how single pages use the dark stylesheet."
+    "section": "Git workflow",
+    "text": "Git workflow\n\n\n\n\n\nCurrent branch: click to switch, create new…\nStage and commit\nPull / Push\n\n\n\nThe branch name in the status bar is also the branch switcher — click it to change branches or create a new one, no dialog hunting required.\nStaging is more explicit here than in RStudio’s checkbox column: the + on a file stages it, and you can stage a single hunk from the diff editor.\nPull and push live behind the ... menu and the sync button. Anything the UI doesn’t cover, the Terminal does — same repo, same Git."
   },
   {
-    "objectID": "slides/01-positron.html#the-plot-didnt-get-the-memo",
-    "href": "slides/01-positron.html#the-plot-didnt-get-the-memo",
+    "objectID": "slides/01-positron.html#demo-formatting-with-air",
+    "href": "slides/01-positron.html#demo-formatting-with-air",
     "title": "Work productively in Positron",
-    "section": "The plot didn’t get the memo",
-    "text": "The plot didn’t get the memo"
+    "section": "Demo: formatting with Air",
+    "text": "Demo: formatting with Air\n\nOpen hello.qmd and mangle an R cell — odd spacing, one long pipe chain\nFix it once: Quarto: Format Cell\nTurn on format on save: Air: Initialize Workspace Folder\nMangle the cell again, save, watch it snap back\n\n\nDemo this live, then the next slides explain what just happened.\nPoint out that formatting only touches code cells — prose and YAML are left alone. The format-on-save setup lands in .vscode/settings.json; the last slide of this section shows exactly what was written."
   },
   {
-    "objectID": "slides/01-positron.html#theme-helpers",
-    "href": "slides/01-positron.html#theme-helpers",
+    "objectID": "slides/01-positron.html#air-an-r-code-formatter",
+    "href": "slides/01-positron.html#air-an-r-code-formatter",
     "title": "Work productively in Positron",
-    "section": "Theme helpers",
-    "text": "Theme helpers\nThe quarto packages turn a brand into a plot theme:\n\nRPython\n\n\nlibrary(quarto)\n\ntheme_set(theme_brand_ggplot2(\"_brand.yml\"))\n\n\nfrom quarto import theme_brand_plotnine\n\ntheme = theme_brand_plotnine(\"_brand.yml\")\n\n\n\n\n\nHelpers exist for ggplot2, plotnine, and others — same brand, so the plot matches the page without anyone picking a color.\nThe R helper applies theme_minimal() underneath, which you may or may not want.\nOne brand file in, one theme out. Which leaves the toggle unsolved.\n\n\nR · Python"
+    "section": "Air: an R code formatter",
+    "text": "Air: an R code formatter\n\nAn extremely fast R code formatter, from Posit\nShips with Positron — nothing to install, nothing to update\nFormats R code in .R files, and R cells in .qmd files when the Quarto extension is active\n\n\nLearn more: https://www.tidyverse.org/blog/2025/02/air/\n\n\nSame idea as usethis::use_tidy_style(), but automatic and instantaneous.\nAir itself is R-only. But note what format-on-save actually does in a .qmd: the Quarto formatter takes the save and dispatches cell by cell to whatever formatter is registered for that language — Air for R, Ruff for Python. So “Air formats my document” is shorthand; the honest version is “Quarto routes each cell to its language’s formatter, and Air is the R one.”"
   },
   {
-    "objectID": "slides/01-positron.html#or-read-the-brand-yourself",
-    "href": "slides/01-positron.html#or-read-the-brand-yourself",
+    "objectID": "slides/01-positron.html#air-in-a-quarto-document",
+    "href": "slides/01-positron.html#air-in-a-quarto-document",
     "title": "Work productively in Positron",
-    "section": "Or read the brand yourself",
-    "text": "Or read the brand yourself\n\nRPython\n\n\nlibrary(brand.yml)\n\nbrand &lt;- read_brand_yml(\"_brand.yml\")\nbrand$color$primary\n\n\nfrom brand_yml import Brand\n\nbrand = Brand.from_yaml(\"_brand.yml\")\nbrand.color.primary\n\n\n\n\nOne source of truth, reachable from code.\n\n\nFor the case the helpers don’t cover: a hand-built figure, a table, a badge in a Shiny app.\nSame rule as the SCSS variables — ask for the role, not the hex code."
+    "section": "Air in a Quarto document",
+    "text": "Air in a Quarto document\n\n\nFormat once:\n\nCommand: Quarto: Format Cell — formats the cell the cursor is in\nOr format just a selection: cmd/ctrl + K, then cmd/ctrl + F\n\n\nFormat on save:\n\nCommand: Air: Initialize Workspace Folder\nWrites .vscode/settings.json and air.toml — check them in, and the whole team gets the same setup\n\n\n\nThe workspace settings land in version control — a nice callback to the Git section: formatting stops being a per-person preference and becomes a project property."
   },
   {
-    "objectID": "slides/01-positron.html#two-modes-need-two-plots",
-    "href": "slides/01-positron.html#two-modes-need-two-plots",
+    "objectID": "slides/01-positron.html#what-format-on-save-looks-like",
+    "href": "slides/01-positron.html#what-format-on-save-looks-like",
     "title": "Work productively in Positron",
-    "section": "Two modes need two plots",
-    "text": "Two modes need two plots\n\nrenderings says: this cell produces one output per mode.\n\n\n\nreport.qmd\n\n```{r}\n#| renderings: [light, dark]\npar(bg = \"#FFFFFF\", fg = \"#000000\")\nplot(1:10)\n\npar(bg = \"#000000\", fg = \"#FFFFFF\", col.axis = \"#FFFFFF\")\nplot(1:10)\n```\n\n\n\nThe number of outputs must match the number of renderings.\n\n\n\nQuarto tags the outputs .light-content and .dark-content — the same mechanism as two slides ago, applied to computational output.\nTwo modes means two themes: build one from each brand file and emit a plot for each. Nothing here is automatic.\nAn image is baked at render time. This is the only way a plot follows the toggle."
+    "section": "What format on save looks like",
+    "text": "What format on save looks like\n\n\n.vscode/settings.json\n\n{\n  \"[r]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"Posit.air-vscode\"\n  },\n  \"[quarto]\": {\n    \"editor.formatOnSave\": true,\n    \"editor.defaultFormatter\": \"quarto.quarto\"\n  }\n}\n\n\nThis is what Air: Initialize Workspace Folder writes for you. The [quarto] block is the piece that makes it apply to R cells in .qmd files.\nNobody needs to memorize this — the point is that it exists and is one command away."
   },
   {
-    "objectID": "slides/01-positron.html#renderings-caption-or-crossref",
-    "href": "slides/01-positron.html#renderings-caption-or-crossref",
+    "objectID": "slides/01-positron.html#demo-posit-assistant",
+    "href": "slides/01-positron.html#demo-posit-assistant",
     "title": "Work productively in Positron",
-    "section": "renderings + caption or crossref",
-    "text": "renderings + caption or crossref\nrenderings and fig-/tbl- labels don’t mix\n\n\nSolution: Wrap the cell instead\n\n\nreport.qmd\n\n::: {#fig-employment}\n\n```{r}\n#| label: employment-plot\n#| renderings: [light, dark]\n```\n\nNon-farm payroll employment, by quarter\n\n:::\n\n\n\n\nCaution The cell’s label must not start with fig- or tbl-, the divs may\n\n\nThe div carries the crossref and the caption; the cell just makes the pictures.\nStill label the cell — stable file names, and errors you can read.\nThis is the kind of gotcha worth knowing exists rather than memorizing."
+    "section": "Demo: Posit Assistant",
+    "text": "Demo: Posit Assistant\n\nOpen the Posit Assistant pane in the sidebar\nAsk it to explain the plot-penguins cell in hello.qmd — it can see the open document and the session\nAsk it to write alt text for the penguins plot, then paste the result into fig-alt\nRun /report to export the conversation as a .qmd\nRead it, check it’s accurate, then keep it\n\n\nDemo this live. Step 2 is the moment to point out session awareness: it describes the data frame you actually have loaded, not one you described.\nStep 4 is the one people don’t expect — the chat becomes a document, code cells and prose, and the work continues in Quarto instead of in a transcript.\nStep 5 is the deliberate part — model the review habit out loud before moving on."
   },
   {
-    "objectID": "slides/01-positron.html#brand-is-the-bottom-layer",
-    "href": "slides/01-positron.html#brand-is-the-bottom-layer",
+    "objectID": "slides/01-positron.html#posit-assistant",
+    "href": "slides/01-positron.html#posit-assistant",
     "title": "Work productively in Positron",
-    "section": "Brand is the bottom layer",
-    "text": "Brand is the bottom layer\nSuppose you have the following and a _brand.yml file in the directory:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, tweaks.scss]\n\n\nQuarto reads this as:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [brand, cosmo, tweaks.scss]   # brand is lowest priority\n\n\n\nWant the brand to win? Say where it goes:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, brand, tweaks.scss]\n\n\n\nThis is the fragile one. A Bootswatch theme listed after brand quietly overrides your brand, and the file that did it never mentions the brand.\nYour own SCSS goes last either way — module 03’s custom.scss sits on top of all of this.\nIf you are not combining with a Bootswatch theme, none of this matters."
+    "section": "Posit Assistant",
+    "text": "Posit Assistant\nAI assistance built into Positron, aware of your R/Python session:\n\nChat in the sidebar — sees your console, variables, and files, and can edit the open document\nInline completions as you type — needs a Posit AI Pass or a Copilot sign-in\n/report turns the conversation into a reproducible .qmd\nFix and Explain buttons on error output\n\n\nLearn more: https://assistant.posit.co/docs/getting-started/\n\n\nPre-installed in recent versions of Positron. Note the completions caveat before anyone tries: chat works with a provider signed in, and inline completions need a Posit AI Pass or GitHub Copilot — so some of the room may not have them.\n/report is the one to remember for this workshop: you explore in chat, then export the whole thing as a .qmd with code cells and prose, and carry on in the document. It is the Quarto-shaped exit from a chat window.\nSession awareness is the differentiator from a generic chatbot: it can see the data frame you actually have loaded, not the one you describe."
   },
   {
-    "objectID": "slides/01-positron.html#same-trick-light-and-dark",
-    "href": "slides/01-positron.html#same-trick-light-and-dark",
+    "objectID": "slides/01-positron.html#practical-deliberate-uses-in-a-quarto-workflow",
+    "href": "slides/01-positron.html#practical-deliberate-uses-in-a-quarto-workflow",
     "title": "Work productively in Positron",
-    "section": "Same trick, light and dark",
-    "text": "Same trick, light and dark\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: [cosmo, brand]\n      dark: [slate, brand]\n\n\nTwo lists, each ordered. brand last in both, so the brand beats the theme in both modes.\nEverything in this section is html and dashboard only — SCSS is a Bootstrap story."
-  },
-  {
-    "objectID": "slides/01-positron.html#brand-reaches-four-formats",
-    "href": "slides/01-positron.html#brand-reaches-four-formats",
-    "title": "Work productively in Positron",
-    "section": "Brand reaches four formats",
-    "text": "Brand reaches four formats\nhtml · dashboard · revealjs · typst\n\n\n\n\n\n\n\nKey\nWhere it lands\n\n\n\n\nforeground, background\nbody text and page, in all four\n\n\nprimary\nlinks, navbar (html), progress bar (revealjs)\n\n\ntypography\nbase, headings, links, code\n\n\nlogo\nnavbar, sidebar, slide corner, page corner\n\n\ndefaults: bootstrap\nhtml and dashboard only\n\n\n\n\nNot pdf. Not docx. Not pptx. The brand.yml implementation is still growing — the docs mark the gaps with limitation callouts.\npdf missing is module 04’s whole argument: render to typst instead and the brand comes with you."
-  },
-  {
-    "objectID": "slides/01-positron.html#logos-land-in-different-places",
-    "href": "slides/01-positron.html#logos-land-in-different-places",
-    "title": "Work productively in Positron",
-    "section": "Logos land in different places",
-    "text": "Logos land in different places\nSet small, medium, large — Quarto picks per location:\n\n\n\n\n\n\n\n\nFormat\nLocation\nPrefers\n\n\n\n\nhtml, dashboard\ntop navbar\nsmall › medium › large\n\n\nhtml\nside navigation\nmedium › small › large\n\n\nrevealjs\nbottom right of slides\nmedium › small › large\n\n\ntypst\ntop left of the page\nmedium › small › large\n\n\nwebsite, book\nbrowser tab favicon\nsmall\n\n\n\n\nYou don’t have to set all three. One logo is fine until it looks wrong somewhere.\nTurn it off per location in _quarto.yml — navbar: logo: false, sidebar: logo: false — when you want the colors but not the mark.\nThe gap module 03 fills: a standalone HTML document has no navbar, so the brand logo has nowhere to go."
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-3-second-format-logo",
-    "href": "slides/01-positron.html#your-turn-3-second-format-logo",
-    "title": "Work productively in Positron",
-    "section": "Your turn 3: second format + logo",
-    "text": "Your turn 3: second format + logo\n\nExercise: 02-brand/03-both-formats\n\n\n\n\n\nAdd slides as a second format in report.qmd:\n\nformat:\n  html:\n    respect-user-color-scheme: true\n  revealjs:\n    output-file: slides.html\n\nPreview each format, discuss with your neighbor how brand is applied.\nRegister brs-logo.svg in _brand.yml as mark; small and medium.\n\n\n\nPreview each format, is logo there?\nInsert logo it in report, above ## Summary:\n\n::: {.content-hidden when-format=\"revealjs\"}\n{{&lt; brand logo medium &gt;}}\n:::\n\nRegister brs-logo-white.svg too, and give both sizes a light/dark pair.\n\nOnce done, discuss with your neighbors: What if you only defined small, medium, or large for one of the logos?"
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-3-takeaways",
-    "href": "slides/01-positron.html#your-turn-3-takeaways",
-    "title": "Work productively in Positron",
-    "section": "Your turn 3: takeaways",
-    "text": "Your turn 3: takeaways\n\nWhen both formats generate HTML, one of them need to output a filename that’s different than the name of the .qmd file, defined with output-file.\nNot all formats use all inputs in _brand.yml, e.g., HTML documents don’t get a logo by default, but elements defined in _brand.yml can be called explicitly with the brand shortcode.\ncontent-hidden when-format=\"revealjs\" is conditional content – keeps the shortcode out of the deck, which already has the logo in the corner.\nThe brand shortcode emits two &lt;img&gt; tags, light-content and dark-content."
-  },
-  {
-    "objectID": "slides/01-positron.html#a-brand-is-a-file-so-it-can-be-a-repo",
-    "href": "slides/01-positron.html#a-brand-is-a-file-so-it-can-be-a-repo",
-    "title": "Work productively in Positron",
-    "section": "A brand is a file, so it can be a repo",
-    "text": "A brand is a file, so it can be a repo\n\none brand, several projects — a website, a report, a deck, an app\nedited in one place, by whoever owns the brand\nversioned, so a change is a commit and not a surprise\n\n\nThe catch: Quarto needs the assets inside your project. Logos and font files can’t be referenced across the filesystem or the network.\n\n\nSo “share” means “copy, and keep the copy in sync”. Say that plainly — it sounds like a compromise until you consider a font file that vanishes mid render.\nCommit the copies. A brand you can’t rebuild from a clone is not shared."
-  },
-  {
-    "objectID": "slides/01-positron.html#quarto-use-brand",
-    "href": "slides/01-positron.html#quarto-use-brand",
-    "title": "Work productively in Positron",
-    "section": "quarto use brand",
-    "text": "quarto use brand\n\n\nTerminal\n\nquarto use brand ./brand-repo         # a local directory\nquarto use brand myorg/shared-brand   # a GitHub repository\nquarto use brand https://example.com/brand.zip\n\n\nCopies into _brand/, then makes it match the source: it asks before creating the directory, before overwriting a file, and before removing one the source no longer has.\n\n\n\n\nTerminal\n\nquarto use brand myorg/shared-brand --dry-run   # show me first\nquarto use brand myorg/shared-brand --force     # no prompts, for CI\n\n\n\nQuarto 1.9. Re-run it to pick up changes to the shared brand — that is the sync story, and it is one command.\n--dry-run prints would-overwrite / would-create / would-remove. Use it the first time on a project you care about.\n--force trusts the source and answers every prompt yes. Fine in a workflow, not at a terminal."
-  },
-  {
-    "objectID": "slides/01-positron.html#or-a-brand-extension",
-    "href": "slides/01-positron.html#or-a-brand-extension",
-    "title": "Work productively in Positron",
-    "section": "Or a brand extension",
-    "text": "Or a brand extension\n\n\n_extensions/\n\n_extensions/\n  myorg/\n    brs-brand/\n\n\ninstalls like any other Quarto extension\nupdate with quarto update\ndistributed from a Git repository\n\nBrand extensions →\n\nSame idea, different plumbing: still a copy in your project, tracked as an extension instead of a _brand/ directory.\nPick one and be consistent. Two copies of a brand in one project is the fragility we’re trying to avoid."
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-4-stop-writing-the-brand",
-    "href": "slides/01-positron.html#your-turn-4-stop-writing-the-brand",
-    "title": "Work productively in Positron",
-    "section": "Your turn 4: stop writing the brand",
-    "text": "Your turn 4: stop writing the brand\n\nExercise: 02-brand/04-shared-brand\n\n\n\nDelete the brand you wrote, and both SVGs.\nPreview the report without the brand to remind yourself what it looks like without it.\nChange the directory to the exercise folder, then take the agency’s brand — with --dry-run first, then without:\n\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run\n\nLook at what landed in _brand/, preview both formats.\nSwitch your system appearance to dark, what happens?"
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-4-takeaways",
-    "href": "slides/01-positron.html#your-turn-4-takeaways",
-    "title": "Work productively in Positron",
-    "section": "Your turn 4: takeaways",
-    "text": "Your turn 4: takeaways\n\nIf the brand isn’t what you want, do not fix that by editing _brand/_brand.yml. Instead, fix the source and run quarto use brand again.\nquarto use brand takes a local directory, a GitHub org/repo, an org/repo/path within one, or a URL to a zip. It copies files into _brand/.\n--dry-run shows what would happen, without changing anything.\n--force skips the prompts, which is what you might want if not working interactively, e.g., in a CI workflow."
-  },
-  {
-    "objectID": "slides/01-positron.html#one-brand-every-page",
-    "href": "slides/01-positron.html#one-brand-every-page",
-    "title": "Work productively in Positron",
-    "section": "One brand, every page",
-    "text": "One brand, every page\nA _brand.yml in the project root applies to the whole site:\n\nEach page gets the brand’s colors and typography.\nNavbar gets primary and the logo, in small size.\nBrowser tab gets the favicon.\ntheme: brand is not required if no other theme is listed, but it is useful if the brand is built on a Bootswatch theme – same layering rule as before."
-  },
-  {
-    "objectID": "slides/01-positron.html#dark-mode-comes-built-in",
-    "href": "slides/01-positron.html#dark-mode-comes-built-in",
-    "title": "Work productively in Positron",
-    "section": "Dark mode comes built in",
-    "text": "Dark mode comes built in\n\nWebsites get a light/dark toggle in the navbar automatically when the theme has two halves:\n\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: brand\n      dark: brand\n\n\n\nWith light/dark pairs in _brand.yml, the toggle flips the whole site, including navbar, links, code, and logo."
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-5-brand-the-website",
-    "href": "slides/01-positron.html#your-turn-5-brand-the-website",
-    "title": "Work productively in Positron",
-    "section": "Your turn 5: brand the website",
-    "text": "Your turn 5: brand the website\n\nExercise: 02-brand/05-website\n\n\n\n\n\nChange the directory to the exercise folder, bring the shared brand into the website project, then render the site:\n\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand\n\nSet the navbar to the brand color:\n\nwebsite:\n  navbar:\n    background: primary\n\nRender again and find everywhere the brand shows up: navbar, links, headings, favicon.\n\n\n\n\n\nGive the site a light/dark toggle with theme: light: brand, dark: brand, and flip it.\nDoes the navbar logo stay readable in both modes? Remember: don’t edit the copy in _brand/ — what would you ask the brand owner for instead?\n\nStretch goal: Add a page that doesn’t exist yet — how much branding work does the new page take?"
-  },
-  {
-    "objectID": "slides/01-positron.html#your-turn-5-takeaways",
-    "href": "slides/01-positron.html#your-turn-5-takeaways",
-    "title": "Work productively in Positron",
-    "section": "Your turn 5: takeaways",
-    "text": "Your turn 5: takeaways\n\nIn a website project, _brand.yml applies site-wide — pages, navbar, and favicon — with no per-page configuration.\nWebsites get a built-in light/dark toggle; with light/dark pairs in the brand, the whole site (including the navbar logo) follows it."
-  },
-  {
-    "objectID": "slides/01-positron.html#reaching-brand-values-from-code",
-    "href": "slides/01-positron.html#reaching-brand-values-from-code",
-    "title": "Work productively in Positron",
-    "section": "Reaching brand values from code",
-    "text": "Reaching brand values from code\n\n\n\n\n\n\n\nWhere\nHow\n\n\n\n\nSCSS\n$brand-forest, $primary\n\n\nTypst\nbrand-color.primary, brand-logo-images.mark.path\n\n\nMarkdown\n{{&lt; brand color primary dark &gt;}}, {{&lt; brand logo mark &gt;}}\n\n\nR\nread_brand_yml(\"_brand.yml\")\n\n\nPython\nBrand.from_yaml(\"_brand.yml\")\n\n\nLua filter\nrequire('modules/brand/brand'), brand.get_color('primary')\n\n\n\n\nThe Lua row is for the workshop we point at in the wrap-up — a filter can read the brand too."
+    "section": "Practical, deliberate uses in a Quarto workflow",
+    "text": "Practical, deliberate uses in a Quarto workflow\n\n\nGood fits:\n\nDraft and revise prose; tighten wording\nWrite alt text for figures\nExplain or debug a code cell; interpret an error message\nFix YAML indentation and option typos\n\n\nYour job, not its job:\n\nReview every word before it ships\nRun every line of code it writes\nCheck every factual claim\nKeep secrets and credentials out of prompts\n\n\n\n“Deliberate” is the operative word: decide what to delegate. A useful rule of thumb — delegate the tedious (formatting, alt text, boilerplate), keep the judgment calls (what the analysis means, whether the code is right).\nThe figure alt-text suggestion is a quiet superpower: it makes accessibility cheap enough to actually happen."
   },
   {
     "objectID": "slides/01-positron.html#learn-more",
     "href": "slides/01-positron.html#learn-more",
     "title": "Work productively in Positron",
     "section": "Learn more",
-    "text": "Learn more\n\nMultiformat branding with _brand.yml — the semantic color list, the typography fields, every limitation callout\nbrand.yml — the specification, and the other tools that read it\nDark mode — the toggle, respect-user-color-scheme, mode-specific content\nCell renderings — renderings: [light, dark]\nMore about Quarto themes — the SCSS layers, if you need to know what beats what"
+    "text": "Learn more\n\nQuarto docs: Guide &gt; Tools &gt; Positron — the Positron-specific Quarto features\nPositron docs: Quarto — quarto.path, rendering .Rmd files with {rmarkdown}\nPositron docs: inline output — per-document sessions, output in the editor\nVS Code docs: Source Control — the Git pane Positron inherits\nFormatting R code with Air — setup, format on save, air.toml\nPosit Assistant docs and the AI + Quarto tutorial"
   },
   {
     "objectID": "setup.html",
@@ -665,8 +567,8 @@
     ]
   },
   {
-    "objectID": "modules/01-workflows.html",
-    "href": "modules/01-workflows.html",
+    "objectID": "modules/01-positron.html",
+    "href": "modules/01-positron.html",
     "title": "Productive workflows in Positron",
     "section": "",
     "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
@@ -676,8 +578,8 @@
     ]
   },
   {
-    "objectID": "modules/01-workflows.html#overview",
-    "href": "modules/01-workflows.html#overview",
+    "objectID": "modules/01-positron.html#overview",
+    "href": "modules/01-positron.html#overview",
     "title": "Productive workflows in Positron",
     "section": "",
     "text": "Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow. Then demystify freeze—when to check it in to version control, when to refresh it, and how to use it intentionally to balance reproducibility, performance, and collaboration.",
@@ -687,8 +589,8 @@
     ]
   },
   {
-    "objectID": "modules/01-workflows.html#learning-objectives",
-    "href": "modules/01-workflows.html#learning-objectives",
+    "objectID": "modules/01-positron.html#learning-objectives",
+    "href": "modules/01-positron.html#learning-objectives",
     "title": "Productive workflows in Positron",
     "section": "Learning Objectives",
     "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nUse Positron’s Quarto-specific features to author and preview documents more efficiently.\nAuto-format R code in Quarto documents with Air.\nIncorporate LLM assistance into a Quarto workflow in practical, deliberate ways.\nExplain how Quarto’s freeze works and when to check it in to version control, refresh it, or disable it.",
@@ -698,8 +600,8 @@
     ]
   },
   {
-    "objectID": "modules/01-workflows.html#links",
-    "href": "modules/01-workflows.html#links",
+    "objectID": "modules/01-positron.html#links",
+    "href": "modules/01-positron.html#links",
     "title": "Productive workflows in Positron",
     "section": "Links",
     "text": "Links\n\nPositron\nQuarto in Positron\nAir formatter\nFreezing computations",
