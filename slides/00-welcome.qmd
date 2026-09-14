@@ -53,7 +53,7 @@ format: revealjs
 ::: {.columns}
 ::: {.column}
 
-**Charlotte**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
+**Charlotte Wickham**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
 
 Senior Developer Advocate @ Posit  <br>
 _Focus on Quarto_
@@ -61,7 +61,7 @@ _Focus on Quarto_
 :::
 ::: {.column}
 
-**Mine**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) [{{< iconify fa7-brands:bluesky >}}](https://bsky.app/profile/minecr.bsky.social) 
+**Mine Çetinkaya-Rundel**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) [{{< iconify fa7-brands:bluesky >}}](https://bsky.app/profile/minecr.bsky.social) 
 
 Professor @ Duke University <br>
 Senior Developer Advocate @ Posit <br> 
