@@ -420,11 +420,11 @@ styling.
 
 2. Create `_brand.yml` in the same folder and name the agency's colors:
 
-   ```yaml
-   color:
-     palette:
-       forest: "#1B5E4F"
-   ```
+```yaml
+color:
+  palette:
+    forest: "#1B5E4F"
+```
 
 3. Render. What happened? 
 
@@ -438,18 +438,18 @@ styling.
 
 4. Now give the colors jobs:
 
-   ```yaml
-     foreground: ink
-     primary: forest
-   ```
+```yaml
+  foreground: ink
+  primary: forest
+```
 
 5. Render. Then add `typography` with Atkinson Hyperlegible and render again.
 
-More details in the exercise folder `README`.
+More details in exercise `README`.
 
 :::
 
-Once done with the steps above, discuss with your neighbors: 
+Once done, discuss with your neighbors: 
 The palette colors are the agency's. 
 The role names are Quarto's. 
 Which of the two would you expect to change more often?
@@ -712,11 +712,11 @@ argument is the variant.
 
 1. Give `background`, `foreground` and `primary` a value per mode:
 
-   ```yaml
-     background:
-       light: white
-       dark: ink
-   ```
+```yaml
+  background:
+    light: white
+    dark: ink
+```
 
 2. Add `respect-user-color-scheme: true` to `report.qmd`, render, and switch your system appearance back and forth with the page open.
 
@@ -732,13 +732,13 @@ argument is the variant.
 
 **Stretch goal:** Give `secondary` and `tertiary` mode values, then find something in the document that uses them, if any.
 
-More details in the exercise folder `README`.
+More details in exercise `README`.
 
 :::
 
 :::
 
-Once done with the steps above, discuss with your neighbors: 
+Once done, discuss with your neighbors: 
 The style guide gave you four colors and no dark mode. 
 You invented `mint`. 
 Is that a decision you are allowed to make, and who would you ask?
@@ -1030,36 +1030,38 @@ logo has nowhere to go.
 
 ::: {.column width="45%"}
 
-1. Add a deck as a second format in `report.qmd` and set a different output file name for it:
+1. Add slides as a second format in `report.qmd`:
 
-   ```yaml
-   format:
-     html:
-       respect-user-color-scheme: true
-     revealjs:
-       output-file: slides.html
-   ```
+```yaml
+format:
+  html:
+    respect-user-color-scheme: true
+  revealjs:
+    output-file: slides.html
+```
 
-2. Preview each format and discuss with your neighbor how brand is applied to each.
+2. Preview each format, discuss with your neighbor how brand is applied.
 
-3. Register `brs-logo.svg` in `_brand.yml` as `mark`, and set `small` and
-   `medium` to it. 
+3. Register `brs-logo.svg` in `_brand.yml` as `mark`; `small` and `medium`. 
    
 :::
 
 ::: {.column width="55%"}
 
-4. Preview each format, do both show the logo? Discuss with your neighbor.
+4. Preview each format, is logo there?
 
-5. Explicitly insert the logo it in the report, above `## Summary`:
+5. Insert logo it in report, above `## Summary`:
 
-   ```markdown
-   ::: {.content-hidden when-format="revealjs"}
-   {{{< brand logo medium >}}}
-   :::
-   ```
+```markdown
+::: {.content-hidden when-format="revealjs"}
+{{{< brand logo medium >}}}
+:::
+```
 
-6. In dark mode the mark is ink on ink. Register `brs-logo-white.svg` too, and give both sizes a `light`/`dark` pair.
+6. Register `brs-logo-white.svg` too, and give both sizes a `light`/`dark` pair.
+
+Once done, discuss with your neighbors: 
+What if you only defined `small`, `medium`, or `large` for one of the logos?
 
 :::
 
@@ -1072,9 +1074,18 @@ logo has nowhere to go.
 
 ## Your turn 3: takeaways
 
+::: incremental
+
 - When both formats generate HTML, one of them need to output a filename that's different than the name of the .qmd file, defined with `output-file`.
 
 - Not all formats use all inputs in `_brand.yml`, e.g., HTML documents don't get a `logo` by default, but elements defined in `_brand.yml` can be called explicitly with the `brand` shortcode.
+
+- `content-hidden when-format="revealjs"` is conditional content -- keeps the shortcode out of the deck, which already has the logo in the corner.
+
+- The brand shortcode emits two `<img>` tags, `light-content` and
+`dark-content`.
+
+:::
 
 # Sharing a brand
 
@@ -1157,69 +1168,136 @@ fragility we're trying to avoid.
 
 ## Your turn 4: stop writing the brand {.smaller}
 
-::: your-turn
-
-1. Delete the brand you wrote, and both SVGs:
-
-   ```bash
-   rm _brand.yml brs-logo.svg brs-logo-white.svg
-   ```
-
-   Render. Default Quarto, in both formats.
-
-2. Take the agency's brand — with `--dry-run` first, then without:
-
-   ```{.bash .wrap}
-   quarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run
-   ```
-
-3. Look at what landed in `_brand/`, render both formats, then switch your
-   system appearance to dark.
-
-:::
-
 ::: exercise-folder
 [Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/04-shared-brand`
 :::
 
-{{< countdown minutes=8 >}}
+::: your-turn
 
-::: notes
-Step 1 proves how much was coming from those two files.
+1. Delete the brand you wrote, and both SVGs.
 
-Step 3: the colors and fonts come back. Dark mode does not, and the reversed
-mark is not in the agency brand at all. Adopting the shared brand cost them
-something real.
+2. Preview the report without the brand to remind yourself what it looks like without it.
 
-Say this out loud: do not fix that by editing `_brand/_brand.yml`. It is a copy,
-the next `quarto use brand` overwrites it, and dark mode is a request to
-whoever owns the brand.
+3. Change the directory to the exercise folder, then take the agency's brand — with `--dry-run` first, then without:
 
-Same command that starts module 03 — they run it again after lunch, knowing
-what it does.
+```{.bash .wrap}
+quarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run
+```
+
+4. Look at what landed in `_brand/`, preview both formats.
+
+5. Switch your system appearance to dark, what happens?
+
 :::
 
-# Wrapping up
+{{< countdown minutes=5 >}}
 
-## Why `_brand.yml`?
+## Your turn 4: takeaways
 
-::: {.incremental}
-- **One description**, not one per format.
-- **Two modes** from one file, or two files.
-- **Same syntax** everywhere — Quarto, Shiny, plots.
-- **Shareable** — a brand is a file, so it can be a repo.
+::: incremental
+
+- If the brand isn't what you want, do not fix that by editing `_brand/_brand.yml`. Instead, fix the source and run `quarto use brand` again.
+
+- `quarto use brand` takes a local directory, a GitHub `org/repo`, an `org/repo/path`
+within one, or a URL to a zip. It copies files into `_brand/`.
+
+- `--dry-run` shows what would happen, without changing anything.
+
+- `--force` skips the prompts, which is what you might want if not working interactively, e.g., in a CI workflow.
+
 :::
 
-::: notes
-What it does not do: `pdf`, `docx`, `pptx`, and plots without a helper.
+# Brand on a website
 
-Everything after lunch assumes the brand is in place and asks a different
-question: not what it looks like, but what's on the page.
+## One brand, every page
+
+A `_brand.yml` in the project root applies to the whole site:
+
+- Each page gets the brand's colors and typography.
+
+- Navbar gets `primary` and the logo, in `small` size.
+
+- Browser tab gets the favicon.
+
+- `theme: brand` is not required if no other theme is listed, but it is useful if the brand is built on a Bootswatch theme -- same layering rule as before.
+
+## Dark mode comes built in 
+
+- Websites get a light/dark toggle in the navbar automatically when the theme has two halves:
+
+```{.yaml filename="_quarto.yml"}
+format:
+  html:
+    theme:
+      light: brand
+      dark: brand
+```
+
+::: {.fragment}
+- With `light`/`dark` pairs in `_brand.yml`, the toggle flips the whole site, including navbar, links, code, and logo
 :::
 
-# Questions?
+## Your turn 5: brand the website {.smaller}
 
-# Resources
+::: exercise-folder
+[Exercise](https://github.com/posit-conf-2026/practical-quarto-exercises): `02-brand/05-website`
+:::
+
+::: your-turn
+
+::: {.columns}
+
+::: {.column width="49%"}
+
+1. Change the directory to the exercise folder, bring the shared brand into the website project, then render the site:
+
+```{.bash .wrap}
+quarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand
+```
+
+2. Set the navbar to the brand color:
+
+```yaml
+website:
+  navbar:
+    background: primary
+```
+
+3. Render again and find everywhere the brand shows up: navbar, links, headings, favicon.
+
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+
+4. Give the site a light/dark toggle with `theme: light: brand, dark: brand`, and flip it.
+
+5. Does the navbar logo stay readable in both modes? Remember: don't edit the copy in `_brand/` — what would you ask the brand owner for instead?
+
+**Stretch goal:** Add a page that doesn't exist yet — how much branding work does the new page take?
+
+:::
+
+:::
+
+:::
+
+{{< countdown minutes=10 >}}
+
+## Your turn 5: takeaways
+
+::: incremental
+
+- In a website project, `_brand.yml` applies site-wide — pages, navbar, and favicon — with no per-page configuration.
+
+- Websites get a built-in light/dark toggle; with `light`/`dark` pairs in the brand, the whole site (including the navbar logo) follows it.
+
+:::
+
+# Wrap up
 
 ## Reaching brand values from code {.smaller}
 
@@ -1239,7 +1317,7 @@ The Lua row is for the workshop we point at in the wrap-up — a filter can read
 the brand too.
 :::
 
-## The full reference {.smaller}
+## Learn more
 
 - [Multiformat branding with `_brand.yml`](https://quarto.org/docs/authoring/brand.html)
   — the semantic color list, the typography fields, every limitation callout
@@ -1255,3 +1333,5 @@ the brand too.
 
 - [More about Quarto themes](https://quarto.org/docs/output-formats/html-themes-more.html)
   — the SCSS layers, if you need to know what beats what
+
+# Questions?
