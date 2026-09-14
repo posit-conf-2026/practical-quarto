@@ -403,7 +403,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "",
     "text": "September 14th, 2026\nposit::conf(2026)",
     "crumbs": [
@@ -413,7 +413,7 @@
   {
     "objectID": "index.html#setup",
     "href": "index.html#setup",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "Setup",
     "text": "Setup\nPlease check the Setup Instructions for recommended steps to take before the workshop.",
     "crumbs": [
@@ -423,7 +423,7 @@
   {
     "objectID": "index.html#schedule",
     "href": "index.html#schedule",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "Schedule",
     "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 09:15\nIntroductions + Set-up\n\n\n09:15 - 10:30\nProductive workflows in Positron\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:10\nDesign once, use anywhere\n\n\n12:10 - 12:30\nInterlude: q2\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBuild reusable structures\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nWhy Typst matters\n\n\n16:30 - 17:00\nWrap-up + Q&A",
     "crumbs": [
@@ -433,7 +433,7 @@
   {
     "objectID": "index.html#instructors",
     "href": "index.html#instructors",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "Instructors",
     "text": "Instructors\nCharlotte Wickham is a Senior Developer Advocate at Posit with a focus on Quarto. Before Posit, she taught Statistics and Data Science at Oregon State University. \nMine Çetinkaya-Rundel is Professor of the Practice at Duke University in the Department of Statistical Science and Senior Developer Advocate at Posit, PBC, where she’s part of the tidyverse team. Mine is a co-author of influential open textbooks like R for Data Science and OpenIntro Statistics, and her contributions to education and open science have earned her several accolades, including the Waller Education Award by the American Statistical Association, the Robert V. Hogg Award by the Mathematical Association of America, and the Pickard Award by Harvard University’s Department of Statistics.",
     "crumbs": [
@@ -443,7 +443,7 @@
   {
     "objectID": "index.html#description",
     "href": "index.html#description",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "Description",
     "text": "Description\nThis workshop is designed for Quarto users who want to update and extend their Quarto mastery. Led by Charlotte Wickham and Mine Çetinkaya-Rundel, this workshop will introduce new features of Quarto as well as blend practical recipes with conceptual understanding, so you can both copy–paste what works and understand why it works. Rather than a linear tour of Quarto features, the workshop is organized as a collection of focused, reusable patterns—each one solving a real authoring or publishing problem you’re likely to encounter.\nThemes will include:\n\nWork productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.\nDesign once, use anywhere: Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.\nBuild reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.\nUnderstand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.\n\n\nBy the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.",
     "crumbs": [
@@ -453,7 +453,7 @@
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "Level up your Quarto: Patterns, templates, and tooling",
+    "title": "Practical Quarto",
     "section": "License",
     "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
     "crumbs": [
