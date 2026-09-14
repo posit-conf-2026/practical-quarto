@@ -90,7 +90,7 @@ Before we move on to Q&A, please take a note of the workshop survey:
 
 ::: large
 
-{{< iconify ri survey-line >}} [pos.it/conf-workshop-survey](http://pos.it/conf-workshop-survey)
+{{< iconify ri survey-line >}} [pos.it/conf26-workshop-survey](http://pos.it/conf26-workshop-survey)
 
 :::
 
