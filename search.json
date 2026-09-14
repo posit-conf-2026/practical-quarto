@@ -838,7 +838,7 @@
     "href": "slides/00-welcome.html#practical-quarto-welcome",
     "title": "Welcome",
     "section": "Practical Quarto: Welcome!",
-    "text": "Practical Quarto: Welcome!\nWifi: Posit Conf 2026 Password: conf2026\n\n\n\nMaterials: pos.it/practical-quarto-conf26\nGet Quarto version 1.10\nGet a copy of exercises: https://github.com/posit-conf-2026/practical-quarto-exercises\n\nOption 1: Fork and clone the repo or use usethis::create_from_github(\"posit-conf-2026/practical-quarto-exercises\")\nOption 2: Download the zip file and unzip it to your working directory\n\nJoin the discord: #workshop-quarto\nLog in to Posit Assistant with the email address you signed up for the conference, or let a TA know ASAP if you need to use a different address"
+    "text": "Practical Quarto: Welcome!\n\n\nWifi: Posit Conf 2026 Password: conf2026\n\nMaterials: pos.it/practical-quarto-conf26\nGet Positron: positron.posit.co/download.html\nGet Quarto version 1.10+: quarto.org/docs/download\nJoin the discord: #workshop-quarto\n\n\n\n\n    \n\n\nGet a copy of exercises: github.com/posit-conf-2026/practical-quarto-exercises\n\nOption 1: Fork and clone the repo\nOption 2: Download the zip file and unzip it to your working directory\n\nLog in to Posit Assistant with the email address you signed up for the conference\n\n\n\n\n\n\n\nTroubleshooting\n\n\nCan’t download Positron or need to use a different email for Posit Assistant? Flag a TA asap!"
   },
   {
     "objectID": "slides/00-welcome.html#housekeeping",
