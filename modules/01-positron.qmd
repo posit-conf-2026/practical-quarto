@@ -4,7 +4,7 @@ title: Productive workflows in Positron
 
 ## Overview
 
-Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air and practical ways to incorporate LLMs into your Quarto workflow.
+Pick up Positron- and Quarto-specific productivity tips, including editor settings worth adopting, auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.
 
 {{< include _slides.md >}}
 
@@ -20,4 +20,6 @@ By the end of this module, you will be able to:
 
 * [Positron](https://positron.posit.co/)
 * [Quarto in Positron](https://quarto.org/docs/tools/positron.html)
+* [Inline output in Positron](https://positron.posit.co/quarto-inline-output.html)
 * [Air formatter](https://www.tidyverse.org/blog/2025/02/air/)
+* [Posit Assistant](https://assistant.posit.co/docs/getting-started)

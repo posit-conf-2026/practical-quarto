@@ -4,7 +4,7 @@ title: Welcome
 
 ## Overview
 
-Get set up for the workshop: install Quarto, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.
+Get set up for the workshop: install Quarto and Positron, log in to Posit Assistant, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.
 
 {{< include _slides.md >}}
 
@@ -13,4 +13,5 @@ Get set up for the workshop: install Quarto, grab a copy of the exercises, and m
 * [Workshop materials](http://pos.it/practical-quarto-conf26)
 * [Exercises](https://github.com/posit-conf-2026/practical-quarto-exercises)
 * [Download Quarto](https://quarto.org/docs/download/)
+* [Download Positron](https://positron.posit.co/download.html)
 * [posit::conf code of conduct](https://posit.co/code-of-conduct)

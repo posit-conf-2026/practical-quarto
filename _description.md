@@ -4,7 +4,7 @@ Themes will include:
 
 - **Work productively in Positron:** Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.
 
-- **Design once, use anywhere:** Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
+- **Design once, use anywhere:** Learn how to work effectively with light and dark modes, brands, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
 
 - **Build reusable structures:** Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.
 
