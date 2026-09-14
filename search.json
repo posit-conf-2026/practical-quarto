@@ -556,11 +556,11 @@
     "text": "A theme gets you started\nQuarto ships 25 Bootswatch themes:\n\n\ndefault, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen\n\nlux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy\n\nslate, solar, spacelab, superhero, united, vapor, yeti, zephyr\n\n\n\nreport.qmd\n\nformat:\n  html:\n    theme: flatly\n\n\nOne key, a whole look. Free, and nobody’s brand.\ntheme: is format: html only — the first hint of the problem this module is about."
   },
   {
-    "objectID": "slides/02-brand.html#but-you-dont-want-a-theme-you-want-your-theme",
-    "href": "slides/02-brand.html#but-you-dont-want-a-theme-you-want-your-theme",
+    "objectID": "slides/02-brand.html#but-you-dont-want-a-theme",
+    "href": "slides/02-brand.html#but-you-dont-want-a-theme",
     "title": "Design once, use anywhere",
-    "section": "But you don’t want a theme, you want your theme",
-    "text": "But you don’t want a theme, you want your theme\n\n\nTO DO: may need to update image\nSame palette, same type, same logo — a website, a logo, a deck, a dashboard.\nAsk: how many places would you have to set that today? A theme per format, per project."
+    "section": "But you don’t want a theme…",
+    "text": "But you don’t want a theme…\nYou want your theme\n\n  \n\n\nSame palette, same type, same logo — a website, a logo, a deck, a dashboard."
   },
   {
     "objectID": "slides/02-brand.html#the-same-look-in-how-many-places",
@@ -581,35 +581,35 @@
     "href": "slides/02-brand.html#two-steps",
     "title": "Design once, use anywhere",
     "section": "Two steps",
-    "text": "Two steps\n\n1. Describe the brand in one _brand.yml.\n2. Quarto applies it to almost every format.\n\n\n\nNo format-specific theming to write. No SCSS unless you want it.\n\n\nStep 2 is the part that is hard to believe until you render it twice.\n“Almost” — the exceptions are worth knowing, and we get to them."
+    "text": "Two steps\n\nDescribe the brand in one _brand.yml.\nQuarto applies it to almost every format.\n\n\nNo format-specific theming to write. No SCSS – unless you want to tweak bits of your document/website/slide deck brand doesn’t control via a YAML field."
   },
   {
     "objectID": "slides/02-brand.html#who-reads-_brand.yml",
     "href": "slides/02-brand.html#who-reads-_brand.yml",
     "title": "Design once, use anywhere",
     "section": "Who reads _brand.yml?",
-    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
+    "text": "Who reads _brand.yml?\n\n\n\n\n\n\nflowchart LR\n    by{brand.yml}\n    by--&gt;quarto[Quarto]\n    quarto--&gt;quarto-html[html]\n    quarto--&gt;quarto-typst[typst]\n    quarto-html--&gt;quarto-websites[Websites]\n    quarto-html--&gt;quarto-presentations[Presentations]\n    quarto-html--&gt;quarto-dashboards[Dashboards]\n    quarto-html--&gt;quarto-emails[Emails]\n\n    by--&gt;R\n    R--&gt;r-bslib[\"{bslib}\"]\n    r-bslib--&gt;r-thematic[\"{thematic}\"]\n    r-bslib--&gt;r-shiny[\"Shiny for R\"]\n    r-bslib--&gt;r-pkgdown[\"pkgdown\"]\n\n    by--&gt;Python\n    Python--&gt;py-brand_yml[\"brand_yml\"]\n    py-brand_yml--&gt;py-shiny[Shiny for Python]\n    py-brand_yml--&gt;py-plots[seaborn, matplotlib, plotnine, ...]\n\n\n\n\n\n\n\n\n\nLearn more: https://posit-dev.github.io/brand-yml/\n\n\nNote pdf is not on this branch — typst is. That is module 04’s argument, arriving early.\nThe same file themes a Shiny app and a pkgdown site. One brand, one repo, several tools."
   },
   {
     "objectID": "slides/02-brand.html#five-keys",
     "href": "slides/02-brand.html#five-keys",
     "title": "Design once, use anywhere",
     "section": "Five keys",
-    "text": "Five keys\n\nmeta — who the brand belongs to: name, links\nlogo — the image files, at a few sizes\ncolor — the palette, and the roles colors play\ntypography — fonts for base, headings, links, code\ndefaults — per-tool escape hatches\n\n\ncolor and typography do most of the work. defaults is where you put the thing brand.yml has no word for.\nNothing here mentions a format. That is the whole idea."
+    "text": "Five keys\n\nmeta — who the brand belongs to: name, links\nlogo — the image files, at a few sizes\ncolor — the palette, and the roles colors play\ntypography — fonts for base, headings, links, code\ndefaults — escape hatches for specific output formats\n\n\ncolor and typography do most of the work. defaults is where you put the thing brand.yml has no word for."
   },
   {
     "objectID": "slides/02-brand.html#brand.yml-1",
     "href": "slides/02-brand.html#brand.yml-1",
     "title": "Design once, use anywhere",
     "section": "_brand.yml",
-    "text": "_brand.yml\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a simple bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\nThe Bureau of Regional Statistics — the same agency whose quarterly release we rebuild in modules 03 and 04.\nTwo halves to color: name your colors in palette, then say what role each one plays. primary: forest, not primary: \"#1b5e4f\".\nRoles are what formats consume. Rename the palette and nothing downstream breaks.\nPaths in a brand file resolve relative to the brand file, not the document.\nmeta is documentation for humans — Quarto does nothing with it yet."
+    "text": "_brand.yml\n\n\n\n\n_brand.yml\n\nmeta:\n  name: Bureau of Regional Statistics\n  link:\n    home: https://example.gov/brs\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  small: mark\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"\n    ink: \"#1f2933\"\n    slate: \"#52606d\"\n    sand: \"#f5f2ea\"\n\n  background: white\n  foreground: ink\n  primary: forest\n  secondary: slate\n  tertiary: sand\n\ntypography:\n  fonts:\n    - family: Atkinson Hyperlegible\n      source: google\n      weight: [400, 600]\n\n  base:\n    family: Atkinson Hyperlegible\n    weight: 400\n\n  headings:\n    family: Atkinson Hyperlegible\n    weight: 600\n\n  link:\n    color: primary\n    decoration: underline\n\n\n\nmeta is documentation for humans only, Quarto doesn’t use it\nIn logo, paths resolve relative to the brand file\ncolor works in two steps: name your colors in palette, then say what role each one plays, e.g., primary: forest, not primary: \"#1b5e4f\""
   },
   {
     "objectID": "slides/02-brand.html#naming-then-roles",
     "href": "slides/02-brand.html#naming-then-roles",
     "title": "Design once, use anywhere",
     "section": "Naming, then roles",
-    "text": "Naming, then roles\n\n\n_brand.yml\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"   # a name for a hex code\n  primary: forest       # a job for a name\n\n\nIn your SCSS these arrive as $brand-forest and $primary.\nIn Typst, as brand-color.primary.\n\n\nThis is the callback in both remaining modules — module 03’s custom.scss reaches for $primary and $brand-forest, module 04’s raw block for brand-color.primary.\nNeither one hard-codes #1b5e4f. That is the payoff for writing the roles down.\nThe semantic list is longer than these two: secondary, tertiary, success, info, warning, danger, light, dark. In html and dashboard they land on the Bootstrap variables of the same name."
+    "text": "Naming, then roles\n\n\n_brand.yml\n\ncolor:\n  palette:\n    forest: \"#1b5e4f\"   # a name for a hex code\n  primary: forest       # a job for a name\n\n\nIn SCSS these arrive as $brand-forest and $primary.\nIn Typst these arrive as brand-color.primary.\n\n\nThis is the callback in both remaining modules — module 03’s custom.scss reaches for $primary and $brand-forest, module 04’s raw block for brand-color.primary.\nNeither one hard-codes #1b5e4f. That is the payoff for writing the roles down.\nThe semantic list is longer than these two: secondary, tertiary, success, info, warning, danger, light, dark. In html and dashboard they land on the Bootstrap variables of the same name."
   },
   {
     "objectID": "slides/02-brand.html#defaults-the-escape-hatch",
@@ -626,18 +626,25 @@
     "text": "Applying it\n\nSave _brand.yml in the root of your project.\nRender.\n\n\nQuarto finds it, and applies it to every document in the project that supports it.\n\n\n\n\n\nWhen it isn’t at the root: Use brand in a document or in _quarto.yml:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: ../brand/brs.yml\n\n\nWhen you want to turn it off: Use brand: false:\n\n\nreport.qmd\n\ntitle: Regional Employment Indicators\nformat: html\nbrand: false\n\n\n\nNo key in the YAML. No line in _quarto.yml. The file’s location is the configuration.\nAlso works for a single document with no project around it — same directory is enough.\nbrand: takes a path — which means a brand can live outside the project. Hold that thought; the last section is about exactly this.\nIt also takes brand elements inline. Careful: doing that replaces the whole of _brand.yml, it does not merge with it.\nfalse is the door out: one document that must not carry the brand."
   },
   {
-    "objectID": "slides/02-brand.html#using-brand-values-in-your-document",
-    "href": "slides/02-brand.html#using-brand-values-in-your-document",
+    "objectID": "slides/02-brand.html#using-brand-values-in-document",
+    "href": "slides/02-brand.html#using-brand-values-in-document",
     "title": "Design once, use anywhere",
-    "section": "Using brand values in your document",
-    "text": "Using brand values in your document\nUse the brand shortcode, {{&lt; brand color primary &gt;}} anywhere a value goes — a div attribute, a background color, inline text:\n\n\n\nslides.qmd\n\n## Findings {background-color=\"{{&lt; brand color primary &gt;}}\"}\n\n\nLearn more: https://quarto.org/docs/authoring/brand.html#using-brand-values\n\n\nA shortcode, like {{&lt; meta &gt;}} in module 04 — resolved by Quarto, in the body, before Pandoc.\n{{&lt; brand logo mark &gt;}} does the same for images.\nColors and logos only. typography, meta and defaults are not reachable this way.\nReach for it when Quarto hasn’t already wired the brand into the thing you’re styling."
+    "section": "Using brand values in document",
+    "text": "Using brand values in document\nUse the brand shortcode, {{&lt; brand color primary &gt;}} anywhere a value goes — a div attribute, a background color, inline text:\n\n\n\nslides.qmd\n\n## Findings {background-color=\"{{&lt; brand color primary &gt;}}\"}\n\n\nLearn more: https://quarto.org/docs/authoring/brand.html#using-brand-values\n\n\nA shortcode, like {{&lt; meta &gt;}} in module 04 — resolved by Quarto, in the body, before Pandoc.\n{{&lt; brand logo mark &gt;}} does the same for images.\nColors and logos only. typography, meta and defaults are not reachable this way.\nReach for it when Quarto hasn’t already wired the brand into the thing you’re styling."
   },
   {
     "objectID": "slides/02-brand.html#your-turn-1-write-a-brand-by-hand",
     "href": "slides/02-brand.html#your-turn-1-write-a-brand-by-hand",
     "title": "Design once, use anywhere",
     "section": "Your turn 1: write a brand by hand",
-    "text": "Your turn 1: write a brand by hand\n\n\nRender report.qmd first, so you have something to compare against.\nCreate _brand.yml in the same folder and name the agency’s colors:\ncolor:\n  palette:\n    forest: \"#1B5E4F\"\nRender. Nothing changed. Now give the colors jobs:\n  foreground: ink\n  primary: forest\nRender. Then add typography with Atkinson Hyperlegible and render again.\n\n\n\nExercise: 02-brand/01-first-brand\n\n\n \n\nThe full palette and the typography block are in the README — nobody has to type from this slide.\nStep 3 is the beat: naming a color does nothing, assigning it does. Steer them to the body text and the link to the methodology notes.\nNo _quarto.yml, no theme:, no css:. They never named the file in report.qmd and Quarto found it anyway."
+    "text": "Your turn 1: write a brand by hand\n\nExercise: 02-brand/01-first-brand\n\n\n\n\n\nRender report.qmd first, so you have something to compare against.\nCreate _brand.yml in the same folder and name the agency’s colors:\n\ncolor:\n  palette:\n    forest: \"#1B5E4F\"\n\nRender. What happened?\n\n\n\n\n\nNow give the colors jobs:\n\n  foreground: ink\n  primary: forest\n\nRender. Then add typography with Atkinson Hyperlegible and render again.\n\nMore details in exercise README.\nOnce done, discuss with your neighbors: The palette colors are the agency’s. The role names are Quarto’s. Which of the two would you expect to change more often?"
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-1-takeaways",
+    "href": "slides/02-brand.html#your-turn-1-takeaways",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 1: takeaways",
+    "text": "Your turn 1: takeaways\n\nNo _quarto.yml, no theme:, no css:, no need to name _brand.yml in report.qmd, just place in the same directory\nNaming a color does nothing, assigning it does: palette names colors. The keys below it — foreground, background, primary, secondary — assign them\nbackground: white is a literal CSS color, not a palette name. Both are legal in a role\nsource: google fetches the font at render time. base sets body text; headings sets every level of heading."
   },
   {
     "objectID": "slides/02-brand.html#two-appearances-one-document",
@@ -665,35 +672,42 @@
     "href": "slides/02-brand.html#logos-for-both-modes",
     "title": "Design once, use anywhere",
     "section": "Logos for both modes",
-    "text": "Logos for both modes\n\n\nFor the project:\n\n\n_brand.yml\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics\n    mark-reversed:\n      path: brs-logo-white.svg\n      alt: Bureau of Regional Statistics\n  medium:\n    light: mark\n    dark: mark-reversed\n\n\nOverride for one document:\n\n\nreport.qmd\n\nlogo:\n  light:\n    path: large\n    alt: Bureau of Regional Statistics\n  dark: brs-logo-white.svg\n\n\n\nA dark logo is not a recolored light logo — that is why this is a separate file, not a filter.\nimages is where alt text lives. Name the image once, then use the name in small, medium, large.\nDocument-level logo: can name a brand resource (large), a file, or a pair."
+    "text": "Logos for both modes\n\n\nFor the project:\n\n\n_brand.yml\n\nlogo:\n  images:\n    mark:\n      path: brs-logo.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n    mark-reversed:\n      path: brs-logo-white.svg\n      alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  medium:\n    light: mark\n    dark: mark-reversed\n\n\nOverride for one document:\n\n\nreport.qmd\n\nlogo:\n  light:\n    path: large\n    alt: Bureau of Regional Statistics logo featuring a stylized bar chart\n  dark: brs-logo-white.svg\n\n\n\nA dark logo is not a recolored light logo — that is why this is a separate file, not a filter.\nimages is where alt text lives. Name the image once, then use the name in small, medium, large.\nDocument-level logo: can name a brand resource (large), a file, or a pair."
   },
   {
     "objectID": "slides/02-brand.html#formats-that-cant-toggle",
     "href": "slides/02-brand.html#formats-that-cant-toggle",
     "title": "Design once, use anywhere",
     "section": "Formats that can’t toggle",
-    "text": "Formats that can’t toggle\nRevealjs and Typst produce one appearance and offer no toggle between light/dark:\n\n\n\n\nslides.qmd\n\nformat:\n  revealjs:\n    brand-mode: dark\n\n\n\n\nreport.qmd\n\nformat:\n  typst:\n    brand-mode: dark\n\n\n\nThere is no runtime in a PDF and no toggle in a deck, so the choice moves to the YAML.\nWorth saying out loud: a dark deck for a dark room is a real use case, and this is the one key that does it.\nBoth formats default to light, whatever order your brand lists."
+    "text": "Formats that can’t toggle\nSome formats produce only one appearance and offer no toggle between light/dark:\n\n\nRevealjs:\n\n\nslides.qmd\n\nformat:\n  revealjs:\n    brand-mode: dark\n\n\nTypst:\n\n\nreport.qmd\n\nformat:\n  typst:\n    brand-mode: dark\n\n\n\nThere is no runtime in a PDF and no toggle in a deck, so the choice moves to the YAML.\nWorth saying out loud: a dark deck for a dark room is a real use case, and this is the one key that does it.\nBoth formats default to light, whatever order your brand lists."
   },
   {
     "objectID": "slides/02-brand.html#content-for-one-mode-only",
     "href": "slides/02-brand.html#content-for-one-mode-only",
     "title": "Design once, use anywhere",
     "section": "Content for one mode only",
-    "text": "Content for one mode only\nUse light-content and .dark-content divs – they place the content in the same place, same size, so the layout doesn’t jump when the reader toggles.\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed.\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
+    "text": "Content for one mode only\n\n\n\nlight-content / .dark-content divs place the content in the same place, same size, so the layout doesn’t jump when the reader toggles\n{{&lt; brand logo mark &gt;}} already does this for you: it emits both, classed\n\n\n\n\nreport.qmd\n\n\n::: {.light-content}\n![](brs-logo.svg)\n:::\n\n::: {.dark-content}\n![](brs-logo-white.svg)\n:::\n\n\n\nUnder the hood: body carries .quarto-light or .quarto-dark, and CSS hides the other one.\nThe default variant for brand logo is both. Ask for light or dark explicitly and you get one, unclassed.\n{{&lt; brand color primary dark &gt;}} is the same idea for colors — the third argument is the variant."
   },
   {
     "objectID": "slides/02-brand.html#your-turn-2-one-brand-two-modes",
     "href": "slides/02-brand.html#your-turn-2-one-brand-two-modes",
     "title": "Design once, use anywhere",
     "section": "Your turn 2: one brand, two modes",
-    "text": "Your turn 2: one brand, two modes\n\n\nGive background, foreground and primary a value per mode:\n  background:\n    light: white\n    dark: ink\nAdd respect-user-color-scheme: true to report.qmd, render, and switch your system appearance back and forth with the page open.\nLook at the link to the methodology notes in dark mode. Fix it: add a lighter green to the palette and use it for the dark half of primary.\n\n\n\nExercise: 02-brand/02-dark-mode\n\n\n \n\nForest on ink is not a link anybody can read. Let them find it rather than telling them.\nStep 3 is where the palette/roles split earns its keep: a palette color is one hex value, so this needs a new name, not a second value for forest.\nA standalone page has no toggle in the corner — that button lives in a website’s navbar. respect-user-color-scheme is how they get at the dark version, and without it the dark stylesheet ships unused."
+    "text": "Your turn 2: one brand, two modes\n\nExercise: 02-brand/02-dark-mode\n\n\n\n\n\nGive background, foreground and primary a value per mode:\n\n  background:\n    light: white\n    dark: ink\n\nAdd respect-user-color-scheme: true to report.qmd, render, and switch your system appearance back and forth with the page open.\n\n\n\n\n\nLook at the link to the methodology notes in dark mode. Fix it: add a lighter green to the palette and use it for the dark half of primary.\n\nStretch goal: Give secondary and tertiary mode values, then find something in the document that uses them, if any.\nMore details in exercise README.\n\nOnce done, discuss with your neighbors: The style guide gave you four colors and no dark mode. You invented mint. Is that a decision you are allowed to make, and who would you ask?"
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-2-takeaways",
+    "href": "slides/02-brand.html#your-turn-2-takeaways",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 2: takeaways",
+    "text": "Your turn 2: takeaways\n\nGetting colors and color contrast right, especially in light/dark mode, requires careful review and iteration.\nA standalone page, unlike a website, has no toggle in the corner;respect-user-color-scheme is how single pages use the dark stylesheet."
   },
   {
     "objectID": "slides/02-brand.html#the-plot-didnt-get-the-memo",
     "href": "slides/02-brand.html#the-plot-didnt-get-the-memo",
     "title": "Design once, use anywhere",
     "section": "The plot didn’t get the memo",
-    "text": "The plot didn’t get the memo\n\n\nTO DO: may need to update image\nThe document is branded. The plot inside it is not — the plotting library never saw the file."
+    "text": "The plot didn’t get the memo"
   },
   {
     "objectID": "slides/02-brand.html#theme-helpers",
@@ -714,21 +728,21 @@
     "href": "slides/02-brand.html#two-modes-need-two-plots",
     "title": "Design once, use anywhere",
     "section": "Two modes need two plots",
-    "text": "Two modes need two plots\nrenderings says: this cell produces one output per mode.\n\n\nreport.qmd\n\n```{r}\n#| renderings: [light, dark]\npar(bg = \"#FFFFFF\", fg = \"#000000\")\nplot(1:10)\n\npar(bg = \"#000000\", fg = \"#FFFFFF\", col.axis = \"#FFFFFF\")\nplot(1:10)\n```\n\n\nThe number of outputs must match the number of renderings.\n\n\nQuarto tags the outputs .light-content and .dark-content — the same mechanism as two slides ago, applied to computational output.\nTwo modes means two themes: build one from each brand file and emit a plot for each. Nothing here is automatic.\nAn image is baked at render time. This is the only way a plot follows the toggle."
+    "text": "Two modes need two plots\n\nrenderings says: this cell produces one output per mode.\n\n\n\nreport.qmd\n\n```{r}\n#| renderings: [light, dark]\npar(bg = \"#FFFFFF\", fg = \"#000000\")\nplot(1:10)\n\npar(bg = \"#000000\", fg = \"#FFFFFF\", col.axis = \"#FFFFFF\")\nplot(1:10)\n```\n\n\n\nThe number of outputs must match the number of renderings.\n\n\n\nQuarto tags the outputs .light-content and .dark-content — the same mechanism as two slides ago, applied to computational output.\nTwo modes means two themes: build one from each brand file and emit a plot for each. Nothing here is automatic.\nAn image is baked at render time. This is the only way a plot follows the toggle."
   },
   {
     "objectID": "slides/02-brand.html#renderings-caption-or-crossref",
     "href": "slides/02-brand.html#renderings-caption-or-crossref",
     "title": "Design once, use anywhere",
     "section": "renderings + caption or crossref",
-    "text": "renderings + caption or crossref\nrenderings and fig-/tbl- labels don’t mix. Wrap the cell instead:\n\n\nreport.qmd\n\n::: {#fig-employment}\n\n```{r}\n#| label: employment-plot\n#| renderings: [light, dark]\n```\n\nNon-farm payroll employment, by quarter\n\n:::\n\n\nThe cell’s label must not start with fig- or tbl-. The div’s may.\n\n\nThe div carries the crossref and the caption; the cell just makes the pictures.\nStill label the cell — stable file names, and errors you can read.\nThis is the kind of gotcha worth knowing exists rather than memorizing."
+    "text": "renderings + caption or crossref\nrenderings and fig-/tbl- labels don’t mix\n\n\nSolution: Wrap the cell instead\n\n\nreport.qmd\n\n::: {#fig-employment}\n\n```{r}\n#| label: employment-plot\n#| renderings: [light, dark]\n```\n\nNon-farm payroll employment, by quarter\n\n:::\n\n\n\n\nCaution The cell’s label must not start with fig- or tbl-, the divs may\n\n\nThe div carries the crossref and the caption; the cell just makes the pictures.\nStill label the cell — stable file names, and errors you can read.\nThis is the kind of gotcha worth knowing exists rather than memorizing."
   },
   {
     "objectID": "slides/02-brand.html#brand-is-the-bottom-layer",
     "href": "slides/02-brand.html#brand-is-the-bottom-layer",
     "title": "Design once, use anywhere",
     "section": "Brand is the bottom layer",
-    "text": "Brand is the bottom layer\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, tweaks.scss]\n\n\nQuarto reads this as:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [brand, cosmo, tweaks.scss]   # brand is lowest priority\n\n\n\nWant the brand to win? Say where it goes:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, brand, tweaks.scss]\n\n\n\nThis is the fragile one. A Bootswatch theme listed after brand quietly overrides your brand, and the file that did it never mentions the brand.\nYour own SCSS goes last either way — module 03’s custom.scss sits on top of all of this.\nIf you are not combining with a Bootswatch theme, none of this matters."
+    "text": "Brand is the bottom layer\nSuppose you have the following and a _brand.yml file in the directory:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, tweaks.scss]\n\n\nQuarto reads this as:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [brand, cosmo, tweaks.scss]   # brand is lowest priority\n\n\n\nWant the brand to win? Say where it goes:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: [cosmo, brand, tweaks.scss]\n\n\n\nThis is the fragile one. A Bootswatch theme listed after brand quietly overrides your brand, and the file that did it never mentions the brand.\nYour own SCSS goes last either way — module 03’s custom.scss sits on top of all of this.\nIf you are not combining with a Bootswatch theme, none of this matters."
   },
   {
     "objectID": "slides/02-brand.html#same-trick-light-and-dark",
@@ -752,11 +766,18 @@
     "text": "Logos land in different places\nSet small, medium, large — Quarto picks per location:\n\n\n\n\n\n\n\n\nFormat\nLocation\nPrefers\n\n\n\n\nhtml, dashboard\ntop navbar\nsmall › medium › large\n\n\nhtml\nside navigation\nmedium › small › large\n\n\nrevealjs\nbottom right of slides\nmedium › small › large\n\n\ntypst\ntop left of the page\nmedium › small › large\n\n\nwebsite, book\nbrowser tab favicon\nsmall\n\n\n\n\nYou don’t have to set all three. One logo is fine until it looks wrong somewhere.\nTurn it off per location in _quarto.yml — navbar: logo: false, sidebar: logo: false — when you want the colors but not the mark.\nThe gap module 03 fills: a standalone HTML document has no navbar, so the brand logo has nowhere to go."
   },
   {
-    "objectID": "slides/02-brand.html#your-turn-3-a-second-format-and-a-logo",
-    "href": "slides/02-brand.html#your-turn-3-a-second-format-and-a-logo",
+    "objectID": "slides/02-brand.html#your-turn-3-second-format-logo",
+    "href": "slides/02-brand.html#your-turn-3-second-format-logo",
     "title": "Design once, use anywhere",
-    "section": "Your turn 3: a second format, and a logo",
-    "text": "Your turn 3: a second format, and a logo\n\n\nAdd a deck as a second format in report.qmd, keeping the HTML:\nformat:\n  html:\n    respect-user-color-scheme: true\n  revealjs:\n    output-file: slides.html\nRender both. You wrote no revealjs theme.\nRegister brs-logo.svg in _brand.yml as mark, and set small and medium to it. Render both — only one of them shows it.\nPut it in the report yourself, above ## Summary:\n::: {.content-hidden when-format=\"revealjs\"}\n{{&lt; brand logo medium &gt;}}\n:::\nIn dark mode the mark is ink on ink. Register brs-logo-white.svg too, and give both sizes a light/dark pair.\n\n\n\nExercise: 02-brand/03-both-formats\n\n\n \n\nStep 1: output-file is not optional. Both formats write report.html and the second render silently overwrites the first.\nStep 2 is the point of the module: nothing in the deck’s YAML mentions the brand, and the deck is branded.\nStep 3 is the gap module 03 fills — placement is a format decision, and format: html has nowhere to put a logo.\nStep 4’s shortcode lands the mark under the title, because the body starts where the title block ends. Note that too; it is the bridge after lunch."
+    "section": "Your turn 3: second format + logo",
+    "text": "Your turn 3: second format + logo\n\nExercise: 02-brand/03-both-formats\n\n\n\n\n\nAdd slides as a second format in report.qmd:\n\nformat:\n  html:\n    respect-user-color-scheme: true\n  revealjs:\n    output-file: slides.html\n\nPreview each format, discuss with your neighbor how brand is applied.\nRegister brs-logo.svg in _brand.yml as mark; small and medium.\n\n\n\nPreview each format, is logo there?\nInsert logo it in report, above ## Summary:\n\n::: {.content-hidden when-format=\"revealjs\"}\n{{&lt; brand logo medium &gt;}}\n:::\n\nRegister brs-logo-white.svg too, and give both sizes a light/dark pair.\n\nOnce done, discuss with your neighbors: What if you only defined small, medium, or large for one of the logos?"
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-3-takeaways",
+    "href": "slides/02-brand.html#your-turn-3-takeaways",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 3: takeaways",
+    "text": "Your turn 3: takeaways\n\nWhen both formats generate HTML, one of them need to output a filename that’s different than the name of the .qmd file, defined with output-file.\nNot all formats use all inputs in _brand.yml, e.g., HTML documents don’t get a logo by default, but elements defined in _brand.yml can be called explicitly with the brand shortcode.\ncontent-hidden when-format=\"revealjs\" is conditional content – keeps the shortcode out of the deck, which already has the logo in the corner.\nThe brand shortcode emits two &lt;img&gt; tags, light-content and dark-content."
   },
   {
     "objectID": "slides/02-brand.html#a-brand-is-a-file-so-it-can-be-a-repo",
@@ -784,14 +805,42 @@
     "href": "slides/02-brand.html#your-turn-4-stop-writing-the-brand",
     "title": "Design once, use anywhere",
     "section": "Your turn 4: stop writing the brand",
-    "text": "Your turn 4: stop writing the brand\n\n\nDelete the brand you wrote, and both SVGs:\nrm _brand.yml brs-logo.svg brs-logo-white.svg\nRender. Default Quarto, in both formats.\nTake the agency’s brand — with --dry-run first, then without:\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run\nLook at what landed in _brand/, render both formats, then switch your system appearance to dark.\n\n\n\nExercise: 02-brand/04-shared-brand\n\n\n \n\nStep 1 proves how much was coming from those two files.\nStep 3: the colors and fonts come back. Dark mode does not, and the reversed mark is not in the agency brand at all. Adopting the shared brand cost them something real.\nSay this out loud: do not fix that by editing _brand/_brand.yml. It is a copy, the next quarto use brand overwrites it, and dark mode is a request to whoever owns the brand.\nSame command that starts module 03 — they run it again after lunch, knowing what it does."
+    "text": "Your turn 4: stop writing the brand\n\nExercise: 02-brand/04-shared-brand\n\n\n\nDelete the brand you wrote, and both SVGs.\nPreview the report without the brand to remind yourself what it looks like without it.\nChange the directory to the exercise folder, then take the agency’s brand — with --dry-run first, then without:\n\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand --dry-run\n\nLook at what landed in _brand/, preview both formats.\nSwitch your system appearance to dark, what happens?"
   },
   {
-    "objectID": "slides/02-brand.html#why-_brand.yml",
-    "href": "slides/02-brand.html#why-_brand.yml",
+    "objectID": "slides/02-brand.html#your-turn-4-takeaways",
+    "href": "slides/02-brand.html#your-turn-4-takeaways",
     "title": "Design once, use anywhere",
-    "section": "Why _brand.yml?",
-    "text": "Why _brand.yml?\n\nOne description, not one per format.\nTwo modes from one file, or two files.\nSame syntax everywhere — Quarto, Shiny, plots.\nShareable — a brand is a file, so it can be a repo.\n\n\nWhat it does not do: pdf, docx, pptx, and plots without a helper.\nEverything after lunch assumes the brand is in place and asks a different question: not what it looks like, but what’s on the page."
+    "section": "Your turn 4: takeaways",
+    "text": "Your turn 4: takeaways\n\nIf the brand isn’t what you want, do not fix that by editing _brand/_brand.yml. Instead, fix the source and run quarto use brand again.\nquarto use brand takes a local directory, a GitHub org/repo, an org/repo/path within one, or a URL to a zip. It copies files into _brand/.\n--dry-run shows what would happen, without changing anything.\n--force skips the prompts, which is what you might want if not working interactively, e.g., in a CI workflow."
+  },
+  {
+    "objectID": "slides/02-brand.html#one-brand-every-page",
+    "href": "slides/02-brand.html#one-brand-every-page",
+    "title": "Design once, use anywhere",
+    "section": "One brand, every page",
+    "text": "One brand, every page\nA _brand.yml in the project root applies to the whole site:\n\nEach page gets the brand’s colors and typography.\nNavbar gets primary and the logo, in small size.\nBrowser tab gets the favicon.\ntheme: brand is not required if no other theme is listed, but it is useful if the brand is built on a Bootswatch theme – same layering rule as before."
+  },
+  {
+    "objectID": "slides/02-brand.html#dark-mode-comes-built-in",
+    "href": "slides/02-brand.html#dark-mode-comes-built-in",
+    "title": "Design once, use anywhere",
+    "section": "Dark mode comes built in",
+    "text": "Dark mode comes built in\n\nWebsites get a light/dark toggle in the navbar automatically when the theme has two halves:\n\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme:\n      light: brand\n      dark: brand\n\n\n\nWith light/dark pairs in _brand.yml, the toggle flips the whole site, including navbar, links, code, and logo"
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-5-brand-the-website",
+    "href": "slides/02-brand.html#your-turn-5-brand-the-website",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 5: brand the website",
+    "text": "Your turn 5: brand the website\n\nExercise: 02-brand/05-website\n\n\n\n\n\nChange the directory to the exercise folder, bring the shared brand into the website project, then render the site:\n\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand\n\nSet the navbar to the brand color:\n\nwebsite:\n  navbar:\n    background: primary\n\nRender again and find everywhere the brand shows up: navbar, links, headings, favicon.\n\n\n\n\n\nGive the site a light/dark toggle with theme: light: brand, dark: brand, and flip it.\nDoes the navbar logo stay readable in both modes? Remember: don’t edit the copy in _brand/ — what would you ask the brand owner for instead?\n\nStretch goal: Add a page that doesn’t exist yet — how much branding work does the new page take?"
+  },
+  {
+    "objectID": "slides/02-brand.html#your-turn-5-takeaways",
+    "href": "slides/02-brand.html#your-turn-5-takeaways",
+    "title": "Design once, use anywhere",
+    "section": "Your turn 5: takeaways",
+    "text": "Your turn 5: takeaways\n\nIn a website project, _brand.yml applies site-wide — pages, navbar, and favicon — with no per-page configuration.\nWebsites get a built-in light/dark toggle; with light/dark pairs in the brand, the whole site (including the navbar logo) follows it."
   },
   {
     "objectID": "slides/02-brand.html#reaching-brand-values-from-code",
@@ -801,11 +850,11 @@
     "text": "Reaching brand values from code\n\n\n\n\n\n\n\nWhere\nHow\n\n\n\n\nSCSS\n$brand-forest, $primary\n\n\nTypst\nbrand-color.primary, brand-logo-images.mark.path\n\n\nMarkdown\n{{&lt; brand color primary dark &gt;}}, {{&lt; brand logo mark &gt;}}\n\n\nR\nread_brand_yml(\"_brand.yml\")\n\n\nPython\nBrand.from_yaml(\"_brand.yml\")\n\n\nLua filter\nrequire('modules/brand/brand'), brand.get_color('primary')\n\n\n\n\nThe Lua row is for the workshop we point at in the wrap-up — a filter can read the brand too."
   },
   {
-    "objectID": "slides/02-brand.html#the-full-reference",
-    "href": "slides/02-brand.html#the-full-reference",
+    "objectID": "slides/02-brand.html#learn-more",
+    "href": "slides/02-brand.html#learn-more",
     "title": "Design once, use anywhere",
-    "section": "The full reference",
-    "text": "The full reference\n\nMultiformat branding with _brand.yml — the semantic color list, the typography fields, every limitation callout\nbrand.yml — the specification, and the other tools that read it\nDark mode — the toggle, respect-user-color-scheme, mode-specific content\nCell renderings — renderings: [light, dark]\nMore about Quarto themes — the SCSS layers, if you need to know what beats what"
+    "section": "Learn more",
+    "text": "Learn more\n\nMultiformat branding with _brand.yml — the semantic color list, the typography fields, every limitation callout\nbrand.yml — the specification, and the other tools that read it\nDark mode — the toggle, respect-user-color-scheme, mode-specific content\nCell renderings — renderings: [light, dark]\nMore about Quarto themes — the SCSS layers, if you need to know what beats what"
   },
   {
     "objectID": "slides/04-typst.html#same-release-new-requirement",
