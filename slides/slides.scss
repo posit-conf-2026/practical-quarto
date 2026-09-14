@@ -1,7 +1,11 @@
 /*-- scss:defaults --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+@font-face {
+  font-family: "Pixel Script";
+  src: url("fonts/pixel-script.otf") format("opentype");
+}
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
 $presentation-heading-color: #030A5F;
@@ -91,7 +95,7 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
 }
 
 .marker {
-  font-family: "Permanent Marker", cursive;
+  font-family: "Pixel Script", cursive;
 }
 
 .rotated-text {

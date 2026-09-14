@@ -6,6 +6,8 @@ title: Design once, use anywhere
 
 Learn how to work effectively with light and dark modes, brands, and renderings, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
 
+{{< include _slides.md >}}
+
 ## Learning Objectives
 
 By the end of this module, you will be able to:

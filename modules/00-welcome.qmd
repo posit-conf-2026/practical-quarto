@@ -1,0 +1,16 @@
+---
+title: Welcome
+---
+
+## Overview
+
+Get set up for the workshop: install Quarto, grab a copy of the exercises, and meet your instructors. Then get a preview of what the day holds and how the modules fit together.
+
+{{< include _slides.md >}}
+
+## Links
+
+* [Workshop materials](http://pos.it/practical-quarto-conf26)
+* [Exercises](https://github.com/posit-conf-2026/practical-quarto-exercises)
+* [Download Quarto](https://quarto.org/docs/download/)
+* [posit::conf code of conduct](https://posit.co/code-of-conduct)

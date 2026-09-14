@@ -1,0 +1,130 @@
+---
+title: Welcome
+format: revealjs
+---
+
+# Logistics
+
+## Practical Quarto: Welcome! {.center .smaller}
+
+**Wifi**: Posit Conf 2026 **Password**: conf2026
+
+::: {.columns}
+::: {.column width="75%"}
+1. Materials: [pos.it/practical-quarto-conf26](http://pos.it/practical-quarto-conf26)
+
+2. Get [Quarto version 1.10](https://quarto.org/docs/download/)
+
+3. Get a copy of exercises: <https://github.com/posit-conf-2026/practical-quarto-exercises>
+   - Option 1: Fork and clone the repo or use `usethis::create_from_github("posit-conf-2026/practical-quarto-exercises")`
+   - Option 2: Download the zip file and unzip it to your working directory
+
+4. Join the discord: `#workshop-quarto`
+
+:::
+::: {.column width="25%"}
+{{< qrcode http://pos.it/practical-quarto-conf26 width=300 height=300 >}}
+:::
+::: 
+
+## Housekeeping {.smaller}
+
+
+## Venue information
+
+-   Meditation/Prayer Room: Room 332
+
+-   Mother's Room: Room 333
+
+-   Speaker's Lounge: Room 334
+
+-   Gender-neutral bathrooms: 4th floor, one on either side of ballroom
+
+## Workshop policies
+
+-   Please review the posit::conf code of conduct, which applies to all workshops: <https://posit.co/code-of-conduct>
+
+-   The Code of Conduct site has info on how to report a problem (in person, email, phone)
+
+-   Please do not photograph people wearing red lanyards
+
+## Instructors
+
+::: {.columns}
+::: {.column}
+
+**Charlotte**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
+
+Senior Developer Advocate @ Posit  <br>
+_Focus on Quarto_
+
+:::
+::: {.column}
+
+**Mine**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) [{{< iconify fa7-brands:bluesky >}}](https://bsky.app/profile/minecr.bsky.social) 
+
+Professor @ Duke University <br>
+Senior Developer Advocate @ Posit <br> 
+_Focus on Quarto, Tidyverse, and Positron_
+
+:::
+
+::: 
+
+## Teaching Assistants
+
+::: {.columns}
+::: {.column}
+Carlos Scheidegger
+:::
+::: {.column}
+Charlie Gao
+:::
+::: 
+
+## Your turn: Introductions
+
+::: your-turn
+Introduce yourself to your neighbor(s):
+
+* Name
+* Affiliation
+* What you use Quarto for
+:::
+
+{{< countdown 2:00 >}}
+
+## How to get help?
+
+-   Raise your *color* post-it note
+
+    {{< iconify streamline-sharp new-sticky-note-solid width=60 height=60 style="color:#ff65a3;" >}} "I'm stuck and need help!"
+
+    {{< iconify streamline-sharp new-sticky-note-solid width=60 height=60 style="color:#46c45a;" >}} "I've finished, and ready to move on."
+
+-   Ask in Discord
+
+-   Talk to us during breaks or your-turns
+
+## Agenda {.smaller}
+
+Full schedule at: [pos.it/practical-quarto-conf26](https://pos.it/practical-quarto-conf26)
+
+| Time          | Activity         |
+| :------------ | :--------------- |
+| 09:00 - 09:15 | Welcome          |
+| 09:15 - 10:30 | Productive workflows in Positron |
+| 10:30 - 11:00 | *Coffee break*   |
+| 11:00 - 12:10 | Design once, use anywhere |
+| 12:10 - 12:30 | Interlude: q2    |
+| 12:30 - 13:30 | *Lunch break*    |
+| 13:30 - 15:00 | Build reusable structures |
+| 15:00 - 15:30 | *Coffee break*   |
+| 15:30 - 16:30 | Why Typst matters |
+| 16:30 - 17:00 | Wrap-up + Q&A    |
+
+## {.center}
+
+::: {.marker .r-fit-text}
+Let's jump in! 
+:::
