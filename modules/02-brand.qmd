@@ -15,7 +15,7 @@ By the end of this module, you will be able to:
 * Enable and customize light and dark modes for HTML documents and websites.
 * Define a brand with `_brand.yml`, including colors, typography, and logos.
 * Apply a single brand consistently across multiple Quarto projects without duplication.
-* Produce renderings of the same content in multiple formats while preserving brand consistency.
+* Render the same branded content to multiple formats while preserving brand consistency.
 
 ## Links
 
