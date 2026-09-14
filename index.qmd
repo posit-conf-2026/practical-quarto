@@ -15,7 +15,7 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 | Time          | Activity         |
 | :------------ | :--------------- |
 | 09:00 - 09:15 | [Welcome](modules/00-welcome.qmd) |
-| 09:15 - 10:30 | [Productive workflows in Positron](modules/01-workflows.qmd) |
+| 09:15 - 10:30 | [Productive workflows in Positron](modules/01-positron.qmd) |
 | 10:30 - 11:00 | *Coffee break*   |
 | 11:00 - 12:10 | [Design once, use anywhere](modules/02-brand.qmd) |
 | 12:10 - 12:30 | Interlude: q2    |
