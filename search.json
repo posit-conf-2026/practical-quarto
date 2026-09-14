@@ -51,224 +51,224 @@
   {
     "objectID": "slides/03-partials.html#what-is-a-template",
     "href": "slides/03-partials.html#what-is-a-template",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a template?",
     "text": "What is a template?\nYou write a document.\n\n\nTitle in the YAML, one line of markdown.\nTeal is yours."
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-template-1",
     "href": "slides/03-partials.html#what-is-a-template-1",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a template?",
     "text": "What is a template?\nRender it, and you get an HTML document.\n\n\nOnly the teal came from the document. Where does the other stuff come from?"
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-template-2",
     "href": "slides/03-partials.html#what-is-a-template-2",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a template?",
     "text": "What is a template?\nA template: boilerplate, with named holes.\n\n\nThe template provides the boilerplate: with named holes for your content. E.g. $title$ takes a value from the YAML by name. — the mechanism the next hour rests on.\nNotice $body$ is your content translated. Pandoc did that."
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-partial",
     "href": "slides/03-partials.html#what-is-a-partial",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a partial?",
     "text": "What is a partial?\nPart of the template renders the title block.\n\n\nSame file as the previous slide, grown a little.\nThere’s a chunk that has one job, make the title block."
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-partial-1",
     "href": "slides/03-partials.html#what-is-a-partial-1",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a partial?",
     "text": "What is a partial?\nPull it out into its own file, now its a partial.\n\n\nThat gets pulled out into it’s own file and referenced in the template. It’s called a partial, and inside looks just like a template, HTML boilerplate with holes for content."
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-partial-2",
     "href": "slides/03-partials.html#what-is-a-partial-2",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a partial?",
     "text": "What is a partial?\nQuarto does this for many parts of the page.\n\n\nSame thing happens with other parts of the document: metadata, styles, etc."
   },
   {
     "objectID": "slides/03-partials.html#what-is-a-partial-3",
     "href": "slides/03-partials.html#what-is-a-partial-3",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "What is a partial?",
     "text": "What is a partial?\nReplace a partial without touching the rest of the template\n\n\nPartition allows you to override a partial without touching the rest of the template. That’s what we’ll do today."
   },
   {
     "objectID": "slides/03-partials.html#every-release-must-carry",
     "href": "slides/03-partials.html#every-release-must-carry",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Every release must carry:",
     "text": "Every release must carry:\n\nthe agency masthead\nthe reference period and the region\nthe release status — Provisional, Revised, or Final\n\n\n\n\n\nthis is a publishing requirement, not a design preference.\nThe same shape applies to any organization’s report template: fields that must appear on every document."
   },
   {
     "objectID": "slides/03-partials.html#setup-replace-the-partial",
     "href": "slides/03-partials.html#setup-replace-the-partial",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Setup: replace the partial",
     "text": "Setup: replace the partial\n\n(Optional) Follow along: 03-partials/00-setup\n\n\nPull the brand:\nquarto use brand posit-conf-2026/practical-quarto-exercises/brs-brand\nCopy templates/title-block.html into the folder.\nRegister it:\n\n\nreport.qmd\n\nformat:\n  html:\n    template-partials:\n      - title-block.html\n\n\n\nRender before adding partial. Add partial. Render. Nothing changes.\nAdd something obvious to check its wired up.\nPoint out $title$. Dollar signs indicate Pandoc template syntax. Can access metadata values.\nNotice brand has logo, but standalone HTML docs don’t get logo."
   },
   {
     "objectID": "slides/03-partials.html#our-starting-point",
     "href": "slides/03-partials.html#our-starting-point",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Our starting point",
     "text": "Our starting point\n\n\nThe partial is theirs now and the page is unchanged by it."
   },
   {
     "objectID": "slides/03-partials.html#your-turn-1-add-the-masthead",
     "href": "slides/03-partials.html#your-turn-1-add-the-masthead",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Your turn 1: add the masthead",
     "text": "Your turn 1: add the masthead\n\n\nAdd a masthead key to the YAML of report.qmd:\nmasthead: _brand/brs-logo.svg\nAdd this line to title-block.html, right after &lt;header ...&gt;:\n&lt;img src=\"$masthead$\" alt=\"Bureau of Regional Statistics\" class=\"report-masthead\"&gt;\nRender.\nChallenge: Provide the alt text via metadata too.\n\n\n\nExercise: 03-partials/01-masthead\n\n\n \n\nTouch on review:\n\n$variable$ substitutes a value\nAny YAML key becomes a template variable. masthead is your key. Quarto has no masthead option and never reads it."
   },
   {
     "objectID": "slides/03-partials.html#section",
     "href": "slides/03-partials.html#section",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "",
     "text": "Resist fixing styling …"
   },
   {
     "objectID": "slides/03-partials.html#pandoc-template-syntax",
     "href": "slides/03-partials.html#pandoc-template-syntax",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Pandoc template syntax",
     "text": "Pandoc template syntax\nWrite in the format you are targeting: HTML here\nAnything inside $...$ or ${...} is Pandoc’s template syntax.\n\n\n\nWrite\nGet\n\n\n\n\n$title$\nthe value of the title metadata key\n\n\n$brs-release.period$\nreach into nested metadata with a dot\n\n\n$title-block.html()$\ninclude a partial — the () mean a file\n\n\n\nPandoc’s template syntax →\n\nThe distinction that matters today: $name$ substitutes a value, $name.html()$ includes a file. Only the second is replaceable through template-partials.\n$title$s works, but ${title}s is clearer — both give Hellos. The two forms are interchangeable everywhere, including partial calls and ${if(x)}…${endif}.\n$$ matters the moment a partial contains a literal dollar — a price, or $(...) in a script.\nConditionals and loops are on the same page of the manual. We meet them in turns 3 and 4."
   },
   {
     "objectID": "slides/03-partials.html#your-turn-2-add-period-and-region",
     "href": "slides/03-partials.html#your-turn-2-add-period-and-region",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Your turn 2: add period and region",
     "text": "Your turn 2: add period and region\nAlready in your YAML, and shown by nothing:\n\n\nreport.qmd\n\nbrs-release:\n  period: \"Q3 2026\"\n  region: Oregon\n\n\n\nCopy, then complete, this line to title-block.html, below the subtitle’s $endif$:\n&lt;p class=\"report-period\"&gt;______ &middot; ______&lt;/p&gt;\nRender. What happens when you remove brs-release from report.qmd?\n\n\n\nExercise: 03-partials/02-period-and-region\n\n\n \n\nAfter: delete region: and render. A separator with nothing after it — the bridge to turn 3."
   },
   {
     "objectID": "slides/03-partials.html#section-1",
     "href": "slides/03-partials.html#section-1",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "",
     "text": "Q3 2026 · Oregon, rendered exactly as written — unlike the date above it, which Quarto reformatted before the template ever saw it."
   },
   {
     "objectID": "slides/03-partials.html#your-own-metadata-your-own-namespace",
     "href": "slides/03-partials.html#your-own-metadata-your-own-namespace",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Your own metadata, your own namespace",
     "text": "Your own metadata, your own namespace\n\n\nreport.qmd\n\nmasthead: _brand/brs-logo.svg   # our name at the top level\nbrs-release:                    # our name with names inside\n  period: \"Q3 2026\"\n  region: Oregon\n\n\nEvery top-level name you invent is a bet that Quarto will never claim it.\n\n\nNest, and you place that bet once instead of once per field.\n\n\nThe obvious name is logo. It’s taken — a real Quarto option in beamer, revealjs, typst and dashboards, free in format: html only.\nRender this same file to typst with logo: set and Quarto puts the image in the page background itself. Module 04 picks this up.\nmasthead is safe. Nesting means you don’t have to know which names are."
   },
   {
     "objectID": "slides/03-partials.html#condition-markup-on-presence",
     "href": "slides/03-partials.html#condition-markup-on-presence",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Condition markup on presence",
     "text": "Condition markup on presence\n\n\ntitle-block.html\n\n$if(subtitle)$\n&lt;p class=\"subtitle lead\"&gt;$subtitle$&lt;/p&gt;\n$endif$\n\n\nRead as if subtitle has a value, then….\n\n\nPrevents empty &lt;p&gt;&lt;/p&gt; in the document.\n\n\nThey’ve been rendering this since setup without reading it.\nPandoc has no comparison operator. $if(x)$ asks “does this have a value?” and nothing else — which is why a default has to live in the template."
   },
   {
     "objectID": "slides/03-partials.html#your-turn-3-add-status",
     "href": "slides/03-partials.html#your-turn-3-add-status",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Your turn 3: add status",
     "text": "Your turn 3: add status\n\n\nAdd status: Provisional under brs-release: in report.qmd.\nIn title-block.html, below the reference period, show the status in a &lt;span class=\"report-status\"&gt; — but only when brs-release.status is set.\nRender. Then delete the status: line and render again — the badge should disappear, leaving nothing behind.\n\n\n\nExercise: 03-partials/03-release-status\n\n\n \n\nNo snippet, so the work is reading their own file and adapting it.\nThe assistant is a sanctioned escape hatch here.\nAfter: status nests under brs-release: — the turn 2 rule, applied unprompted. The badge is unstyled and looks like nothing, which is the cue for turn 4."
   },
   {
     "objectID": "slides/03-partials.html#section-2",
     "href": "slides/03-partials.html#section-2",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "",
     "text": "Provisional as plain text. It carries the right information and reads like nothing, which is exactly the setup for turn 4: three classes in the markup, still no CSS."
   },
   {
     "objectID": "slides/03-partials.html#more-pandoc-template-syntax",
     "href": "slides/03-partials.html#more-pandoc-template-syntax",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "More Pandoc template syntax",
     "text": "More Pandoc template syntax\n\n\n\n\n\n\n\nWrite\nGet\n\n\n\n\n$if(x)$ … $else$ … $endif$\nconditionals\n\n\n$for(x)$ … $endfor$\nloop over an array\n\n\n$sep$\ninside a loop: emitted between items, never after the last\n\n\n${x/uppercase}\na pipe — also lowercase, length, reverse, nowrap, …\n\n\n$--\na comment, to the end of the line\n\n\n\nPandoc’s template syntax →\n\nA signpost, not a lesson. You have met $if$; the rest is “this exists, the manual has it”.\n$sep$ is worth ten seconds: a separator that knows it is between things."
   },
   {
     "objectID": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
     "href": "slides/03-partials.html#for-html-styling-lives-outside-the-partials",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "For HTML: styling lives outside the partials",
     "text": "For HTML: styling lives outside the partials\n\n\ntitle-block.html\n\n&lt;span class=\"report-status\"&gt;$brs-release.status$&lt;/span&gt;\n\n\nNo color. No size. No position. Just a class.\n\n\nStyle using SCSS:\n\n\ncustom.scss\n\n/*-- scss:rules --*/\n.report-status { background-color: $primary; }\n\n\n\nThree classes:report-masthead,report-period, report-status.\n\n\nA partial decides what appears and in what order. A stylesheet decides what it looks like. Cross that line and nobody can restyle your template.\nThis is why the snippets shipped with class names already in them."
   },
   {
     "objectID": "slides/03-partials.html#your-turn-4-style-what-you-built",
     "href": "slides/03-partials.html#your-turn-4-style-what-you-built",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Your turn 4: style what you built",
     "text": "Your turn 4: style what you built\n\nDon’t edit title-block.html.\n\nAsk Posit Assistant to style your title block. Start with the prompt below then describe what you want.\nRender. Not what you asked for? Say what is wrong and go again.\nSkim custom.scss. Change one of the brand variables used and render again.\n\n\nExample prompt:\nI'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.\n\nExercise: 03-partials/04-style"
   },
   {
     "objectID": "slides/03-partials.html#one-answer",
     "href": "slides/03-partials.html#one-answer",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "One answer",
     "text": "One answer\n\nResultThe promptcustom.scss\n\n\n\n\n\nI'm in @03-partials/04-style. Write SCSS to style my title block. Use our brand variables ($primary, $secondary, $brand-forest, $text-muted) and never a hard-coded color.\n\nI want the masthead on the right, and the status styled like a badge.\n\n\n/*-- scss:rules --*/\n\n// Accent rule under the whole masthead block.\n#title-block-header {\n  border-bottom: 3px solid $primary;\n  padding-bottom: 1rem;\n  margin-bottom: 1.5rem;\n  // Clear the floated masthead so the description/metadata sit below.\n  overflow: hidden;\n}\n\n// Logo floats to the right of the title text.\n.report-masthead {\n  float: right;\n  width: auto;\n  max-height: 4rem;\n  margin-left: 1.5rem;\n}\n\n.subtitle {\n  color: $secondary;\n}\n\n// Release period reads as secondary metadata.\n.report-period {\n  color: $text-muted;\n  font-size: 0.9rem;\n  margin-bottom: 0.75rem;\n}\n\n// Status pill. color-contrast() picks a readable foreground from the\n// brand background instead of hard-coding black or white.\n.report-status {\n  display: inline-block;\n  padding: 0.25em 0.75em;\n  border-radius: 999px;\n  background-color: $brand-forest;\n  color: color-contrast($brand-forest);\n  font-size: 0.75rem;\n  font-weight: 600;\n  letter-spacing: 0.05em;\n  text-transform: uppercase;\n}\n\n\n\n\nIt styled #title-block-header and .subtitle which I didn’t ask for."
   },
   {
     "objectID": "slides/03-partials.html#replace-partials-to",
     "href": "slides/03-partials.html#replace-partials-to",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Replace partials to…",
     "text": "Replace partials to…\n\nExpose custom metadata fields in title-block for format: html\nZhuzh up your title-slide 💅 in format: revealjs\nCreate a custom layout for format: typst"
   },
   {
     "objectID": "slides/03-partials.html#partials-for-various-formats",
     "href": "slides/03-partials.html#partials-for-various-formats",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Partials for various formats",
     "text": "Partials for various formats\nThey exist! https://quarto.org/docs/journals/templates.html\n\nLaTeXTypstHTMLRevealjsBeamer\n\n\ndocument-metadata.latex\npassoptions.latex\ndoc-class.tex\nfonts.latex\nfont-settings.latex\ncommon.latex\npandoc.tex\n  tables.tex\n  graphics.tex\n  citations.tex\n  babel-lang.tex\n  tightlist.tex\n  biblio-config.tex\nafter-header-includes.latex\nhypersetup.latex\nbefore-title.tex\ntitle.tex\nbefore-body.tex\ntoc.tex\nbefore-bib.tex\nbiblio.tex\nafter-body.tex\n\n\nnumbering.typ \ndefinitions.typ\ntypst-template.typ\npage.typ\ntypst-show.typ\nnotes.typ\nbiblio.typ\n\n\nmetadata.html\ntitle-block.html\n  title-metadata.html \n    _title-meta-author.html\ntoc.html\n\n\ntoc-slide.html\ntitle-slide.html\n\n\npassoptions.latex\ndoc-class.tex\nfonts.latex\nfont-settings.latex\ncommon.latex\npandoc.tex\n  tables.tex\n  graphics.tex\n  citations.tex\n  babel-lang.tex\n  tightlist.tex\n  biblio-config.tex\nafter-header-includes.latex\nhypersetup.latex\nbefore-title.tex\ntitle.tex\nbefore-body.tex\ntoc.tex\nbefore-bib.tex\nbiblio.tex\nafter-body.tex"
   },
   {
     "objectID": "slides/03-partials.html#full-or-partial",
     "href": "slides/03-partials.html#full-or-partial",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Full or partial?",
     "text": "Full or partial?\n\nReplacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.\nSafer approaches:\n\nSelectively replace partials that exist within the master LaTeX or HTML template\nReplace the entire LaTeX or HTML template, but then include partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features"
   },
   {
     "objectID": "slides/03-partials.html#sharing-a-custom-format-extension",
     "href": "slides/03-partials.html#sharing-a-custom-format-extension",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Sharing: a custom format extension",
     "text": "Sharing: a custom format extension\nEverything you built, in one folder someone else can install:\n\n\n\n\n_extensions/brs/\n\n_extension.yml\ntitle-block.html\nbrs.scss\nbrs-logo.svg\n\n\n\n\n_extension.yml\n\ntitle: BRS Report\nauthor: Bureau of Regional Statistics\nversion: 1.0.0\ncontributes:\n  formats:\n    html:\n      masthead: brs-logo.svg\n      template-partials:\n        - title-block.html\n      theme: [default, brs.scss]\n\n\n\nExample: brs-format\n\nCreating formats →"
   },
   {
     "objectID": "slides/03-partials.html#the-full-template.html",
     "href": "slides/03-partials.html#the-full-template.html",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "The full template.html",
     "text": "The full template.html\n\n\n\n\n\nhtml/pandoc/template.html →"
   },
   {
     "objectID": "slides/03-partials.html#there-is-more-than-one-title-block.html",
     "href": "slides/03-partials.html#there-is-more-than-one-title-block.html",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "There is more than one title-block.html",
     "text": "There is more than one title-block.html\nQuarto picks one for you based on your YAML, and the docs link to the wrong one for the default:\n\n\n\nYour YAML\nPartial that renders\n\n\n\n\n(nothing — Bootstrap default)\ntemplates/title-block.html ← you used this one\n\n\ntitle-block-banner: true\ntemplates/banner/title-block.html\n\n\ntitle-block-style: manuscript\ntemplates/manuscript/title-block.html\n\n\ntitle-block-style: none\npandoc/title-block.html — Pandoc’s plain block"
   },
   {
     "objectID": "slides/03-partials.html#template-format-revealjs",
     "href": "slides/03-partials.html#template-format-revealjs",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Template: format: revealjs",
     "text": "Template: format: revealjs\n\nrevealjs/pandoc/template.html →"
   },
   {
     "objectID": "slides/03-partials.html#template-format-pdf",
     "href": "slides/03-partials.html#template-format-pdf",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Template: format: pdf",
     "text": "Template: format: pdf\n\npdf/pandoc/template.tex →"
   },
   {
     "objectID": "slides/03-partials.html#localized-strings-in-templates",
     "href": "slides/03-partials.html#localized-strings-in-templates",
-    "title": "Partials",
+    "title": "Build reusable structures",
     "section": "Localized strings in templates",
     "text": "Localized strings in templates\nHard-coding “Table of contents” in a partial breaks the moment someone sets lang:.\nSince Quarto 1.10, the strings Quarto already translates are template variables:\n&lt;h2&gt;${quarto.language.toc-title-document}&lt;/h2&gt;\n\n\n\n\nlang: en\nlang: fr\n\n\n\n\nTable of contents\nTable des matières\n\n\nAbstract\nRésumé\n\n\n\n\nLocalized strings in templates →\n\nThe quarto.language namespace exposes every string Quarto localizes, resolved for the document’s lang."
   },
