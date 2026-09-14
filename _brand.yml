@@ -1,15 +1,18 @@
 color:
   palette:
-    blue: "#447099"
-    orange: "#ee6331"
-    teal: "#419599"
-    green: "#729943"
-    burgundy: "#9a4665"
-    purple: burgundy
-    gray: "#404041"
+    navy: "#030A5F"
+    lime: "#BBF81B"
+    blue: "#419CF5"
+    magenta: "#C514C8"
+    pink: "#EB4FEE"
+    indigo: "#4D44AA"
+    purple: "#7B0D84"
+    dark-blue: "#0B70D5"
+    gray: "#909090"
+    off-white: "#F5FAFF"
     black: "#151515"
     white: "#FFFFFF"
-  primary: blue
+  primary: navy
   foreground: black
 
 typography: 
@@ -26,4 +29,3 @@ defaults:
       h2 {
           border: none;
         }
-

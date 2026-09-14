@@ -1,5 +1,6 @@
 ---
-title: "Level up your Quarto: Patterns, templates, and tooling"
+title: Practical Quarto
+subtitle: Patterns, templates, and tooling
 ---
 
 > September 14th, 2026  
