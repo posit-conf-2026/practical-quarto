@@ -56,13 +56,24 @@ them, teach from them, just say where they came from.
 
 ## Workshop survey
 
-Before we move on to Q&A, please take a note of the workshop survey:
+::: center
+
+Before we move on to Q&A,<br>please take a note of the workshop survey:
 
 <br>
 
 ::: large
 
 {{< iconify ri survey-line >}} [pos.it/conf26-workshop-survey](http://pos.it/conf26-workshop-survey)
+
+:::
+
+<br>
+
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/refs/heads/main/SVG/quarto.svg){width=200px}
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/refs/heads/main/SVG/positron.svg){width=200px}
+
+and grab a Quarto and/or Positron hex sticker!
 
 :::
 
@@ -76,4 +87,15 @@ Any questions, but especially of the kind:
 
 # Thank you!
 
-{{< iconify ri survey-line >}} [pos.it/conf26-workshop-survey](http://pos.it/conf26-workshop-survey)
+::: center
+
+Don't forget to...
+
+fill out the survey: {{< iconify ri survey-line >}} [pos.it/conf26-workshop-survey](http://pos.it/conf26-workshop-survey)
+
+grab a Quarto and/or Positron hex sticker!
+
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/refs/heads/main/SVG/quarto.svg){width=200px}
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/refs/heads/main/SVG/positron.svg){width=200px}
+
+:::
