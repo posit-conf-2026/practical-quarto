@@ -4,9 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
-$presentation-title-slide-text-align: "left";
-$presentation-heading-color: #283c4d;
-$link-color: #283c4d;
+$presentation-heading-color: #030A5F;
 
 // Quarto's default is $code-font-size * 0.55, which lands around 0.48em.
 $code-block-font-size: 0.7em;
@@ -120,30 +118,30 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
 }
 
 .reveal .slide .your-turn {
-  border-left: 3px solid #283c4d;
+  border-left: 3px solid #030A5F;
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  background: #9cbbbd50;
+  background: #BBF81B30;
 }
 
 .reveal .slide .exercise-folder {
-  border-left: 3px solid #ddb245;
+  border-left: 3px solid #419CF5;
   padding-left: 0.5em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   margin-bottom: 0.25em;
-  background: #ddb24550;
+  background: #419CF530;
   font-size: 0.8em;
 }
 
 .reveal .slide .example-folder {
-  border-left: 3px solid #5a5a5a;
+  border-left: 3px solid #909090;
   padding-left: 0.5em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   margin-top: 0.25em;
-  background: #e2e2e2;
+  background: #F5FAFF;
   font-size: 0.8em;
 }

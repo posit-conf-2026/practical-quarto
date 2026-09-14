@@ -1,5 +1,5 @@
 code-line-numbers: false
-subtitle: "Level up your Quarto: Patterns, templates, and tooling @ `posit::conf(2026)`"
+subtitle: "Practical Quarto: Patterns, templates, and tooling @ `posit::conf(2026)`"
 authors:
   - Charlotte Wickham
   - Mine Çetinkaya-Rundel
@@ -7,12 +7,12 @@ footer: "[pos.it/practical-quarto-conf26](http://pos.it/practical-quarto-conf26)
 format: 
   revealjs:
     title-slide-attributes:
-      data-background-color: "#9cbbbd"
+      data-background-color: "#419CF5"
     template-partials: 
       - title-slide.html
     theme: slides.scss
     countdown:
-      color_background: "#283c4d"
+      color_background: "#EB4FEE"
       color_text: "#ffffff"
     include-after-body: 
       text: |
