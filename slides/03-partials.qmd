@@ -240,7 +240,7 @@ brs-release:
    <p class="report-period">______ &middot; ______</p>
    ```
 
-2. Render. What happens you remove `brs-release` from `report.qmd`?
+2. Render. What happens when you remove `brs-release` from `report.qmd`?
 
 :::
 
@@ -338,7 +338,7 @@ nothing else — which is why a default has to live in the template.
 ::: notes
 No snippet, so the work is reading their own file and adapting it.
 
-The assistant is a sanctioned escape hatch here. Prompt is in the README.
+The assistant is a sanctioned escape hatch here.
 
 After: `status` nests under `brs-release:` — the turn 2 rule, applied unprompted.
 The badge is unstyled and looks like nothing, which is the cue for turn 4.
@@ -370,8 +370,7 @@ still no CSS.
 A signpost, not a lesson. You have met `$if$`; the rest is "this exists, the
 manual has it".
 
-`$sep$` is worth ten seconds: it is the answer to the dangling `&middot;` from
-turn 2's optional extra — a separator that knows it is between things.
+`$sep$` is worth ten seconds: a separator that knows it is between things.
 :::
 
 ## For HTML: styling lives outside the partials
@@ -655,6 +654,8 @@ contributes:
 
 ![](../images/html-template-partials.svg){.nostretch width="80%" fig-align="center" fig-alt="A schematic of template.html as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: metadata.html (meta tags), styles.html (CSS), and a dashed header-includes slot. Inside the body: a dashed include-before slot; title-block.html (only if title, subtitle, author, date, or similar metadata is set), drawn as a container nesting title-metadata.html, which nests _title-meta-author.html; toc.html (table of contents, only if toc is set); the body; and a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
 
+[`html/pandoc/template.html` →](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/html/pandoc/template.html)
+
 ## There is more than one `title-block.html` {.smaller}
 
 Quarto picks one for you based on your YAML, and
@@ -671,9 +672,13 @@ the docs link to the wrong one for the default:
 
 ![](../images/revealjs-template-partials.svg){.nostretch width="80%"  fig-alt="A schematic of template.html for revealjs as an ordered stack inside literal html, head, and body tags, each section drawn as a box. Inside the head: styles.html (shared with the html format) and a dashed header-includes slot. Inside the body: a dashed include-before slot, then a box marking the div with class slides, holding title-slide.html, toc-slide.html (only if toc is set), and the body (one section element per slide), then the template's literal reveal.js setup scripts shown as a dotted mark, and last a dashed include-after slot. Dotted marks between the boxes indicate the template's literal HTML boilerplate."}
 
+[`revealjs/pandoc/template.html` →](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/revealjs/pandoc/template.html)
+
 ## Template: `format: pdf` {.scrollable}
 
 ![](../images/pdf-template-partials.svg){.nostretch width="80%"  fig-alt="A schematic of template.tex as an ordered stack of partial files. The preamble partials come first: document-metadata.latex, passoptions.latex, doc-class.tex, fonts.latex, and font-settings.latex, then common.latex drawn as a container nesting pandoc.tex, which holds six leaf partials (babel-lang, biblio-config, citations, graphics, tables, tightlist) and the dashed header-includes slot, then after-header-includes.latex, hypersetup.latex, before-title.tex (empty hook), and title.tex. The document section, delimited by the literal begin-document and end-document lines, holds before-body.tex, a dashed include-before slot, toc.tex, the body, before-bib.tex (empty hook), biblio.tex, a dashed include-after slot, and after-body.tex (empty hook)."}
+
+[`pdf/pandoc/template.tex` →](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/pdf/pandoc/template.tex)
 
 ## Localized strings in templates {.smaller}
 

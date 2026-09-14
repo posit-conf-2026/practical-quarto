@@ -239,9 +239,12 @@ Pandoc just does not use them.
 rect()
 ```
 \
+
+::: {.fragment fragment-index=1}
 ```{.typst filename="badge.typ"}
 #rect()
 ```
+:::
 :::
 
 ::: {.column width="38%"}
@@ -250,14 +253,16 @@ rect()
 rect()
 ```
 
+::: {.fragment fragment-index=1}
 ```{typst}
 //| alt: "An empty rectangle with a thin black outline."
 #rect()
 ```
 :::
 :::
+:::
 
-::: {.fragment}
+::: {.fragment fragment-index=2}
 Empty parentheses: a call with no arguments.
 :::
 
@@ -603,10 +608,10 @@ everything below.
 ::: your-turn
 
 1. Write a **set rule** to loosen the paragraphs — `par` has a `leading`
-   argument. [`par`](https://typst.app/docs/reference/model/par/)
+   argument. [`par` →](https://typst.app/docs/reference/model/par/)
 
 2. Write a **show-set rule** to centre the section headings.
-   [`align`](https://typst.app/docs/reference/layout/align/)
+   [`align` →](https://typst.app/docs/reference/layout/align/)
 
 3. Challenge: step 2 caught `### Manufacturing` too. Narrow the selector to the top-level sections only.
 
