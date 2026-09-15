@@ -20,28 +20,12 @@ This workshop is designed for Quarto users who want to update and extend their Q
 
 Themes will include:
 
+- Work productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.
 - Design once, use anywhere: Learn how to work effectively with light and dark modes, brands, and multiple output formats, and how to share a consistent brand across multiple Quarto projects without duplication or fragility.
 - Build reusable structures: Use template partials to factor out repeated content and layouts, making large or long-lived projects easier to maintain and evolve.
 - Understand why Typst matters: Explore why Typst deserves a place on your radar, with concrete “quick wins” that show how it can dramatically simplify PDF generation.
-- Work productively in Positron: Pick up Positron- and Quarto-specific productivity tips, including auto-formatting with Air, and practical ways to incorporate LLMs into your Quarto workflow.
 
 By the end of the workshop, you’ll have a curated set of Quarto recipes and a mental model for how the pieces fit together. You’ll leave the workshop equipped to create more polished documents, scale your workflows across projects and teams, and make deliberate, informed choices about tools, formats, and authoring strategies.
-
-## Setup
-
-ADD INFORMATION YOU WANT LEARNERS TO HAVE / STEPS THEY WANT THEM TO COMPLETE PRIOR TO THE WORKSHOP. THIS COULD BE A LINK TO A THREAD ON POSIT COMMUNITY, PACKAGE INSTALL INSTRUCTIONS, HOW TO GET A POSIT CLOUD ACCOUNT, ETC.
-
-## Schedule
-
-| Time          | Activity         |
-| :------------ | :--------------- |
-| 09:00 - 10:30 | Session 1        |
-| 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2        |
-| 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 3        |
-| 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4        |
 
 ## Instructor(s)
 
